@@ -3,17 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "start": "next dev",
     "build": "next build",
-    "start": "next start"
+    "prod": "next start"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
-    "antd": "^4.0.4",
+    "antd": "^4.1.0",
     "babel-plugin-import": "^1.9.1",
     "null-loader": "2.0.0",
     "next": "^9.3.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.1"
   }
 }
