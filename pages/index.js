@@ -5,6 +5,7 @@ const Index = () => {
 	return (
 		<div>
 			<NationWide />
+			<br />
 			<Statewise />
 		</div>
 	);

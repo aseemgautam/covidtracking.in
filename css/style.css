@@ -13,7 +13,6 @@
   background-color: #fff;
   padding: 0px;
   border-bottom: 1px solid #eee;
-  margin-bottom: 10px;
 }
 .ant-layout-footer {
   /* position: fixed;
@@ -29,13 +28,13 @@
   z-index: 1;
 } */
 
-.section-heading div:nth-child(2) {
+/* .section-heading div:nth-child(2) {
   text-align: right;
-}
+} */
 
 .ant-statistic {
   background-color: #eee;
-  padding: 10px;
+  padding: 10px !important;
 }
 
 .state-collapse {
@@ -69,12 +68,24 @@
   background-color: #fff;
 }
 .state-panel-stats div {
-  padding: 0px 5px;
-  width: 48px;
+  width: 52px;
   text-align: center;
   margin: 0px;
   background-color: khaki;
   margin-left: 5px;
+}
+
+.national-radio {
+  margin: 15px 0px;
+}
+
+.ant-tag {
+  margin:0;
+}
+
+.chart {
+  height: 200px;
+  width: 100%;
 }
 
 @media (max-width: 576px) {
@@ -86,5 +97,8 @@
   }
   .ant-statistic-content-suffix {
     font-size: 14px;
+  }
+  .state-panel-stats div {
+    width: 48px;
   }
 }

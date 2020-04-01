@@ -49,14 +49,14 @@ export default () => {
 		<div>
 			<Row className="section-heading" justify="space-between">
 				<Col flex={2}>
-					<h3>States</h3>
+					<h3>State wise (latest)</h3>
 				</Col>
 				<Col flex>
 					<div className="state-panel-stats">
 						<div>Active</div>
 						<div>Total</div>
 						<div>Recov</div>
-						<div>Fatal</div>
+						<div>Deaths</div>
 					</div>
 				</Col>
 			</Row>
