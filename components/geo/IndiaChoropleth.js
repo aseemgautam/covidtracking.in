@@ -1,6 +1,4 @@
 import { Choropleth } from '@nivo/geo';
-import countries from '../../data/world_countries';
-import CountriesGeoData from '../../data/CountriesGeoData';
 import IndiaStatesGeo from '../../data/IndiaStatesGeo';
 import Wealth from '../../data/Wealth';
 // make sure parent container have a defined height when using
