@@ -13,12 +13,12 @@ const SiteLayout = props => {
 						<div className="logo">COVID - 19</div>
 					</Col>
 					<Col xs={16} sm={16} lg={14} xl={12}>
-						<Space size="middle" className="navigation">
-							<a href="/">Tracker</a>
-							<a href="/">News</a>
-							<a href="/helpline">Helpline</a>
-							<a href="/labs">Labs</a>
-						</Space>
+						{/* <Space size="middle" className="navigation">
+						</Space> */}
+						<a href="/">Tracker</a>
+						<a href="/">News</a>
+						<a href="/helpline">Helpline</a>
+						<a href="/labs">Labs</a>
 					</Col>
 					<Col xs={1} sm={1} lg={2} xl={4} />
 				</Row>

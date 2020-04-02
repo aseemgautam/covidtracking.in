@@ -1,16 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { ResponsiveBar } from '@nivo/bar';
 
-const styles = {
-	fontFamily: 'inherit',
-	textAlign: 'center',
-	height: '300px',
-	// width: '100%'
-};
 const commonProps = {
 	// width: 900,
 	height: 300,
-	margin: { top: 30, right: 30, bottom: 30, left: 30 },
+	margin: { top: 30, right: 0, bottom: 30, left: 0 },
 	padding: 0.2,
 	labelTextColor: 'inherit:darker(1.4)',
 	labelSkipWidth: 16,
@@ -44,9 +38,9 @@ const divergingCommonProps = {
 		tickPadding: 12,
 	},
 	axisBottom: {
-		legend: 'Date',
-		legendPosition: 'middle',
-		legendOffset: 50,
+		// legend: 'Date',
+		// legendPosition: 'middle',
+		// legendOffset: 50,
 		tickSize: 0,
 		tickPadding: 12,
 	},
@@ -73,7 +67,7 @@ const divergingCommonProps = {
 			legend: 'deaths',
 			legendPosition: 'bottom-left',
 			legendOrientation: 'horizontal',
-			legendOffsetY: 120,
+			legendOffsetY: 50,
 		},
 	],
 };

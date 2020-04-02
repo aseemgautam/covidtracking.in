@@ -1,7 +1,10 @@
 /* eslint-disable */
 const withCss = require('@zeit/next-css')
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
 
-module.exports = withCss({
+module.exports = withBundleAnalyzer(withCss({
   webpack: (config, { isServer }) => {
     if (isServer) {
       const antStyles = /antd\/.*?\/style\/css.*?/
@@ -25,4 +28,4 @@ module.exports = withCss({
     }
     return config
   },
-})
+}));

@@ -61,6 +61,7 @@
   display: flex;
   justify-content: space-between;
   line-height: 40px;
+  width: 100%;
 }
 
 .state-panel-stats {
@@ -81,6 +82,10 @@
 
 .ant-tag {
   margin:0;
+}
+
+.india-map {
+  background-color: #fafafa;
 }
 
 .chart {

@@ -1,4 +1,4 @@
-const StatePanelHeader = props => {
+const stateCasesRow = props => {
 	const { title, active, total, recover, fatal } = props;
 	return (
 		<div className="state-panel-header">
@@ -13,4 +13,4 @@ const StatePanelHeader = props => {
 	);
 };
 
-export default StatePanelHeader;
+export default stateCasesRow;

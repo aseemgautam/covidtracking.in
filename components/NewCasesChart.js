@@ -13,7 +13,7 @@ const NewCasesChart = () => {
 			<ResponsiveBar
 				colors={['#1890ff']}
 				padding={0.35}
-				margin={{ top: 30, right: 30, bottom: 30, left: 30 }}
+				margin={{ top: 30, right: 0, bottom: 30, left: 0 }}
 				data={[
 					{ date: '23/03', cases: 103 },
 					{ date: '24/03', cases: 37 },
@@ -27,7 +27,7 @@ const NewCasesChart = () => {
 				]}
 				indexBy="date"
 				keys={['cases']}
-				axisLeft={false}
+				axisLeft={null}
 				enableGridY={false}
 				enableGridX={false}
 				labelTextColor="#fff"

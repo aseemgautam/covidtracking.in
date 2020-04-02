@@ -1,8 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { Statistic, Row, Col, Radio, Tag } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
-import NewCasesChart from './NewCasesChart';
-import DeathVsRecoveredChart from './DeathVsRecoveredChart';
 
 const Nationwide = () => {
 	return (
@@ -100,14 +98,6 @@ const Nationwide = () => {
 						// valueStyle={{ color: '#cf1322' }}
 						suffix="Local Transmission"
 					/>
-				</Col>
-			</Row>
-			<Row>
-				<Col xs={24} md={12}>
-					<NewCasesChart />
-				</Col>
-				<Col xs={24} md={12}>
-					<DeathVsRecoveredChart />
 				</Col>
 			</Row>
 		</div>

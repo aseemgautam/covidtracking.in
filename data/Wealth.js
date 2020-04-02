@@ -1,0 +1,33 @@
+const Wealth = [
+	{ id: 'Andhra Pradesh', value: 51025 },
+	{ id: 'Arunachal Pradesh', value: 51405 },
+	{ id: 'Assam', value: 27197 },
+	{ id: 'Bihar', value: 16715 },
+	{ id: 'Chhattisgarh', value: 38059 },
+	{ id: 'Delhi', value: 116886 },
+	{ id: 'Goa', value: 132719 },
+	{ id: 'Gujarat', value: 63961 },
+	{ id: 'Haryana', value: 78781 },
+	{ id: 'Himachal Pradesh', value: 50365 },
+	{ id: 'Jammu and Kashmir', value: 30582 },
+	{ id: 'Jharkhand', value: 27132 },
+	{ id: 'Karnataka', value: 52097 },
+	{ id: 'Kerala', value: 59179 },
+	{ id: 'Madhya Pradesh', value: 27250 },
+	{ id: 'Maharashtra', value: 74027 },
+	{ id: 'Manipur', value: 27332 },
+	{ id: 'Meghalaya', value: 43555 },
+	{ id: 'Mizoram', value: 45982 },
+	{ id: 'Nagaland', value: 45353 },
+	{ id: 'Orissa', value: 33226 },
+	{ id: 'Punjab', value: 60746 },
+	{ id: 'Rajasthan', value: 34042 },
+	{ id: 'Sikkim', value: 68731 },
+	{ id: 'Tamil Nadu', value: 63547 },
+	{ id: 'Tripura', value: 35799 },
+	{ id: 'Uttar Pradesh', value: 23395 },
+	{ id: 'Uttaranchal', value: 59584 },
+	{ id: 'West Bengal', value: 41219 }
+];
+
+export default Wealth;

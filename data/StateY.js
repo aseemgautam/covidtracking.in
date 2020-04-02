@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-const stateData = [
+const stateYData = [
 	{
 		Id: 1,
 		Name: 'Andhra Pradesh',
@@ -203,16 +203,16 @@ const stateData = [
 		Cured: 6,
 		Deaths: 3
 	},
-	// {
-	// 	Id: 98,
-	// 	Name: 'Total',
-	// 	Confirmed: 1965,
-	// 	Cured: 151,
-	// 	Deaths: 50
-	// }
+	{
+		Id: 98,
+		Name: 'Total',
+		Confirmed: 1965,
+		Cured: 151,
+		Deaths: 50
+	}
 ];
-stateData.sort((a, b) => {
+stateYData.sort((a, b) => {
 	return b.Confirmed - a.Confirmed;
 });
-Object.freeze(stateData);
-export default stateData;
+Object.freeze(stateYData);
+export default stateYData;
