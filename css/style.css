@@ -33,42 +33,27 @@
 } */
 
 .ant-statistic {
-  background-color: #eee;
-  padding: 10px !important;
-}
-
-.state-collapse {
-  border: 0px !important;
-  background-color: transparent !important;
-}
-
-.state-collapse .ant-collapse-header {
-  padding: 0 !important;
-  padding-left: 40px !important;
-}
-
-.ant-collapse > .ant-collapse-item {
-    margin-bottom: 5px;
-    background-color: #eee;
-    border-bottom: 0px !important;
+  text-align: center;
+  padding: 10px 0px;
+  border: 1px solid #eee;
 }
 
 .ant-collapse-content {
   border-top: none !important;
 }
 
-.state-panel-header {
-  display: flex;
-  justify-content: space-between;
-  line-height: 40px;
+.state-case-row {
+  line-height: 32px;
   width: 100%;
+  padding: 1px 0px !important;
+  border: 0 !important;
 }
 
-.state-panel-stats {
+.state-case-row-stats {
   display: flex;
   background-color: #fff;
 }
-.state-panel-stats div {
+.state-case-row-stats div {
   width: 52px;
   text-align: center;
   margin: 0px;
@@ -85,7 +70,15 @@
 }
 
 .india-map {
+  height: 400px;
   background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.live-tag {
+  margin-right:0 !important;
 }
 
 .chart {

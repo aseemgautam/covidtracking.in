@@ -8,12 +8,12 @@ const Nationwide = () => {
 			<Row className="national-radio" justify="space-between" align="middle">
 				<Col flex={2}>
 					<Radio.Group defaultValue={0}>
-						<Radio.Button value={0}>Today</Radio.Button>
-						<Radio.Button value={1}>Yesterday</Radio.Button>
+						<Radio.Button value={0}>India</Radio.Button>
+						<Radio.Button value={1} disabled>World (coming soon)</Radio.Button>
 					</Radio.Group>
 				</Col>
 				<Col flex>
-					<Tag color="#87d068">Live</Tag>
+					<Tag color="#87d068" className="live-tag">Live</Tag>
 				</Col>
 			</Row>
 			{/* <br /> */}
@@ -21,7 +21,7 @@ const Nationwide = () => {
 				<Col xs={8} sm={8}>
 					<Statistic
 						title="Total"
-						value="27"
+						value="2547"
 						precision={0}
 						// valueStyle={{ color: '#cf1322' }}
 						// prefix={<ArrowDownOutlined />}
@@ -30,7 +30,7 @@ const Nationwide = () => {
 				<Col xs={8} sm={8}>
 					<Statistic
 						title="New Cases"
-						value={125}
+						value={345}
 						precision={0}
 						// valueStyle={{ color: '#cf1322' }}
 						prefix={<PlusOutlined />}
@@ -39,7 +39,7 @@ const Nationwide = () => {
 				<Col xs={8} sm={8}>
 					<Statistic
 						title="New Deaths"
-						value={125}
+						value={111}
 						precision={0}
 						// valueStyle={{ color: '#cf1322' }}
 						prefix={<PlusOutlined />}
@@ -57,7 +57,7 @@ const Nationwide = () => {
 				<Col xs={8} sm={8}>
 					<Statistic
 						title="Active"
-						value={766}
+						value={2311}
 						precision={0}
 						// valueStyle={{ color: '#cf1322' }}
 						// prefix={<ArrowDownOutlined />}
@@ -66,7 +66,7 @@ const Nationwide = () => {
 				<Col xs={8} sm={8}>
 					<Statistic
 						title="Total Recovered"
-						value={21}
+						value={199}
 						precision={0}
 						// valueStyle={{ color: '#cf1322' }}
 						// prefix={<ArrowDownOutlined />}
@@ -75,7 +75,7 @@ const Nationwide = () => {
 				<Col xs={8} sm={8}>
 					<Statistic
 						title="Total Deaths"
-						value={21}
+						value={66}
 						precision={0}
 						// valueStyle={{ color: '#cf1322' }}
 						// prefix={<ArrowDownOutlined />}

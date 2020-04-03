@@ -5,26 +5,14 @@ import StateData from '../data/State';
 export default () => {
 	return (
 		<div>
-			<Row className="section-heading" justify="space-between">
-				<Col flex={2}>
-					<h3>State wise (latest)</h3>
-				</Col>
-				<Col flex>
-					<div className="state-panel-stats">
-						<div>Active</div>
-						<div>Total</div>
-						<div>Recov</div>
-						<div>Deaths</div>
-					</div>
-				</Col>
-			</Row>
 			<List
-				// header={<div>Header</div>}
-				// footer={<div>Footer</div>}
+				pagination={{
+					pageSize: 10,
+				}}
 				dataSource={StateData}
 				renderItem={state => {
 					return (
-						<List.Item>
+						<List.Item className="state-case-row">
 							<StateCasesRow
 								title={state.Name}
 								active={state.Confirmed - state.Cured}

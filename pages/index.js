@@ -1,5 +1,5 @@
 import NationWide from '../components/Nationwide';
-import Statewise from '../components/Statewise';
+// import Statewise from '../components/Statewise';
 import Charts from '../components/Charts';
 
 const Index = () => {
@@ -8,8 +8,8 @@ const Index = () => {
 			<NationWide />
 			<br />
 			<Charts />
-			<br />
-			<Statewise />
+			{/* <br />
+			<Statewise /> */}
 		</div>
 	);
 };

@@ -9,8 +9,8 @@ import Wealth from '../../data/Wealth';
 const IndiaChoropleth = ({ data /* see data tab */ }) => {
 	return (
 		<Choropleth
-			height={500}
-			width={500}
+			height={400}
+			width={340}
 			data={Wealth}
 			features={IndiaStatesGeo.features}
 			margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
@@ -19,10 +19,10 @@ const IndiaChoropleth = ({ data /* see data tab */ }) => {
 			unknownColor="#666666"
 			// label="Cases"
 			valueFormat=".0s"
-			// projectionTranslation={[-1.4, 1.1]}
-			projectionTranslation={[-1.91, 1.18]}
+			projectionTranslation={[-2.25, 1.15]} // 100 scale = -0.4, +0.1, 1 = -.004, +.001
+			// projectionTranslation={[-1.91, 1.18]}
 			projectionRotation={[0, 0, 0]}
-			projectionScale={850}
+			projectionScale={650}
 			borderWidth={0.5}
 			borderColor="#fff"
 			legends={[
@@ -31,14 +31,14 @@ const IndiaChoropleth = ({ data /* see data tab */ }) => {
 					direction: 'column',
 					justify: true,
 					translateX: -20,
-					translateY: -30,
+					translateY: -20,
 					itemsSpacing: 0,
-					itemWidth: 94,
+					itemWidth: 74,
 					itemHeight: 18,
 					itemDirection: 'left-to-right',
 					itemTextColor: '#444444',
 					itemOpacity: 0.85,
-					symbolSize: 18,
+					symbolSize: 16,
 					effects: [
 						{
 							on: 'hover',
@@ -57,7 +57,7 @@ const IndiaChoropleth = ({ data /* see data tab */ }) => {
 					],
 					anchor: 'bottom-right',
 					direction: 'column',
-					translateY: -160,
+					translateY: -150,
 					itemTextColor: '#444444',
 					itemWidth: 130,
 					itemHeight: 20,
