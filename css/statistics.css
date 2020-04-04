@@ -1,0 +1,51 @@
+.covid-statistic, .covid-statistic-with-suffix {
+  padding: 6px 13px !important;
+  border: 1px solid #eee;
+}
+
+.covid-statistic-with-suffix .ant-statistic-content,
+.covid-statistic-with-suffix .ant-statistic-title
+{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+}
+
+.covid-statistic .ant-statistic-content-suffix {
+  font-size: 18px;
+}
+
+.statistic-stage1 .ant-statistic-content,
+.statistic-stage1 .ant-statistic-title {
+  justify-content: space-between !important;
+}
+
+.statistic-stage1 {
+  background-color: #fff7e6;
+  border-color: #ffe7ba;
+  padding: 6px 20% !important;
+}
+
+.red {
+  color: #f5222d;
+}
+
+.green {
+  color: #52c41a
+}
+
+.center {
+  text-align: center;
+}
+
+@media (max-width: 420px) {
+  .ant-statistic-title {
+    font-size: 13px !important;
+  }
+  .ant-statistic-content {
+    font-size: 18px !important;
+  }
+  .ant-statistic-content-suffix {
+    font-size: 14px !important;
+  }
+}

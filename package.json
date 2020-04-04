@@ -8,6 +8,7 @@
     "prod": "next start"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.0.5",
     "@next/bundle-analyzer": "^9.3.4",
     "@nivo/bar": "^0.61.1",
     "@nivo/geo": "^0.61.1",

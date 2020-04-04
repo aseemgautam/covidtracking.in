@@ -22,26 +22,6 @@
   background-color: #fff;
 }
 
-/* .section-heading {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-} */
-
-/* .section-heading div:nth-child(2) {
-  text-align: right;
-} */
-
-.ant-statistic {
-  text-align: center;
-  padding: 10px 0px;
-  border: 1px solid #eee;
-}
-
-.ant-collapse-content {
-  border-top: none !important;
-}
-
 .state-case-row {
   line-height: 32px;
   width: 100%;
@@ -84,19 +64,4 @@
 .chart {
   height: 200px;
   width: 100%;
-}
-
-@media (max-width: 576px) {
-  .ant-statistic-title {
-    font-size: 13px;
-  }
-  .ant-statistic-content {
-    font-size: 18px;
-  }
-  .ant-statistic-content-suffix {
-    font-size: 14px;
-  }
-  .state-panel-stats div {
-    width: 48px;
-  }
 }
