@@ -14,7 +14,7 @@ const Nationwide = () => {
 		<Statistic
 			className="covid-statistic center"
 			title="Active"
-			value={2311}
+			value={2784}
 			precision={0}
 		/>
 	);
@@ -41,16 +41,16 @@ const Nationwide = () => {
 			</Row>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={16} sm={12}>
-					{CovidStatisticFactory('Confirmed', 'Today', 2578, 247, 'red')}
+					{CovidStatisticFactory('Confirmed', 'Today', 3071, 525, 'red')}
 				</Col>
 				<Col xs={8} sm={6}>{active}</Col>
 				<Col xs={0} sm={6}>{fatalityRate}</Col>
 				<Col xs={16} sm={12}>
-					{CovidStatisticFactory('Deaths', 'Today', 62, 6, 'red')}
+					{CovidStatisticFactory('Deaths', 'Today', 75, 13, 'red')}
 				</Col>
 				<Col xs={8} sm={0}>{fatalityRate}</Col>
 				<Col xs={16} sm={12}>
-					{CovidStatisticFactory('Recovered', 'Today', 151, 24, 'green')}
+					{CovidStatisticFactory('Recovered', 'Today', 212, 50, 'green')}
 				</Col>
 				<Col xs={8} sm={12}>{tests}</Col>
 				<Col xs={24} sm={12}>
