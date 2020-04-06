@@ -1,21 +1,21 @@
 import { Statistic } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 
-const CovidStatistic = ({ title, suffixTitle, value, suffixValue, suffixClassName }) => {
+const CovidStatistic = ({ className, title, precision, value,
+	suffixValue, suffixClassName, showPlusIcon }) => {
 	return (
 		<Statistic
-			className="covid-statistic-with-suffix"
+			className={`${className} covid-statistic-with-suffix`}
 			title={(
 				<>
 					<span>{title}</span>
-					<span>{suffixTitle}</span>
 				</>
 			)}
 			value={value}
-			precision={0}
+			precision={precision}
 			suffix={(
 				<>
-					<PlusOutlined className={suffixClassName} />
+					{showPlusIcon && <PlusOutlined className={suffixClassName} />}
 					<span className={suffixClassName}>{suffixValue}</span>
 				</>
 			)}
@@ -23,14 +23,17 @@ const CovidStatistic = ({ title, suffixTitle, value, suffixValue, suffixClassNam
 	);
 };
 
-const CovidStatisticFactory = (title, suffixTitle, value, suffixValue, suffixClassName) => {
+const CovidStatisticFactory = (className, title,
+	suffixTitle, value, suffixValue, suffixClassName, showPlusIcon) => {
 	return (
 		<CovidStatistic
+			className={className}
 			title={title}
 			suffixTitle={suffixTitle}
 			value={value}
 			suffixValue={suffixValue}
 			suffixClassName={suffixClassName}
+			showPlusIcon={showPlusIcon}
 		/>
 	);
 };

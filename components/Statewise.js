@@ -1,4 +1,4 @@
-import { Row, Col, List } from 'antd';
+import { List } from 'antd';
 import StateCasesRow from './StateCasesRow';
 import StateData from '../data/State';
 
@@ -6,8 +6,18 @@ export default () => {
 	return (
 		<div>
 			<List
+				className="state-list"
+				header={(
+					<>
+						{/* <div>+Today</div> */}
+						<div>Confirm</div>
+						<div>Active</div>
+						<div className="red-8">Deaths</div>
+						<div className="green">Cured</div>
+					</>
+				)}
 				pagination={{
-					pageSize: 10,
+					pageSize: 9,
 				}}
 				dataSource={StateData}
 				renderItem={state => {

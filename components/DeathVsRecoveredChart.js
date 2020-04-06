@@ -2,8 +2,6 @@
 import { ResponsiveBar } from '@nivo/bar';
 
 const commonProps = {
-	// width: 900,
-	height: 300,
 	margin: { top: 30, right: 0, bottom: 30, left: 0 },
 	padding: 0.2,
 	labelTextColor: 'inherit:darker(1.4)',
@@ -74,13 +72,15 @@ const divergingCommonProps = {
 
 const DeathVsRecoveredChart = () => {
 	return (
-		<ResponsiveBar
-			{...divergingCommonProps}
-			keys={['recover', 'death']}
-			padding={0.4}
-			colors={['#97e3d5', '#f47560']}
-			labelFormat={v => { return v; }}
-		/>
+		<div className="chart">
+			<ResponsiveBar
+				{...divergingCommonProps}
+				keys={['recover', 'death']}
+				padding={0.4}
+				colors={['#97e3d5', '#f47560']}
+				labelFormat={v => { return v; }}
+			/>
+		</div>
 	);
 };
 

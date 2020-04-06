@@ -7,7 +7,8 @@ import Statewise from './Statewise';
 const Charts = () => {
 	return (
 		<>
-			<Row gutter={[16, 16]}>
+			{/* <div>State Level cases </div> */}
+			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} sm={24} md={12}>
 					<div id="india-map" className="india-map">
 						<IndiaChoropleth />
@@ -17,7 +18,7 @@ const Charts = () => {
 					<Statewise />
 				</Col>
 			</Row>
-			<Row>
+			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} md={12}>
 					<NewCasesChart />
 				</Col>

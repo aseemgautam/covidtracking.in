@@ -12,14 +12,15 @@
     "@next/bundle-analyzer": "^9.3.4",
     "@nivo/bar": "^0.61.1",
     "@nivo/geo": "^0.61.1",
+    "@nivo/pie": "^0.61.1",
     "@nivo/treemap": "^0.61.0",
-    "@zeit/next-css": "^1.0.1",
     "antd": "^4.1.0",
     "babel-plugin-import": "^1.9.1",
     "next": "^9.3.2",
     "null-loader": "2.0.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "sass": "^1.26.3"
   },
   "eslintConfig": {
     "extends": "react-app"

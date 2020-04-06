@@ -1,36 +1,54 @@
 import { ResponsiveBar } from '@nivo/bar';
 
-const styles = {
-	fontFamily: 'inherit',
-	textAlign: 'center',
-	height: '300px',
-	// width: '100%'
-};
-
 const NewCasesChart = () => {
 	return (
-		<div style={styles}>
+		<div className="chart">
 			<ResponsiveBar
-				colors={['#1890ff']}
-				padding={0.35}
+				colors={['#ffc53d', '#f5222d', '#52c41a']}
+				padding={0.2}
+				labelSkipHeight={10}
 				margin={{ top: 30, right: 0, bottom: 30, left: 0 }}
 				data={[
-					{ date: '23/03', cases: 103 },
-					{ date: '24/03', cases: 37 },
-					{ date: '25/03', cases: 121 },
-					{ date: '26/03', cases: 70 },
-					{ date: '27/03', cases: 160 },
-					{ date: '28/03', cases: 100 },
-					{ date: '29/03', cases: 37 },
-					{ date: '30/03', cases: 227 },
-					{ date: '31/03', cases: 146 }
+					{ date: '23/03', cases: 103, death: 5, recover: 10 },
+					{ date: '24/03', cases: 37, death: 5, recover: 10 },
+					{ date: '25/03', cases: 121, death: 5, recover: 10 },
+					{ date: '26/03', cases: 70, death: 5, recover: 10 },
+					{ date: '27/03', cases: 160, death: 5, recover: 10 },
+					{ date: '28/03', cases: 100, death: 5, recover: 10 },
+					{ date: '29/03', cases: 37, death: 5, recover: 10 },
+					{ date: '30/03', cases: 227, death: 5, recover: 10 },
+					{ date: '31/03', cases: 146, death: 5, recover: 10 }
 				]}
 				indexBy="date"
-				keys={['cases']}
+				keys={['cases', 'death', 'recover']}
 				axisLeft={null}
 				enableGridY={false}
 				enableGridX={false}
-				labelTextColor="#fff"
+				labelTextColor="#555"
+				legends={[
+					{
+						dataFrom: 'keys',
+						anchor: 'top-left',
+						direction: 'row',
+						justify: false,
+						translateX: 0,
+						translateY: 0,
+						itemsSpacing: 0,
+						itemWidth: 40,
+						itemHeight: 10,
+						itemDirection: 'top-to-bottom',
+						itemOpacity: 0.85,
+						symbolSize: 20,
+						effects: [
+							{
+								on: 'hover',
+								style: {
+									itemOpacity: 1
+								}
+							}
+						]
+					}
+				]}
 			/>
 		</div>
 	);

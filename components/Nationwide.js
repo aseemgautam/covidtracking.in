@@ -1,4 +1,4 @@
-import { Statistic, Row, Col, Radio, Tag } from 'antd';
+import { Statistic, Row, Col } from 'antd';
 import { CovidStatisticFactory } from './CovidStatistic';
 
 const Nationwide = () => {
@@ -21,54 +21,34 @@ const Nationwide = () => {
 	const tests = (
 		<Statistic
 			className="covid-statistic center"
-			title="Tests"
-			value="38,976"
+			title="Total Covid-19 Tests"
+			value="77,976"
 			precision={0}
 		/>
 	);
 	return (
-		<div>
-			<Row className="national-radio" justify="space-between" align="middle">
-				<Col flex={2}>
-					<Radio.Group defaultValue={0}>
-						<Radio.Button value={0}>India</Radio.Button>
-						<Radio.Button value={1} disabled>World (coming soon)</Radio.Button>
-					</Radio.Group>
-				</Col>
-				<Col flex>
-					<Tag color="#87d068" className="live-tag">Live</Tag>
-				</Col>
-			</Row>
+		<>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
-				<Col xs={16} sm={12}>
-					{CovidStatisticFactory('Confirmed', 'Today', 3071, 525, 'red')}
+				<Col xs={12} sm={8} md={6}>
+					{CovidStatisticFactory('statistic-confirmed', 'Confirmed', 0, 3071, 525, 'red', true)}
 				</Col>
-				<Col xs={8} sm={6}>{active}</Col>
-				<Col xs={0} sm={6}>{fatalityRate}</Col>
-				<Col xs={16} sm={12}>
-					{CovidStatisticFactory('Deaths', 'Today', 75, 13, 'red')}
+				<Col xs={12} sm={8} md={6}>{active}</Col>
+				<Col xs={12} sm={8} md={6}>
+					{CovidStatisticFactory('statistic-deaths', 'Deaths', 0, 75, 13, 'red', true)}
 				</Col>
-				<Col xs={8} sm={0}>{fatalityRate}</Col>
-				<Col xs={16} sm={12}>
-					{CovidStatisticFactory('Recovered', 'Today', 212, 50, 'green')}
+				<Col xs={12} sm={8} md={6}>
+					{CovidStatisticFactory('statistic-recovered', 'Recovered', 0, 212, 50, 'green', true)}
 				</Col>
-				<Col xs={8} sm={12}>{tests}</Col>
-				<Col xs={24} sm={12}>
-					<Statistic
-						className="covid-statistic-with-suffix statistic-stage1"
-						title={(
-							<>
-								<span>Stage</span>
-								<span>Type</span>
-							</>
-						)}
-						value="2"
-						precision={0}
-						suffix="Local Transmission"
-					/>
+				<Col xs={12} sm={8} md={6}>{fatalityRate}</Col>
+				<Col xs={12} sm={8} md={6}>
+					{CovidStatisticFactory('', 'Daily New Cases', 0, 212, 9, 'green', true)}
 				</Col>
+				<Col xs={12} sm={12} md={6}>
+					{CovidStatisticFactory('', 'Cases Per 10L', 2, 0.01, 'Very Low', 'green', false)}
+				</Col>
+				<Col xs={12} sm={12} md={6}>{tests}</Col>
 			</Row>
-		</div>
+		</>
 	);
 };
 
