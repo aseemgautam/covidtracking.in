@@ -1,0 +1,29 @@
+.lab-card {
+  .ant-card-extra {
+    font-size: 16px !important;
+  }
+  .ant-card-body {
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .ant-card-body::before {
+    content: none;
+  }
+  .ant-card-body::after {
+    content: none;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+    }
+    list-style: none;
+  }
+  .ant-card-head-title {
+    white-space: normal;
+    max-width: 92%;
+  }
+}

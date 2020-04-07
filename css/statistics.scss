@@ -1,11 +1,11 @@
-// @use 'vars';
+@use 'vars';
 
 .covid-statistic, .covid-statistic-with-suffix {
   padding: 8px 15px !important;
-  // border: vars.$border;
-  border: 1px solid #eee;
-  border-radius: 2px;
+  border: vars.$border;
+  border-radius: vars.$border-radius;
   background-color: #fff;
+  color: #526473;
 }
 
 .covid-statistic-with-suffix .ant-statistic-content,

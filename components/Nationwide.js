@@ -22,7 +22,7 @@ const Nationwide = () => {
 		<Statistic
 			className="covid-statistic center"
 			title="Total Covid-19 Tests"
-			value="77,976"
+			value="1,07,006"
 			precision={0}
 		/>
 	);
