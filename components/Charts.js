@@ -4,15 +4,17 @@ import NewCasesChart from './NewCasesChart';
 import DeathVsRecoveredChart from './DeathVsRecoveredChart';
 import IndiaChoropleth from './geo/IndiaChoropleth';
 import Statewise from './Statewise';
+import AgeDemographics from './charts/AgeDemographics';
+import GenderRatio from './charts/GenderRatio';
 
-const GenderRatioNoSSR = dynamic(
-	() => { return import('./charts/GenderRatio'); },
-	{ ssr: false }
-);
-const AgeDemographicsNoSSR = dynamic(
-	() => { return import('./charts/AgeDemographics'); },
-	{ ssr: false }
-);
+// const GenderRatioNoSSR = dynamic(
+// 	() => { return import('./charts/GenderRatio'); },
+// 	{ ssr: false }
+// );
+// const AgeDemographicsNoSSR = dynamic(
+// 	() => { return import('./charts/AgeDemographics'); },
+// 	{ ssr: false }
+// );
 
 const Charts = () => {
 	return (
@@ -39,12 +41,12 @@ const Charts = () => {
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} md={12}>
 					<div className="section">
-						<GenderRatioNoSSR />
+						<GenderRatio />
 					</div>
 				</Col>
 				<Col xs={24} md={12}>
 					<div className="section">
-						<AgeDemographicsNoSSR />
+						<AgeDemographics />
 					</div>
 				</Col>
 			</Row>

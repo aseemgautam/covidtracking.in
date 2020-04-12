@@ -1,5 +1,11 @@
 import React, { useRef, useEffect } from 'react';
-import { Pie } from '@antv/g2plot';
+
+let g2Plot;
+
+if (typeof window !== 'undefined') {
+	// eslint-disable-next-line global-require
+	g2Plot = require('@antv/g2plot');
+}
 
 const GenderRatio = () => {
 	const container = useRef(null);
@@ -11,7 +17,7 @@ const GenderRatio = () => {
 		if (!container.current) {
 			return;
 		}
-		const piePlot = new Pie(container.current, {
+		const piePlot = new g2Plot.Pie(container.current, {
 			forceFit: true,
 			// title: {
 			// 	visible: true,

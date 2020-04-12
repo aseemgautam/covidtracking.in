@@ -1,5 +1,11 @@
+/* eslint-disable global-require */
 import React, { useRef, useEffect } from 'react';
-import { Bar } from '@antv/g2plot';
+
+let g2Plot;
+
+if (typeof window !== 'undefined') {
+	g2Plot = require('@antv/g2plot');
+}
 
 const AgeDemographics = () => {
 	const container = useRef(null);
@@ -13,7 +19,7 @@ const AgeDemographics = () => {
 		if (!container.current) {
 			return;
 		}
-		const barChart = new Bar(container.current, {
+		const barChart = new g2Plot.Bar(container.current, {
 			forceFit: true,
 			data,
 			xAxis: {
