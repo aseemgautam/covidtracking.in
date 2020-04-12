@@ -1,8 +1,18 @@
 import { Row, Col } from 'antd';
+import dynamic from 'next/dynamic';
 import NewCasesChart from './NewCasesChart';
 import DeathVsRecoveredChart from './DeathVsRecoveredChart';
 import IndiaChoropleth from './geo/IndiaChoropleth';
 import Statewise from './Statewise';
+
+const GenderRatioNoSSR = dynamic(
+	() => { return import('./charts/GenderRatio'); },
+	{ ssr: false }
+);
+const AgeDemographicsNoSSR = dynamic(
+	() => { return import('./charts/AgeDemographics'); },
+	{ ssr: false }
+);
 
 const Charts = () => {
 	return (
@@ -24,6 +34,18 @@ const Charts = () => {
 				</Col>
 				<Col xs={24} md={12}>
 					<DeathVsRecoveredChart />
+				</Col>
+			</Row>
+			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
+				<Col xs={24} md={12}>
+					<div className="section">
+						<GenderRatioNoSSR />
+					</div>
+				</Col>
+				<Col xs={24} md={12}>
+					<div className="section">
+						<AgeDemographicsNoSSR />
+					</div>
 				</Col>
 			</Row>
 		</>

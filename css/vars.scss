@@ -1,6 +1,17 @@
 $gold: #faad14;
-$green: #389e0d;
+$green: #52c41a;
 $red: #f5222d;
 
 $border: 1px solid #CED4D9;
 $border-radius: 2px;
+$section-title-color: #F2F4F5;
+
+%section {
+  background-color: #fff;
+  border: $border;
+  border-radius: $border-radius;
+}
+
+%section-header {
+  background-color: #F2F4F5;
+}

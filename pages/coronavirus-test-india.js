@@ -1,6 +1,6 @@
-import { Row, Col } from 'antd';
-import fetch from 'node-fetch';
+import { Row, Col, Breadcrumb } from 'antd';
 import StateGroup from '../components/StateGroup';
+import StateJSON from '../public/india-states.json';
 
 const coronavirusTest = ({ groups }) => {
 	const linkGroups = groups.map(group => {
@@ -12,17 +12,21 @@ const coronavirusTest = ({ groups }) => {
 	});
 	return (
 		<>
-			<h1>STATE WISE LIST OF CERTIFIED LABS FOR CORONAVIRUS TESTS (COVID - 19)</h1>
-			<span>Please click on a state to view list of certified labs in that state.</span>
+			<Breadcrumb>
+				<Breadcrumb.Item><a href="/">Home</a></Breadcrumb.Item>
+				<Breadcrumb.Item>Coronavirus Testing Labs</Breadcrumb.Item>
+			</Breadcrumb>
+			<h1>LIST OF CERTIFIED LABS FOR CORONAVIRUS TEST (COVID - 19)</h1>
+			<span>Click on any state to view certified coronavirus laboratories (Goverment & Private).
+			</span>
+			<br /><br />
 			<Row>{linkGroups}</Row>
 		</>
 	);
 };
 
 export async function getStaticProps() {
-	// Call an external API endpoint to get posts.
-	const json = await (await fetch('http://localhost:3000/india-states.json')).json();
-	const stateGroups = json.states.reduce((acc, state) => {
+	const stateGroups = StateJSON.states.reduce((acc, state) => {
 		const group = state.name[0];
 		if (!acc[group]) acc[group] = { group, children: [state.name] };
 		else acc[group].children.push(state.name);

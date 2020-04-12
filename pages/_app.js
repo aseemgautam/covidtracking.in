@@ -15,10 +15,16 @@ import 'antd/es/icon/style/index.css';
 import 'antd/es/tag/style/index.css';
 import 'antd/es/button/style/index.css';
 import 'antd/es/breadcrumb/style/index.css';
+import 'antd/es/menu/style/index.css';
+import 'antd/es/dropdown/style/index.css';
+import 'antd/es/tooltip/style/index.css';
 import '../css/style.scss';
 import '../css/statistics.scss';
 import '../css/vars.scss';
 import '../css/lab.scss';
+import '../css/stateList.scss';
+import '../css/helpline.scss';
+import '../css/tracker.scss';
 
 class Covid19Wiki extends App {
 	render() {

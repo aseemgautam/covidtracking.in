@@ -1,7 +1,8 @@
 import { Row, Col, Breadcrumb } from 'antd';
-import fetch from 'node-fetch';
 import Head from 'next/head';
 import LabCard from '../../components/LabCard';
+import StateJSON from '../../public/india-states.json';
+import LabsJson from '../../public/labs.json';
 
 const Labs = ({ labs, state }) => {
 	const labElements = labs.map(lab => {
@@ -26,8 +27,6 @@ const Labs = ({ labs, state }) => {
 			<h1 className="uppercase">
 				List of certified coronavirus testing labs in {state}
 			</h1>
-			<span>Goverment approved private & public labrotaries for coronavirus testing.</span>
-			<br /><br />
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				{labElements}
 			</Row>
@@ -38,8 +37,7 @@ const Labs = ({ labs, state }) => {
 export async function getStaticProps(context) {
 	let currentState = context.params.id;
 	currentState = currentState.replace(/-/g, ' ');
-	const allLabs = await (await fetch('http://localhost:3000/labs.json')).json();
-	const labs = allLabs.items.filter(item => {
+	const labs = LabsJson.items.filter(item => {
 		const stateName = item.state.trim().toLowerCase();
 		return stateName === currentState;
 	});
@@ -49,8 +47,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-	const statesJson = await (await fetch('http://localhost:3000/india-states.json')).json();
-	const paths = statesJson.states.map(state => {
+	const paths = StateJSON.states.map(state => {
 		const stateName = state.name.replace(/ /g, '-');
 		return {
 			params: { id: stateName.toLowerCase() }

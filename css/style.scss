@@ -24,7 +24,7 @@
 }
 
 h1 {
-  margin: 15px 0px;
+  margin: 12px 0px;
 }
 
 h2 {
@@ -42,6 +42,9 @@ h2 {
 .mobile-navigation {
   text-align: right;
   font-size: 22px;
+  .ant-icon {
+    padding: 10px 0px 10px 10px;
+  }
 }
 .logo {
   display: flex;
@@ -60,12 +63,12 @@ h2 {
   background-color: #fafbfc;
 }
 .ant-layout-content {
-  padding: 24px 0px;
+  padding: 16px 0px;
 }
 .ant-layout-header {
   background-color: #fff;
   padding: 0px;
-  border-bottom: 1px solid #eee;
+  border-bottom: vars.$border;
 }
 .ant-layout-footer {
   /* position: fixed;
@@ -73,52 +76,6 @@ h2 {
   width: 100%;
   text-align: center;
   background-color: #fff;
-}
-
-.state-list {
-  background-color: #fff;
-  border: 1px solid #eee;
-  padding: 10px !important;
-}
-.state-list .ant-list-header {
-  display: flex;
-  justify-content: flex-end;
-  padding: 0px;
-  background-color: #fafafa;
-}
-
-.state-list .ant-list-header div {
-  width: 52px;
-  margin-left:5px;
-  font-weight: 500;
-  text-align: center;
-  line-height: 30px;
-  font-size: 13px;
-}
-
-.state-case-row {
-  line-height: 30px;
-  width: 100%;
-  padding: 2px 0px !important;
-}
-
-.state-case-row .state-name {
-  max-width: 120px;
-}
-
-.state-case-row-stats {
-  display: flex;
-  background-color: #fff;
-  font-size: 13px;
-}
-.state-case-row-stats div {
-  width: 52px;
-  text-align: center;
-  margin-left: 5px;
-}
-
-.row-cell-today {
-  font-weight: 500;
 }
 
 .national-radio {
@@ -137,27 +94,30 @@ h2 {
   justify-content: center;
 }
 
-.state-group h2 {
-  padding: 10px 10px 0px 10px;
-  font-weight: 300;
-  margin: 0px;
-}
-
-.state-group a {
-  background-color: #fff;
-  padding: 5px 10px;
-  border: 1px solid #eee;
-  border-radius: vars.$border-radius;
-  display: inline-block;
-  margin-right: 10px;
-  margin-top: 10px;
-  font-size: 15px;
-}
-
 .chart {
-  border: 1px solid #eee;
+  border: vars.$border;
   border-radius: vars.$border-radius;
   background-color: #fff;
   padding: 10px;
   height: 300px;
+}
+
+.section {
+  @extend %section;
+  .section-header {
+    @extend %section-header;
+  }
+}
+
+.navigation {
+  a {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 420px) {
+  h1 {
+    font-size: 16px;
+    margin: 10px 0px;
+  }
 }

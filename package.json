@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.0.5",
+    "@antv/g2plot": "^1.0.3",
     "@next/bundle-analyzer": "^9.3.4",
     "@nivo/bar": "^0.61.1",
     "@nivo/geo": "^0.61.1",
@@ -27,6 +28,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-plugin-import": "^2.11.0",

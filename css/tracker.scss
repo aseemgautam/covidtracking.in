@@ -1,0 +1,14 @@
+@use 'vars';
+
+.tracker-title {
+  h1 {
+    margin-top: 0px;
+  }
+  display: flex;
+  justify-content: space-between;
+  line-height: 32px;
+}
+
+.last-updated {
+  font-size: 13px;
+}

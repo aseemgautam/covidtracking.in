@@ -1,4 +1,30 @@
+@use 'vars';
+
+.state-group {
+  h2 {
+    padding: 10px 10px 0px 10px;
+    font-weight: 300;
+    margin: 0px;
+  }
+
+  a {
+    background-color: #fff;
+    padding: 5px 10px;
+    border: vars.$border;
+    border-radius: vars.$border-radius;
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-size: 15px;
+  }
+}
+
 .lab-card {
+  border: vars.$border;
+  .ant-card-head {
+    background-color: vars.$section-title-color;
+    border-bottom: none;
+  }
   .ant-card-extra {
     font-size: 16px !important;
   }

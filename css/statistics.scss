@@ -25,6 +25,13 @@
   text-align: center;
 }
 
+.statistic-deaths {
+  border-color: vars.$red;
+}
+.statistic-recovered {
+  border-color: vars.$green;
+}
+
 @media (max-width: 420px) {
   .ant-statistic-content {
     font-size: 20px !important;

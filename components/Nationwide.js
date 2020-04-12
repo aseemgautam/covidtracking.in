@@ -21,13 +21,19 @@ const Nationwide = () => {
 	const tests = (
 		<Statistic
 			className="covid-statistic center"
-			title="Total Covid-19 Tests"
-			value="1,07,006"
+			title="Covid-19 Tests"
+			value="1,77,006"
 			precision={0}
 		/>
 	);
 	return (
 		<>
+			<Row>
+				<Col flex={24} className="tracker-title">
+					<h1>COVID-19 TRACKER</h1>
+					<div className="last-updated">Last Updated 7 hours ago</div>
+				</Col>
+			</Row>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={12} sm={8} md={6}>
 					{CovidStatisticFactory('statistic-confirmed', 'Confirmed', 0, 3071, 525, 'red', true)}

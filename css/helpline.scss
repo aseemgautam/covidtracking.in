@@ -1,0 +1,23 @@
+@use 'vars';
+.helpline-card {
+  @extend %section;
+  .ant-card-head {
+    @extend %section-header;
+  }
+  .ant-card-body {
+    font-size: 16px;
+  }
+}
+.helpline-list {
+  @extend %section;
+  .ant-list-header {
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background-color: vars.$section-title-color;
+  }
+  .ant-list-item {
+    padding: 12px 16px;
+  }
+}
