@@ -1,56 +1,58 @@
-import { ResponsiveBar } from '@nivo/bar';
+import React, { useRef, useEffect } from 'react';
+import { Chart } from '@antv/g2';
 
 const NewCasesChart = () => {
+	const container = useRef(null);
+	const data = [
+		{ date: '23/03', cases: 103, death: 5, recover: 10 },
+		{ date: '24/03', cases: 37, death: 5, recover: 10 },
+		{ date: '25/03', cases: 121, death: 5, recover: 10 },
+		{ date: '26/03', cases: 70, death: 5, recover: 10 },
+		{ date: '27/03', cases: 160, death: 5, recover: 10 },
+		{ date: '28/03', cases: 100, death: 5, recover: 10 },
+		{ date: '29/03', cases: 37, death: 5, recover: 10 },
+		{ date: '30/03', cases: 227, death: 5, recover: 10 },
+		{ date: '31/03', cases: 146, death: 5, recover: 10 }
+	];
+	const formatted = [];
+	data.forEach(d => {
+		formatted.push({ date: d.date, type: 'cases', value: d.cases },
+			{ date: d.date, type: 'death', value: d.death },
+			{ date: d.date, type: 'recover', value: d.recover });
+	});
+	useEffect(() => {
+		if (!container.current) {
+			return;
+		}
+		const chart = new Chart({
+			container: container.current,
+			autoFit: true,
+			height: 400
+		});
+
+		chart.data(formatted);
+		chart.scale('value', {
+			nice: true,
+		});
+		chart.tooltip({
+			shared: true,
+			showMarkers: false,
+		});
+
+		chart
+			.interval()
+			.position(['date', 'value'])
+			.color('type')
+			.adjust('stack');
+
+		chart.interaction('active-region');
+
+		chart.render();
+	}, [formatted]);
 	return (
-		<div className="chart">
-			<ResponsiveBar
-				colors={['#ffc53d', '#f5222d', '#52c41a']}
-				padding={0.2}
-				labelSkipHeight={10}
-				margin={{ top: 30, right: 0, bottom: 30, left: 0 }}
-				data={[
-					{ date: '23/03', cases: 103, death: 5, recover: 10 },
-					{ date: '24/03', cases: 37, death: 5, recover: 10 },
-					{ date: '25/03', cases: 121, death: 5, recover: 10 },
-					{ date: '26/03', cases: 70, death: 5, recover: 10 },
-					{ date: '27/03', cases: 160, death: 5, recover: 10 },
-					{ date: '28/03', cases: 100, death: 5, recover: 10 },
-					{ date: '29/03', cases: 37, death: 5, recover: 10 },
-					{ date: '30/03', cases: 227, death: 5, recover: 10 },
-					{ date: '31/03', cases: 146, death: 5, recover: 10 }
-				]}
-				indexBy="date"
-				keys={['cases', 'death', 'recover']}
-				axisLeft={null}
-				enableGridY={false}
-				enableGridX={false}
-				labelTextColor="#555"
-				legends={[
-					{
-						dataFrom: 'keys',
-						anchor: 'top-left',
-						direction: 'row',
-						justify: false,
-						translateX: 0,
-						translateY: 0,
-						itemsSpacing: 0,
-						itemWidth: 40,
-						itemHeight: 10,
-						itemDirection: 'top-to-bottom',
-						itemOpacity: 0.85,
-						symbolSize: 20,
-						effects: [
-							{
-								on: 'hover',
-								style: {
-									itemOpacity: 1
-								}
-							}
-						]
-					}
-				]}
-			/>
-		</div>
+		<>
+			<div ref={container} />
+		</>
 	);
 };
 

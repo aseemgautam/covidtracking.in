@@ -1,0 +1,5616 @@
+[
+  {
+    "Date": "2020-03-11",
+    "State": "Delhi",
+    "Confirmed": 5,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-11",
+    "State": "Haryana",
+    "Confirmed": 14,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-11",
+    "State": "Kerala",
+    "Confirmed": 17,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-11",
+    "State": "Rajasthan",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-11",
+    "State": "Telengana",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-11",
+    "State": "Uttar Pradesh",
+    "Confirmed": 10,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-11",
+    "State": "Ladakh",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-11",
+    "State": "Tamil Nadu",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-11",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-11",
+    "State": "Punjab",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-11",
+    "State": "Karnataka",
+    "Confirmed": 4,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-11",
+    "State": "Maharashtra",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-12",
+    "State": "Delhi",
+    "Confirmed": 6,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-12",
+    "State": "Haryana",
+    "Confirmed": 14,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-12",
+    "State": "Kerala",
+    "Confirmed": 17,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-12",
+    "State": "Rajasthan",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-12",
+    "State": "Telengana",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-12",
+    "State": "Uttar Pradesh",
+    "Confirmed": 11,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-12",
+    "State": "Ladakh",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-12",
+    "State": "Tamil Nadu",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-12",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-12",
+    "State": "Punjab",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-12",
+    "State": "Karnataka",
+    "Confirmed": 5,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-12",
+    "State": "Maharashtra",
+    "Confirmed": 11,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-13",
+    "State": "Delhi",
+    "Confirmed": 7,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-13",
+    "State": "Haryana",
+    "Confirmed": 14,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-13",
+    "State": "Kerala",
+    "Confirmed": 19,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-13",
+    "State": "Rajasthan",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-13",
+    "State": "Telengana",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-13",
+    "State": "Uttar Pradesh",
+    "Confirmed": 12,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-13",
+    "State": "Ladakh",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-13",
+    "State": "Tamil Nadu",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-13",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-13",
+    "State": "Punjab",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-13",
+    "State": "Karnataka",
+    "Confirmed": 6,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-13",
+    "State": "Maharashtra",
+    "Confirmed": 14,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-13",
+    "State": "Andhra Pradesh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-14",
+    "State": "Delhi",
+    "Confirmed": 7,
+    "Cured": 2,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-14",
+    "State": "Haryana",
+    "Confirmed": 14,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-14",
+    "State": "Kerala",
+    "Confirmed": 22,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-14",
+    "State": "Rajasthan",
+    "Confirmed": 4,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-14",
+    "State": "Telengana",
+    "Confirmed": 1,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-14",
+    "State": "Uttar Pradesh",
+    "Confirmed": 12,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-14",
+    "State": "Ladakh",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-14",
+    "State": "Tamil Nadu",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-14",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-14",
+    "State": "Punjab",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-14",
+    "State": "Karnataka",
+    "Confirmed": 6,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-14",
+    "State": "Maharashtra",
+    "Confirmed": 19,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-14",
+    "State": "Andhra Pradesh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-15",
+    "State": "Andhra Pradesh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-15",
+    "State": "Delhi",
+    "Confirmed": 7,
+    "Cured": 2,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-15",
+    "State": "Haryana",
+    "Confirmed": 14,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-15",
+    "State": "Karnataka",
+    "Confirmed": 6,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-15",
+    "State": "Kerala",
+    "Confirmed": 22,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-15",
+    "State": "Maharashtra",
+    "Confirmed": 32,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-15",
+    "State": "Punjab",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-15",
+    "State": "Rajasthan",
+    "Confirmed": 4,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-15",
+    "State": "Tamil Nadu",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-15",
+    "State": "Telengana",
+    "Confirmed": 3,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-15",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-15",
+    "State": "Ladakh",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-15",
+    "State": "Uttar Pradesh",
+    "Confirmed": 13,
+    "Cured": 4,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-15",
+    "State": "Uttarakhand",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-16",
+    "State": "Andhra Pradesh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-16",
+    "State": "Delhi",
+    "Confirmed": 7,
+    "Cured": 2,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-16",
+    "State": "Haryana",
+    "Confirmed": 14,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-16",
+    "State": "Karnataka",
+    "Confirmed": 8,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-16",
+    "State": "Kerala",
+    "Confirmed": 22,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-16",
+    "State": "Maharashtra",
+    "Confirmed": 36,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-16",
+    "State": "Odisha",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-16",
+    "State": "Punjab",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-16",
+    "State": "Rajasthan",
+    "Confirmed": 4,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-16",
+    "State": "Tamil Nadu",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-16",
+    "State": "Telengana",
+    "Confirmed": 4,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-16",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-16",
+    "State": "Ladakh",
+    "Confirmed": 4,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-16",
+    "State": "Uttar Pradesh",
+    "Confirmed": 13,
+    "Cured": 4,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-16",
+    "State": "Uttarakhand",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-17",
+    "State": "Andhra Pradesh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-17",
+    "State": "Delhi",
+    "Confirmed": 9,
+    "Cured": 2,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-17",
+    "State": "Haryana",
+    "Confirmed": 16,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-17",
+    "State": "Karnataka",
+    "Confirmed": 11,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-17",
+    "State": "Kerala",
+    "Confirmed": 25,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-17",
+    "State": "Maharashtra",
+    "Confirmed": 38,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-17",
+    "State": "Odisha",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-17",
+    "State": "Punjab",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-17",
+    "State": "Rajasthan",
+    "Confirmed": 4,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-17",
+    "State": "Tamil Nadu",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-17",
+    "State": "Telengana",
+    "Confirmed": 3,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-17",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-17",
+    "State": "Ladakh",
+    "Confirmed": 8,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-17",
+    "State": "Uttar Pradesh",
+    "Confirmed": 16,
+    "Cured": 5,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-17",
+    "State": "Uttarakhand",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-17",
+    "State": "West Bengal",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-18",
+    "State": "Andhra Pradesh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-18",
+    "State": "Delhi",
+    "Confirmed": 11,
+    "Cured": 2,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-18",
+    "State": "Haryana",
+    "Confirmed": 17,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-18",
+    "State": "Karnataka",
+    "Confirmed": 14,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-18",
+    "State": "Kerala",
+    "Confirmed": 25,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-18",
+    "State": "Maharashtra",
+    "Confirmed": 42,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-18",
+    "State": "Odisha",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-18",
+    "State": "Puducherry",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-18",
+    "State": "Punjab",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-18",
+    "State": "Rajasthan",
+    "Confirmed": 7,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-18",
+    "State": "Tamil Nadu",
+    "Confirmed": 2,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-18",
+    "State": "Telengana",
+    "Confirmed": 4,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-18",
+    "State": "Chandigarh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-18",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 4,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-18",
+    "State": "Ladakh",
+    "Confirmed": 8,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-18",
+    "State": "Uttar Pradesh",
+    "Confirmed": 17,
+    "Cured": 5,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-18",
+    "State": "Uttarakhand",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-18",
+    "State": "West Bengal",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-19",
+    "State": "Andhra Pradesh",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-19",
+    "State": "Chhattisgarh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-19",
+    "State": "Delhi",
+    "Confirmed": 16,
+    "Cured": 3,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-19",
+    "State": "Gujarat",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-19",
+    "State": "Haryana",
+    "Confirmed": 17,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-19",
+    "State": "Karnataka",
+    "Confirmed": 15,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-19",
+    "State": "Kerala",
+    "Confirmed": 26,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-19",
+    "State": "Maharashtra",
+    "Confirmed": 44,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-19",
+    "State": "Odisha",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-19",
+    "State": "Puducherry",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-19",
+    "State": "Punjab",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-19",
+    "State": "Rajasthan",
+    "Confirmed": 7,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-19",
+    "State": "Tamil Nadu",
+    "Confirmed": 3,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-19",
+    "State": "Telengana",
+    "Confirmed": 7,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-19",
+    "State": "Chandigarh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-19",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 4,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-19",
+    "State": "Ladakh",
+    "Confirmed": 10,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-19",
+    "State": "Uttar Pradesh",
+    "Confirmed": 19,
+    "Cured": 9,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-19",
+    "State": "Uttarakhand",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-19",
+    "State": "West Bengal",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-20",
+    "State": "Andhra Pradesh",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-20",
+    "State": "Chhattisgarh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-20",
+    "State": "Delhi",
+    "Confirmed": 25,
+    "Cured": 5,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-20",
+    "State": "Gujarat",
+    "Confirmed": 7,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-20",
+    "State": "Haryana",
+    "Confirmed": 17,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-20",
+    "State": "Himachal Pradesh",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-20",
+    "State": "Karnataka",
+    "Confirmed": 15,
+    "Cured": 1,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-20",
+    "State": "Kerala",
+    "Confirmed": 33,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-20",
+    "State": "Madhya Pradesh",
+    "Confirmed": 4,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-20",
+    "State": "Maharashtra",
+    "Confirmed": 49,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-20",
+    "State": "Odisha",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-20",
+    "State": "Puducherry",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-20",
+    "State": "Punjab",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-20",
+    "State": "Rajasthan",
+    "Confirmed": 17,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-20",
+    "State": "Tamil Nadu",
+    "Confirmed": 3,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-20",
+    "State": "Telengana",
+    "Confirmed": 8,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-20",
+    "State": "Chandigarh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-20",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 4,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-20",
+    "State": "Ladakh",
+    "Confirmed": 13,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-20",
+    "State": "Uttar Pradesh",
+    "Confirmed": 24,
+    "Cured": 9,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-20",
+    "State": "Uttarakhand",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-20",
+    "State": "West Bengal",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-21",
+    "State": "Andhra Pradesh",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-21",
+    "State": "Chhattisgarh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-21",
+    "State": "Delhi",
+    "Confirmed": 25,
+    "Cured": 5,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-21",
+    "State": "Gujarat",
+    "Confirmed": 7,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-21",
+    "State": "Haryana",
+    "Confirmed": 17,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-21",
+    "State": "Himachal Pradesh",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-21",
+    "State": "Karnataka",
+    "Confirmed": 15,
+    "Cured": 1,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-21",
+    "State": "Kerala",
+    "Confirmed": 33,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-21",
+    "State": "Madhya Pradesh",
+    "Confirmed": 4,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-21",
+    "State": "Maharashtra",
+    "Confirmed": 60,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-21",
+    "State": "Odisha",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-21",
+    "State": "Puducherry",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-21",
+    "State": "Punjab",
+    "Confirmed": 13,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-21",
+    "State": "Rajasthan",
+    "Confirmed": 17,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-21",
+    "State": "Tamil Nadu",
+    "Confirmed": 3,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-21",
+    "State": "Telengana",
+    "Confirmed": 10,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-21",
+    "State": "Chandigarh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-21",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 4,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-21",
+    "State": "Ladakh",
+    "Confirmed": 13,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-21",
+    "State": "Uttar Pradesh",
+    "Confirmed": 24,
+    "Cured": 9,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-21",
+    "State": "Uttarakhand",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-21",
+    "State": "West Bengal",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-22",
+    "State": "Andhra Pradesh",
+    "Confirmed": 5,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-22",
+    "State": "Bihar",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-22",
+    "State": "Chhattisgarh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-22",
+    "State": "Delhi",
+    "Confirmed": 28,
+    "Cured": 5,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-22",
+    "State": "Gujarat",
+    "Confirmed": 18,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-22",
+    "State": "Haryana",
+    "Confirmed": 21,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-22",
+    "State": "Himachal Pradesh",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-22",
+    "State": "Karnataka",
+    "Confirmed": 26,
+    "Cured": 2,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-22",
+    "State": "Kerala",
+    "Confirmed": 60,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-22",
+    "State": "Madhya Pradesh",
+    "Confirmed": 6,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-22",
+    "State": "Maharashtra",
+    "Confirmed": 64,
+    "Cured": 0,
+    "Death": 2
+  },
+  {
+    "Date": "2020-03-22",
+    "State": "Odisha",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-22",
+    "State": "Puducherry",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-22",
+    "State": "Punjab",
+    "Confirmed": 21,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-22",
+    "State": "Rajasthan",
+    "Confirmed": 27,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-22",
+    "State": "Tamil Nadu",
+    "Confirmed": 7,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-22",
+    "State": "Telengana",
+    "Confirmed": 15,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-22",
+    "State": "Chandigarh",
+    "Confirmed": 5,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-22",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 4,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-22",
+    "State": "Ladakh",
+    "Confirmed": 13,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-22",
+    "State": "Uttar Pradesh",
+    "Confirmed": 28,
+    "Cured": 9,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-22",
+    "State": "Uttarakhand",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-22",
+    "State": "West Bengal",
+    "Confirmed": 7,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-23",
+    "State": "Andhra Pradesh",
+    "Confirmed": 7,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-23",
+    "State": "Bihar",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-23",
+    "State": "Chhattisgarh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-23",
+    "State": "Delhi",
+    "Confirmed": 30,
+    "Cured": 6,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-23",
+    "State": "Gujarat",
+    "Confirmed": 29,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-23",
+    "State": "Haryana",
+    "Confirmed": 26,
+    "Cured": 11,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-23",
+    "State": "Himachal Pradesh",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-23",
+    "State": "Karnataka",
+    "Confirmed": 37,
+    "Cured": 2,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-23",
+    "State": "Kerala",
+    "Confirmed": 87,
+    "Cured": 4,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-23",
+    "State": "Madhya Pradesh",
+    "Confirmed": 7,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-23",
+    "State": "Maharashtra",
+    "Confirmed": 84,
+    "Cured": 0,
+    "Death": 2
+  },
+  {
+    "Date": "2020-03-23",
+    "State": "Odisha",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-23",
+    "State": "Puducherry",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-23",
+    "State": "Punjab",
+    "Confirmed": 21,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-23",
+    "State": "Rajasthan",
+    "Confirmed": 33,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-23",
+    "State": "Tamil Nadu",
+    "Confirmed": 10,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-23",
+    "State": "Telengana",
+    "Confirmed": 22,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-23",
+    "State": "Chandigarh",
+    "Confirmed": 6,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-23",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 4,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-23",
+    "State": "Ladakh",
+    "Confirmed": 13,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-23",
+    "State": "Uttar Pradesh",
+    "Confirmed": 33,
+    "Cured": 9,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-23",
+    "State": "Uttarakhand",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-23",
+    "State": "West Bengal",
+    "Confirmed": 7,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Andhra Pradesh",
+    "Confirmed": 9,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Bihar",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Chhattisgarh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Delhi",
+    "Confirmed": 30,
+    "Cured": 6,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Gujarat",
+    "Confirmed": 32,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Haryana",
+    "Confirmed": 28,
+    "Cured": 11,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Himachal Pradesh",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Karnataka",
+    "Confirmed": 41,
+    "Cured": 3,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Kerala",
+    "Confirmed": 101,
+    "Cured": 4,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Madhya Pradesh",
+    "Confirmed": 9,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Maharashtra",
+    "Confirmed": 98,
+    "Cured": 0,
+    "Death": 2
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Manipur",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Mizoram",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Odisha",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Puducherry",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Punjab",
+    "Confirmed": 29,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Rajasthan",
+    "Confirmed": 32,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Tamil Nadu",
+    "Confirmed": 16,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Telengana",
+    "Confirmed": 25,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Chandigarh",
+    "Confirmed": 7,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 7,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Ladakh",
+    "Confirmed": 13,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Uttar Pradesh",
+    "Confirmed": 35,
+    "Cured": 11,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "Uttarakhand",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-24",
+    "State": "West Bengal",
+    "Confirmed": 9,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Andhra Pradesh",
+    "Confirmed": 11,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Bihar",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Chhattisgarh",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Delhi",
+    "Confirmed": 34,
+    "Cured": 6,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Goa",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Gujarat",
+    "Confirmed": 37,
+    "Cured": 0,
+    "Death": 2
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Haryana",
+    "Confirmed": 30,
+    "Cured": 11,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Himachal Pradesh",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Karnataka",
+    "Confirmed": 41,
+    "Cured": 3,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Kerala",
+    "Confirmed": 110,
+    "Cured": 4,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Madhya Pradesh",
+    "Confirmed": 15,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Maharashtra",
+    "Confirmed": 121,
+    "Cured": 1,
+    "Death": 3
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Manipur",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Mizoram",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Odisha",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Puducherry",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Punjab",
+    "Confirmed": 33,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Rajasthan",
+    "Confirmed": 38,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Tamil Nadu",
+    "Confirmed": 20,
+    "Cured": 1,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Telengana",
+    "Confirmed": 31,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Chandigarh",
+    "Confirmed": 7,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 11,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Ladakh",
+    "Confirmed": 13,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Uttar Pradesh",
+    "Confirmed": 37,
+    "Cured": 11,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "Uttarakhand",
+    "Confirmed": 4,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-25",
+    "State": "West Bengal",
+    "Confirmed": 9,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Andaman and Nicobar Islands",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Andhra Pradesh",
+    "Confirmed": 12,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Bihar",
+    "Confirmed": 6,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Chandigarh",
+    "Confirmed": 7,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Chhattisgarh",
+    "Confirmed": 6,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Delhi",
+    "Confirmed": 35,
+    "Cured": 6,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Goa",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Gujarat",
+    "Confirmed": 42,
+    "Cured": 0,
+    "Death": 3
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Haryana",
+    "Confirmed": 30,
+    "Cured": 11,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Himachal Pradesh",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 13,
+    "Cured": 1,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Karnataka",
+    "Confirmed": 55,
+    "Cured": 3,
+    "Death": 2
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Kerala",
+    "Confirmed": 129,
+    "Cured": 11,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Ladakh",
+    "Confirmed": 13,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Madhya Pradesh",
+    "Confirmed": 20,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Maharashtra",
+    "Confirmed": 127,
+    "Cured": 15,
+    "Death": 4
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Manipur",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Mizoram",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Odisha",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Puducherry",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Punjab",
+    "Confirmed": 33,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Rajasthan",
+    "Confirmed": 39,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Tamil Nadu",
+    "Confirmed": 23,
+    "Cured": 1,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Telengana",
+    "Confirmed": 35,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Uttarakhand",
+    "Confirmed": 4,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "Uttar Pradesh",
+    "Confirmed": 40,
+    "Cured": 11,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-26",
+    "State": "West Bengal",
+    "Confirmed": 10,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Andaman and Nicobar Islands",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Andhra Pradesh",
+    "Confirmed": 14,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Bihar",
+    "Confirmed": 9,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Chandigarh",
+    "Confirmed": 7,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Chhattisgarh",
+    "Confirmed": 6,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Delhi",
+    "Confirmed": 38,
+    "Cured": 6,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Goa",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Gujarat",
+    "Confirmed": 44,
+    "Cured": 0,
+    "Death": 3
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Haryana",
+    "Confirmed": 34,
+    "Cured": 11,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Himachal Pradesh",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 18,
+    "Cured": 1,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Karnataka",
+    "Confirmed": 55,
+    "Cured": 3,
+    "Death": 2
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Kerala",
+    "Confirmed": 165,
+    "Cured": 11,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Ladakh",
+    "Confirmed": 13,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Madhya Pradesh",
+    "Confirmed": 30,
+    "Cured": 0,
+    "Death": 2
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Maharashtra",
+    "Confirmed": 177,
+    "Cured": 25,
+    "Death": 5
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Manipur",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Mizoram",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Odisha",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Puducherry",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Punjab",
+    "Confirmed": 38,
+    "Cured": 1,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Rajasthan",
+    "Confirmed": 46,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Tamil Nadu",
+    "Confirmed": 32,
+    "Cured": 2,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Telengana",
+    "Confirmed": 38,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Uttarakhand",
+    "Confirmed": 4,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "Uttar Pradesh",
+    "Confirmed": 44,
+    "Cured": 11,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-27",
+    "State": "West Bengal",
+    "Confirmed": 15,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Andhra Pradesh",
+    "Confirmed": 14,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Andaman and Nicobar Islands",
+    "Confirmed": 9,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Bihar",
+    "Confirmed": 9,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Chandigarh",
+    "Confirmed": 8,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Chhattisgarh",
+    "Confirmed": 6,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Delhi",
+    "Confirmed": 38,
+    "Cured": 6,
+    "Death": 2
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Goa",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Gujarat",
+    "Confirmed": 52,
+    "Cured": 0,
+    "Death": 4
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Haryana",
+    "Confirmed": 19,
+    "Cured": 12,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Himachal Pradesh",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 31,
+    "Cured": 1,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Karnataka",
+    "Confirmed": 76,
+    "Cured": 5,
+    "Death": 3
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Kerala",
+    "Confirmed": 174,
+    "Cured": 15,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Ladakh",
+    "Confirmed": 13,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Madhya Pradesh",
+    "Confirmed": 30,
+    "Cured": 0,
+    "Death": 2
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Maharashtra",
+    "Confirmed": 183,
+    "Cured": 25,
+    "Death": 6
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Manipur",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Mizoram",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Odisha",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Puducherry",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Punjab",
+    "Confirmed": 38,
+    "Cured": 1,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Rajasthan",
+    "Confirmed": 52,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Tamil Nadu",
+    "Confirmed": 36,
+    "Cured": 2,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Telengana",
+    "Confirmed": 56,
+    "Cured": 1,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Uttarakhand",
+    "Confirmed": 5,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "Uttar Pradesh",
+    "Confirmed": 54,
+    "Cured": 11,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-28",
+    "State": "West Bengal",
+    "Confirmed": 17,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Andhra Pradesh",
+    "Confirmed": 19,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Andaman and Nicobar Islands",
+    "Confirmed": 9,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Bihar",
+    "Confirmed": 11,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Chandigarh",
+    "Confirmed": 8,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Chhattisgarh",
+    "Confirmed": 7,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Delhi",
+    "Confirmed": 53,
+    "Cured": 6,
+    "Death": 2
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Goa",
+    "Confirmed": 5,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Gujarat",
+    "Confirmed": 58,
+    "Cured": 1,
+    "Death": 5
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Haryana",
+    "Confirmed": 33,
+    "Cured": 17,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Himachal Pradesh",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 31,
+    "Cured": 1,
+    "Death": 2
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Karnataka",
+    "Confirmed": 80,
+    "Cured": 5,
+    "Death": 3
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Kerala",
+    "Confirmed": 194,
+    "Cured": 19,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Ladakh",
+    "Confirmed": 13,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Madhya Pradesh",
+    "Confirmed": 33,
+    "Cured": 0,
+    "Death": 2
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Maharashtra",
+    "Confirmed": 193,
+    "Cured": 25,
+    "Death": 8
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Manipur",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Mizoram",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Odisha",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Puducherry",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Punjab",
+    "Confirmed": 38,
+    "Cured": 1,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Rajasthan",
+    "Confirmed": 57,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Tamil Nadu",
+    "Confirmed": 50,
+    "Cured": 4,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Telengana",
+    "Confirmed": 69,
+    "Cured": 1,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Uttarakhand",
+    "Confirmed": 7,
+    "Cured": 2,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "Uttar Pradesh",
+    "Confirmed": 75,
+    "Cured": 11,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-29",
+    "State": "West Bengal",
+    "Confirmed": 19,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Andhra Pradesh",
+    "Confirmed": 23,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Andaman and Nicobar Islands",
+    "Confirmed": 9,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Bihar",
+    "Confirmed": 15,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Chandigarh",
+    "Confirmed": 8,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Chhattisgarh",
+    "Confirmed": 7,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Delhi",
+    "Confirmed": 87,
+    "Cured": 6,
+    "Death": 2
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Goa",
+    "Confirmed": 5,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Gujarat",
+    "Confirmed": 69,
+    "Cured": 1,
+    "Death": 6
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Haryana",
+    "Confirmed": 36,
+    "Cured": 18,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Himachal Pradesh",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 48,
+    "Cured": 2,
+    "Death": 2
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Karnataka",
+    "Confirmed": 83,
+    "Cured": 5,
+    "Death": 3
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Kerala",
+    "Confirmed": 202,
+    "Cured": 19,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Ladakh",
+    "Confirmed": 13,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Madhya Pradesh",
+    "Confirmed": 47,
+    "Cured": 0,
+    "Death": 3
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Maharashtra",
+    "Confirmed": 198,
+    "Cured": 25,
+    "Death": 8
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Manipur",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Mizoram",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Odisha",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Puducherry",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Punjab",
+    "Confirmed": 38,
+    "Cured": 1,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Rajasthan",
+    "Confirmed": 59,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Tamil Nadu",
+    "Confirmed": 67,
+    "Cured": 4,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Telengana",
+    "Confirmed": 71,
+    "Cured": 1,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Uttarakhand",
+    "Confirmed": 7,
+    "Cured": 2,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "Uttar Pradesh",
+    "Confirmed": 82,
+    "Cured": 11,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-30",
+    "State": "West Bengal",
+    "Confirmed": 22,
+    "Cured": 0,
+    "Death": 2
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Andhra Pradesh",
+    "Confirmed": 83,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Andaman and Nicobar Islands",
+    "Confirmed": 10,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Bihar",
+    "Confirmed": 23,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Chandigarh",
+    "Confirmed": 13,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Chhattisgarh",
+    "Confirmed": 9,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Delhi",
+    "Confirmed": 120,
+    "Cured": 6,
+    "Death": 2
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Goa",
+    "Confirmed": 5,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Gujarat",
+    "Confirmed": 74,
+    "Cured": 5,
+    "Death": 6
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Haryana",
+    "Confirmed": 43,
+    "Cured": 21,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Himachal Pradesh",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 55,
+    "Cured": 2,
+    "Death": 2
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Karnataka",
+    "Confirmed": 101,
+    "Cured": 8,
+    "Death": 3
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Kerala",
+    "Confirmed": 241,
+    "Cured": 23,
+    "Death": 2
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Ladakh",
+    "Confirmed": 13,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Madhya Pradesh",
+    "Confirmed": 47,
+    "Cured": 0,
+    "Death": 3
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Maharashtra",
+    "Confirmed": 302,
+    "Cured": 39,
+    "Death": 9
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Manipur",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Mizoram",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Odisha",
+    "Confirmed": 4,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Puducherry",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Punjab",
+    "Confirmed": 41,
+    "Cured": 1,
+    "Death": 3
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Rajasthan",
+    "Confirmed": 93,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Tamil Nadu",
+    "Confirmed": 124,
+    "Cured": 4,
+    "Death": 1
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Telengana",
+    "Confirmed": 94,
+    "Cured": 1,
+    "Death": 3
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Uttarakhand",
+    "Confirmed": 7,
+    "Cured": 2,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "Uttar Pradesh",
+    "Confirmed": 103,
+    "Cured": 14,
+    "Death": 0
+  },
+  {
+    "Date": "2020-03-31",
+    "State": "West Bengal",
+    "Confirmed": 26,
+    "Cured": 0,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Andhra Pradesh",
+    "Confirmed": 86,
+    "Cured": 1,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Andaman and Nicobar Islands",
+    "Confirmed": 10,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Assam",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Bihar",
+    "Confirmed": 23,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Chandigarh",
+    "Confirmed": 16,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Chhattisgarh",
+    "Confirmed": 9,
+    "Cured": 2,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Delhi",
+    "Confirmed": 152,
+    "Cured": 6,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Goa",
+    "Confirmed": 5,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Gujarat",
+    "Confirmed": 82,
+    "Cured": 5,
+    "Death": 6
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Haryana",
+    "Confirmed": 43,
+    "Cured": 21,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Himachal Pradesh",
+    "Confirmed": 3,
+    "Cured": 1,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 62,
+    "Cured": 2,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Jharkhand",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Karnataka",
+    "Confirmed": 110,
+    "Cured": 9,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Kerala",
+    "Confirmed": 265,
+    "Cured": 25,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Ladakh",
+    "Confirmed": 13,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Madhya Pradesh",
+    "Confirmed": 99,
+    "Cured": 0,
+    "Death": 6
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Maharashtra",
+    "Confirmed": 335,
+    "Cured": 42,
+    "Death": 13
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Manipur",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Mizoram",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Odisha",
+    "Confirmed": 4,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Puducherry",
+    "Confirmed": 3,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Punjab",
+    "Confirmed": 46,
+    "Cured": 1,
+    "Death": 4
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Rajasthan",
+    "Confirmed": 108,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Tamil Nadu",
+    "Confirmed": 234,
+    "Cured": 6,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Telengana",
+    "Confirmed": 96,
+    "Cured": 1,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Uttarakhand",
+    "Confirmed": 7,
+    "Cured": 2,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "Uttar Pradesh",
+    "Confirmed": 113,
+    "Cured": 14,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-01",
+    "State": "West Bengal",
+    "Confirmed": 37,
+    "Cured": 6,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Andhra Pradesh",
+    "Confirmed": 132,
+    "Cured": 1,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Andaman and Nicobar Islands",
+    "Confirmed": 10,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Arunachal Pradesh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Assam",
+    "Confirmed": 16,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Bihar",
+    "Confirmed": 24,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Chandigarh",
+    "Confirmed": 18,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Chhattisgarh",
+    "Confirmed": 9,
+    "Cured": 2,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Delhi",
+    "Confirmed": 219,
+    "Cured": 8,
+    "Death": 4
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Goa",
+    "Confirmed": 6,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Gujarat",
+    "Confirmed": 87,
+    "Cured": 8,
+    "Death": 7
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Haryana",
+    "Confirmed": 43,
+    "Cured": 21,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Himachal Pradesh",
+    "Confirmed": 6,
+    "Cured": 1,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 70,
+    "Cured": 3,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Jharkhand",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Karnataka",
+    "Confirmed": 124,
+    "Cured": 10,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Kerala",
+    "Confirmed": 286,
+    "Cured": 27,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Ladakh",
+    "Confirmed": 14,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Madhya Pradesh",
+    "Confirmed": 99,
+    "Cured": 0,
+    "Death": 6
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Maharashtra",
+    "Confirmed": 335,
+    "Cured": 42,
+    "Death": 16
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Manipur",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Mizoram",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Odisha",
+    "Confirmed": 5,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Puducherry",
+    "Confirmed": 3,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Punjab",
+    "Confirmed": 46,
+    "Cured": 1,
+    "Death": 4
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Rajasthan",
+    "Confirmed": 133,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Tamil Nadu",
+    "Confirmed": 309,
+    "Cured": 6,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Telengana",
+    "Confirmed": 107,
+    "Cured": 1,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Uttarakhand",
+    "Confirmed": 10,
+    "Cured": 2,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "Uttar Pradesh",
+    "Confirmed": 113,
+    "Cured": 14,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-02",
+    "State": "West Bengal",
+    "Confirmed": 53,
+    "Cured": 3,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Andhra Pradesh",
+    "Confirmed": 161,
+    "Cured": 1,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Andaman and Nicobar Islands",
+    "Confirmed": 10,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Arunachal Pradesh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Assam",
+    "Confirmed": 24,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Bihar",
+    "Confirmed": 29,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Chandigarh",
+    "Confirmed": 18,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Chhattisgarh",
+    "Confirmed": 9,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Delhi",
+    "Confirmed": 386,
+    "Cured": 8,
+    "Death": 6
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Goa",
+    "Confirmed": 6,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Gujarat",
+    "Confirmed": 95,
+    "Cured": 10,
+    "Death": 9
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Haryana",
+    "Confirmed": 49,
+    "Cured": 24,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Himachal Pradesh",
+    "Confirmed": 6,
+    "Cured": 1,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 75,
+    "Cured": 3,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Jharkhand",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Karnataka",
+    "Confirmed": 128,
+    "Cured": 12,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Kerala",
+    "Confirmed": 295,
+    "Cured": 41,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Ladakh",
+    "Confirmed": 14,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Madhya Pradesh",
+    "Confirmed": 104,
+    "Cured": 0,
+    "Death": 6
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Maharashtra",
+    "Confirmed": 423,
+    "Cured": 42,
+    "Death": 19
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Manipur",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Mizoram",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Odisha",
+    "Confirmed": 5,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Puducherry",
+    "Confirmed": 5,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Punjab",
+    "Confirmed": 53,
+    "Cured": 1,
+    "Death": 5
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Rajasthan",
+    "Confirmed": 179,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Tamil Nadu",
+    "Confirmed": 411,
+    "Cured": 6,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Telengana",
+    "Confirmed": 158,
+    "Cured": 1,
+    "Death": 7
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Uttarakhand",
+    "Confirmed": 16,
+    "Cured": 2,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "Uttar Pradesh",
+    "Confirmed": 174,
+    "Cured": 19,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-03",
+    "State": "West Bengal",
+    "Confirmed": 63,
+    "Cured": 3,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Andhra Pradesh",
+    "Confirmed": 161,
+    "Cured": 1,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Andaman and Nicobar Islands",
+    "Confirmed": 10,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Arunachal Pradesh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Assam",
+    "Confirmed": 24,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Bihar",
+    "Confirmed": 30,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Chandigarh",
+    "Confirmed": 18,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Chhattisgarh",
+    "Confirmed": 9,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Delhi",
+    "Confirmed": 445,
+    "Cured": 15,
+    "Death": 6
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Goa",
+    "Confirmed": 7,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Gujarat",
+    "Confirmed": 105,
+    "Cured": 14,
+    "Death": 10
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Haryana",
+    "Confirmed": 49,
+    "Cured": 24,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Himachal Pradesh",
+    "Confirmed": 6,
+    "Cured": 1,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 92,
+    "Cured": 4,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Jharkhand",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Karnataka",
+    "Confirmed": 144,
+    "Cured": 12,
+    "Death": 4
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Kerala",
+    "Confirmed": 306,
+    "Cured": 49,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Ladakh",
+    "Confirmed": 14,
+    "Cured": 10,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Madhya Pradesh",
+    "Confirmed": 104,
+    "Cured": 0,
+    "Death": 6
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Maharashtra",
+    "Confirmed": 490,
+    "Cured": 42,
+    "Death": 24
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Manipur",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Mizoram",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Odisha",
+    "Confirmed": 20,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Puducherry",
+    "Confirmed": 5,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Punjab",
+    "Confirmed": 57,
+    "Cured": 1,
+    "Death": 5
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Rajasthan",
+    "Confirmed": 200,
+    "Cured": 21,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Tamil Nadu",
+    "Confirmed": 485,
+    "Cured": 6,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Telengana",
+    "Confirmed": 269,
+    "Cured": 32,
+    "Death": 7
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Uttarakhand",
+    "Confirmed": 22,
+    "Cured": 2,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "Uttar Pradesh",
+    "Confirmed": 227,
+    "Cured": 19,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-04",
+    "State": "West Bengal",
+    "Confirmed": 69,
+    "Cured": 10,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Andhra Pradesh",
+    "Confirmed": 226,
+    "Cured": 1,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Andaman and Nicobar Islands",
+    "Confirmed": 10,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Arunachal Pradesh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Assam",
+    "Confirmed": 26,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Bihar",
+    "Confirmed": 30,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Chandigarh",
+    "Confirmed": 18,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Chhattisgarh",
+    "Confirmed": 9,
+    "Cured": 3,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Delhi",
+    "Confirmed": 503,
+    "Cured": 18,
+    "Death": 7
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Goa",
+    "Confirmed": 7,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Gujarat",
+    "Confirmed": 122,
+    "Cured": 18,
+    "Death": 11
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Haryana",
+    "Confirmed": 84,
+    "Cured": 25,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Himachal Pradesh",
+    "Confirmed": 13,
+    "Cured": 1,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 106,
+    "Cured": 4,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Jharkhand",
+    "Confirmed": 3,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Karnataka",
+    "Confirmed": 151,
+    "Cured": 12,
+    "Death": 4
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Kerala",
+    "Confirmed": 314,
+    "Cured": 55,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Ladakh",
+    "Confirmed": 14,
+    "Cured": 10,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Madhya Pradesh",
+    "Confirmed": 165,
+    "Cured": 0,
+    "Death": 9
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Maharashtra",
+    "Confirmed": 690,
+    "Cured": 42,
+    "Death": 45
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Manipur",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Mizoram",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Odisha",
+    "Confirmed": 21,
+    "Cured": 2,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Puducherry",
+    "Confirmed": 5,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Punjab",
+    "Confirmed": 68,
+    "Cured": 4,
+    "Death": 6
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Rajasthan",
+    "Confirmed": 253,
+    "Cured": 21,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Tamil Nadu",
+    "Confirmed": 571,
+    "Cured": 8,
+    "Death": 5
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Telengana",
+    "Confirmed": 321,
+    "Cured": 34,
+    "Death": 7
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Uttarakhand",
+    "Confirmed": 26,
+    "Cured": 4,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "Uttar Pradesh",
+    "Confirmed": 227,
+    "Cured": 19,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-05",
+    "State": "West Bengal",
+    "Confirmed": 80,
+    "Cured": 10,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Andhra Pradesh",
+    "Confirmed": 266,
+    "Cured": 1,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Andaman and Nicobar Islands",
+    "Confirmed": 10,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Arunachal Pradesh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Assam",
+    "Confirmed": 26,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Bihar",
+    "Confirmed": 32,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Chandigarh",
+    "Confirmed": 18,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Chhattisgarh",
+    "Confirmed": 10,
+    "Cured": 8,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Delhi",
+    "Confirmed": 523,
+    "Cured": 19,
+    "Death": 7
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Goa",
+    "Confirmed": 7,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Gujarat",
+    "Confirmed": 144,
+    "Cured": 22,
+    "Death": 12
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Haryana",
+    "Confirmed": 90,
+    "Cured": 25,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Himachal Pradesh",
+    "Confirmed": 13,
+    "Cured": 2,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 109,
+    "Cured": 4,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Jharkhand",
+    "Confirmed": 4,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Karnataka",
+    "Confirmed": 151,
+    "Cured": 12,
+    "Death": 4
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Kerala",
+    "Confirmed": 327,
+    "Cured": 58,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Ladakh",
+    "Confirmed": 14,
+    "Cured": 10,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Madhya Pradesh",
+    "Confirmed": 165,
+    "Cured": 0,
+    "Death": 9
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Maharashtra",
+    "Confirmed": 748,
+    "Cured": 56,
+    "Death": 45
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Manipur",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Mizoram",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Odisha",
+    "Confirmed": 21,
+    "Cured": 2,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Puducherry",
+    "Confirmed": 5,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Punjab",
+    "Confirmed": 76,
+    "Cured": 4,
+    "Death": 6
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Rajasthan",
+    "Confirmed": 288,
+    "Cured": 21,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Tamil Nadu",
+    "Confirmed": 621,
+    "Cured": 8,
+    "Death": 5
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Telengana",
+    "Confirmed": 321,
+    "Cured": 34,
+    "Death": 7
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Tripura",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Uttarakhand",
+    "Confirmed": 31,
+    "Cured": 5,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "Uttar Pradesh",
+    "Confirmed": 305,
+    "Cured": 21,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-06",
+    "State": "West Bengal",
+    "Confirmed": 91,
+    "Cured": 13,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Andhra Pradesh",
+    "Confirmed": 305,
+    "Cured": 1,
+    "Death": 4
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Andaman and Nicobar Islands",
+    "Confirmed": 10,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Arunachal Pradesh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Assam",
+    "Confirmed": 27,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Bihar",
+    "Confirmed": 38,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Chandigarh",
+    "Confirmed": 18,
+    "Cured": 7,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Chhattisgarh",
+    "Confirmed": 10,
+    "Cured": 9,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Delhi",
+    "Confirmed": 576,
+    "Cured": 21,
+    "Death": 9
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Goa",
+    "Confirmed": 7,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Gujarat",
+    "Confirmed": 165,
+    "Cured": 25,
+    "Death": 13
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Haryana",
+    "Confirmed": 147,
+    "Cured": 28,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Himachal Pradesh",
+    "Confirmed": 18,
+    "Cured": 2,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 116,
+    "Cured": 4,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Jharkhand",
+    "Confirmed": 4,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Karnataka",
+    "Confirmed": 175,
+    "Cured": 25,
+    "Death": 4
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Kerala",
+    "Confirmed": 336,
+    "Cured": 70,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Ladakh",
+    "Confirmed": 14,
+    "Cured": 10,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Madhya Pradesh",
+    "Confirmed": 229,
+    "Cured": 0,
+    "Death": 13
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Maharashtra",
+    "Confirmed": 1018,
+    "Cured": 79,
+    "Death": 64
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Manipur",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Mizoram",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Odisha",
+    "Confirmed": 42,
+    "Cured": 2,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Puducherry",
+    "Confirmed": 5,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Punjab",
+    "Confirmed": 91,
+    "Cured": 4,
+    "Death": 7
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Rajasthan",
+    "Confirmed": 328,
+    "Cured": 21,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Tamil Nadu",
+    "Confirmed": 690,
+    "Cured": 19,
+    "Death": 7
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Telengana",
+    "Confirmed": 364,
+    "Cured": 35,
+    "Death": 7
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Tripura",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Uttarakhand",
+    "Confirmed": 31,
+    "Cured": 5,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "Uttar Pradesh",
+    "Confirmed": 326,
+    "Cured": 21,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-07",
+    "State": "West Bengal",
+    "Confirmed": 99,
+    "Cured": 13,
+    "Death": 5
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Andhra Pradesh",
+    "Confirmed": 348,
+    "Cured": 6,
+    "Death": 4
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Andaman and Nicobar Islands",
+    "Confirmed": 11,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Arunachal Pradesh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Assam",
+    "Confirmed": 28,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Bihar",
+    "Confirmed": 38,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Chandigarh",
+    "Confirmed": 18,
+    "Cured": 7,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Chhattisgarh",
+    "Confirmed": 10,
+    "Cured": 9,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Delhi",
+    "Confirmed": 669,
+    "Cured": 21,
+    "Death": 9
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Goa",
+    "Confirmed": 7,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Gujarat",
+    "Confirmed": 179,
+    "Cured": 25,
+    "Death": 16
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Haryana",
+    "Confirmed": 147,
+    "Cured": 28,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Himachal Pradesh",
+    "Confirmed": 18,
+    "Cured": 2,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 158,
+    "Cured": 4,
+    "Death": 4
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Jharkhand",
+    "Confirmed": 4,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Karnataka",
+    "Confirmed": 181,
+    "Cured": 28,
+    "Death": 5
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Kerala",
+    "Confirmed": 345,
+    "Cured": 83,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Ladakh",
+    "Confirmed": 14,
+    "Cured": 10,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Madhya Pradesh",
+    "Confirmed": 229,
+    "Cured": 0,
+    "Death": 13
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Maharashtra",
+    "Confirmed": 1135,
+    "Cured": 117,
+    "Death": 72
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Manipur",
+    "Confirmed": 1,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Mizoram",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Odisha",
+    "Confirmed": 42,
+    "Cured": 2,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Puducherry",
+    "Confirmed": 5,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Punjab",
+    "Confirmed": 101,
+    "Cured": 4,
+    "Death": 8
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Rajasthan",
+    "Confirmed": 381,
+    "Cured": 21,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Tamil Nadu",
+    "Confirmed": 738,
+    "Cured": 21,
+    "Death": 8
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Telengana",
+    "Confirmed": 427,
+    "Cured": 35,
+    "Death": 7
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Tripura",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Uttarakhand",
+    "Confirmed": 33,
+    "Cured": 5,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "Uttar Pradesh",
+    "Confirmed": 361,
+    "Cured": 27,
+    "Death": 4
+  },
+  {
+    "Date": "2020-04-08",
+    "State": "West Bengal",
+    "Confirmed": 103,
+    "Cured": 16,
+    "Death": 5
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Andhra Pradesh",
+    "Confirmed": 348,
+    "Cured": 6,
+    "Death": 4
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Andaman and Nicobar Islands",
+    "Confirmed": 11,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Arunachal Pradesh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Assam",
+    "Confirmed": 29,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Bihar",
+    "Confirmed": 39,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Chandigarh",
+    "Confirmed": 18,
+    "Cured": 7,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Chhattisgarh",
+    "Confirmed": 10,
+    "Cured": 9,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Delhi",
+    "Confirmed": 720,
+    "Cured": 25,
+    "Death": 12
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Goa",
+    "Confirmed": 7,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Gujarat",
+    "Confirmed": 241,
+    "Cured": 26,
+    "Death": 17
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Haryana",
+    "Confirmed": 169,
+    "Cured": 29,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Himachal Pradesh",
+    "Confirmed": 18,
+    "Cured": 2,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 158,
+    "Cured": 4,
+    "Death": 4
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Jharkhand",
+    "Confirmed": 13,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Karnataka",
+    "Confirmed": 181,
+    "Cured": 28,
+    "Death": 5
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Kerala",
+    "Confirmed": 357,
+    "Cured": 96,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Ladakh",
+    "Confirmed": 15,
+    "Cured": 10,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Madhya Pradesh",
+    "Confirmed": 259,
+    "Cured": 0,
+    "Death": 16
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Maharashtra",
+    "Confirmed": 1364,
+    "Cured": 125,
+    "Death": 97
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Manipur",
+    "Confirmed": 2,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Mizoram",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Odisha",
+    "Confirmed": 44,
+    "Cured": 2,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Puducherry",
+    "Confirmed": 5,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Punjab",
+    "Confirmed": 101,
+    "Cured": 4,
+    "Death": 8
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Rajasthan",
+    "Confirmed": 463,
+    "Cured": 21,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Tamil Nadu",
+    "Confirmed": 834,
+    "Cured": 21,
+    "Death": 8
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Telengana",
+    "Confirmed": 442,
+    "Cured": 35,
+    "Death": 7
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Tripura",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Uttarakhand",
+    "Confirmed": 35,
+    "Cured": 5,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "Uttar Pradesh",
+    "Confirmed": 410,
+    "Cured": 31,
+    "Death": 4
+  },
+  {
+    "Date": "2020-04-09",
+    "State": "West Bengal",
+    "Confirmed": 116,
+    "Cured": 16,
+    "Death": 5
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Andhra Pradesh",
+    "Confirmed": 363,
+    "Cured": 7,
+    "Death": 6
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Andaman and Nicobar Islands",
+    "Confirmed": 11,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Arunachal Pradesh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Assam",
+    "Confirmed": 29,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Bihar",
+    "Confirmed": 60,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Chandigarh",
+    "Confirmed": 18,
+    "Cured": 7,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Chhattisgarh",
+    "Confirmed": 18,
+    "Cured": 9,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Delhi",
+    "Confirmed": 903,
+    "Cured": 25,
+    "Death": 13
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Goa",
+    "Confirmed": 7,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Gujarat",
+    "Confirmed": 308,
+    "Cured": 31,
+    "Death": 19
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Haryana",
+    "Confirmed": 177,
+    "Cured": 29,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Himachal Pradesh",
+    "Confirmed": 28,
+    "Cured": 6,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 207,
+    "Cured": 6,
+    "Death": 4
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Jharkhand",
+    "Confirmed": 14,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Karnataka",
+    "Confirmed": 207,
+    "Cured": 31,
+    "Death": 6
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Kerala",
+    "Confirmed": 364,
+    "Cured": 123,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Ladakh",
+    "Confirmed": 15,
+    "Cured": 10,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Madhya Pradesh",
+    "Confirmed": 435,
+    "Cured": 0,
+    "Death": 33
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Maharashtra",
+    "Confirmed": 1574,
+    "Cured": 188,
+    "Death": 110
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Manipur",
+    "Confirmed": 2,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Mizoram",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Odisha",
+    "Confirmed": 48,
+    "Cured": 2,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Puducherry",
+    "Confirmed": 5,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Punjab",
+    "Confirmed": 132,
+    "Cured": 5,
+    "Death": 11
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Rajasthan",
+    "Confirmed": 553,
+    "Cured": 21,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Tamil Nadu",
+    "Confirmed": 911,
+    "Cured": 44,
+    "Death": 8
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Telengana",
+    "Confirmed": 473,
+    "Cured": 43,
+    "Death": 7
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Tripura",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Uttarakhand",
+    "Confirmed": 35,
+    "Cured": 5,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "Uttar Pradesh",
+    "Confirmed": 431,
+    "Cured": 32,
+    "Death": 4
+  },
+  {
+    "Date": "2020-04-10",
+    "State": "West Bengal",
+    "Confirmed": 116,
+    "Cured": 16,
+    "Death": 5
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Andhra Pradesh",
+    "Confirmed": 381,
+    "Cured": 11,
+    "Death": 6
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Andaman and Nicobar Islands",
+    "Confirmed": 11,
+    "Cured": 10,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Arunachal Pradesh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Assam",
+    "Confirmed": 29,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Bihar",
+    "Confirmed": 63,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Chandigarh",
+    "Confirmed": 19,
+    "Cured": 7,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Chhattisgarh",
+    "Confirmed": 18,
+    "Cured": 9,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Delhi",
+    "Confirmed": 1069,
+    "Cured": 25,
+    "Death": 19
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Goa",
+    "Confirmed": 7,
+    "Cured": 5,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Gujarat",
+    "Confirmed": 432,
+    "Cured": 44,
+    "Death": 22
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Haryana",
+    "Confirmed": 177,
+    "Cured": 29,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Himachal Pradesh",
+    "Confirmed": 32,
+    "Cured": 6,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 207,
+    "Cured": 6,
+    "Death": 4
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Jharkhand",
+    "Confirmed": 17,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Karnataka",
+    "Confirmed": 214,
+    "Cured": 37,
+    "Death": 6
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Kerala",
+    "Confirmed": 364,
+    "Cured": 123,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Ladakh",
+    "Confirmed": 15,
+    "Cured": 10,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Madhya Pradesh",
+    "Confirmed": 532,
+    "Cured": 0,
+    "Death": 36
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Maharashtra",
+    "Confirmed": 1761,
+    "Cured": 208,
+    "Death": 127
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Manipur",
+    "Confirmed": 2,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Mizoram",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Odisha",
+    "Confirmed": 50,
+    "Cured": 2,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Puducherry",
+    "Confirmed": 7,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Punjab",
+    "Confirmed": 151,
+    "Cured": 5,
+    "Death": 11
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Rajasthan",
+    "Confirmed": 700,
+    "Cured": 21,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Tamil Nadu",
+    "Confirmed": 969,
+    "Cured": 44,
+    "Death": 10
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Telengana",
+    "Confirmed": 504,
+    "Cured": 43,
+    "Death": 9
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Tripura",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Uttarakhand",
+    "Confirmed": 35,
+    "Cured": 5,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "Uttar Pradesh",
+    "Confirmed": 452,
+    "Cured": 45,
+    "Death": 5
+  },
+  {
+    "Date": "2020-04-11",
+    "State": "West Bengal",
+    "Confirmed": 134,
+    "Cured": 19,
+    "Death": 5
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Andhra Pradesh",
+    "Confirmed": 427,
+    "Cured": 11,
+    "Death": 7
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Andaman and Nicobar Islands",
+    "Confirmed": 11,
+    "Cured": 10,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Arunachal Pradesh",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Assam",
+    "Confirmed": 29,
+    "Cured": 0,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Bihar",
+    "Confirmed": 64,
+    "Cured": 19,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Chandigarh",
+    "Confirmed": 21,
+    "Cured": 7,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Chhattisgarh",
+    "Confirmed": 31,
+    "Cured": 10,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Delhi",
+    "Confirmed": 1154,
+    "Cured": 27,
+    "Death": 24
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Goa",
+    "Confirmed": 7,
+    "Cured": 5,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Gujarat",
+    "Confirmed": 516,
+    "Cured": 44,
+    "Death": 25
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Haryana",
+    "Confirmed": 185,
+    "Cured": 29,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Himachal Pradesh",
+    "Confirmed": 32,
+    "Cured": 13,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Jammu and Kashmir",
+    "Confirmed": 245,
+    "Cured": 6,
+    "Death": 4
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Jharkhand",
+    "Confirmed": 19,
+    "Cured": 0,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Karnataka",
+    "Confirmed": 232,
+    "Cured": 57,
+    "Death": 6
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Kerala",
+    "Confirmed": 376,
+    "Cured": 179,
+    "Death": 2
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Ladakh",
+    "Confirmed": 15,
+    "Cured": 10,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Madhya Pradesh",
+    "Confirmed": 564,
+    "Cured": 0,
+    "Death": 36
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Maharashtra",
+    "Confirmed": 1985,
+    "Cured": 217,
+    "Death": 149
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Manipur",
+    "Confirmed": 2,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Mizoram",
+    "Confirmed": 1,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Odisha",
+    "Confirmed": 54,
+    "Cured": 12,
+    "Death": 1
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Puducherry",
+    "Confirmed": 7,
+    "Cured": 1,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Punjab",
+    "Confirmed": 151,
+    "Cured": 5,
+    "Death": 11
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Rajasthan",
+    "Confirmed": 804,
+    "Cured": 21,
+    "Death": 3
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Tamil Nadu",
+    "Confirmed": 1043,
+    "Cured": 50,
+    "Death": 11
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Telengana",
+    "Confirmed": 504,
+    "Cured": 43,
+    "Death": 9
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Tripura",
+    "Confirmed": 2,
+    "Cured": 0,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Uttarakhand",
+    "Confirmed": 35,
+    "Cured": 5,
+    "Death": 0
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "Uttar Pradesh",
+    "Confirmed": 483,
+    "Cured": 46,
+    "Death": 5
+  },
+  {
+    "Date": "2020-04-12",
+    "State": "West Bengal",
+    "Confirmed": 152,
+    "Cured": 29,
+    "Death": 7
+  }
+]

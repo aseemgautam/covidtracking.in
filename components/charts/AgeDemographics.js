@@ -1,51 +1,39 @@
-/* eslint-disable global-require */
 import React, { useRef, useEffect } from 'react';
-
-let g2Plot;
-
-if (typeof window !== 'undefined') {
-	g2Plot = require('@antv/g2plot');
-}
+import { Chart } from '@antv/g2';
 
 const AgeDemographics = () => {
 	const container = useRef(null);
 	const data = [
-		{ Age: '0 - 20', value: 8.61 },
-		{ Age: '21 - 40', value: 41.88 },
-		{ Age: '41 - 60', value: 32.82 },
-		{ Age: 'Above 60', value: 16.69 },
+		{ age: '0 - 20', percent: 8.61 },
+		{ age: '21 - 40', percent: 41.88 },
+		{ age: '41 - 60', percent: 32.82 },
+		{ age: '60 +', percent: 16.69 },
 	];
 	useEffect(() => {
 		if (!container.current) {
 			return;
 		}
-		const barChart = new g2Plot.Bar(container.current, {
-			forceFit: true,
-			data,
-			xAxis: {
-				label: {
-					visible: false
-				},
-				visible: true,
-				title: {
-					text: '% confirmed covid -19 cases'
-				}
-			},
-			yAxis: true,
-			xField: 'value',
-			yField: 'Age',
-			tooltip: {
-				visible: false
-			},
-			label: {
-				visible: true,
-				formatter: text => {
-					return [`${text}%`];
-				}
-			},
-			renderer: 'svg'
+		const chart = new Chart({
+			container: container.current,
+			autoFit: true,
+			height: 400,
 		});
-		barChart.render();
+		chart.tooltip({
+			showTitle: false
+		});
+		chart.data(data);
+		chart.scale('percent', { nice: true });
+		chart.coordinate().transpose();
+		chart.interaction('active-region');
+		chart.interval().position('age*percent')
+			.tooltip('age*percent',
+				(age, percent) => {
+					return {
+						name: `${age} years`,
+						value: `${percent}% cases`
+					};
+				});
+		chart.render();
 	}, [data]);
 	return (
 		<>

@@ -1,49 +1,50 @@
 import React, { useRef, useEffect } from 'react';
-
-let g2Plot;
-
-if (typeof window !== 'undefined') {
-	// eslint-disable-next-line global-require
-	g2Plot = require('@antv/g2plot');
-}
+import { Chart } from '@antv/g2';
 
 const GenderRatio = () => {
 	const container = useRef(null);
 	const data = [
-		{ Gender: 'Male', value: 76 },
-		{ Gender: 'Female', value: 24 }
+		{ gender: 'Male', percent: 0.76 },
+		{ gender: 'Female', percent: 0.24 }
 	];
 	useEffect(() => {
-		if (!container.current) {
-			return;
-		}
-		const piePlot = new g2Plot.Pie(container.current, {
-			forceFit: true,
-			// title: {
-			// 	visible: true,
-			// 	text: 'Covid-19 Cases Gender',
-			// },
-			// description: {
-			// 	visible: true,
-			// 	text: 'Covid - 19 cases affect 77% of males & 23% of females',
-			// },
-			radius: 0.7,
-			data,
-			angleField: 'value',
-			colorField: 'Gender',
-			tooltip: {
-				visible: false
-			},
-			label: {
-				visible: true,
-				type: 'spider',
-				formatter: (text, item, id) => {
-					return [data[id].Gender, `${data[id].value}%`];
-				}
-			},
-			renderer: 'svg'
+		const chart = new Chart({
+			container: container.current,
+			autoFit: true,
+			height: 400
 		});
-		piePlot.render();
+
+		chart.scale('percent', {
+			formatter: val => {
+				return `${val * 100}%`;
+			},
+		});
+
+		chart.coordinate('theta', {
+			radius: 0.75,
+		});
+
+		chart.data(data);
+		chart.tooltip({
+			showTitle: false,
+			showMarkers: false,
+		});
+		chart.legend('gender', {
+			position: 'top',
+			offsetY: 10
+		});
+		chart
+			.interval()
+			.adjust('stack')
+			.position('percent')
+			.color('gender', ['#1890ff', '#f04864'])
+			.label('percent', {
+				content: value => {
+					return `${value.gender}: ${value.percent * 100}%`;
+				}
+			});
+
+		chart.render();
 	}, [data]);
 	return (
 		<>
