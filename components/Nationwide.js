@@ -1,31 +1,8 @@
-import { Statistic, Row, Col } from 'antd';
+import { Row, Col } from 'antd';
 import { CovidStatisticFactory } from './CovidStatistic';
+import Analytics from '../classes/Analytics';
 
 const Nationwide = () => {
-	const fatalityRate = (
-		<Statistic
-			className="covid-statistic center"
-			title="Fatality Rate"
-			value="2.33%"
-			precision={2}
-		/>
-	);
-	const active = (
-		<Statistic
-			className="covid-statistic center"
-			title="Active"
-			value={2784}
-			precision={0}
-		/>
-	);
-	const tests = (
-		<Statistic
-			className="covid-statistic center"
-			title="Covid-19 Tests"
-			value="1,77,006"
-			precision={0}
-		/>
-	);
 	return (
 		<>
 			<Row>
@@ -36,23 +13,29 @@ const Nationwide = () => {
 			</Row>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={12} sm={8} md={6}>
-					{CovidStatisticFactory('statistic-confirmed', 'Confirmed', 0, 3071, 525, 'red', true)}
-				</Col>
-				<Col xs={12} sm={8} md={6}>{active}</Col>
-				<Col xs={12} sm={8} md={6}>
-					{CovidStatisticFactory('statistic-deaths', 'Deaths', 0, 75, 13, 'red', true)}
+					{CovidStatisticFactory(Analytics.confirmed, 'statistic-confirmed', 'red', 0)}
 				</Col>
 				<Col xs={12} sm={8} md={6}>
-					{CovidStatisticFactory('statistic-recovered', 'Recovered', 0, 212, 50, 'green', true)}
+					{CovidStatisticFactory(Analytics.active, 'statistic-active', 'red', 0)}
 				</Col>
-				<Col xs={12} sm={8} md={6}>{fatalityRate}</Col>
 				<Col xs={12} sm={8} md={6}>
-					{CovidStatisticFactory('', 'Daily New Cases', 0, 212, 9, 'green', true)}
+					{CovidStatisticFactory(Analytics.deaths, 'statistic-deaths', 'red', 0)}
+				</Col>
+				<Col xs={12} sm={8} md={6}>
+					{CovidStatisticFactory(Analytics.recovered, 'statistic-recovered', 'green', 0)}
+				</Col>
+				<Col xs={12} sm={8} md={6}>
+					{CovidStatisticFactory(Analytics.fatalityRate, '', '', 2)}
+				</Col>
+				<Col xs={12} sm={8} md={6}>
+					{CovidStatisticFactory(Analytics.weeklyTrend, '', 'red', 0)}
 				</Col>
 				<Col xs={12} sm={12} md={6}>
-					{CovidStatisticFactory('', 'Cases Per 10L', 2, 0.01, 'Very Low', 'green', false)}
+					{CovidStatisticFactory(Analytics.casesPer1L, '', 'green', 2)}
 				</Col>
-				<Col xs={12} sm={12} md={6}>{tests}</Col>
+				<Col xs={12} sm={12} md={6}>
+					{CovidStatisticFactory(Analytics.tests, '', 'green', 0)}
+				</Col>
 			</Row>
 		</>
 	);

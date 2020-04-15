@@ -1,39 +1,41 @@
-import { Statistic } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
+import { Statistic, Tooltip } from 'antd';
+import { PlusOutlined, QuestionCircleOutlined } from '@ant-design/icons';
 
-const CovidStatistic = ({ className, title, precision, value,
-	suffixValue, suffixClassName, showPlusIcon }) => {
+const CovidStatistic = ({ statistic, className, suffixClassName, precision }) => {
+	const showPlusIcon = statistic.secondary && statistic.secondary > 0;
+	const helpText = (
+		<Tooltip title={statistic.helpText}>
+			<QuestionCircleOutlined />
+		</Tooltip>
+	);
 	return (
 		<Statistic
 			className={`${className} covid-statistic-with-suffix`}
 			title={(
 				<>
-					<span>{title}</span>
+					<span>{statistic.name}</span>
+					{statistic.helpText && helpText}
 				</>
 			)}
-			value={value}
+			value={statistic.primary}
 			precision={precision}
 			suffix={(
 				<>
 					{showPlusIcon && <PlusOutlined className={suffixClassName} />}
-					<span className={suffixClassName}>{suffixValue}</span>
+					<span className={suffixClassName}>{statistic.secondary}</span>
 				</>
 			)}
 		/>
 	);
 };
 
-const CovidStatisticFactory = (className, title,
-	suffixTitle, value, suffixValue, suffixClassName, showPlusIcon) => {
+const CovidStatisticFactory =	(statistic, className, suffixClassName, precision) => {
 	return (
 		<CovidStatistic
 			className={className}
-			title={title}
-			suffixTitle={suffixTitle}
-			value={value}
-			suffixValue={suffixValue}
+			statistic={statistic}
 			suffixClassName={suffixClassName}
-			showPlusIcon={showPlusIcon}
+			precision={precision}
 		/>
 	);
 };
