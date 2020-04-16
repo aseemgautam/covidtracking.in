@@ -2,7 +2,8 @@ import { Statistic, Tooltip } from 'antd';
 import { PlusOutlined, QuestionCircleOutlined } from '@ant-design/icons';
 
 const CovidStatistic = ({ statistic, className, suffixClassName, precision }) => {
-	const showPlusIcon = statistic.secondary && statistic.secondary > 0;
+	const showPlusIcon = statistic.secondary && Number.isInteger(statistic.secondary)
+		&& statistic.secondary > 0;
 	const helpText = (
 		<Tooltip title={statistic.helpText}>
 			<QuestionCircleOutlined />
@@ -10,7 +11,7 @@ const CovidStatistic = ({ statistic, className, suffixClassName, precision }) =>
 	);
 	return (
 		<Statistic
-			className={`${className} covid-statistic-with-suffix`}
+			className={`${className} covid-statistic`}
 			title={(
 				<>
 					<span>{statistic.name}</span>

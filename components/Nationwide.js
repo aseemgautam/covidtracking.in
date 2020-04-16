@@ -1,6 +1,7 @@
 import { Row, Col } from 'antd';
 import { CovidStatisticFactory } from './CovidStatistic';
 import Analytics from '../classes/Analytics';
+import TrendStatistic from './TrendStatistic';
 
 const Nationwide = () => {
 	return (
@@ -28,7 +29,7 @@ const Nationwide = () => {
 					{CovidStatisticFactory(Analytics.fatalityRate, '', '', 2)}
 				</Col>
 				<Col xs={12} sm={8} md={6}>
-					{CovidStatisticFactory(Analytics.weeklyTrend, '', 'red', 0)}
+					<TrendStatistic statistic={Analytics.weeklyTrend} />
 				</Col>
 				<Col xs={12} sm={12} md={6}>
 					{CovidStatisticFactory(Analytics.casesPer1L, '', 'green', 2)}
