@@ -1,8 +1,6 @@
 import { Row, Col, Breadcrumb } from 'antd';
 import Head from 'next/head';
 import LabCard from '../../components/LabCard';
-import StateJSON from '../../public/india-states.json';
-import LabsJson from '../../public/labs.json';
 
 const Labs = ({ labs, state }) => {
 	const labElements = labs.map(lab => {
@@ -37,6 +35,7 @@ const Labs = ({ labs, state }) => {
 export async function getStaticProps(context) {
 	let currentState = context.params.id;
 	currentState = currentState.replace(/-/g, ' ');
+	const LabsJson = await import('../../public/labs.json');
 	const labs = LabsJson.items.filter(item => {
 		const stateName = item.state.trim().toLowerCase();
 		return stateName === currentState;
@@ -47,6 +46,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
+	const StateJSON = await import('../../public/india-states.json');
 	const paths = StateJSON.states.map(state => {
 		const stateName = state.name.replace(/ /g, '-');
 		return {

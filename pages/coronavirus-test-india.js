@@ -2,8 +2,14 @@ import { Row, Col, Breadcrumb } from 'antd';
 import StateGroup from '../components/StateGroup';
 import StateJSON from '../public/india-states.json';
 
-const coronavirusTest = ({ groups }) => {
-	const linkGroups = groups.map(group => {
+const coronavirusTest = () => {
+	const stateGroups = StateJSON.states.reduce((acc, state) => {
+		const group = state.name[0];
+		if (!acc[group]) acc[group] = { group, children: [state.name] };
+		else acc[group].children.push(state.name);
+		return acc;
+	}, {});
+	const linkGroups = Object.values(stateGroups).map(group => {
 		return (
 			<Col key={group.group} xs={24} sm={12} md={12} lg={8}>
 				<StateGroup groupName={group.group} states={group.children} />
@@ -25,18 +31,18 @@ const coronavirusTest = ({ groups }) => {
 	);
 };
 
-export async function getStaticProps() {
-	const stateGroups = StateJSON.states.reduce((acc, state) => {
-		const group = state.name[0];
-		if (!acc[group]) acc[group] = { group, children: [state.name] };
-		else acc[group].children.push(state.name);
-		return acc;
-	}, {});
-	return {
-		props: {
-			groups: Object.values(stateGroups),
-		},
-	};
-}
+// export async function getStaticProps() {
+// 	const stateGroups = StateJSON.states.reduce((acc, state) => {
+// 		const group = state.name[0];
+// 		if (!acc[group]) acc[group] = { group, children: [state.name] };
+// 		else acc[group].children.push(state.name);
+// 		return acc;
+// 	}, {});
+// 	return {
+// 		props: {
+// 			groups: Object.values(stateGroups),
+// 		},
+// 	};
+// }
 
 export default coronavirusTest;
