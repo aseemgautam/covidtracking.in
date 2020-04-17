@@ -4,7 +4,7 @@ import Statewise from './Statewise';
 import AgeDemographics from './charts/AgeDemographics';
 import GenderRatio from './charts/GenderRatio';
 import ActiveCases from './charts/ActiveCases';
-import IndiaMap from './geo/IndiaMap';
+// import IndiaMap from './geo/IndiaMap';
 
 const Charts = () => {
 	return (
@@ -17,7 +17,7 @@ const Charts = () => {
 					</div>
 				</Col> */}
 				<Col xs={24} sm={24} md={12}>
-					<IndiaMap />
+					{/* <IndiaMap /> */}
 				</Col>
 				<Col xs={24} sm={24} md={12}>
 					<Statewise />
