@@ -1,10 +1,23 @@
 import { Row, Col } from 'antd';
-import NewCasesChart from './NewCasesChart';
+import dynamic from 'next/dynamic';
 import Statewise from './Statewise';
-import AgeDemographics from './charts/AgeDemographics';
-import GenderRatio from './charts/GenderRatio';
-import ActiveCases from './charts/ActiveCases';
+// import AgeDemographics from './charts/AgeDemographics';
 // import IndiaMap from './geo/IndiaMap';
+
+const NewCasesChart = dynamic(import('../components/NewCasesChart'), { ssr: false });
+
+const GenderRatio = dynamic(
+	() => { return import('./charts/GenderRatio'); },
+	{ loading: () => { return <p>Loading Gender Ratio</p>; }, ssr: false },
+);
+
+
+const ActiveCases = dynamic(
+	() => { return import('./charts/ActiveCases'); },
+	{ loading: () => { return <p>Loading Active Cases Chart</p>; }, ssr: false }
+);
+
+const AgeDemographics = dynamic(import('./charts/AgeDemographics'), { ssr: false });
 
 const Charts = () => {
 	return (

@@ -1,7 +1,6 @@
 import NationWide from '../components/Nationwide';
 import Charts from '../components/Charts';
 
-
 const Index = () => {
 	return (
 		<>
