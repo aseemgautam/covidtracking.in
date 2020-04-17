@@ -6298,5 +6298,12 @@
     "confirmed": 231,
     "recovered": 42,
     "deaths": 7
+  },
+  {
+    "date": "2020-04-15",
+    "state": "Sikkim",
+    "confirmed": 0,
+    "recovered": 0,
+    "deaths": 0
   }
 ]
