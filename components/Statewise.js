@@ -1,19 +1,8 @@
 /* eslint-disable no-restricted-syntax */
 import { List } from 'antd';
 import StateCasesRow from './StateCasesRow';
-import Analytics from '../classes/Analytics';
 
-export default () => {
-	let cases = [];
-	for (const key in Analytics.casesByState) {
-		if (Object.prototype.hasOwnProperty.call(Analytics.casesByState, key)
-			&& Array.isArray(Analytics.casesByState[key])) {
-			cases.push(Analytics.casesByState[key].pop());
-		}
-	}
-	cases = cases.sort((a, b) => {
-		return b.confirmed - a.confirmed;
-	});
+const StateWise = ({ statewiseLatest }) => {
 	return (
 		<List
 			className="state-table"
@@ -28,7 +17,7 @@ export default () => {
 			pagination={{
 				pageSize: 9,
 			}}
-			dataSource={cases}
+			dataSource={statewiseLatest}
 			renderItem={state => {
 				return (
 					<List.Item className="state-case-row">
@@ -39,3 +28,5 @@ export default () => {
 		/>
 	);
 };
+
+export default StateWise;

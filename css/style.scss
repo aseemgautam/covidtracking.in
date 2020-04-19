@@ -114,6 +114,23 @@ h2 {
     font-size: 15px;
   }
 }
+.leaflet-control-attribution {
+  display: none !important;
+}
+#map {
+  height: 100%;
+}
+
+.map-info {
+  @extend %section;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  #map {
+    height: 400px;
+  }
+}
 
 @media (max-width: 420px) {
   h1 {

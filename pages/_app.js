@@ -25,6 +25,7 @@ import '../css/lab.scss';
 import '../css/stateList.scss';
 import '../css/helpline.scss';
 import '../css/tracker.scss';
+import 'leaflet/dist/leaflet.css';
 
 class Covid19Wiki extends App {
 	render() {

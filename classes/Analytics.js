@@ -15,6 +15,8 @@ class Analytics {
 				return {
 					...curr,
 					newCases: idx === 0 ? 0 : curr.confirmed - src[idx - 1].confirmed,
+					newRecover: idx === 0 ? 0 : curr.recovered - src[idx - 1].recovered,
+					newDeaths: idx === 0 ? 0 : curr.deaths - src[idx - 1].deaths,
 					active: curr.confirmed - curr.deaths - curr.recovered
 				};
 			});
@@ -66,6 +68,27 @@ class Analytics {
 				return acc + curr.newCases;
 			}, 0);
 		return current - previous;
+	}
+
+	getMapColor = count => {
+		if (count < 30) return '#addd8e';
+		if (count < 100) return '#fef0d9';
+		if (count < 200) return '#fdd49e';
+		if (count < 500) return '#fdbb84';
+		if (count < 1000) return '#fc8d59';
+		if (count < 2000) return '#e34a33';
+		if (count < 5000) return '#b30000';
+		return '#addd8e';
+	}
+
+	statewiseLatest = () => {
+		let cases = [];
+		for (const [, v] of Object.entries(this.casesByState)) {
+			v[v.length - 1].color = this.getMapColor(v[v.length - 1].confirmed);
+			cases.push(v[v.length - 1]);
+		}
+		cases = cases.sort((a, b) => { return b.confirmed - a.confirmed; });
+		return cases;
 	}
 
 	groupBy = (field, srcArray) => {

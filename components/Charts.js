@@ -1,25 +1,15 @@
 import { Row, Col } from 'antd';
 import dynamic from 'next/dynamic';
+import NewCasesChart from './NewCasesChart';
 import Statewise from './Statewise';
-// import AgeDemographics from './charts/AgeDemographics';
-// import IndiaMap from './geo/IndiaMap';
+import AgeDemographics from './charts/AgeDemographics';
+import GenderRatio from './charts/GenderRatio';
+import ActiveCases from './charts/ActiveCases';
 
-const NewCasesChart = dynamic(import('../components/NewCasesChart'), { ssr: false });
+const IndiaMap = dynamic(() => { return import('./geo/IndiaMap'); }, { ssr: false });
+// const IndiaMap = dynamic(() => { return import('./geo/IndiaMapD3'); }, { ssr: false });
 
-const GenderRatio = dynamic(
-	() => { return import('./charts/GenderRatio'); },
-	{ loading: () => { return <p>Loading Gender Ratio</p>; }, ssr: false },
-);
-
-
-const ActiveCases = dynamic(
-	() => { return import('./charts/ActiveCases'); },
-	{ loading: () => { return <p>Loading Active Cases Chart</p>; }, ssr: false }
-);
-
-const AgeDemographics = dynamic(import('./charts/AgeDemographics'), { ssr: false });
-
-const Charts = () => {
+const Charts = ({ statewiseLatest, newCases }) => {
 	return (
 		<>
 			{/* <div>State Level cases </div> */}
@@ -30,15 +20,17 @@ const Charts = () => {
 					</div>
 				</Col> */}
 				<Col xs={24} sm={24} md={12}>
-					{/* <IndiaMap /> */}
+					<IndiaMap statewiseLatest={statewiseLatest} />
 				</Col>
 				<Col xs={24} sm={24} md={12}>
-					<Statewise />
+					<Statewise statewiseLatest={statewiseLatest} />
 				</Col>
 			</Row>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} md={24}>
-					<NewCasesChart />
+					<div className="section">
+						<NewCasesChart cases={newCases} />
+					</div>
 				</Col>
 			</Row>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
