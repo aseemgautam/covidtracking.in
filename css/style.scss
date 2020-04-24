@@ -109,6 +109,10 @@ h2 {
   }
 }
 
+.control {
+  @extend %control;
+}
+
 .navigation {
   a {
     font-size: 15px;

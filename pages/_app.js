@@ -18,6 +18,9 @@ import 'antd/es/breadcrumb/style/index.css';
 import 'antd/es/menu/style/index.css';
 import 'antd/es/dropdown/style/index.css';
 import 'antd/es/tooltip/style/index.css';
+import 'antd/es/select/style/index.css';
+import 'antd/es/switch/style/index.css';
+import 'leaflet/dist/leaflet.css';
 import '../css/style.scss';
 import '../css/statistics.scss';
 import '../css/vars.scss';
@@ -25,7 +28,7 @@ import '../css/lab.scss';
 import '../css/stateList.scss';
 import '../css/helpline.scss';
 import '../css/tracker.scss';
-import 'leaflet/dist/leaflet.css';
+import '../css/charts.scss';
 
 class Covid19Wiki extends App {
 	render() {

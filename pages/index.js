@@ -3,23 +3,22 @@ import NationWide from '../components/Nationwide';
 import Charts from '../components/Charts';
 import Analytics from '../classes/Analytics';
 
-const Index = ({ statewiseLatest, newCases }) => {
+function Index({ statewiseLatest, newCases }) {
 	return (
 		<>
 			<NationWide />
 			<Charts statewiseLatest={statewiseLatest} newCases={newCases} />
 		</>
 	);
-};
+}
+
+export default Index;
 
 export async function getStaticProps() {
 	return {
 		props: {
-			statewiseLatest: Analytics.statewiseLatest(),
-			newCases: Analytics.cases.slice(-31)
+			statewiseLatest: Analytics.casesByStateLatest,
+			newCases: Analytics.cases.slice(-14)
 		}
 	};
 }
-
-
-export default Index;

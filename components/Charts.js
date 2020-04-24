@@ -4,10 +4,10 @@ import NewCasesChart from './NewCasesChart';
 import Statewise from './Statewise';
 import AgeDemographics from './charts/AgeDemographics';
 import GenderRatio from './charts/GenderRatio';
-import ActiveCases from './charts/ActiveCases';
+import Testing from './charts/Testing';
+import StateGrowth from './charts/StateGrowth';
 
 const IndiaMap = dynamic(() => { return import('./geo/IndiaMap'); }, { ssr: false });
-// const IndiaMap = dynamic(() => { return import('./geo/IndiaMapD3'); }, { ssr: false });
 
 const Charts = ({ statewiseLatest, newCases }) => {
 	return (
@@ -34,6 +34,13 @@ const Charts = ({ statewiseLatest, newCases }) => {
 				</Col>
 			</Row>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
+				<Col xs={24} md={24}>
+					<div className="section">
+						<StateGrowth />
+					</div>
+				</Col>
+			</Row>
+			{/* <Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} md={12}>
 					<div className="section">
 						<GenderRatio />
@@ -44,10 +51,14 @@ const Charts = ({ statewiseLatest, newCases }) => {
 						<AgeDemographics />
 					</div>
 				</Col>
+			</Row> */}
+			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
+				<Col xs={24} md={24}>
+					<div className="section">
+						<Testing />
+					</div>
+				</Col>
 			</Row>
-			<div>
-				<ActiveCases />
-			</div>
 		</>
 	);
 };

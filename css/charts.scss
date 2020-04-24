@@ -1,0 +1,12 @@
+@use 'vars';
+
+.chart-options {
+  display: flex;
+  .ant-select, .ant-checkbox-wrapper {
+    width: 100%;
+  }
+}
+
+.new-cases-chart .g2-tooltip .g2-tooltip-list .g2-tooltip-list-item:nth-last-child(2) {
+  display: none;
+}

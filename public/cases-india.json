@@ -235,8 +235,39 @@
   },
   {
     "date": "2020-04-19",
-    "confirmed": 16116,
-    "deaths": 519,
-    "recovered": 2302
+    "confirmed": 17265,
+    "deaths": 543,
+    "recovered": 2547
+  },
+  {
+    "date": "2020-04-20",
+    "confirmed": 17656,
+    "deaths": 559,
+    "recovered": 2842
+  },
+  {
+    "date": "2020-04-21",
+    "confirmed": 18985,
+    "deaths": 603,
+    "recovered": 3260
+  },
+  {
+    "date": "2020-04-22",
+    "confirmed": 20471,
+    "deaths": 652,
+    "recovered": 3960
+  },
+  {
+    "date": "2020-04-23",
+    "confirmed": 21700,
+    "deaths": 686,
+    "recovered": 4325
+  },
+  {
+    "date": "2020-04-24",
+    "confirmed": 23452,
+    "deaths": 723,
+    "recovered": 4814
   }
+
 ]

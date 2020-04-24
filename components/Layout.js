@@ -24,7 +24,7 @@ const SiteLayout = props => {
 		<Layout className="layout">
 			<Header>
 				<Row>
-					<Col xs={1} sm={1} lg={2} xl={3} />
+					<Col xs={1} sm={1} lg={1} xl={2} />
 					<Col className="logo" xs={18} sm={10} lg={6} xl={6}>
 						<img src="/india.png" alt="india" />
 						<a href="/">Coronavirus India Wiki</a>
@@ -34,23 +34,23 @@ const SiteLayout = props => {
 							<MenuOutlined />
 						</Dropdown>
 					</Col>
-					<Col xs={0} sm={12} lg={14} xl={12}>
+					<Col xs={0} sm={12} lg={16} xl={14}>
 						<Space size="middle" className="navigation">
 							{tracker}
 							{helpline}
 							{testing}
 						</Space>
 					</Col>
-					<Col xs={1} sm={1} lg={2} xl={3} />
+					<Col xs={1} sm={1} lg={1} xl={2} />
 				</Row>
 			</Header>
 			<Content>
 				<Row>
-					<Col xs={1} sm={1} lg={2} xl={3} />
-					<Col xs={22} sm={22} lg={20} xl={18}>
+					<Col xs={0} sm={1} lg={1} xl={2} />
+					<Col xs={24} sm={22} lg={22} xl={20}>
 						{children}
 					</Col>
-					<Col xs={1} sm={1} lg={2} xl={3} />
+					<Col xs={0} sm={1} lg={1} xl={2} />
 				</Row>
 			</Content>
 			<Footer style={{ textAlign: 'center' }}>Covid 19 Wiki</Footer>

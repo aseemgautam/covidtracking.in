@@ -3,7 +3,10 @@ import L from 'leaflet';
 
 class LeafletMap {
 	constructor(lat, lng, zoom, getColor, getInfo, geoJSON) {
-		this.map = L.map('map').setView([lat, lng], zoom);
+		this.map = L.map('map', { zoomControl: false }).setView([lat, lng], zoom);
+		this.map.touchZoom.disable();
+		this.map.boxZoom.disable();
+		this.map.scrollWheelZoom.disable();
 		L.tileLayer(
 			'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYXNlZW1nYXV0YW0iLCJhIjoiY2s5NG1hdW9uMGFtaTNmbnlodzE5MG1ydCJ9.bI9pFdktrGpRkNEMhiyKkg',
 			{
