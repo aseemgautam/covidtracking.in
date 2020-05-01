@@ -3,7 +3,7 @@
 /* eslint-disable max-len */
 import React, { useEffect } from 'react';
 import IndiaGeoJSON from '../../public/india';
-import LeafletMap from '../LeafletMap';
+import LeafletMap from './LeafletMap';
 import Analytics from '../../classes/Analytics';
 
 const Map = React.memo(({ statewiseLatest }) => {

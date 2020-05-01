@@ -1,9 +1,32 @@
 [
   {
+    "date": "2020-02-12",
+    "samples": 1725,
+    "newSamples": "",
+    "positive": "",
+    "newPositive": "",
+    "percentPositive": ""
+  },
+  {
+    "date": "2020-02-19",
+    "samples": 2658,
+    "newSamples": 933,
+    "positive": "",
+    "newPositive": "",
+    "percentPositive": ""
+  },
+  {
+    "date": "2020-03-09",
+    "samples": 5255,
+    "newSamples": 2597,
+    "positive": 42,
+    "newPositive": "",
+    "percentPositive": ""
+  },
+  {
     "date": "2020-03-18",
     "samples": 13125,
     "newSamples": 7870,
-    "individuals": 12235,
     "positive": 150,
     "newPositive": 108,
     "percentPositive": 1.372299873
@@ -12,7 +35,6 @@
     "date": "2020-03-19",
     "samples": 13316,
     "newSamples": 191,
-    "individuals": 12426,
     "positive": 168,
     "newPositive": 18,
     "percentPositive": 9.42408377
@@ -21,7 +43,6 @@
     "date": "2020-03-20",
     "samples": 15404,
     "newSamples": 2088,
-    "individuals": 14514,
     "positive": 236,
     "newPositive": 68,
     "percentPositive": 3.256704981
@@ -30,7 +51,6 @@
     "date": "2020-03-21",
     "samples": 16911,
     "newSamples": 1507,
-    "individuals": 16021,
     "positive": 315,
     "newPositive": 79,
     "percentPositive": 5.242203052
@@ -39,7 +59,6 @@
     "date": "2020-03-22",
     "samples": 18127,
     "newSamples": 1216,
-    "individuals": 17237,
     "positive": 396,
     "newPositive": 81,
     "percentPositive": 6.661184211
@@ -48,7 +67,6 @@
     "date": "2020-03-23",
     "samples": 20707,
     "newSamples": 2580,
-    "individuals": 19817,
     "positive": 471,
     "newPositive": 75,
     "percentPositive": 2.906976744
@@ -57,7 +75,6 @@
     "date": "2020-03-24",
     "samples": 22694,
     "newSamples": 1987,
-    "individuals": 21804,
     "positive": 536,
     "newPositive": 65,
     "percentPositive": 3.271263211
@@ -66,7 +83,6 @@
     "date": "2020-03-25",
     "samples": 25144,
     "newSamples": 2450,
-    "individuals": 24254,
     "positive": 581,
     "newPositive": 45,
     "percentPositive": 1.836734694
@@ -75,7 +91,6 @@
     "date": "2020-03-27",
     "samples": 27688,
     "newSamples": 2544,
-    "individuals": 26798,
     "positive": 691,
     "newPositive": 110,
     "percentPositive": 4.323899371
@@ -84,7 +99,6 @@
     "date": "2020-04-01",
     "samples": 47951,
     "newSamples": 20263,
-    "individuals": "",
     "positive": 1637,
     "newPositive": 946,
     "percentPositive": 4.668607807
@@ -93,7 +107,6 @@
     "date": "2020-04-02",
     "samples": 55851,
     "newSamples": 7900,
-    "individuals": "",
     "positive": 2056,
     "newPositive": 419,
     "percentPositive": 5.303797468
@@ -102,7 +115,6 @@
     "date": "2020-04-03",
     "samples": 69245,
     "newSamples": 13394,
-    "individuals": "",
     "positive": 2653,
     "newPositive": 597,
     "percentPositive": 4.457219651
@@ -111,7 +123,6 @@
     "date": "2020-04-04",
     "samples": 79950,
     "newSamples": 10705,
-    "individuals": "",
     "positive": 3113,
     "newPositive": 460,
     "percentPositive": 4.29705745
@@ -120,7 +131,6 @@
     "date": "2020-04-05",
     "samples": 89534,
     "newSamples": 9584,
-    "individuals": "",
     "positive": 3554,
     "newPositive": 441,
     "percentPositive": 4.601419032
@@ -129,7 +139,6 @@
     "date": "2020-04-06",
     "samples": 101068,
     "newSamples": 11534,
-    "individuals": "",
     "positive": 4135,
     "newPositive": 581,
     "percentPositive": 5.037281082
@@ -138,7 +147,6 @@
     "date": "2020-04-07",
     "samples": 114015,
     "newSamples": 12947,
-    "individuals": "",
     "positive": 4616,
     "newPositive": 481,
     "percentPositive": 3.715146366
@@ -147,7 +155,6 @@
     "date": "2020-04-08",
     "samples": 127919,
     "newSamples": 13904,
-    "individuals": "",
     "positive": 5114,
     "newPositive": 498,
     "percentPositive": 3.581703107
@@ -156,7 +163,6 @@
     "date": "2020-04-09",
     "samples": 144910,
     "newSamples": 16991,
-    "individuals": "",
     "positive": 5705,
     "newPositive": 591,
     "percentPositive": 3.478312048
@@ -165,7 +171,6 @@
     "date": "2020-04-10",
     "samples": 161330,
     "newSamples": 16420,
-    "individuals": 147034,
     "positive": 6872,
     "newPositive": 1167,
     "percentPositive": 7.107186358
@@ -174,7 +179,6 @@
     "date": "2020-04-11",
     "samples": 179374,
     "newSamples": 18044,
-    "individuals": 164773,
     "positive": 7703,
     "newPositive": 831,
     "percentPositive": 4.605409
@@ -183,7 +187,6 @@
     "date": "2020-04-12",
     "samples": 195748,
     "newSamples": 16374,
-    "individuals": 181028,
     "positive": 8312,
     "newPositive": 609,
     "percentPositive": 3.719311103
@@ -192,7 +195,6 @@
     "date": "2020-04-13",
     "samples": 217554,
     "newSamples": 21806,
-    "individuals": 202551,
     "positive": 9341,
     "newPositive": 1029,
     "percentPositive": 4.718884711
@@ -201,7 +203,6 @@
     "date": "2020-04-14",
     "samples": 244893,
     "newSamples": 27339,
-    "individuals": 229426,
     "positive": 10307,
     "newPositive": 966,
     "percentPositive": 3.533413804
@@ -210,7 +211,6 @@
     "date": "2020-04-15",
     "samples": 274599,
     "newSamples": 29706,
-    "individuals": 258730,
     "positive": 11297,
     "newPositive": 990,
     "percentPositive": 3.332660069
@@ -219,25 +219,22 @@
     "date": "2020-04-16",
     "samples": 302956,
     "newSamples": 28357,
-    "individuals": 286714,
-    "positive": 12581,
-    "newPositive": 1284,
+    "positive": "12,581",
+    "newPositive": "1,284",
     "percentPositive": 4.527982509
   },
   {
     "date": "2020-04-17",
     "samples": 335123,
     "newSamples": 32167,
-    "individuals": 318449,
     "positive": 14098,
-    "newPositive": 1517,
+    "newPositive": "1,517",
     "percentPositive": 4.716013306
   },
   {
     "date": "2020-04-18",
     "samples": 372123,
     "newSamples": 37000,
-    "individuals": 354969,
     "positive": 16365,
     "newPositive": 2267,
     "percentPositive": 6.127027027
@@ -246,7 +243,6 @@
     "date": "2020-04-19",
     "samples": 401586,
     "newSamples": 29463,
-    "individuals": 383985,
     "positive": 17615,
     "newPositive": 1250,
     "percentPositive": 4.242609374
@@ -255,7 +251,6 @@
     "date": "2020-04-21",
     "samples": 462621,
     "newSamples": 61035,
-    "individuals": 447812,
     "positive": 18985,
     "newPositive": 1370,
     "percentPositive": 2.244613746
@@ -264,7 +259,6 @@
     "date": "2020-04-23",
     "samples": 500542,
     "newSamples": 37921,
-    "individuals": 485172,
     "positive": 21797,
     "newPositive": 2812,
     "percentPositive": 7.41541626
@@ -273,9 +267,64 @@
     "date": "2020-04-24",
     "samples": 541789,
     "newSamples": 41247,
-    "individuals": 525667,
     "positive": 23502,
     "newPositive": 1705,
     "percentPositive": 4.133633961
+  },
+  {
+    "date": "2020-04-25",
+    "samples": 579957,
+    "newSamples": 38168,
+    "positive": 24506,
+    "newPositive": 1004,
+    "percentPositive": 2.630475791
+  },
+  {
+    "date": "2020-04-26",
+    "samples": 625309,
+    "newSamples": 45352,
+    "positive": 26492,
+    "newPositive": 1986,
+    "percentPositive": 4.379079203
+  },
+  {
+    "date": "2020-04-27",
+    "samples": 665819,
+    "newSamples": 40510,
+    "positive": 27892,
+    "newPositive": 1400,
+    "percentPositive": 3.455936806
+  },
+  {
+    "date": "2020-04-28",
+    "samples": 716733,
+    "newSamples": 50914,
+    "positive": 29435,
+    "newPositive": 1543,
+    "percentPositive": 3.030600621
+  },
+  {
+    "date": "2020-04-29",
+    "samples": 770764,
+    "newSamples": 54031,
+    "positive": 31332,
+    "newPositive": 1897,
+    "percentPositive": 3.510947419
+  },
+  {
+    "date": "2020-04-30",
+    "samples": 830201,
+    "newSamples": 59437,
+    "positive": 33050,
+    "newPositive": 1718,
+    "percentPositive": 2.89045544
+  },
+  {
+    "date": "2020-05-01",
+    "samples": 902654,
+    "newSamples": 72453,
+    "positive": 35043,
+    "newPositive": 1993,
+    "percentPositive": 2.750748761
   }
 ]

@@ -1,11 +1,10 @@
 @use 'vars';
 
 .covid-statistic {
-  padding: 8px 15px !important;
+  padding: 15px 0px !important;
   border: vars.$border;
   border-radius: vars.$border-radius;
   background-color: #fff;
-  color: #526473;
 }
 
 .covid-statistic .ant-statistic-content,
@@ -14,15 +13,11 @@
   display: flex;
   align-items: baseline;
   justify-content: center;
+  text-transform: uppercase;
 }
 
 .covid-statistic .ant-statistic-title {
   align-items: center;
-}
-
-.covid-statistic .ant-statistic-content-suffix {
-  font-size: 14px;
-  font-weight: 500;
 }
 
 .covid-statistic .ant-statistic-title .anticon {
@@ -41,8 +36,9 @@
 .statistic-recovered {
   border-color: vars.$green;
 }
-// @media (max-width: 420px) {
-//   .ant-statistic-content {
-//     font-size: 20px !important;
-//   }
-// }
+@media (max-width: 420px) {
+  .covid-statistic .ant-statistic-title { font-size: 13px;}
+  .ant-statistic-content {
+    font-size: 18px !important;
+  }
+}

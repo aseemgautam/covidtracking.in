@@ -3,26 +3,30 @@ import { Chart } from '@antv/g2';
 
 const NewCasesChart = ({ cases }) => {
 	const container = useRef(null);
-	const formatted = [];
-	let peak = 0;
-	cases.forEach(d => {
-		if (d.newCases > peak) peak = d.newCases;
-		formatted.push(
-			{ date: d.date, type: 'New Cases', value: d.newCases },
-			{ date: d.date, type: 'Deaths', value: d.newDeaths },
-			{ date: d.date, type: 'Recovered', value: d.newRecover },
-			{ date: d.date, type: 'Active', value: 0, active: d.active });
-	});
 
 	useEffect(() => {
 		if (!container.current) {
 			return;
 		}
+		const chartData = [];
+		const isMobile = window.innerWidth < 576;
+		const padding = isMobile ? 10 : 15;
+		let peak = 0;
+
+		cases.slice(isMobile ? -14 : -21).forEach(d => {
+			if (d.newCases > peak) peak = d.newCases;
+			chartData.push(
+				{ date: d.date, type: 'New Cases', value: d.newCases },
+				{ date: d.date, type: 'Deaths', value: d.newDeaths },
+				{ date: d.date, type: 'Recovered', value: d.newRecover },
+				{ date: d.date, type: 'Active', value: 0, active: d.active });
+		});
+
 		const chart = new Chart({
 			container: container.current,
 			autoFit: true,
 			height: 400,
-			padding: [40, 60, 40, 40]
+			padding: [20, padding, 40, padding]
 		});
 		chart.axis('date', {
 			tickLine: null,
@@ -33,10 +37,12 @@ const NewCasesChart = ({ cases }) => {
 			}
 		});
 		chart.axis('active', {
+			visible: false,
 			tickLine: null,
 			grid: null
 		});
-		chart.data(formatted);
+		chart.axis('value', false);
+		chart.data(chartData);
 		chart.scale('active', {
 			nice: true
 		});
@@ -47,12 +53,14 @@ const NewCasesChart = ({ cases }) => {
 			type: 'timeCat'
 		});
 		chart.legend({
-			position: 'top',
+			position: 'top-left',
+			offsetX: 10
 		});
 		chart.tooltip({
 			shared: true,
 			showMarkers: false
 		});
+
 		chart
 			.interval()
 			.position(['date', 'value'])
@@ -89,9 +97,8 @@ const NewCasesChart = ({ cases }) => {
 			.shape('smooth');
 		chart.interaction('active-region');
 		chart.filter('type', type => { return type === 'New Cases' || type === 'Active'; });
-		// chart.
 		chart.render();
-	}, [formatted, peak]);
+	}, [cases]);
 	return (
 		<>
 			<div className="new-cases-chart" ref={container} />

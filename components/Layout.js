@@ -1,14 +1,19 @@
 import { Layout, Space, Row, Col, Menu, Dropdown } from 'antd';
-import { MenuOutlined, PhoneOutlined, LineChartOutlined, ScheduleOutlined } from '@ant-design/icons';
+import { MenuOutlined, PhoneOutlined, BarChartOutlined,
+	ScheduleOutlined, RiseOutlined } from '@ant-design/icons';
 
 const { Header, Content, Footer } = Layout;
-const tracker = <a href="/"><LineChartOutlined /> Tracker</a>;
+const tracker = <a href="/"><RiseOutlined /> Tracker</a>;
+const analytics = <a href="/"><BarChartOutlined /> Analytics</a>;
 const helpline = <a href="/helpline"><PhoneOutlined /> Helpline</a>;
 const testing = <a href="/coronavirus-test-india"><ScheduleOutlined /> Testing</a>;
 const menu = (
 	<Menu>
 		<Menu.Item>
 			{tracker}
+		</Menu.Item>
+		<Menu.Item>
+			{analytics}
 		</Menu.Item>
 		<Menu.Item>
 			{helpline}
@@ -37,6 +42,7 @@ const SiteLayout = props => {
 					<Col xs={0} sm={12} lg={16} xl={14}>
 						<Space size="middle" className="navigation">
 							{tracker}
+							{analytics}
 							{helpline}
 							{testing}
 						</Space>
@@ -46,11 +52,11 @@ const SiteLayout = props => {
 			</Header>
 			<Content>
 				<Row>
-					<Col xs={0} sm={1} lg={1} xl={2} />
-					<Col xs={24} sm={22} lg={22} xl={20}>
+					<Col xs={0} sm={0} md={1} lg={1} xl={2} />
+					<Col xs={24} sm={24} md={22} lg={22} xl={20}>
 						{children}
 					</Col>
-					<Col xs={0} sm={1} lg={1} xl={2} />
+					<Col xs={0} sm={0} md={1} lg={1} xl={2} />
 				</Row>
 			</Content>
 			<Footer style={{ textAlign: 'center' }}>Covid 19 Wiki</Footer>

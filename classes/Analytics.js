@@ -4,6 +4,7 @@ import CovidTests from '../public/covid-tests.json';
 import CasesIndia from '../public/cases-india.json';
 import AllCasesState from '../public/cases-india-statewise.json';
 import IndiaStates from '../public/india-states.json';
+import CasesDistricts from '../public/cases-districts.json';
 import Statistic from './Statistic';
 import HelpText from './HelpText';
 import GetTrend from './Trend';
@@ -12,16 +13,7 @@ const IndiaPopulation = 1377122402;
 
 class Analytics {
 	constructor() {
-		this.cases = CasesIndia.sort(this.sortJsonByDateDesc)
-			.map((curr, idx, src) => {
-				return {
-					...curr,
-					newCases: idx === 0 ? 0 : curr.confirmed - src[idx - 1].confirmed,
-					newRecover: idx === 0 ? 0 : curr.recovered - src[idx - 1].recovered,
-					newDeaths: idx === 0 ? 0 : curr.deaths - src[idx - 1].deaths,
-					active: curr.confirmed - curr.deaths - curr.recovered
-				};
-			});
+		this.cases = CasesIndia.sort(this.sortJsonByDateDesc);
 
 		// STATE
 		this.states = [];
@@ -37,18 +29,32 @@ class Analytics {
 				this.casesByStateLatest.push(_.last(filtered));
 			}
 		});
-		// console.log(CovidTests);
 		this.testingData = [];
-
 		CovidTests.sort(this.sortJsonByDateDesc).forEach(test => {
 			this.testingData.push(
 				{ date: test.date, type: 'Samples', value: test.newSamples },
-				{ date: test.date, type: 'Positive', value: test.newPositive }
+				{ date: test.date,
+					type: 'Positive',
+					value: test.newPositive,
+					percent: Math.round((test.percentPositive + Number.EPSILON) * 100) / 100
+				}
 			);
 		});
 		this.activeCasesPeak = _.compact(this.activeCasesPeak);
 		this.casesByStateLatest = _.orderBy(this.casesByStateLatest, ['confirmed'], ['desc']);
-		// this.tests = CovidTests.
+		this.districts = _.orderBy(CasesDistricts, ['confirmed'], ['desc']).slice(0, 10);
+		this.casesForCalendarActiveGrowth = this.cases
+			.map(val => {
+				return {
+					percent: val.percentIncActive,
+					date: val.date,
+					newActive: val.newActive,
+					'New Active Cases': val.newActive,
+					'% inc from day before': `${val.percentIncActive}%`,
+					active: val.active
+				};
+			});
+
 		// TRENDS
 		const last2Days = this.cases.slice(-2);
 		const trendValue = this.calculateTrend(7);

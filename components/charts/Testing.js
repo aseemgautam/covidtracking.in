@@ -40,7 +40,22 @@ const TestingChart = () => {
 				if (type === 'Samples') return '#d9d9d9';
 				return '#f5222d';
 			})
-			.label('value')
+			.label('value', value => {
+				return {
+					content: data => {
+						if (data.type === 'Positive') {
+							return `${data.value} \n${data.percent}%\n`;
+						}
+						return data.value;
+					},
+					offset: 10,
+					style: {
+						// fill: value === peak ? '#fc1600' : 'rgba(0, 0, 0, 0.65)',
+						// fontWeight: value === peak ? 500 : 400,
+						fontSize: 11
+					}
+				};
+			})
 			.adjust([
 				{
 					type: 'stack'

@@ -1,0 +1,212 @@
+[
+  {
+    "State": "MAHARASHTRA",
+    "District": "MUMBAI",
+    "Confirmed": 5407
+  },
+  {
+    "State": "GUJARAT",
+    "District": "AHMEDABAD",
+    "Confirmed": 1298
+  },
+  {
+    "State": "DELHI",
+    "District": "Tablighi Jamaat",
+    "Confirmed": 1080
+  },
+  {
+    "State": "MADHYA PRADESH",
+    "District": "INDORE",
+    "Confirmed": 915
+  },
+  {
+    "State": "MAHARASHTRA",
+    "District": "PUNE",
+    "Confirmed": 1052
+  },
+  {
+    "State": "RAJASTHAN",
+    "District": "JAIPUR",
+    "Confirmed": 537
+  },
+  {
+    "State": "TELANGANA",
+    "District": "HYDERABAD",
+    "Confirmed": 472
+  },
+  {
+    "State": "MAHARASHTRA",
+    "District": "THANE",
+    "Confirmed": 465
+  },
+  {
+    "State": "GUJARAT",
+    "District": "SURAT",
+    "Confirmed": 338
+  },
+  {
+    "State": "TAMIL NADU",
+    "District": "CHENNAI",
+    "Confirmed": 303
+  },
+  {
+    "State": "MADHYA PRADESH",
+    "District": "BHOPAL",
+    "Confirmed": 277
+  },
+  {
+    "State": "UTTAR PRADESH",
+    "District": "AGRA",
+    "Confirmed": 241
+  },
+  {
+    "State": "RAJASTHAN",
+    "District": "JODHPUR",
+    "Confirmed": 228
+  },
+  {
+    "State": "DELHI",
+    "District": "Non Tracable",
+    "Confirmed": 213
+  },
+  {
+    "State": "GUJARAT",
+    "District": "VADODARA",
+    "Confirmed": 188
+  },
+  {
+    "State": "DELHI",
+    "District": "CENTRAL DELHI",
+    "Confirmed": 184
+  },
+  {
+    "State": "WEST BENGAL",
+    "District": "KOLKATA",
+    "Confirmed": 184
+  },
+  {
+    "State": "KERALA",
+    "District": "KASARAGODE",
+    "Confirmed": 170
+  },
+  {
+    "State": "UTTAR PRADESH",
+    "District": "LUCKNOW",
+    "Confirmed": 167
+  },
+  {
+    "State": "ANDHRA PRADESH",
+    "District": "KURNOOL",
+    "Confirmed": 158
+  },
+  {
+    "State": "TAMIL NADU",
+    "District": "COIMBATORE",
+    "Confirmed": 133
+  },
+  {
+    "State": "DELHI",
+    "District": "SOUTH EAST",
+    "Confirmed": 130
+  },
+  {
+    "State": "ANDHRA PRADESH",
+    "District": "GUNTUR",
+    "Confirmed": 128
+  },
+  {
+    "State": "DELHI",
+    "District": "WEST DELHI",
+    "Confirmed": 122
+  },
+  {
+    "State": "TAMIL NADU",
+    "District": "TIRUPPUR",
+    "Confirmed": 109
+  },
+  {
+    "State": "RAJASTHAN",
+    "District": "BHARATPUR",
+    "Confirmed": 102
+  },
+  {
+    "State": "RAJASTHAN",
+    "District": "KOTA",
+    "Confirmed": 99
+  },
+  {
+    "State": "UTTAR PRADESH",
+    "District": "GAUTAM BUDHA NAGAR",
+    "Confirmed": 98
+  },
+  {
+    "State": "MAHARASHTRA",
+    "District": "NASHIK",
+    "Confirmed": 96
+  },
+  {
+    "State": "RAJASTHAN",
+    "District": "TONK",
+    "Confirmed": 95
+  },
+  {
+    "State": "KERALA",
+    "District": "CANNANORE(KANNUR)",
+    "Confirmed": 92
+  },
+  {
+    "State": "KARNATAKA",
+    "District": "MYSURU",
+    "Confirmed": 84
+  },
+  {
+    "State": "TELANGANA",
+    "District": "SURYAPET",
+    "Confirmed": 83
+  },
+  {
+    "State": "JAMMU AND KASHMIR",
+    "District": "BANDIPORA",
+    "Confirmed": 81
+  },
+  {
+    "State": "JAMMU AND KASHMIR",
+    "District": "SRINAGAR",
+    "Confirmed": 79
+  },
+  {
+    "State": "WEST BENGAL",
+    "District": "HOWRAH",
+    "Confirmed": 79
+  },
+  {
+    "State": "ANDHRA PRADESH",
+    "District": "KRISHNA",
+    "Confirmed": 76
+  },
+  {
+    "State": "MAHARASHTRA",
+    "District": "NAGPUR",
+    "Confirmed": 76
+  },
+  {
+    "State": "TAMIL NADU",
+    "District": "DINDIGUL",
+    "Confirmed": 76
+  },
+  {
+    "State": "UTTAR PRADESH",
+    "District": "MEERUT",
+    "Confirmed": 75
+  },
+  {
+    "State": "UTTAR PRADESH",
+    "District": "SAHARANPUR",
+    "Confirmed": 72
+  },
+  {
+    "State": "DELHI",
+    "District": "SOUTH DELHI",
+    "Confirmed": 70
+  }
+]

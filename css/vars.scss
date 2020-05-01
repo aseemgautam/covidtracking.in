@@ -2,7 +2,7 @@ $gold: #faad14;
 $green: #52c41a;
 $red: #f5222d;
 
-$border: 1px solid #CED4D9;
+$border: 1px solid rgba(0,0,0,.14); // #CED4D9;
 $control-border: 1px solid #d9d9d9;
 $border-radius: 2px;
 $section-title-color: #F2F4F5;
@@ -11,7 +11,6 @@ $section-title-color: #F2F4F5;
   background-color: #fff;
   border: $border;
   border-radius: $border-radius;
-  padding: 10px;
 }
 %control {
   height: 32px;

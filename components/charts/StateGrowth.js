@@ -1,13 +1,13 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Chart } from '@antv/g2';
-import { Select, Switch, Row, Col } from 'antd';
+import { Select, Row, Col } from 'antd';
 import _ from 'lodash';
 import Analytics from '../../classes/Analytics';
 
 const { Option } = Select;
 
 const StateGrowth = () => {
-	const [selectedStates, setSelectedStates] = useState(Analytics.topNAffected(5));
+	const [selectedStates, setSelectedStates] = useState(Analytics.topNAffected(3));
 	const [days, setDays] = useState(14);
 	const showPeak = useRef(true);
 	const { states } = Analytics;
@@ -33,16 +33,16 @@ const StateGrowth = () => {
 			peaks.forEach(peak => {
 				chart.current.annotation().dataMarker({
 					position: [peak.date, peak.active],
-					text: {
-						content: peak.active,
-						style: {
-							textAlign: 'center'
-						}
-					},
-					top: true,
-					// line: {
-					// 	length: 15
+					// text: {
+					// 	content: peak.active,
+					// 	style: {
+					// 		textAlign: 'center'
+					// 	}
 					// },
+					top: true,
+					line: {
+						length: 0
+					},
 					point: {
 						style: {
 							lineWidth: 2,
@@ -83,7 +83,7 @@ const StateGrowth = () => {
 				container: 'stateGrowthChart', // container.current,
 				autoFit: true,
 				height: 500,
-				padding: [60, 40]
+				padding: [50, 20, 50, 40]
 			});
 			chart.current.legend({
 				position: 'top',
@@ -105,7 +105,7 @@ const StateGrowth = () => {
 			});
 
 			chart.current.axis('date', {
-				tickLine: null,
+				tickLine: true,
 				label: {
 					formatter: text => {
 						return text.replace('2020-', '');
@@ -134,13 +134,15 @@ const StateGrowth = () => {
 				// 		},
 				// 	};
 				// })
-				.color('state');
+				.color('state')
+				.shape('smooth');
 
 			chart.current
 				.point()
 				.size(3)
 				.shape('circle')
 				.position('date*active')
+				.label('active')
 				.color('state');
 
 			// chart.current.removeInteraction('legend-filter');
@@ -156,14 +158,14 @@ const StateGrowth = () => {
 	return (
 		<>
 			<Row gutter={[8, 8]} align="middle" className="chart-options">
+				{/* <Col sm={8} md={4}>
+					<div className="control">Show Peaks <Switch onChange={onShowPeakChange} /></div>
+				</Col> */}
 				<Col sm={8} md={4}>
-					<div className="control">Show Peaks <Switch checked onChange={onShowPeakChange} /></div>
-				</Col>
-				<Col sm={8} md={4}>
-					<Select defaultValue={5} onChange={onTopNChange}>
+					<Select defaultValue={3} onChange={onTopNChange}>
+						<Option value={3}>Top 3 Affected</Option>
 						<Option value={5}>Top 5 Affected</Option>
 						<Option value={10}>Top 10 Affected</Option>
-						<Option value={15}>Top 15 Affected</Option>
 					</Select>
 				</Col>
 				<Col sm={8} md={4}>
