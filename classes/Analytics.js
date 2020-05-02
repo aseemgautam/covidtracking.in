@@ -88,7 +88,9 @@ class Analytics {
 				newCases: idx === 0 ? 0 : curr.confirmed - src[idx - 1].confirmed,
 				newRecover: idx === 0 ? 0 : curr.recovered - src[idx - 1].recovered,
 				newDeaths: idx === 0 ? 0 : curr.deaths - src[idx - 1].deaths,
-				active: curr.confirmed - curr.deaths - curr.recovered
+				active: curr.confirmed - curr.deaths - curr.recovered,
+				newActive: idx === 0 ? 0 : (curr.confirmed - curr.deaths - curr.recovered)
+				- (src[idx - 1].confirmed - src[idx - 1].deaths - src[idx - 1].recovered)
 			};
 		});
 	}

@@ -1,14 +1,72 @@
 /* eslint-disable no-restricted-syntax */
-import { Table, List, Tabs, Typography } from 'antd';
+import { Table } from 'antd';
+import { CaretUpOutlined } from '@ant-design/icons';
+import StateTableCell from './StateTableCell';
 
-const { TabPane } = Tabs;
 const columns = [
-	{ title: '', dataIndex: 'state' },
-	{ title: '', dataIndex: 'newCases', align: 'center' },
-	{ title: 'Confirm', dataIndex: 'confirmed', align: 'center' },
-	{ title: 'Active', dataIndex: 'active', align: 'center' },
-	{ title: 'Deaths', dataIndex: 'deaths', align: 'center' },
-	{ title: 'Cured', dataIndex: 'recovered', align: 'center' }
+	{ title: '', dataIndex: 'state', width: 130, fixed: 'left', ellipsis: true },
+	{ title: '',
+		dataIndex: 'newCases',
+		align: 'left',
+		width: 60,
+		render: text => {
+			return (
+				<div className="red"><CaretUpOutlined />{text}</div>
+			);
+		}
+	},
+	{ title: 'Confirm',
+		dataIndex: 'confirmed',
+		align: 'center',
+		width: 80,
+		sortDirections: ['descend', 'ascend'],
+		sorter: (a, b) => {
+			return a.confirmed - b.confirmed;
+		},
+	},
+	{ title: 'Active',
+		dataIndex: 'active',
+		align: 'center',
+		width: 130,
+		defaultSortOrder: 'descend',
+		sortDirections: ['descend', 'ascend'],
+		sorter: (a, b) => {
+			return a.active - b.active;
+		},
+		render: (text, record) => {
+			const delta = record.newActive <= 0 ? record.newActive : record.newActive;
+			return (
+				<StateTableCell value={text} delta={delta} />
+			);
+		}
+	},
+	{ title: 'Deaths',
+		dataIndex: 'deaths',
+		align: 'center',
+		width: 110,
+		sortDirections: ['descend', 'ascend'],
+		sorter: (a, b) => {
+			return a.deaths - b.deaths;
+		},
+		render: (text, record) => {
+			return (
+				<StateTableCell value={text} delta={record.newDeaths} />
+			);
+		}
+	},
+	{ title: 'Cured',
+		dataIndex: 'recovered',
+		align: 'center',
+		width: 120,
+		sortDirections: ['descend', 'ascend'],
+		sorter: (a, b) => {
+			return a.recovered - b.recovered;
+		},
+		render: (text, record) => {
+			return (
+				<StateTableCell value={text} delta={record.newRecover} isCaretUpRed={false} />
+			);
+		} }
 ];
 const StateWise = ({ casesByStateLatest, districts }) => {
 	// const isMobile = window.innerWidth < 576;
@@ -19,8 +77,8 @@ const StateWise = ({ casesByStateLatest, districts }) => {
 			dataSource={casesByStateLatest}
 			rowKey="state"
 			size="small"
-			// scroll={{ x: 450 }}
-			pagination={{ size: 'default', pageSize: 10 }}
+			scroll={{ x: 'max-content', y: 450 }}
+			pagination={{ size: 'default', pageSize: 35, hideOnSinglePage: true }}
 		/>
 		// <Tabs defaultActiveKey="1" className="state-tabs">
 		// 	<TabPane tab="States" key="1">

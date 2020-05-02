@@ -1,9 +1,18 @@
 @use 'vars';
 .state-table {
-  .ant-table { font-size: 13px;}
-.ant-table-small .ant-table-tbody > tr > td{
-  padding: 6px 6px;
-}
+  // .ant-table { font-size: 13px; }
+.ant-table-small .ant-table-tbody > tr > td {
+    padding: 0px 6px;
+    .cell-wrapper { display: flex; flex-shrink: 0; line-height: 32px;}
+    div.count { flex-grow: 1; text-align: right;}
+    div.delta { width: 60px; font-weight: 300; }
+    .delta { text-align: left; padding-left: 10px; }
+  }
+.ant-table-small .ant-table-tbody > tr > td:nth-child(3),
+.ant-table-small .ant-table-tbody > tr > td:nth-child(4),
+.ant-table-small .ant-table-tbody > tr > td:nth-child(5) {
+  border-right: 1px solid #f0f0f0;
+  }
 }
 
 @media (max-width: 420px) {
