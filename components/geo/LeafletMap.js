@@ -6,6 +6,7 @@ class LeafletMap {
 		this.map = L.map('map', { zoomControl: false }).setView([lat, lng], zoom);
 		this.map.touchZoom.disable();
 		this.map.boxZoom.disable();
+		this.map.doubleClickZoom.disable();
 		this.map.scrollWheelZoom.disable();
 		this.map.dragging.disable();
 		L.tileLayer(
@@ -36,6 +37,10 @@ class LeafletMap {
 		this.getInfo = getInfo;
 		this.geoJsonLayer = L.geoJson(geoJSON, { style: this.style,
 			onEachFeature: this.onEachFeature }).addTo(this.map);
+	}
+
+	resetGeoJsonStyle = () => {
+		this.geoJsonLayer.resetStyle();
 	}
 
 	style = feature => {

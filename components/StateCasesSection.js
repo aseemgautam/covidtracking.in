@@ -20,7 +20,9 @@ function ActiveCasesSection() {
 			</div> */}
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} sm={24} md={12}>
-					<IndiaMap statewiseLatest={Analytics.casesByStateLatest} />
+					<div className="section">
+						<IndiaMap statewiseLatest={Analytics.casesByStateLatest} />
+					</div>
 				</Col>
 				<Col xs={24} sm={24} md={12}>
 					<div className="section">

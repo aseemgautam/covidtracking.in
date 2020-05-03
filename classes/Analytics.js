@@ -22,13 +22,20 @@ class Analytics {
 		this.activeCasesPeak = [];
 		IndiaStates.states.forEach(element => {
 			this.states.push({ name: element.name, code: element.code });
-			const filtered = this.calculateNew(_.filter(AllCasesState, { state: element.name }));
+			const filtered = this.calculateNew(_.filter(AllCasesState, { state: element.name }))
+				.map(value => {
+					return {
+						...value,
+						casesPer1L: value.confirmed > 50 ? this.roundToTwoDigits((value.confirmed * 100000) / element.population) : '-'
+					};
+				});
 			this.activeCasesPeak.push(_.maxBy(filtered, val => { return val.active; }));
 			this.casesByState.set(element.name, filtered);
 			if (filtered && filtered.length > 0) {
 				this.casesByStateLatest.push(_.last(filtered));
 			}
 		});
+
 		this.testingData = [];
 		CovidTests.sort(this.sortJsonByDateDesc).forEach(test => {
 			this.testingData.push(
@@ -80,6 +87,10 @@ class Analytics {
 
 	sortJsonByDateDesc = (a, b) => { return new Date(a.date) - new Date(b.date); }
 
+	roundToTwoDigits = num => {
+		return Math.round((num + Number.EPSILON) * 100) / 100;
+	}
+
 	calculateNew = casesArray => {
 		return casesArray.map((curr, idx, src) => {
 			return {
@@ -90,7 +101,8 @@ class Analytics {
 				newDeaths: idx === 0 ? 0 : curr.deaths - src[idx - 1].deaths,
 				active: curr.confirmed - curr.deaths - curr.recovered,
 				newActive: idx === 0 ? 0 : (curr.confirmed - curr.deaths - curr.recovered)
-				- (src[idx - 1].confirmed - src[idx - 1].deaths - src[idx - 1].recovered)
+				- (src[idx - 1].confirmed - src[idx - 1].deaths - src[idx - 1].recovered),
+				deathRate: curr.deaths > 10 ? this.roundToTwoDigits((curr.deaths * 100) / curr.confirmed) : '-'
 			};
 		});
 	}
@@ -108,14 +120,14 @@ class Analytics {
 	}
 
 	getMapColor = count => {
-		if (count > 4000) return '#b30000';
-		if (count > 3000) return '#e34a33';
-		if (count > 2000) return '#fc8d59';
-		if (count > 1000) return '#fdbb84';
-		if (count > 500) return '#fdd49e';
-		if (count > 200) return '#fef0d9';
-		if (count > 50) return '#addd8e';
-		return '#addd8e';
+		if (count > 6400) return '#b30000';
+		if (count > 3200) return '#e34a33';
+		if (count > 1600) return '#fc8d59';
+		if (count > 800) return '#fdbb84';
+		if (count > 400) return '#fdd49e';
+		if (count > 200) return '#c7e9c0';
+		if (count > 100) return '#74c476';
+		return '#74c476';
 	}
 
 	topNAffected = topn => {

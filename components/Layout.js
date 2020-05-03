@@ -32,7 +32,7 @@ const SiteLayout = props => {
 					<Col xs={1} sm={1} lg={1} xl={2} />
 					<Col className="logo" xs={18} sm={10} lg={6} xl={6}>
 						<img src="/india.png" alt="india" />
-						<a href="/">Coronavirus India Wiki</a>
+						<a href="/">Coronavirus India Tracker</a>
 					</Col>
 					<Col xs={4} sm={0} className="mobile-navigation">
 						<Dropdown overlay={menu}>
@@ -59,7 +59,7 @@ const SiteLayout = props => {
 					<Col xs={0} sm={0} md={1} lg={1} xl={2} />
 				</Row>
 			</Content>
-			<Footer style={{ textAlign: 'center' }}>Covid 19 Wiki</Footer>
+			<Footer style={{ textAlign: 'center' }}>Coronavirus India Tracker</Footer>
 		</Layout>
 	);
 };
