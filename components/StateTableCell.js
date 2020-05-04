@@ -1,14 +1,14 @@
-import { CaretUpOutlined, CaretDownOutlined } from '@ant-design/icons';
+import { CaretUpOutlined, CaretDownOutlined, PauseOutlined } from '@ant-design/icons';
 
-const StateTableCell = ({ value, delta, isCaretUpRed }) => {
-	const isRed = isCaretUpRed === undefined;
+const StateTableCell = ({ value, delta, showCaret }) => {
 	const icon = delta > 0
-		? <CaretUpOutlined className={isRed ? 'red' : 'green'} />
+		? <CaretUpOutlined className="red" />
 		: <CaretDownOutlined className="green" />;
+	const deltaElement = delta === 0 ? <PauseOutlined rotate={90} /> : Math.abs(delta);
 	return (
 		<div className="cell-wrapper">
 			<div className="count">{value}</div>
-			<div className="delta">{delta !== 0 && icon}{delta !== 0 && Math.abs(delta)}</div>
+			<div className="delta">{showCaret && icon }{(!showCaret && delta > 0) && '+'}{deltaElement}</div>
 		</div>
 	);
 };

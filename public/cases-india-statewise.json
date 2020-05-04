@@ -9257,14 +9257,14 @@
     "date": "2020-04-29",
     "state": "Andaman and Nicobar Islands",
     "confirmed": 33,
-    "recovered": 11,
+    "recovered": 15,
     "deaths": 0
   },
   {
     "date": "2020-04-29",
     "state": "Andhra Pradesh",
     "confirmed": 1332,
-    "recovered": 258,
+    "recovered": 287,
     "deaths": 31
   },
   {
@@ -9285,28 +9285,28 @@
     "date": "2020-04-29",
     "state": "Bihar",
     "confirmed": 383,
-    "recovered": 57,
+    "recovered": 64,
     "deaths": 2
   },
   {
     "date": "2020-04-29",
     "state": "Chandigarh",
-    "confirmed": 40,
+    "confirmed": 56,
     "recovered": 17,
     "deaths": 0
   },
   {
     "date": "2020-04-29",
     "state": "Chhattisgarh",
-    "confirmed": 49,
-    "recovered": 32,
+    "confirmed": 38,
+    "recovered": 34,
     "deaths": 0
   },
   {
     "date": "2020-04-29",
     "state": "Delhi",
-    "confirmed": 3233,
-    "recovered": 877,
+    "confirmed": 3314,
+    "recovered": 1078,
     "deaths": 54
   },
   {
@@ -9319,50 +9319,50 @@
   {
     "date": "2020-04-29",
     "state": "Gujarat",
-    "confirmed": 3856,
-    "recovered": 394,
-    "deaths": 162
+    "confirmed": 3774,
+    "recovered": 434,
+    "deaths": 181
   },
   {
     "date": "2020-04-29",
     "state": "Haryana",
-    "confirmed": 299,
-    "recovered": 183,
+    "confirmed": 310,
+    "recovered": 209,
     "deaths": 3
   },
   {
     "date": "2020-04-29",
     "state": "Himachal Pradesh",
     "confirmed": 40,
-    "recovered": 22,
+    "recovered": 25,
     "deaths": 1
   },
   {
     "date": "2020-04-29",
     "state": "Jammu and Kashmir",
-    "confirmed": 562,
-    "recovered": 164,
-    "deaths": 7
+    "confirmed": 565,
+    "recovered": 176,
+    "deaths": 8
   },
   {
     "date": "2020-04-29",
     "state": "Jharkhand",
     "confirmed": 105,
-    "recovered": 17,
+    "recovered": 19,
     "deaths": 3
   },
   {
     "date": "2020-04-29",
     "state": "Karnataka",
     "confirmed": 532,
-    "recovered": 198,
+    "recovered": 215,
     "deaths": 20
   },
   {
     "date": "2020-04-29",
     "state": "Kerala",
-    "confirmed": 492,
-    "recovered": 355,
+    "confirmed": 486,
+    "recovered": 359,
     "deaths": 4
   },
   {
@@ -9374,17 +9374,17 @@
   },
   {
     "date": "2020-04-29",
-    "state": "Madhya Pradesh",
-    "confirmed": 2541,
-    "recovered": 361,
-    "deaths": 113
+    "state": "Madhya Pradesh#",
+    "confirmed": 2561,
+    "recovered": 377,
+    "deaths": "119#"
   },
   {
     "date": "2020-04-29",
     "state": "Maharashtra",
-    "confirmed": 9187,
-    "recovered": 1282,
-    "deaths": 369
+    "confirmed": 9318,
+    "recovered": 1388,
+    "deaths": 400
   },
   {
     "date": "2020-04-29",
@@ -9410,8 +9410,8 @@
   {
     "date": "2020-04-29",
     "state": "Odisha",
-    "confirmed": 118,
-    "recovered": 37,
+    "confirmed": 119,
+    "recovered": 38,
     "deaths": 1
   },
   {
@@ -9424,29 +9424,29 @@
   {
     "date": "2020-04-29",
     "state": "Punjab",
-    "confirmed": 346,
+    "confirmed": 322,
     "recovered": 71,
-    "deaths": 18
+    "deaths": 19
   },
   {
     "date": "2020-04-29",
     "state": "Rajasthan",
-    "confirmed": 2338,
-    "recovered": 669,
-    "deaths": 46
+    "confirmed": 2364,
+    "recovered": 768,
+    "deaths": 51
   },
   {
     "date": "2020-04-29",
     "state": "Tamil Nadu",
-    "confirmed": 2041,
-    "recovered": 1101,
-    "deaths": 24
+    "confirmed": 2058,
+    "recovered": 1168,
+    "deaths": 25
   },
   {
     "date": "2020-04-29",
     "state": "Telangana",
-    "confirmed": 1004,
-    "recovered": 321,
+    "confirmed": 1012,
+    "recovered": 367,
     "deaths": 26
   },
   {
@@ -9459,23 +9459,23 @@
   {
     "date": "2020-04-29",
     "state": "Uttarakhand",
-    "confirmed": 52,
-    "recovered": 33,
+    "confirmed": 54,
+    "recovered": 34,
     "deaths": 0
   },
   {
     "date": "2020-04-29",
     "state": "Uttar Pradesh",
-    "confirmed": 2124,
-    "recovered": 400,
-    "deaths": 31
+    "confirmed": 2115,
+    "recovered": 477,
+    "deaths": 36
   },
   {
     "date": "2020-04-29",
     "state": "West Bengal",
     "confirmed": 725,
-    "recovered": 109,
-    "deaths": 20
+    "recovered": 119,
+    "deaths": 22
   },
   {
     "date": "2020-04-30",
@@ -9924,5 +9924,677 @@
     "confirmed": 795,
     "recovered": 139,
     "deaths": 33
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Andaman and Nicobar Islands",
+    "confirmed": 33,
+    "recovered": 16,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Andhra Pradesh",
+    "confirmed": 1525,
+    "recovered": 441,
+    "deaths": 33
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Arunachal Pradesh",
+    "confirmed": 1,
+    "recovered": 1,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Assam",
+    "confirmed": 43,
+    "recovered": 32,
+    "deaths": 1
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Bihar",
+    "confirmed": 471,
+    "recovered": 98,
+    "deaths": 3
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Chandigarh",
+    "confirmed": 88,
+    "recovered": 17,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Chhattisgarh",
+    "confirmed": 43,
+    "recovered": 36,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Delhi",
+    "confirmed": 3738,
+    "recovered": 1167,
+    "deaths": 61
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Goa",
+    "confirmed": 7,
+    "recovered": 7,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Gujarat",
+    "confirmed": 4721,
+    "recovered": 735,
+    "deaths": 236
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Haryana",
+    "confirmed": 360,
+    "recovered": 227,
+    "deaths": 4
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Himachal Pradesh",
+    "confirmed": 40,
+    "recovered": 30,
+    "deaths": 1
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Jammu and Kashmir",
+    "confirmed": 639,
+    "recovered": 247,
+    "deaths": 8
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Jharkhand",
+    "confirmed": 111,
+    "recovered": 20,
+    "deaths": 3
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Karnataka",
+    "confirmed": 598,
+    "recovered": 255,
+    "deaths": 25
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Kerala",
+    "confirmed": 498,
+    "recovered": 392,
+    "deaths": 4
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Ladakh",
+    "confirmed": 22,
+    "recovered": 17,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Madhya Pradesh",
+    "confirmed": 2719,
+    "recovered": 524,
+    "deaths": 145
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Maharashtra",
+    "confirmed": 11506,
+    "recovered": 1879,
+    "deaths": 485
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Manipur",
+    "confirmed": 2,
+    "recovered": 2,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Meghalaya",
+    "confirmed": 12,
+    "recovered": 0,
+    "deaths": 1
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Mizoram",
+    "confirmed": 1,
+    "recovered": 0,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Odisha",
+    "confirmed": 154,
+    "recovered": 55,
+    "deaths": 1
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Puducherry",
+    "confirmed": 8,
+    "recovered": 5,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Punjab",
+    "confirmed": 772,
+    "recovered": 112,
+    "deaths": 20
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Rajasthan",
+    "confirmed": 2666,
+    "recovered": 1116,
+    "deaths": 62
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Tamil Nadu",
+    "confirmed": 2526,
+    "recovered": 1312,
+    "deaths": 28
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Telangana",
+    "confirmed": 1057,
+    "recovered": 441,
+    "deaths": 26
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Tripura",
+    "confirmed": 2,
+    "recovered": 2,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Uttarakhand",
+    "confirmed": 58,
+    "recovered": 37,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-02",
+    "state": "Uttar Pradesh",
+    "confirmed": 2455,
+    "recovered": 656,
+    "deaths": 43
+  },
+  {
+    "date": "2020-05-02",
+    "state": "West Bengal",
+    "confirmed": 795,
+    "recovered": 139,
+    "deaths": 33
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Andaman and Nicobar Islands",
+    "confirmed": 33,
+    "recovered": 17,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Andhra Pradesh",
+    "confirmed": 1583,
+    "recovered": 488,
+    "deaths": 33
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Arunachal Pradesh",
+    "confirmed": 1,
+    "recovered": 1,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Assam",
+    "confirmed": 43,
+    "recovered": 32,
+    "deaths": 1
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Bihar",
+    "confirmed": 482,
+    "recovered": 117,
+    "deaths": 4
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Chandigarh",
+    "confirmed": 94,
+    "recovered": 19,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Chhattisgarh",
+    "confirmed": 43,
+    "recovered": 36,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Delhi",
+    "confirmed": 4122,
+    "recovered": 1256,
+    "deaths": 64
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Goa",
+    "confirmed": 7,
+    "recovered": 7,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Gujarat",
+    "confirmed": 5055,
+    "recovered": 896,
+    "deaths": 262
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Haryana",
+    "confirmed": 394,
+    "recovered": 227,
+    "deaths": 4
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Himachal Pradesh",
+    "confirmed": 40,
+    "recovered": 33,
+    "deaths": 1
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Jammu and Kashmir",
+    "confirmed": 666,
+    "recovered": 254,
+    "deaths": 8
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Jharkhand",
+    "confirmed": 115,
+    "recovered": 22,
+    "deaths": 3
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Karnataka",
+    "confirmed": 606,
+    "recovered": 282,
+    "deaths": 25
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Kerala",
+    "confirmed": 500,
+    "recovered": 400,
+    "deaths": 4
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Ladakh",
+    "confirmed": 40,
+    "recovered": 17,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Madhya Pradesh",
+    "confirmed": 2846,
+    "recovered": 798,
+    "deaths": 156
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Maharashtra",
+    "confirmed": 12296,
+    "recovered": 2000,
+    "deaths": 521
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Manipur",
+    "confirmed": 2,
+    "recovered": 2,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Meghalaya",
+    "confirmed": 12,
+    "recovered": 0,
+    "deaths": 1
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Mizoram",
+    "confirmed": 1,
+    "recovered": 0,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Odisha",
+    "confirmed": 160,
+    "recovered": 56,
+    "deaths": 1
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Puducherry",
+    "confirmed": 8,
+    "recovered": 5,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Punjab",
+    "confirmed": 772,
+    "recovered": 112,
+    "deaths": 20
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Rajasthan",
+    "confirmed": 2772,
+    "recovered": 1121,
+    "deaths": 65
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Tamil Nadu",
+    "confirmed": 2757,
+    "recovered": 1341,
+    "deaths": 29
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Telangana",
+    "confirmed": 1063,
+    "recovered": 458,
+    "deaths": 28
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Tripura",
+    "confirmed": 4,
+    "recovered": 2,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Uttarakhand",
+    "confirmed": 59,
+    "recovered": 39,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-03",
+    "state": "Uttar Pradesh",
+    "confirmed": 2626,
+    "recovered": 698,
+    "deaths": 43
+  },
+  {
+    "date": "2020-05-03",
+    "state": "West Bengal",
+    "confirmed": 922,
+    "recovered": 151,
+    "deaths": 33
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Andaman and Nicobar Islands",
+    "confirmed": 33,
+    "recovered": 32,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Andhra Pradesh",
+    "confirmed": 1650,
+    "recovered": 524,
+    "deaths": 36
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Arunachal Pradesh",
+    "confirmed": 1,
+    "recovered": 1,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Assam",
+    "confirmed": 43,
+    "recovered": 32,
+    "deaths": 1
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Bihar",
+    "confirmed": 517,
+    "recovered": 125,
+    "deaths": 4
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Chandigarh",
+    "confirmed": 94,
+    "recovered": 19,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Chhattisgarh",
+    "confirmed": 57,
+    "recovered": 36,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Delhi",
+    "confirmed": 4549,
+    "recovered": 1362,
+    "deaths": 64
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Goa",
+    "confirmed": 7,
+    "recovered": 7,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Gujarat",
+    "confirmed": 5428,
+    "recovered": 1042,
+    "deaths": 290
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Haryana",
+    "confirmed": 442,
+    "recovered": 245,
+    "deaths": 5
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Himachal Pradesh",
+    "confirmed": 40,
+    "recovered": 34,
+    "deaths": 1
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Jammu and Kashmir",
+    "confirmed": 701,
+    "recovered": 287,
+    "deaths": 8
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Jharkhand",
+    "confirmed": 115,
+    "recovered": 22,
+    "deaths": 3
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Karnataka",
+    "confirmed": 642,
+    "recovered": 304,
+    "deaths": 26
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Kerala",
+    "confirmed": 500,
+    "recovered": 401,
+    "deaths": 4
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Ladakh",
+    "confirmed": 41,
+    "recovered": 17,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Madhya Pradesh",
+    "confirmed": 2942,
+    "recovered": 798,
+    "deaths": 165
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Maharashtra",
+    "confirmed": 12974,
+    "recovered": 2115,
+    "deaths": 548
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Manipur",
+    "confirmed": 2,
+    "recovered": 2,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Meghalaya",
+    "confirmed": 12,
+    "recovered": 0,
+    "deaths": 1
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Mizoram",
+    "confirmed": 1,
+    "recovered": 0,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Odisha",
+    "confirmed": 163,
+    "recovered": 60,
+    "deaths": 1
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Puducherry",
+    "confirmed": 8,
+    "recovered": 5,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Punjab",
+    "confirmed": 1102,
+    "recovered": 117,
+    "deaths": 21
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Rajasthan",
+    "confirmed": 2886,
+    "recovered": 1356,
+    "deaths": 71
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Tamil Nadu",
+    "confirmed": 3023,
+    "recovered": 1379,
+    "deaths": 30
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Telangana",
+    "confirmed": 1082,
+    "recovered": 490,
+    "deaths": 29
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Tripura",
+    "confirmed": 16,
+    "recovered": 2,
+    "deaths": 0
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Uttarakhand",
+    "confirmed": 60,
+    "recovered": 39,
+    "deaths": 1
+  },
+  {
+    "date": "2020-05-04",
+    "state": "Uttar Pradesh",
+    "confirmed": 2742,
+    "recovered": 758,
+    "deaths": 45
+  },
+  {
+    "date": "2020-05-04",
+    "state": "West Bengal",
+    "confirmed": 963,
+    "recovered": 151,
+    "deaths": 35
   }
 ]

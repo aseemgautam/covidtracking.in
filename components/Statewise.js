@@ -1,17 +1,46 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-restricted-syntax */
-import { Table } from 'antd';
+import { Table, Progress, Typography } from 'antd';
 import { CaretUpOutlined } from '@ant-design/icons';
 import StateTableCell from './StateTableCell';
+import Colors from '../classes/Colors';
 
+const { Text } = Typography;
 const columns = [
 	{ title: '', dataIndex: 'state', width: 130, fixed: 'left', ellipsis: true },
-	{ title: '',
+	{ title: 'New',
 		dataIndex: 'newCases',
 		align: 'left',
 		width: 60,
 		render: text => {
 			return (
-				<div className="red"><CaretUpOutlined />{text}</div>
+				<div>{text === 0 ? '' : `+${text}`}</div>
+			);
+		}
+	},
+	{
+		title: 'Weekly Rate',
+		dataIndex: 'rateOfInc7days',
+		align: 'center',
+		width: 160,
+		render: (text, record) => {
+			const growthRate = Number.parseFloat(text);
+			let color = '#f3f3f3';
+			if (growthRate) {
+				if (growthRate > 100) color = Colors.red6;
+				else if (growthRate > 75) color = Colors.orange6;
+				else if (growthRate > 50) color = Colors.yellow6;
+				else if (growthRate > 25) color = Colors.yellow6;
+				else if (growthRate > 0) {
+					color = Colors.green6;
+					text = 25;
+				} else if (growthRate < 0) { color = Colors.green7; text = 100; }
+			}
+			return (
+				<div className="weekly-rate">
+					<Progress percent={text} showInfo={false} status="normal" steps={4} strokeColor={color} />
+					<Text type="secondary">{`${record.rateOfInc7days}%`}</Text>
+				</div>
 			);
 		}
 	},
@@ -36,7 +65,7 @@ const columns = [
 		render: (text, record) => {
 			const delta = record.newActive <= 0 ? record.newActive : record.newActive;
 			return (
-				<StateTableCell value={text} delta={delta} />
+				<StateTableCell showCaret value={text} delta={delta} />
 			);
 		}
 	},

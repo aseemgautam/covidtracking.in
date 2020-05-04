@@ -23,10 +23,20 @@ class Analytics {
 		IndiaStates.states.forEach(element => {
 			this.states.push({ name: element.name, code: element.code });
 			const filtered = this.calculateNew(_.filter(AllCasesState, { state: element.name }))
-				.map(value => {
+				.map((curr, idx, src) => {
+					let rateOfInc7days = '-';
+					let activeDelta = 0;
+					if (idx > 7 && src[idx - 7].active > 0) {
+						activeDelta = curr.active - src[idx - 7].active;
+						rateOfInc7days = (activeDelta * 100) / src[idx - 7].active;
+					}
 					return {
-						...value,
-						casesPer1L: value.confirmed > 50 ? this.roundToTwoDigits((value.confirmed * 100000) / element.population) : '-'
+						...curr,
+						casesPer1L: curr.confirmed > 50
+							? this.roundToTwoDigits((curr.confirmed * 100000) / element.population) : '-',
+						rateOfInc7days: this.roundToTwoDigits(rateOfInc7days),
+						activeDelta,
+						active7daysAgo: idx > 7 ? src[idx - 7].active : 0
 					};
 				});
 			this.activeCasesPeak.push(_.maxBy(filtered, val => { return val.active; }));
@@ -35,7 +45,6 @@ class Analytics {
 				this.casesByStateLatest.push(_.last(filtered));
 			}
 		});
-
 		this.testingData = [];
 		CovidTests.sort(this.sortJsonByDateDesc).forEach(test => {
 			this.testingData.push(
@@ -83,7 +92,16 @@ class Analytics {
 		this.casesPer1L = new Statistic('Cases Per 1L', casesPer1L, 'Very Low');
 		this.tests = new Statistic('Samples Tested', tests[1].samples,
 			tests[1].samples - tests[0].samples);
+
+		[{ x: 1 }, { x: 2 }, { x: 3 }].reduce((accumulator, currentValue) => {
+			return accumulator + currentValue.x;
+		}, 0);
 	}
+
+	// calculatePercentageIncNDays = arrayN => {
+	// 	if (!Array.isArray(arrayN) || arrayN.length <= 1) return '-';
+
+	// }
 
 	sortJsonByDateDesc = (a, b) => { return new Date(a.date) - new Date(b.date); }
 

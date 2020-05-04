@@ -5,8 +5,14 @@
     padding: 0px 6px;
     .cell-wrapper { display: flex; flex-shrink: 0; line-height: 32px;}
     div.count { flex-grow: 1; text-align: right;}
-    div.delta { width: 60px; font-weight: 300; }
+    div.delta { width: 60px; }
     .delta { text-align: left; padding-left: 10px; }
+    .weekly-rate {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 10px;
+    }
   }
 .ant-table-small .ant-table-tbody > tr > td:nth-child(3),
 .ant-table-small .ant-table-tbody > tr > td:nth-child(4),
