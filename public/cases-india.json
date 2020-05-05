@@ -658,5 +658,17 @@
     "newRecover": 875,
     "newActive": 1615,
     "percentIncActive": 5.75
+  },
+  {
+    "date": "2020-05-05",
+    "confirmed": 46433,
+    "deaths": 1568,
+    "recovered": 12727,
+    "active": 32138,
+    "newCases": 3597,
+    "newDeaths": 179,
+    "newRecover": 965,
+    "newActive": 2453,
+    "percentIncActive": 8.26
   }
 ]
