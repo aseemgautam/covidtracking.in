@@ -13,8 +13,24 @@ const IndiaPopulation = 1377122402;
 
 class Analytics {
 	constructor() {
-		this.cases = CasesIndia.sort(this.sortJsonByDateDesc);
-
+		this.cases = CasesIndia.sort(this.sortJsonByDateDesc)
+			.map((curr, idx, src) => {
+				let rateOfInc7days = '-';
+				let activeDelta = 0;
+				if (idx > 7 && src[idx - 7].active > 0) {
+					activeDelta = curr.active - src[idx - 7].active;
+					rateOfInc7days = (activeDelta * 100) / src[idx - 7].active;
+				}
+				return {
+					...curr,
+					casesPer1L: curr.confirmed > 50
+						? this.roundToTwoDigits((curr.confirmed * 100000) / IndiaPopulation) : '-',
+					rateOfInc7days: this.roundToTwoDigits(rateOfInc7days),
+					activeDelta,
+					active7daysAgo: idx > 7 ? src[idx - 7].active : 0
+				};
+			});
+		this.latest = _.last(this.cases);
 		// STATE
 		this.states = [];
 		this.casesByState = new Map();
@@ -78,6 +94,7 @@ class Analytics {
 		const tests = CovidTests.sort(this.sortJsonByDateDesc).slice(-2);
 		const fatalityRate = (last2Days[1].deaths / last2Days[1].confirmed) * 100;
 		const casesPer1L = (last2Days[1].confirmed / IndiaPopulation) * 100000;
+		this.deathRate = fatalityRate;
 		this.confirmed = new Statistic('Confirmed', last2Days[1].confirmed,
 			last2Days[1].newCases);
 		this.active = new Statistic('Active', last2Days[1].active,
@@ -87,7 +104,7 @@ class Analytics {
 		this.recovered = new Statistic('Recovered', last2Days[1].recovered,
 			last2Days[1].recovered - last2Days[0].recovered);
 		this.fatalityRate = new Statistic('Death Rate', `${fatalityRate.toFixed(2)}%`);
-		this.weeklyTrend = new Statistic('7 Days Trend',
+		this.weeklyTrend = new Statistic('ROG (7 days)',
 			trendValue, GetTrend(trendValue), HelpText.weeklyTrend);
 		this.casesPer1L = new Statistic('Cases Per 1L', casesPer1L, 'Very Low');
 		this.tests = new Statistic('Samples Tested', tests[1].samples,

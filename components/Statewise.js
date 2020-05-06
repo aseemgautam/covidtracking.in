@@ -1,9 +1,9 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-restricted-syntax */
 import { Table, Progress, Typography } from 'antd';
-import { CaretUpOutlined } from '@ant-design/icons';
 import StateTableCell from './StateTableCell';
 import Colors from '../classes/Colors';
+import Analytics from '../classes/Analytics';
 
 const { Text } = Typography;
 const columns = [
@@ -29,9 +29,11 @@ const columns = [
 			if (growthRate) {
 				if (growthRate > 100) color = Colors.red6;
 				else if (growthRate > 75) color = Colors.orange6;
-				else if (growthRate > 50) color = Colors.yellow6;
-				else if (growthRate > 25) color = Colors.yellow6;
-				else if (growthRate > 0) {
+				else if (growthRate > 50) color = Colors.gold6;
+				else if (growthRate > 25) {
+					color = Colors.yellow6;
+					text = 51;
+				} else if (growthRate > 0) {
 					color = Colors.green6;
 					text = 25;
 				} else if (growthRate < 0) { color = Colors.green7; text = 100; }
@@ -63,10 +65,14 @@ const columns = [
 			return a.active - b.active;
 		},
 		render: (text, record) => {
-			const delta = record.newActive <= 0 ? record.newActive : record.newActive;
-			return (
-				<StateTableCell showCaret value={text} delta={delta} />
-			);
+			const delta = record.newActive; // <= 0 ? record.newActive : record.newActive;
+			const backgroundColor = delta < 0 ? Colors.green2 : '';
+			return {
+				props: {
+					style: { backgroundColor }
+				},
+				children: <StateTableCell showCaret value={text} delta={delta} />
+			};
 		}
 	},
 	{ title: 'Deaths',
@@ -78,9 +84,9 @@ const columns = [
 			return a.deaths - b.deaths;
 		},
 		render: (text, record) => {
-			return (
-				<StateTableCell value={text} delta={record.newDeaths} />
-			);
+			return {
+				children: <StateTableCell statistic="deaths" value={text} delta={record.newDeaths} />
+			};
 		}
 	},
 	{ title: 'Cured',
@@ -100,7 +106,7 @@ const columns = [
 	{
 		title: 'Cases /1L',
 		dataIndex: 'casesPer1L',
-		align: 'right',
+		align: 'center',
 		width: 110,
 		sortDirections: ['descend', 'ascend'],
 		sorter: (a, b) => {
@@ -110,11 +116,21 @@ const columns = [
 	{
 		title: 'Death Rate',
 		dataIndex: 'deathRate',
-		align: 'right',
+		align: 'center',
 		width: 110,
 		sortDirections: ['descend', 'ascend'],
 		sorter: (a, b) => {
 			return a.deathRate - b.deathRate;
+		},
+		render: (text, record) => {
+			let className = '';
+			if (record.deathRate > 1.5 * Analytics.deathRate) className = 'red bold';
+			if (record.deathRate < 0.5 * Analytics.deathRate) className = 'green bold';
+			return (
+				<div className={className}>
+					{text}
+				</div>
+			);
 		}
 	}
 ];

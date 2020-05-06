@@ -1,15 +1,20 @@
 @use 'vars';
 
 .covid-statistic {
-  padding: 15px 0px !important;
+  padding: 10px 0px !important;
   border: vars.$border;
   border-radius: vars.$border-radius;
   background-color: #fff;
+  .ant-card-body { 
+    padding: 0px;
+  }
+  .weekly-rate > .ant-progress { padding-right: 16px;}
 }
 
 .covid-statistic .ant-statistic-content,
 .covid-statistic .ant-statistic-title
 {
+  font-size: 18px;
   display: flex;
   align-items: baseline;
   justify-content: center;
@@ -17,7 +22,7 @@
 }
 
 .covid-statistic .ant-statistic-title {
-  align-items: center;
+  align-items: center; font-size: 13px;
 }
 
 .covid-statistic .ant-statistic-title .anticon {
@@ -35,10 +40,4 @@
 }
 .statistic-recovered {
   border-color: vars.$green;
-}
-@media (max-width: 420px) {
-  .covid-statistic .ant-statistic-title { font-size: 13px;}
-  .ant-statistic-content {
-    font-size: 18px !important;
-  }
 }

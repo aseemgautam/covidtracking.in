@@ -8,7 +8,9 @@ const StateTableCell = ({ value, delta, showCaret }) => {
 	return (
 		<div className="cell-wrapper">
 			<div className="count">{value}</div>
-			<div className="delta">{showCaret && icon }{(!showCaret && delta > 0) && '+'}{deltaElement}</div>
+			<div className="delta">
+				{(delta !== 0 && showCaret) && icon }{(!showCaret && delta > 0) && '+'}{deltaElement}
+			</div>
 		</div>
 	);
 };
