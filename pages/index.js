@@ -1,16 +1,14 @@
+/* eslint-disable max-len */
 /* eslint-disable no-restricted-syntax */
 import Head from 'next/head';
 import Statistics from '../components/Statistics';
-import FullWidthRow from '../components/layout/FullWidthRow';
-import ActiveCasesSection from '../components/ActiveCasesSection';
-import NewCasesSection from '../components/NewCasesSection';
 import StateCasesSection from '../components/StateCasesSection';
 
 function Index() {
 	return (
 		<>
 			<Head>
-				<title>Understandable insights on Covid-19 in India</title>
+				<title>Covid-19 Insights & Analytics - India</title>
 				<link rel="shortcut icon" href="/favicon.ico" />
 				<meta property="og:title" content="Understandable insights on covid-19 in India" key="title" />
 				<meta property="og:description" content="Data driven insights & reports on spread of covid-19 in India." key="description" />
@@ -21,12 +19,6 @@ function Index() {
 			</Head>
 			<Statistics />
 			<StateCasesSection />
-			{/* <FullWidthRow>
-				<ActiveCasesSection />
-			</FullWidthRow>
-			<FullWidthRow>
-				<NewCasesSection />
-			</FullWidthRow> */}
 		</>
 	);
 }

@@ -2,7 +2,7 @@ const StateGroup = ({ groupName, states }) => {
 	const links = states.map(state => {
 		const stateLink = state.replace(/ /g, '-').toLowerCase();
 		return (
-			<a key={stateLink} href={`/coronavirus-test-india/${stateLink}`}>{state}</a>
+			<a key={stateLink} href={`/coronavirus-testing-labs/${stateLink}`}>{state}</a>
 		);
 	});
 	return (

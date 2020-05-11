@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Row, Col, Breadcrumb } from 'antd';
 import Head from 'next/head';
 import LabCard from '../../components/LabCard';
@@ -16,9 +17,11 @@ const Labs = ({ labs, state }) => {
 				<title>List of certified coronavirus (Covid-19) testing labs in {state}</title>
 			</Head>
 			<Breadcrumb>
-				<Breadcrumb.Item><a href="/">Home</a></Breadcrumb.Item>
+				<Breadcrumb.Item><Link href="/"><a>Home</a></Link></Breadcrumb.Item>
 				<Breadcrumb.Item>
-					<a href="/coronavirus-test-india">Coronavirus Testing Labs</a>
+					<Link href="/coronavirus-testing-labs">
+						<a>Coronavirus Testing Labs</a>
+					</Link>
 				</Breadcrumb.Item>
 				<Breadcrumb.Item className="capitalize">{state}</Breadcrumb.Item>
 			</Breadcrumb>

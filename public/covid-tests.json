@@ -358,5 +358,53 @@
     "positive": 46433,
     "newPositive": 3900,
     "percentPositive": 4.603779821
+  },
+  {
+    "date": "2020-05-06",
+    "samples": 1276781,
+    "newSamples": 84835,
+    "positive": 49391,
+    "newPositive": 2958,
+    "percentPositive": 3.486768433
+  },
+  {
+    "date": "2020-05-07",
+    "samples": 1357413,
+    "newSamples": 80632,
+    "positive": 52952,
+    "newPositive": 3561,
+    "percentPositive": 4.41636075
+  },
+  {
+    "date": "2020-05-08",
+    "samples": 1437788,
+    "newSamples": 80375,
+    "positive": 56342,
+    "newPositive": 3390,
+    "percentPositive": 4.217729393
+  },
+  {
+    "date": "2020-05-09",
+    "samples": 1523213,
+    "newSamples": 85425,
+    "positive": 59662,
+    "newPositive": 3320,
+    "percentPositive": 3.886450102
+  },
+  {
+    "date": "2020-05-10",
+    "samples": 1609037,
+    "newSamples": 85824,
+    "positive": 62939,
+    "newPositive": 3277,
+    "percentPositive": 3.818279269
+  },
+  {
+    "date": "2020-05-11",
+    "samples": 1673688,
+    "newSamples": 64651,
+    "positive": 67152,
+    "newPositive": 4213,
+    "percentPositive": 6.5165272
   }
 ]

@@ -670,5 +670,77 @@
     "newRecover": 965,
     "newActive": 2453,
     "percentIncActive": 8.26
+  },
+  {
+    "date": "2020-05-06",
+    "confirmed": 49391,
+    "deaths": 1694,
+    "recovered": 14183,
+    "active": 33514,
+    "newCases": 2958,
+    "newDeaths": 126,
+    "newRecover": 1456,
+    "newActive": 1376,
+    "percentIncActive": 4.28
+  },
+  {
+    "date": "2020-05-07",
+    "confirmed": 52952,
+    "deaths": 1783,
+    "recovered": 15267,
+    "active": 35902,
+    "newCases": 3561,
+    "newDeaths": 89,
+    "newRecover": 1084,
+    "newActive": 2388,
+    "percentIncActive": 7.13
+  },
+  {
+    "date": "2020-05-08",
+    "confirmed": 56342,
+    "deaths": 1886,
+    "recovered": 16540,
+    "active": 37916,
+    "newCases": 3390,
+    "newDeaths": 103,
+    "newRecover": 1273,
+    "newActive": 2014,
+    "percentIncActive": 5.61
+  },
+  {
+    "date": "2020-05-09",
+    "confirmed": 59662,
+    "deaths": 1981,
+    "recovered": 17847,
+    "active": 39834,
+    "newCases": 3320,
+    "newDeaths": 95,
+    "newRecover": 1307,
+    "newActive": 1918,
+    "percentIncActive": 5.06
+  },
+  {
+    "date": "2020-05-10",
+    "confirmed": 62939,
+    "deaths": 2109,
+    "recovered": 19358,
+    "active": 41472,
+    "newCases": 3277,
+    "newDeaths": 128,
+    "newRecover": 1511,
+    "newActive": 1638,
+    "percentIncActive": 4.11
+  },
+  {
+    "date": "2020-05-11",
+    "confirmed": 67152,
+    "deaths": 2206,
+    "recovered": 20917,
+    "active": 44029,
+    "newCases": 4213,
+    "newDeaths": 97,
+    "newRecover": 1559,
+    "newActive": 2557,
+    "percentIncActive": 6.17
   }
 ]

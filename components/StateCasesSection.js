@@ -1,29 +1,16 @@
-import { Typography, Row, Col } from 'antd';
-import dynamic from 'next/dynamic';
-import { BarChartOutlined } from '@ant-design/icons';
+import { Row, Col } from 'antd';
 import Statewise from './Statewise';
 import Analytics from '../classes/Analytics';
-
-// const { Text } = Typography;
-const IndiaMap = dynamic(() => { return import('./geo/IndiaMap'); }, { ssr: false });
 
 function ActiveCasesSection() {
 	return (
 		<>
-			{/* <div className="section-head">
-				<h4><BarChartOutlined /> STATE & DISTRICT CASES </h4>
-			</div> */}
-			{/* <div className="section-content">
-				<Text type="secondary">
-					Daily growth of covid-19 cases for the selected period.
-				</Text>
-			</div> */}
+			<Row>
+				<Col flex={24} className="page-section-title">
+					<h4>STATE STATISTICS</h4>
+				</Col>
+			</Row>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
-				{/* <Col xs={24} sm={24} md={24}>
-					<div className="section">
-						<IndiaMap statewiseLatest={Analytics.casesByStateLatest} />
-					</div>
-				</Col> */}
 				<Col xs={24} sm={24} md={24}>
 					<div className="section">
 						<Statewise

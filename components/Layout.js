@@ -1,12 +1,13 @@
+import Link from 'next/link';
 import { Layout, Space, Row, Col, Menu, Dropdown, Button } from 'antd';
 import { MenuOutlined, PhoneOutlined, BarChartOutlined,
 	ScheduleOutlined, RiseOutlined, TwitterOutlined } from '@ant-design/icons';
 
 const { Header, Content, Footer } = Layout;
-const tracker = <a href="/"><RiseOutlined /> Tracker</a>;
-const analytics = <a href="/"><BarChartOutlined /> Analytics</a>;
-const helpline = <a href="/helpline"><PhoneOutlined /> Helpline</a>;
-const testing = <a href="/coronavirus-test-india"><ScheduleOutlined /> Testing</a>;
+const tracker = <Link href="/"><a><RiseOutlined /> Tracker</a></Link>;
+const analytics = <Link href="/analytics"><a><BarChartOutlined /> Analytics</a></Link>;
+const helpline = <Link href="/helpline"><a><PhoneOutlined /> Helpline</a></Link>;
+const testing = <Link href="/coronavirus-testing-labs"><a><ScheduleOutlined /> Testing</a></Link>;
 const menu = (
 	<Menu>
 		<Menu.Item>

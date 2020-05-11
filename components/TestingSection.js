@@ -1,24 +1,24 @@
 import { Typography } from 'antd';
 import { BarChartOutlined } from '@ant-design/icons';
-import NewCasesChart from './charts/NewCasesChart';
+import TetsingChart from './charts/Testing';
 import Analytics from '../classes/Analytics';
 
 const { Text } = Typography;
 
-const newCasesSection = () => {
+function testingSection() {
 	return (
 		<>
 			<div className="section-head">
-				<h4><BarChartOutlined /> NEW CASES</h4>
+				<h4><BarChartOutlined /> Covid-19 Testing</h4>
 			</div>
 			<div className="section-content">
 				<Text type="secondary">
-					Daily growth of covid-19 cases.
+					Testing & rate of infections daily.
 				</Text>
 			</div>
-			<NewCasesChart cases={Analytics.cases} />
+			<TetsingChart cases={Analytics.cases} />
 		</>
 	);
 }
 
-export default newCasesSection;
+export default testingSection;

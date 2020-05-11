@@ -1,12 +1,13 @@
 import { Row, Col, Breadcrumb } from 'antd';
+import _ from 'lodash';
 import StateGroup from '../components/StateGroup';
-import StateJSON from '../public/india-states.json';
 
-const coronavirusTest = () => {
-	const stateGroups = StateJSON.states.reduce((acc, state) => {
-		const group = state.name[0];
-		if (!acc[group]) acc[group] = { group, children: [state.name] };
-		else acc[group].children.push(state.name);
+const coronavirusTest = props => {
+	const { states } = props;
+	const stateGroups = states.reduce((acc, state) => {
+		const group = state[0];
+		if (!acc[group]) acc[group] = { group, children: [state] };
+		else acc[group].children.push(state);
 		return acc;
 	}, {});
 	const linkGroups = Object.values(stateGroups).map(group => {
@@ -31,18 +32,18 @@ const coronavirusTest = () => {
 	);
 };
 
-// export async function getStaticProps() {
-// 	const stateGroups = StateJSON.states.reduce((acc, state) => {
-// 		const group = state.name[0];
-// 		if (!acc[group]) acc[group] = { group, children: [state.name] };
-// 		else acc[group].children.push(state.name);
-// 		return acc;
-// 	}, {});
-// 	return {
-// 		props: {
-// 			groups: Object.values(stateGroups),
-// 		},
-// 	};
-// }
+export async function getStaticProps() {
+	const labsJson = await import('../public/labs.json');
+	// eslint-disable-next-line consistent-return
+	const states = _.uniq(_.map(labsJson.items, item => {
+		// eslint-disable-next-line no-restricted-globals
+		if (item.state && item.state.trim() && isNaN(item.state.trim())) {
+			return item.state.trim().replace(',', '');
+		}
+	}));
+	return {
+		props: { states: _.compact(states) }, // will be passed to the page component as props
+	};
+}
 
 export default coronavirusTest;

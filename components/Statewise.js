@@ -4,6 +4,7 @@ import { Table, Progress, Typography } from 'antd';
 import StateTableCell from './StateTableCell';
 import Colors from '../classes/Colors';
 import Analytics from '../classes/Analytics';
+import RateOfGrowthHelp from './RateOfGrowthHelp';
 
 const { Text } = Typography;
 const columns = [
@@ -19,28 +20,22 @@ const columns = [
 		}
 	},
 	{
-		title: 'Weekly Rate',
+		title: <RateOfGrowthHelp days={7} />,
 		dataIndex: 'rateOfInc7days',
 		align: 'center',
 		width: 160,
 		render: (text, record) => {
 			const growthRate = Number.parseFloat(text);
-			let color = '#f3f3f3';
-			if (growthRate) {
-				if (growthRate > 100) color = Colors.red6;
-				else if (growthRate > 75) color = Colors.orange6;
-				else if (growthRate > 50) color = Colors.gold6;
-				else if (growthRate > 25) {
-					color = Colors.yellow6;
-					text = 51;
-				} else if (growthRate > 0) {
-					color = Colors.green6;
-					text = 25;
-				} else if (growthRate < 0) { color = Colors.green7; text = 100; }
-			}
+			const progressSettings = Analytics.getProgressColorAndPercent(growthRate);
 			return (
 				<div className="weekly-rate">
-					<Progress percent={text} showInfo={false} status="normal" steps={4} strokeColor={color} />
+					<Progress
+						percent={progressSettings.percent}
+						showInfo={false}
+						status="normal"
+						steps={4}
+						strokeColor={progressSettings.color}
+					/>
 					<Text type="secondary">{`${record.rateOfInc7days}%`}</Text>
 				</div>
 			);

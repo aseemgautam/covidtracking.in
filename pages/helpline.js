@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Card, List, Typography, Breadcrumb } from 'antd';
 import HelpJson from '../public/helpline.json';
 
@@ -21,7 +22,7 @@ const helpline = () => {
 	return (
 		<>
 			<Breadcrumb>
-				<Breadcrumb.Item><a href="/">Home</a></Breadcrumb.Item>
+				<Breadcrumb.Item><Link href="/"><a>Home</a></Link></Breadcrumb.Item>
 				<Breadcrumb.Item>Coronavirus Helpline</Breadcrumb.Item>
 			</Breadcrumb>
 			<h1>CORONAVIRUS HELPLINE - NATIONAL</h1>

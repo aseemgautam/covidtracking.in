@@ -8,6 +8,7 @@ import CasesDistricts from '../public/cases-districts.json';
 import Statistic from './Statistic';
 import HelpText from './HelpText';
 import GetTrend from './Trend';
+import Colors from './Colors';
 
 const IndiaPopulation = 1377122402;
 
@@ -205,8 +206,25 @@ class Analytics {
 			}, {}
 		);
 	}
-}
 
+	getProgressColorAndPercent = growthRate => {
+		let color = '#f3f3f3';
+		let percent = growthRate;
+		if (growthRate) {
+			if (growthRate > 100) color = Colors.red6;
+			else if (growthRate > 75) color = Colors.orange6;
+			else if (growthRate > 50) color = Colors.gold6;
+			else if (growthRate > 25) {
+				color = Colors.yellow6;
+				percent = 51;
+			} else if (growthRate > 0) {
+				color = Colors.green6;
+				percent = 25;
+			} else if (growthRate < 0) { color = Colors.green7; percent = 100; }
+		}
+		return { color, percent };
+	}
+}
 const analytics = new Analytics();
 Object.freeze(analytics);
 export default analytics;
