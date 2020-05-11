@@ -10,6 +10,7 @@ export default class extends Document {
 			// eslint-disable-next-line jsx-a11y/html-has-lang
 			<html>
 				<Head>
+					<link rel="shortcut icon" href="/favicon.ico" />
 					{/* Global Site Tag (gtag.js) - Google Analytics */}
 					<script
 						async
