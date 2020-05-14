@@ -59,8 +59,8 @@ h2 {
 .mobile-navigation {
   text-align: right;
   font-size: 22px;
-  .ant-icon {
-    padding: 10px 0px 10px 10px;
+  .anticon {
+    padding: 16px 0px 16px 16px;
   }
 }
 .logo {
@@ -100,10 +100,22 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .ant-btn { margin-bottom: 16px;}
+    .btn-twitter {
+      line-height: 24px;
+      border: vars.$border;
+      border-radius: vars.$border-radius;
+      padding: 4px 8px;
+      margin-bottom: 8px;
+    }
   }
 }
-
+#loading {
+  position: fixed;
+  top: 75px;
+  right: 32px;
+  font-size: 24px;
+  display: none;
+ }
 .national-radio {
   margin: 15px 0px;
 }

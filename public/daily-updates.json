@@ -8,5 +8,26 @@
     "down": ["High number of cases in Tamil Nadu - 716.",
     "6 new cases in Himachal Pradesh. 50 new cases over the past week. Unusal increase, next few days are important.",
     "Telangana - 51 new cases, high cases 2nd day in a row. Cause of concern for a state with 432 active cases & consistant negative rate of growth."]  
+  },
+  {
+    "date": "2020-05-14",
+    "update": [
+      "New Cases - 3722. Deaths - 134. Recovered - 1849.",
+      "92,791 covid-19 test's done, out of which 4.01% (3722) were positive."
+    ],
+    "up": [
+      "Only 10 new cases in Punjab. Weekly rate of growth (ROG, active cases) slows down to 24.96%.",
+      "Andhra Pradesh maintains its Negative growth in Active cases.",
+      "No cases in Chhattisgarh - 8th day in a row. State is almost covid-19 free."
+    ],
+    "warn" : [
+      "101 new cases in Odisha. Almost 25% increase in a single day. Total cases now 538 (437 yesterday).",
+      "15 new cases in Assam. The state was covid-19 free for a while."
+    ],
+    "down": [
+      "509 new cases in Tamil Nadu. Active cases have more than doubled in the last 7 days.",
+      "1405 new cases in Mahrashtra, up from 1026 yesterday.",
+      "109 new cases in Bihar. State had only 264 active cases on 10th May, gone upto 545 today. High ROG. "
+    ]
   }
 ]

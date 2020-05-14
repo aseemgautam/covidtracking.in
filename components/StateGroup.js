@@ -4,7 +4,11 @@ const StateGroup = ({ groupName, states }) => {
 	const links = states.map(state => {
 		const stateLink = state.replace(/ /g, '-').toLowerCase();
 		return (
-			<Link key={stateLink} href={`/coronavirus-testing-labs/${stateLink}`}>
+			<Link
+				key={stateLink}
+				href="/coronavirus-testing-labs/[id]"
+				as={`/coronavirus-testing-labs/${stateLink}`}
+			>
 				<a>{state}</a>
 			</Link>
 		);

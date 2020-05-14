@@ -75,7 +75,15 @@ const SiteLayout = props => {
 						</p>
 					</Col>
 					<Col className="footer-twitter" xs={24} sm={8} md={8} lg={6} xl={6}>
-						<Button icon={<TwitterOutlined />}>Follow on twitter</Button>
+						<div className="btn-twitter">
+							<a
+								rel="noopener noreferrer"
+								target="_blank"
+								href="https://twitter.com/cvd19in"
+							>
+								<TwitterOutlined /> Follow on twitter
+							</a>
+						</div>
 						<div>Developed By
 							<a
 								href="https://www.linkedin.com/in/aseemgautam/"

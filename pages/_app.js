@@ -1,6 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import App from 'next/app';
+import Router from 'next/router';
+import { LoadingOutlined } from '@ant-design/icons';
 import SiteLayout from '../components/Layout';
 import 'antd/es/grid/style/index.css';
 import 'antd/es/card/style/index.css';
@@ -35,12 +37,23 @@ import '../css/helpline.scss';
 import '../css/charts.scss';
 import '../css/home.scss';
 
+Router.events.on('routeChangeStart', () => {
+	document.getElementById('loading').style.display = 'block';
+});
+Router.events.on('routeChangeComplete', () => {
+	document.getElementById('loading').style.display = 'none';
+});
+Router.events.on('routeChangeError', () => {
+	document.getElementById('loading').style.display = 'none';
+});
+
 class Covid19Wiki extends App {
 	render() {
 		const { Component, pageProps } = this.props;
 
 		return (
 			<SiteLayout>
+				<div id="loading"><LoadingOutlined /></div>
 				<Component {...pageProps} />
 			</SiteLayout>
 		);

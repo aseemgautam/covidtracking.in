@@ -89,12 +89,15 @@ class Analytics {
 				};
 			});
 		// eslint-disable-next-line prefer-destructuring
-		this.todaysUpdate = [];
-		const todaysUpdate = DailyUpdates.sort(this.sortJsonByDateDesc)[0];
+		const todaysUpdate = _.last(DailyUpdates.sort(this.sortJsonByDateDesc));
+		this.todaysUpdate = {
+			date: todaysUpdate.date,
+			updates: []
+		};
 		Object.keys(todaysUpdate).forEach(key => {
 			if (key !== 'date') {
 				todaysUpdate[key].forEach(value => {
-					this.todaysUpdate.push({ type: key, text: value });
+					this.todaysUpdate.updates.push({ type: key, text: value });
 				});
 			}
 		});

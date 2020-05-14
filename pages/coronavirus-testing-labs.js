@@ -42,7 +42,7 @@ export async function getStaticProps() {
 		}
 	}));
 	return {
-		props: { states: _.compact(states) }, // will be passed to the page component as props
+		props: { states: _.compact(states).sort() }, // will be passed to the page component as props
 	};
 }
 
