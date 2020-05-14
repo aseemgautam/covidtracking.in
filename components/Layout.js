@@ -33,7 +33,7 @@ const SiteLayout = props => {
 					<Col xs={1} sm={1} lg={1} xl={2} />
 					<Col className="logo" xs={18} sm={16} md={9} lg={6} xl={6}>
 						<img src="/india.png" alt="india" />
-						<a href="/">Coronavirus India Analytics</a>
+						<a href="/">Covid-19 Insights</a>
 					</Col>
 					<Col xs={4} sm={6} md={0} className="mobile-navigation">
 						<Dropdown overlay={menu}>

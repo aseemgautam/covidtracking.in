@@ -5,6 +5,7 @@ import CasesIndia from '../public/cases-india.json';
 import AllCasesState from '../public/cases-india-statewise.json';
 import IndiaStates from '../public/india-states.json';
 import CasesDistricts from '../public/cases-districts.json';
+import DailyUpdates from '../public/daily-updates.json';
 import Statistic from './Statistic';
 import HelpText from './HelpText';
 import GetTrend from './Trend';
@@ -87,7 +88,16 @@ class Analytics {
 					active: val.active
 				};
 			});
-
+		// eslint-disable-next-line prefer-destructuring
+		this.todaysUpdate = [];
+		const todaysUpdate = DailyUpdates.sort(this.sortJsonByDateDesc)[0];
+		Object.keys(todaysUpdate).forEach(key => {
+			if (key !== 'date') {
+				todaysUpdate[key].forEach(value => {
+					this.todaysUpdate.push({ type: key, text: value });
+				});
+			}
+		});
 		// TRENDS
 		const last2Days = this.cases.slice(-2);
 		const trendValue = this.calculateTrend(7);
@@ -115,11 +125,6 @@ class Analytics {
 			return accumulator + currentValue.x;
 		}, 0);
 	}
-
-	// calculatePercentageIncNDays = arrayN => {
-	// 	if (!Array.isArray(arrayN) || arrayN.length <= 1) return '-';
-
-	// }
 
 	sortJsonByDateDesc = (a, b) => { return new Date(a.date) - new Date(b.date); }
 

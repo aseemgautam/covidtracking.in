@@ -7,12 +7,6 @@ const Statistics = () => {
 	const progressSettings = Analytics.getProgressColorAndPercent(Analytics.latest.rateOfInc7days);
 	return (
 		<>
-			<Row>
-				<Col flex={24} className="page-section-title">
-					<h4>NATIONAL STATISTICS</h4>
-					<div className="last-updated">Updated Daily at 9 AM</div>
-				</Col>
-			</Row>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={12} sm={8} lg={6}>
 					{CovidStatisticFactory(Analytics.confirmed, 'statistic-confirmed', 'red', 0)}

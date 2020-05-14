@@ -58,7 +58,6 @@ const RateOfGrowthText = ({ className }) => {
 				closable
 				onClose={onClose}
 				visible={visible}
-				forceRender
 				width={360}
 			>
 				<p>Overall % increase of active cases in the last 7 days.

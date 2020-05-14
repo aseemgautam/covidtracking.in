@@ -10,10 +10,9 @@ const NewCasesChart = ({ cases }) => {
 		}
 		const chartData = [];
 		const isMobile = window.innerWidth < 576;
-		const padding = isMobile ? 10 : 15;
 		let peak = 0;
 
-		cases.slice(isMobile ? -14 : -21).forEach(d => {
+		cases.slice(isMobile ? -14 : -30).forEach(d => {
 			if (d.newCases > peak) peak = d.newCases;
 			chartData.push(
 				{ date: d.date, type: 'New Cases', value: d.newCases },
@@ -26,7 +25,7 @@ const NewCasesChart = ({ cases }) => {
 			container: container.current,
 			autoFit: true,
 			height: 400,
-			padding: [20, padding, 40, padding]
+			padding: [20, isMobile ? 15 : 20, 40, 15]
 		});
 		chart.axis('date', {
 			tickLine: null,
@@ -64,6 +63,7 @@ const NewCasesChart = ({ cases }) => {
 		chart
 			.interval()
 			.position(['date', 'value'])
+			.size(isMobile ? 18 : 23)
 			.color('type', ['#ffc53d', '#d7191c', '#1a9641', '#1890ff'])
 			// .label('value')
 			.label('value', value => {

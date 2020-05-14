@@ -1,24 +1,51 @@
-/* eslint-disable max-len */
 /* eslint-disable no-restricted-syntax */
 import Head from 'next/head';
+import { Row, Col } from 'antd';
 import Statistics from '../components/Statistics';
-import StateCasesSection from '../components/StateCasesSection';
+import StateTable from '../components/StateTable';
+import DailyUpdate from '../components/DailyUpdate';
+import Analytics from '../classes/Analytics';
 
 function Index() {
 	return (
 		<>
 			<Head>
 				<title>Covid-19 Insights & Analytics - India</title>
-				<link rel="shortcut icon" href="/favicon.ico" />
-				<meta property="og:title" content="Understandable insights on covid-19 in India" key="title" />
-				<meta property="og:description" content="Data driven insights & reports on spread of covid-19 in India." key="description" />
-				<meta property="og:type" content="website" />
-				<meta property="og:url" content="https://covid19wiki.now.sh/" />
-				<meta property="og:image" content="/cvd-og.png" />
-				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			</Head>
+			<Row>
+				<Col flex={24} className="page-section-title">
+					<h4>TODAY&apos;s INSIGHTS </h4>
+					<div className="last-updated">Updated Daily at 9 AM</div>
+				</Col>
+			</Row>
+			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
+				<Col xs={24} sm={24} md={24}>
+					<div className="section">
+						<DailyUpdate updates={Analytics.todaysUpdate} />
+					</div>
+				</Col>
+			</Row>
+			<Row>
+				<Col flex={24} className="page-section-title">
+					<h4>NATIONAL STATISTICS</h4>
+				</Col>
+			</Row>
 			<Statistics />
-			<StateCasesSection />
+			<Row>
+				<Col flex={24} className="page-section-title">
+					<h4>STATE STATISTICS</h4>
+				</Col>
+			</Row>
+			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
+				<Col xs={24} sm={24} md={24}>
+					<div className="section">
+						<StateTable
+							casesByStateLatest={Analytics.casesByStateLatest}
+							districts={Analytics.districts}
+						/>
+					</div>
+				</Col>
+			</Row>
 		</>
 	);
 }

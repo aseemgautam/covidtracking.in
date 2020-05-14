@@ -1,0 +1,12 @@
+[
+  {
+    "date": "2020-05-13",
+    "update": ["New Cases - 3525. Deaths - 122. Recovered - 1931."],
+    "up" : ["Highest tests done, 94,671 with 3.72% positives. Less than normal. ",
+      "Gujarat, Uttar Pradesh, West Bengal, Andhra Pradesh had negative growth in active cases.",
+      "No new cases in Chattisgarh & Assam."],
+    "down": ["High number of cases in Tamil Nadu - 716.",
+    "6 new cases in Himachal Pradesh. 50 new cases over the past week. Unusal increase, next few days are important.",
+    "Telangana - 51 new cases, high cases 2nd day in a row. Cause of concern for a state with 432 active cases & consistant negative rate of growth."]  
+  }
+]

@@ -1,8 +1,12 @@
+import Link from 'next/link';
+
 const StateGroup = ({ groupName, states }) => {
 	const links = states.map(state => {
 		const stateLink = state.replace(/ /g, '-').toLowerCase();
 		return (
-			<a key={stateLink} href={`/coronavirus-testing-labs/${stateLink}`}>{state}</a>
+			<Link key={stateLink} href={`/coronavirus-testing-labs/${stateLink}`}>
+				<a>{state}</a>
+			</Link>
 		);
 	});
 	return (

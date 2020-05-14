@@ -23,7 +23,7 @@ const columns = [
 		title: <RateOfGrowthHelp days={7} />,
 		dataIndex: 'rateOfInc7days',
 		align: 'center',
-		width: 160,
+		width: 170,
 		render: (text, record) => {
 			const growthRate = Number.parseFloat(text);
 			const progressSettings = Analytics.getProgressColorAndPercent(growthRate);
@@ -99,10 +99,10 @@ const columns = [
 		}
 	},
 	{
-		title: 'Cases /1L',
+		title: 'Cases 1L',
 		dataIndex: 'casesPer1L',
 		align: 'center',
-		width: 110,
+		width: 100,
 		sortDirections: ['descend', 'ascend'],
 		sorter: (a, b) => {
 			return a.casesPer1L - b.casesPer1L;
