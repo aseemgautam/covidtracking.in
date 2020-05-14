@@ -1,4 +1,7 @@
+/* eslint-disable max-len */
 import Link from 'next/link';
+import Head from 'next/head';
+
 import { Card, List, Typography, Breadcrumb } from 'antd';
 import HelpJson from '../public/helpline.json';
 
@@ -21,11 +24,21 @@ const national = [
 const helpline = () => {
 	return (
 		<>
+			<Head>
+				<title>Covid-19 State & National Helpline Contact Numbers, India</title>
+				<link rel="shortcut icon" href="/favicon.ico" />
+				<meta property="og:title" content="Covid-19 State & National Helpline Contact Numbers, India" key="title" />
+				<meta property="og:description" content="List of all covid-19 helpline numbers in India." key="description" />
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://cvd19.in/helpline" />
+				<meta property="og:image" content="/cvd-og.png" />
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+			</Head>
 			<Breadcrumb>
 				<Breadcrumb.Item><Link href="/"><a>Home</a></Link></Breadcrumb.Item>
 				<Breadcrumb.Item>Coronavirus Helpline</Breadcrumb.Item>
 			</Breadcrumb>
-			<h1>CORONAVIRUS HELPLINE - NATIONAL</h1>
+			<h1>CORONAVIRUS (Covid-19) HELPLINE - NATIONAL</h1>
 			<List
 				grid={{
 					gutter: 16,

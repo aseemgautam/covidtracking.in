@@ -11,11 +11,12 @@ export default class extends Document {
 			// eslint-disable-next-line jsx-a11y/html-has-lang
 			<html>
 				<Head>
+					<title>Covid-19 Daily Insights & Analytics - India</title>
 					<link rel="shortcut icon" href="/favicon.ico" />
-					<meta property="og:title" content="Understandable insights on covid-19 in India" key="title" />
-					<meta property="og:description" content="Data driven insights & reports on spread of covid-19 in India." key="description" />
+					<meta property="og:title" content="COVID-19 Daily Updates & Analytics - India" key="title" />
+					<meta property="og:description" content="Data driven insights & information on spread of Covid-19 in India." key="description" />
 					<meta property="og:type" content="website" />
-					<meta property="og:url" content="https://covid19wiki.now.sh/" />
+					<meta property="og:url" content="https://cvd19.in/" />
 					<meta property="og:image" content="/cvd-og.png" />
 					<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 					{/* Global Site Tag (gtag.js) - Google Analytics */}
