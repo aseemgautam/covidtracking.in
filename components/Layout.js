@@ -31,16 +31,16 @@ const SiteLayout = props => {
 			<Header>
 				<Row>
 					<Col xs={1} sm={1} lg={1} xl={2} />
-					<Col className="logo" xs={18} sm={16} md={9} lg={6} xl={6}>
+					<Col className="logo" xs={18} sm={16} md={10} lg={6} xl={6}>
 						<img src="/india.png" alt="india" />
-						<a href="/">Covid-19 Insights</a>
+						<a href="/">Covid-19 Dashboard & Tracker</a>
 					</Col>
 					<Col xs={4} sm={6} md={0} className="mobile-navigation">
 						<Dropdown overlay={menu}>
 							<MenuOutlined />
 						</Dropdown>
 					</Col>
-					<Col xs={0} sm={0} md={13} lg={16} xl={14}>
+					<Col xs={0} sm={0} md={12} lg={16} xl={14}>
 						<Space size="middle" className="navigation">
 							{tracker}
 							{analytics}

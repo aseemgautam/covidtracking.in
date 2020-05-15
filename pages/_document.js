@@ -13,7 +13,7 @@ export default class extends Document {
 				<Head>
 					<title>Covid-19 Daily Insights & Analytics - India</title>
 					<link rel="shortcut icon" href="/favicon.png" />
-					<meta property="og:title" content="COVID-19 Daily Updates & Analytics - India" key="title" />
+					<meta property="og:title" content="COVID-19 Tracker & Dashboard - India" key="title" />
 					<meta property="og:description" content="Data driven insights & information on spread of Covid-19 in India." key="description" />
 					<meta property="og:type" content="website" />
 					<meta property="og:url" content="https://cvd19.in/" />

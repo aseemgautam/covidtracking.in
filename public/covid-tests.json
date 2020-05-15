@@ -435,8 +435,8 @@
     "date": "2020-05-15",
     "samples": 2039952,
     "newSamples": 92911,
-    "positive": "81970",
-    "newPositive": "3967",
-    "percentPositive": "4.269677433"
+    "positive": 81970,
+    "newPositive": 3967,
+    "percentPositive": 4.269677433
   }
 ]
