@@ -18,7 +18,7 @@ rules:
   brace-style: [error, 1tbs, { "allowSingleLine": true }]
   max-len:
     - error
-    - 105
+    - 125
     - 2
     # - ignoreStrings: true
     # - ignoreTrailingComments: true

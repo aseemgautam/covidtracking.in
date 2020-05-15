@@ -1,4 +1,5 @@
 import { Row, Col, Breadcrumb } from 'antd';
+import Head from 'next/head';
 import _ from 'lodash';
 import StateGroup from '../components/StateGroup';
 
@@ -19,6 +20,14 @@ const coronavirusTest = props => {
 	});
 	return (
 		<>
+			<Head>
+				<title>List of Covid-19 (Coronavirus) Labs across India</title>
+				<meta property="og:title" content="List of Covid-19 (Coronavirus) Labs across India" key="title" />
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://cvd19.in/coronavirus-testing-labs" />
+				<meta property="og:image" content="/cvd-og.png" />
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+			</Head>
 			<Breadcrumb>
 				<Breadcrumb.Item><a href="/">Home</a></Breadcrumb.Item>
 				<Breadcrumb.Item>Coronavirus Testing Labs</Breadcrumb.Item>

@@ -29,5 +29,22 @@
       "1405 new cases in Mahrashtra, up from 1026 yesterday.",
       "109 new cases in Bihar. State had only 264 active cases on 10th May, gone upto 545 today. High ROG. "
     ]
+  },
+  {
+    "date": "2020-05-15",
+    "update": [
+      "New Cases - 3967. Deaths - 90. Recovered - 2192.",
+      "92,911 covid-19 test's done, out of which 4.26% (3967) were positive."
+    ],
+    "up": [
+      "1 new case in Chattisgarh & Tripura.",
+      "11 new cases in Punjab. Continues it's negative growth in Active cases."
+    ],
+    "down": [
+      "472 new cases in Delhi. Average no of new cases increasing - 350 (last week) to around 450. ",
+      "1602 new cases in Mahrashtra, up from 1405 yesterday.",
+      "25 new cases in Kerala. The state was covid free until now with no active cases.",
+      "7 cases in Goa. Goa has been covid-19 free for a while now."
+    ]
   }
 ]
