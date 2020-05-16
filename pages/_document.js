@@ -11,7 +11,6 @@ export default class extends Document {
 			// eslint-disable-next-line jsx-a11y/html-has-lang
 			<html>
 				<Head>
-					<title>COVID-19 Tracker & Dashboard - India</title>
 					<link rel="shortcut icon" href="/favicon.png" />
 					<meta property="og:title" content="COVID-19 Tracker & Dashboard - India" key="title" />
 					<meta property="og:description" content="Data driven insights & information on spread of Covid-19 in India." key="description" />

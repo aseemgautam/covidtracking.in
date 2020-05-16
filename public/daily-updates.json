@@ -55,14 +55,15 @@
       "Majority (2775, 70%) of cases in Maharashtra, Tamil Nadu, Gujarat, Delhi."
     ],
     "warn": [
-      "16 new cases in Kerala. Active cases (16 on 10th May to 80 today) have quadrupuled (4x) in past 7 days."
+      "Testing capacity has peaked & is lat at ~ 95,000 samples for 7 days."
     ],
     "up": [
       "No new cases in Punjab, Haryana, Chandigarh & Tripura."
     ],
     "down": [
       "425 new cases in Delhi. Average no of new cases increasing - 350 (last week) to around 450. ",
-      "1576 new cases in Mahrashtra. Continues 3rd day with 1500+ daily cases."
+      "1576 new cases in Mahrashtra. Continues 3rd day with 1500+ daily cases.",
+      "16 new cases in Kerala. Active cases (16 on 10th May to 80 today) have quadrupuled (4x) in past 7 days."
     ]
   }
 ]

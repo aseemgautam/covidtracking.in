@@ -1,5 +1,10 @@
 @use 'vars';
 .state-table {
+  .ant-table-thead > tr > th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
   // .ant-table { font-size: 13px; }
 .ant-table-small .ant-table-tbody > tr > td {
     padding: 0px 6px;

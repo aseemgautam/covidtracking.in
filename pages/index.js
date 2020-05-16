@@ -1,5 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 import { Row, Col } from 'antd';
+import Head from 'next/head';
 import Statistics from '../components/Statistics';
 import StateTable from '../components/StateTable';
 import DailyUpdate from '../components/DailyUpdate';
@@ -8,6 +9,9 @@ import Analytics from '../classes/Analytics';
 function Index() {
 	return (
 		<>
+			<Head>
+				<title>COVID-19 Tracker & Dashboard - India</title>
+			</Head>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} sm={24} md={24}>
 					<DailyUpdate date={Analytics.todaysUpdate.date} updates={Analytics.todaysUpdate.updates} />

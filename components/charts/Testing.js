@@ -61,6 +61,7 @@ const TestingChart = () => {
 					type: 'stack'
 				},
 			]);
+		chart.interaction('active-region');
 		chart.render();
 	}, []);
 	return (

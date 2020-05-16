@@ -15,7 +15,7 @@ const DailyUpdate = props => {
 	}
 	return (
 		<List
-			header={<h4>{`TODAY'S INSIGHTS (${dateString})`}</h4>}
+			header={<h4>{`TODAY'S UPDATE (${dateString})`}</h4>}
 			className="daily-update-list"
 			itemLayout="horizontal"
 			size="small"

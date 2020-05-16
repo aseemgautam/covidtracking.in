@@ -106,7 +106,7 @@ class Analytics {
 		const trendValue = this.calculateTrend(7);
 
 		const tests = CovidTests.sort(this.sortJsonByDateDesc).slice(-2);
-		const fatalityRate = (last2Days[1].deaths / last2Days[1].confirmed) * 100;
+		const fatalityRate = (last2Days[1].deaths / (last2Days[1].recovered + last2Days[1].deaths)) * 100;
 		const casesPer1L = (last2Days[1].confirmed / IndiaPopulation) * 100000;
 		this.deathRate = fatalityRate;
 		this.confirmed = new Statistic('Confirmed', last2Days[1].confirmed,
@@ -146,7 +146,7 @@ class Analytics {
 				active: curr.confirmed - curr.deaths - curr.recovered,
 				newActive: idx === 0 ? 0 : (curr.confirmed - curr.deaths - curr.recovered)
 				- (src[idx - 1].confirmed - src[idx - 1].deaths - src[idx - 1].recovered),
-				deathRate: curr.deaths > 10 ? this.roundToTwoDigits((curr.deaths * 100) / curr.confirmed) : '-'
+				deathRate: curr.deaths > 5 ? this.roundToTwoDigits((curr.deaths * 100) / (curr.recovered + curr.deaths)) : '-'
 			};
 		});
 	}

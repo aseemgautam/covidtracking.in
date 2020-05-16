@@ -99,17 +99,7 @@ const columns = [
 		}
 	},
 	{
-		title: 'Cases 1L',
-		dataIndex: 'casesPer1L',
-		align: 'center',
-		width: 100,
-		sortDirections: ['descend', 'ascend'],
-		sorter: (a, b) => {
-			return a.casesPer1L - b.casesPer1L;
-		}
-	},
-	{
-		title: 'Death Rate',
+		title: 'Death %',
 		dataIndex: 'deathRate',
 		align: 'center',
 		width: 110,
@@ -127,9 +117,19 @@ const columns = [
 				</div>
 			);
 		}
+	},
+	{
+		title: 'Cases 1L',
+		dataIndex: 'casesPer1L',
+		align: 'center',
+		width: 100,
+		sortDirections: ['descend', 'ascend'],
+		sorter: (a, b) => {
+			return a.casesPer1L - b.casesPer1L;
+		}
 	}
 ];
-const StateWise = ({ casesByStateLatest, districts }) => {
+const StateWise = ({ casesByStateLatest }) => {
 	// const isMobile = window.innerWidth < 576;
 	return (
 		<Table
