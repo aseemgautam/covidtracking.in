@@ -19,6 +19,6 @@ const newCasesSection = () => {
 			<NewCasesChart cases={Analytics.cases} />
 		</>
 	);
-}
+};
 
 export default newCasesSection;

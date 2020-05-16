@@ -46,5 +46,23 @@
       "25 new cases in Kerala. The state was covid free until now with no active cases.",
       "7 cases in Goa. Goa has been covid-19 free for a while now."
     ]
+  },
+  {
+    "date": "2020-05-16",
+    "update": [
+      "New Cases - 3970. Deaths - 113. Recovered - 2233.",
+      "94,325 covid-19 test's done, out of which 4.21% (3970) were positive.",
+      "Majority (2775, 70%) of cases in Maharashtra, Tamil Nadu, Gujarat, Delhi."
+    ],
+    "warn": [
+      "16 new cases in Kerala. Active cases (16 on 10th May to 80 today) have quadrupuled (4x) in past 7 days."
+    ],
+    "up": [
+      "No new cases in Punjab, Haryana, Chandigarh & Tripura."
+    ],
+    "down": [
+      "425 new cases in Delhi. Average no of new cases increasing - 350 (last week) to around 450. ",
+      "1576 new cases in Mahrashtra. Continues 3rd day with 1500+ daily cases."
+    ]
   }
 ]

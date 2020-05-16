@@ -438,5 +438,13 @@
     "positive": 81970,
     "newPositive": 3967,
     "percentPositive": 4.269677433
+  },
+  {
+    "date": "2020-05-16",
+    "samples": 2134277,
+    "newSamples": 94325,
+    "positive": 85940,
+    "newPositive": 3970,
+    "percentPositive": 4.208852372
   }
 ]
