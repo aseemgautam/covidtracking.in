@@ -12,14 +12,15 @@ function Index() {
 			<Head>
 				<title>COVID-19 Tracker & Dashboard - India</title>
 			</Head>
-			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
+			{/* <Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} sm={24} md={24}>
 					<DailyUpdate date={Analytics.todaysUpdate.date} updates={Analytics.todaysUpdate.updates} />
 				</Col>
-			</Row>
+			</Row> */}
 			<Row>
 				<Col flex={24} className="page-section-title">
 					<h4>NATIONAL STATISTICS</h4>
+					<h4>Last Updated 17th May, 9:46 AM</h4>
 				</Col>
 			</Row>
 			<Statistics />

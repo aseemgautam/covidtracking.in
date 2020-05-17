@@ -50,10 +50,10 @@ const RateOfGrowthText = ({ className }) => {
 	}
 	return (
 		<>
-			<a onClick={showHelp} className={`${className} link`}>Weekly Rate of Growth</a>
+			<a onClick={showHelp} className={`${className} link`}>7 DAY TREND</a>
 			<Drawer
 				className="rate-of-growth-drawer"
-				title="Active Cases - Weekly Rate of Growth"
+				title="7 Day Trend - Active Cases"
 				placement="right"
 				closable
 				onClose={onClose}
