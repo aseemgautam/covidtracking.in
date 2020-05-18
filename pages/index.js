@@ -20,7 +20,7 @@ function Index() {
 			<Row>
 				<Col flex={24} className="page-section-title">
 					<h4>NATIONAL STATISTICS</h4>
-					<h4>Last Updated 17th May, 9:46 AM</h4>
+					<h4>Updated 18th May, 10:42 AM</h4>
 				</Col>
 			</Row>
 			<Statistics />
