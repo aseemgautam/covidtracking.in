@@ -24,6 +24,7 @@ import 'antd/es/select/style/index.css';
 import 'antd/es/tabs/style/index.css';
 import 'antd/es/radio/style/index.css';
 import 'antd/es/table/style/index.css';
+import 'antd/es/divider/style/index.css';
 import 'antd/es/progress/style/index.css';
 import 'antd/es/drawer/style/index.css';
 import 'antd/es/avatar/style/index.css';
@@ -36,6 +37,7 @@ import '../css/stateList.scss';
 import '../css/helpline.scss';
 import '../css/charts.scss';
 import '../css/home.scss';
+import '../css/antd.scss';
 
 Router.events.on('routeChangeStart', () => {
 	document.getElementById('loading').style.display = 'block';

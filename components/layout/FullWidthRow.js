@@ -1,11 +1,11 @@
 import { Row, Col } from 'antd';
 
 const FullWidthRow = props => {
-	const { children } = props;
+	const { children, className } = props;
 	return (
-		<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
+		<Row>
 			<Col xs={24} md={24}>
-				<div className="section">
+				<div className={className}>
 					{children}
 				</div>
 			</Col>

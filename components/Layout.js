@@ -1,13 +1,12 @@
 import Link from 'next/link';
 import { Layout, Space, Row, Col, Menu, Dropdown, Button } from 'antd';
-import { MenuOutlined, PhoneOutlined, BarChartOutlined,
-	ScheduleOutlined, RiseOutlined, TwitterOutlined } from '@ant-design/icons';
+import { MenuOutlined, TwitterOutlined } from '@ant-design/icons';
 
 const { Header, Content, Footer } = Layout;
-const tracker = <Link href="/"><a><RiseOutlined /> Tracker</a></Link>;
-const analytics = <Link href="/analytics"><a><BarChartOutlined /> Analytics</a></Link>;
-const helpline = <Link href="/helpline"><a><PhoneOutlined /> Helpline</a></Link>;
-const testing = <Link href="/coronavirus-testing-labs"><a><ScheduleOutlined /> Testing</a></Link>;
+const tracker = <Link href="/"><a>TRACKER</a></Link>;
+const analytics = <Link href="/analytics"><a>ANALYTICS</a></Link>;
+const helpline = <Link href="/helpline"><a>HELPLINES</a></Link>;
+const testing = <Link href="/coronavirus-testing-labs"><a>TESTING</a></Link>;
 const menu = (
 	<Menu>
 		<Menu.Item>
@@ -30,17 +29,15 @@ const SiteLayout = props => {
 		<Layout className="layout">
 			<Header>
 				<Row>
-					<Col xs={1} sm={1} lg={1} xl={2} />
-					<Col className="logo" xs={18} sm={16} md={10} lg={6} xl={6}>
-						<img src="/india.png" alt="india" />
-						<a href="/">Covid-19 Tracker & Dashboard</a>
+					<Col className="logo" xs={20} sm={18} md={12} lg={8}>
+						<a href="/">COVID TRACKING PROJECT</a>
 					</Col>
 					<Col xs={4} sm={6} md={0} className="mobile-navigation">
 						<Dropdown overlay={menu}>
 							<MenuOutlined />
 						</Dropdown>
 					</Col>
-					<Col xs={0} sm={0} md={12} lg={16} xl={14}>
+					<Col xs={0} sm={0} md={12} lg={16}>
 						<Space size="middle" className="navigation">
 							{tracker}
 							{analytics}
@@ -48,21 +45,17 @@ const SiteLayout = props => {
 							{testing}
 						</Space>
 					</Col>
-					<Col xs={1} sm={1} lg={1} xl={2} />
 				</Row>
 			</Header>
 			<Content>
 				<Row>
-					<Col xs={0} sm={1} md={1} lg={1} xl={2} />
-					<Col xs={24} sm={22} md={22} lg={22} xl={20}>
+					<Col span={24}>
 						{children}
 					</Col>
-					<Col xs={0} sm={1} md={1} lg={1} xl={2} />
 				</Row>
 			</Content>
-			<Footer style={{ textAlign: 'center' }}>
+			{/* <Footer style={{ textAlign: 'center' }}>
 				<Row>
-					<Col xs={0} sm={0} md={1} lg={1} xl={2} />
 					<Col className="footer-about" xs={24} sm={16} md={14} lg={16} xl={14}>
 						<h3>About</h3>
 						<p>
@@ -93,9 +86,8 @@ const SiteLayout = props => {
 							</a>
 						</div>
 					</Col>
-					<Col xs={0} sm={0} md={1} lg={1} xl={2} />
 				</Row>
-			</Footer>
+			</Footer> */}
 		</Layout>
 	);
 };

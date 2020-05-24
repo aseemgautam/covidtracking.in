@@ -9,6 +9,14 @@ class Colors {
 		this.green2 = '#d9f7be';
 		this.green6 = '#52c41a';
 		this.green7 = '#389e0d';
+
+		this.primary = '#2f54eb';
+		this.chart = '#597ef7';
+		this.chartSecondary = '#85a5ff';
+		this.chartRed = '';
+
+		this.newCasesStack = '#FFCC32';
+		this.testingSampleStack = '#d9d9d9';
 	}
 }
 

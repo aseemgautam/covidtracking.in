@@ -50,7 +50,7 @@ const RateOfGrowthText = ({ className }) => {
 	}
 	return (
 		<>
-			<a onClick={showHelp} className={`${className} link`}>7 DAY TREND</a>
+			<a onClick={showHelp} className={`${className} link`}>LAST 7 DAYS TREND</a>
 			<Drawer
 				className="rate-of-growth-drawer"
 				title="7 Day Trend - Active Cases"

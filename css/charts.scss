@@ -7,6 +7,12 @@
   }
 }
 
+.active-cases-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
 .new-cases-chart .g2-tooltip .g2-tooltip-list .g2-tooltip-list-item:nth-last-child(2) {
   display: none;
 }

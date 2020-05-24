@@ -2,17 +2,22 @@
 /* eslint-disable no-restricted-syntax */
 import { Table, Progress, Typography } from 'antd';
 import StateTableCell from './StateTableCell';
-import Colors from '../classes/Colors';
 import Analytics from '../classes/Analytics';
 import RateOfGrowthHelp from './RateOfGrowthHelp';
+import TableCellCasesGrowth from './charts/TableCellCasesGrowth';
 
 const { Text } = Typography;
 const columns = [
-	{ title: '', dataIndex: 'state', width: 130, fixed: 'left', ellipsis: true },
-	{ title: 'New',
+	{ title: 'State',
+		dataIndex: 'state',
+		width: 105,
+		fixed: 'left',
+		className: 'state-name'
+	},
+	{ title: '+ TODAY',
 		dataIndex: 'newCases',
-		align: 'left',
-		width: 60,
+		align: 'right',
+		width: 80,
 		render: text => {
 			return (
 				<div>{text === 0 ? '' : `+${text}`}</div>
@@ -23,12 +28,13 @@ const columns = [
 		title: <RateOfGrowthHelp days={7} />,
 		dataIndex: 'rateOfInc7days',
 		align: 'center',
-		width: 170,
+		width: 300,
 		render: (text, record) => {
 			const growthRate = Number.parseFloat(text);
 			const progressSettings = Analytics.getProgressColorAndPercent(growthRate);
 			return (
 				<div className="weekly-rate">
+					{record.confirmed > 50 && <TableCellCasesGrowth data={record} />}
 					<Progress
 						percent={progressSettings.percent}
 						showInfo={false}
@@ -36,7 +42,7 @@ const columns = [
 						steps={4}
 						strokeColor={progressSettings.color}
 					/>
-					<Text type="secondary">{`${record.rateOfInc7days}%`}</Text>
+					<Text>{`${record.rateOfInc7days}%`}</Text>
 				</div>
 			);
 		}
@@ -61,11 +67,11 @@ const columns = [
 		},
 		render: (text, record) => {
 			const delta = record.newActive; // <= 0 ? record.newActive : record.newActive;
-			const backgroundColor = delta < 0 ? Colors.green2 : '';
+			// const backgroundColor = delta < 0 ? Colors.green2 : '';
 			return {
-				props: {
-					style: { backgroundColor }
-				},
+				// props: {
+				// 	style: { backgroundColor }
+				// },
 				children: <StateTableCell showCaret value={text} delta={delta} />
 			};
 		}
@@ -122,7 +128,7 @@ const columns = [
 		title: 'Cases 1L',
 		dataIndex: 'casesPer1L',
 		align: 'center',
-		width: 100,
+		width: 110,
 		sortDirections: ['descend', 'ascend'],
 		sorter: (a, b) => {
 			return a.casesPer1L - b.casesPer1L;

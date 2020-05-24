@@ -54,6 +54,7 @@ class Analytics {
 							? this.roundToTwoDigits((curr.confirmed * 100000) / element.population) : '-',
 						rateOfInc7days: this.roundToTwoDigits(rateOfInc7days),
 						activeDelta,
+						last7DaysActive: src.slice(-7),
 						active7daysAgo: idx > 7 ? src[idx - 7].active : 0
 					};
 				});
@@ -216,7 +217,7 @@ class Analytics {
 	}
 
 	getProgressColorAndPercent = growthRate => {
-		let color = '#f3f3f3';
+		let color;
 		let percent = growthRate;
 		if (growthRate) {
 			if (growthRate > 100) color = Colors.red6;

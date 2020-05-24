@@ -1,43 +1,42 @@
 @use 'vars';
 
 .covid-statistic {
-  padding: 10px 0px !important;
-  border: vars.$border;
+  padding: 10px !important;
   border-radius: vars.$border-radius;
-  background-color: #fff;
+  background-color: #f5f5f5;
   .ant-card-body { 
     padding: 0px;
   }
   .weekly-rate > .ant-progress { padding-right: 16px;}
 }
 
-.covid-statistic .ant-statistic-content,
-.covid-statistic .ant-statistic-title
+.covid-statistic .ant-statistic-title,
+.covid-statistic .ant-statistic-content
 {
-  font-size: 18px;
+  font-weight: 500;
   display: flex;
   align-items: baseline;
-  justify-content: center;
+  justify-content: flex-end;
   text-transform: uppercase;
+  color: vars.$font-color;
+}
+
+.covid-statistic .ant-statistic-content {
+  font-size: 18px;
 }
 
 .covid-statistic .ant-statistic-title {
-  align-items: center; font-size: 13px;
+  align-items: center; font-size: 14px;
 }
 
-.covid-statistic .ant-statistic-title .anticon {
-  position: absolute;
-  right: 30px;
-  cursor: help;
-}
 
 .center {
   text-align: center;
 }
 
 .statistic-deaths {
-  border-color: vars.$red;
+  background-color: vars.$red2;
 }
 .statistic-recovered {
-  border-color: vars.$green;
+  background-color: vars.$green2;
 }
