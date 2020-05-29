@@ -17,17 +17,39 @@ $font-color: #303030;
 $logo-color:$gold4;
 $primary-color: #2f54eb;
 
-$border: 1px solid rgba(0,0,0,.14); // #CED4D9;
+$border: 1px solid rgba(0,0,0,.10);;
 $control-border: 1px solid #d9d9d9;
 $border-radius: 2px;
 
 $title-border: 2px solid $logo-color;
+$statistic-background: #f5f5f5;
+
+$trend-very-poor: #C71E1D;
+$trend-poor: #fa8c16;
+$trend-progress: #FFC300;
+$trend-better: #006750;
+
+$ant-progress-step-color: #ddd;
+
+%flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+%flex-row-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 %section {
   background-color: #fff;
   border: $border;
   border-radius: $border-radius;
 }
+
 %control {
   height: 32px;
   line-height: 32px;

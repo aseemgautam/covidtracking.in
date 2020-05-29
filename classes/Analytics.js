@@ -1,38 +1,16 @@
 /* eslint-disable no-restricted-syntax */
 import _ from 'lodash';
 import CovidTests from '../public/covid-tests.json';
-import CasesIndia from '../public/cases-india.json';
 import AllCasesState from '../public/cases-india-statewise.json';
 import IndiaStates from '../public/india-states.json';
 import CasesDistricts from '../public/cases-districts.json';
 import DailyUpdates from '../public/daily-updates.json';
-import Statistic from './Statistic';
-import HelpText from './HelpText';
-import GetTrend from './Trend';
+import CovidDataIndia from './CovidDataIndia';
 import Colors from './Colors';
-
-const IndiaPopulation = 1377122402;
 
 class Analytics {
 	constructor() {
-		this.cases = CasesIndia.sort(this.sortJsonByDateDesc)
-			.map((curr, idx, src) => {
-				let rateOfInc7days = '-';
-				let activeDelta = 0;
-				if (idx > 7 && src[idx - 7].active > 0) {
-					activeDelta = curr.active - src[idx - 7].active;
-					rateOfInc7days = (activeDelta * 100) / src[idx - 7].active;
-				}
-				return {
-					...curr,
-					casesPer1L: curr.confirmed > 50
-						? this.roundToTwoDigits((curr.confirmed * 100000) / IndiaPopulation) : '-',
-					rateOfInc7days: this.roundToTwoDigits(rateOfInc7days),
-					activeDelta,
-					active7daysAgo: idx > 7 ? src[idx - 7].active : 0
-				};
-			});
-		this.latest = _.last(this.cases);
+		this.cases = CovidDataIndia.cases;
 		// STATE
 		this.states = [];
 		this.casesByState = new Map();
@@ -51,11 +29,16 @@ class Analytics {
 					return {
 						...curr,
 						casesPer1L: curr.confirmed > 50
-							? this.roundToTwoDigits((curr.confirmed * 100000) / element.population) : '-',
-						rateOfInc7days: this.roundToTwoDigits(rateOfInc7days),
+							? this.round((curr.confirmed * 100000) / element.population) : '-',
+						rateOfInc7days: this.round(rateOfInc7days),
 						activeDelta,
-						last7DaysActive: src.slice(-7),
-						active7daysAgo: idx > 7 ? src[idx - 7].active : 0
+						rollingAvg7days: idx > 7 ? this.round(src.slice(idx - 7, idx).reduce((prev, current) => {
+							return prev + current.newCases;
+						}, 0) / 7) : 0,
+						rollingAvg14days: idx > 14 ? this.round(src.slice(idx - 14, idx).reduce((prev, current) => {
+							return prev + current.newCases;
+						}, 0) / 14) : 0,
+						last7DaysActive: src.slice(-7)
 					};
 				});
 			this.activeCasesPeak.push(_.maxBy(filtered, val => { return val.active; }));
@@ -102,37 +85,11 @@ class Analytics {
 				});
 			}
 		});
-		// TRENDS
-		const last2Days = this.cases.slice(-2);
-		const trendValue = this.calculateTrend(7);
-
-		const tests = CovidTests.sort(this.sortJsonByDateDesc).slice(-2);
-		const fatalityRate = (last2Days[1].deaths / (last2Days[1].recovered + last2Days[1].deaths)) * 100;
-		const casesPer1L = (last2Days[1].confirmed / IndiaPopulation) * 100000;
-		this.deathRate = fatalityRate;
-		this.confirmed = new Statistic('Confirmed', last2Days[1].confirmed,
-			last2Days[1].newCases);
-		this.active = new Statistic('Active', last2Days[1].active,
-			last2Days[1].active - last2Days[0].active);
-		this.deaths = new Statistic('Deaths', last2Days[1].deaths,
-			last2Days[1].deaths - last2Days[0].deaths);
-		this.recovered = new Statistic('Recovered', last2Days[1].recovered,
-			last2Days[1].recovered - last2Days[0].recovered);
-		this.fatalityRate = new Statistic('Death Rate', `${fatalityRate.toFixed(2)}%`);
-		this.weeklyTrend = new Statistic('ROG (7 days)',
-			trendValue, GetTrend(trendValue), HelpText.weeklyTrend);
-		this.casesPer1L = new Statistic('Cases Per 1L', casesPer1L, 'Very Low');
-		this.tests = new Statistic('Samples Tested', tests[1].samples,
-			tests[1].samples - tests[0].samples);
-
-		[{ x: 1 }, { x: 2 }, { x: 3 }].reduce((accumulator, currentValue) => {
-			return accumulator + currentValue.x;
-		}, 0);
 	}
 
 	sortJsonByDateDesc = (a, b) => { return new Date(a.date) - new Date(b.date); }
 
-	roundToTwoDigits = num => {
+	round = num => {
 		return Math.round((num + Number.EPSILON) * 100) / 100;
 	}
 
@@ -147,7 +104,7 @@ class Analytics {
 				active: curr.confirmed - curr.deaths - curr.recovered,
 				newActive: idx === 0 ? 0 : (curr.confirmed - curr.deaths - curr.recovered)
 				- (src[idx - 1].confirmed - src[idx - 1].deaths - src[idx - 1].recovered),
-				deathRate: curr.deaths > 5 ? this.roundToTwoDigits((curr.deaths * 100) / (curr.recovered + curr.deaths)) : '-'
+				deathRate: curr.deaths > 5 ? this.round((curr.deaths * 100) / (curr.recovered + curr.deaths)) : '-'
 			};
 		});
 	}
@@ -221,8 +178,7 @@ class Analytics {
 		let percent = growthRate;
 		if (growthRate) {
 			if (growthRate > 100) color = Colors.red6;
-			else if (growthRate > 75) color = Colors.orange6;
-			else if (growthRate > 50) color = Colors.gold6;
+			else if (growthRate > 50) color = Colors.orange6;
 			else if (growthRate > 25) {
 				color = Colors.yellow6;
 				percent = 51;

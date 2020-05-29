@@ -3,7 +3,10 @@
 .covid-statistic {
   padding: 10px !important;
   border-radius: vars.$border-radius;
-  background-color: #f5f5f5;
+  background-color: vars.$statistic-background;
+  .ant-card {
+    background-color: vars.$statistic-background;
+  }
   .ant-card-body { 
     padding: 0px;
   }
@@ -26,9 +29,28 @@
 }
 
 .covid-statistic .ant-statistic-title {
-  align-items: center; font-size: 14px;
+  align-items: center;
 }
 
+.trend-card {
+  border-radius: vars.$border-radius;
+  background-color: vars.$statistic-background;
+  .ant-progress-steps-item {
+    background-color: vars.$ant-progress-step-color;
+  }
+  .trend-percent {
+    margin-left: 8px;
+  }
+  .ant-col {
+    padding: 8px;
+  }
+  .ant-col:first-child {
+    background-color: #eee;
+  }
+  .ant-statistic-title {
+    font-weight: 500;
+  }
+}
 
 .center {
   text-align: center;

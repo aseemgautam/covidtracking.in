@@ -1,0 +1,31 @@
+@use 'vars';
+.trend-info { 
+  border-radius: 2px;
+  color: #fff;
+  text-align: center;
+  @extend %flex-column-center;
+  height: 101px;
+  padding: 10px;
+}
+
+.trend-info.very-poor {
+  background-color: vars.$trend-very-poor;
+}
+
+.trend-info.poor {
+  background-color: vars.$trend-poor;
+}
+
+.trend-info.progress {
+  background-color: vars.$trend-progress;
+}
+
+.trend-info.better {
+  background-color: vars.$trend-better;
+}
+
+.trend-info.description {
+  color: vars.$font-color;
+  font-size: 13px;
+  background-color: vars.$statistic-background;
+}

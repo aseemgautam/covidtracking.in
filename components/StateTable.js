@@ -4,7 +4,7 @@ import { Table, Progress, Typography } from 'antd';
 import StateTableCell from './StateTableCell';
 import Analytics from '../classes/Analytics';
 import RateOfGrowthHelp from './RateOfGrowthHelp';
-import TableCellCasesGrowth from './charts/TableCellCasesGrowth';
+import LineChartSmall from './charts/LineChartSmall';
 
 const { Text } = Typography;
 const columns = [
@@ -24,29 +24,30 @@ const columns = [
 			);
 		}
 	},
-	{
-		title: <RateOfGrowthHelp days={7} />,
-		dataIndex: 'rateOfInc7days',
-		align: 'center',
-		width: 300,
-		render: (text, record) => {
-			const growthRate = Number.parseFloat(text);
-			const progressSettings = Analytics.getProgressColorAndPercent(growthRate);
-			return (
-				<div className="weekly-rate">
-					{record.confirmed > 50 && <TableCellCasesGrowth data={record} />}
-					<Progress
-						percent={progressSettings.percent}
-						showInfo={false}
-						status="normal"
-						steps={4}
-						strokeColor={progressSettings.color}
-					/>
-					<Text>{`${record.rateOfInc7days}%`}</Text>
-				</div>
-			);
-		}
-	},
+	// {
+	// 	title: <RateOfGrowthHelp title="7 DAYS TREND OF COVID+" days={7} />,
+	// 	dataIndex: 'rateOfInc7days',
+	// 	align: 'center',
+	// 	width: 300,
+	// 	render: (text, record) => {
+	// 		const growthRate = Number.parseFloat(text);
+	// 		const progressSettings = Analytics.getProgressColorAndPercent(growthRate);
+	// 		return (
+	// 			<div className="weekly-rate">
+	// 				{record.confirmed > 50
+	// 				&& <LineChartSmall fieldX="date" fieldY="active" width={120} data={record.last7DaysActive} />}
+	// 				<Progress
+	// 					percent={progressSettings.percent}
+	// 					showInfo={false}
+	// 					status="normal"
+	// 					steps={4}
+	// 					strokeColor={progressSettings.color}
+	// 				/>
+	// 				<Text>{`${record.rateOfInc7days}%`}</Text>
+	// 			</div>
+	// 		);
+	// 	}
+	// },
 	{ title: 'Confirm',
 		dataIndex: 'confirmed',
 		align: 'center',
@@ -136,7 +137,6 @@ const columns = [
 	}
 ];
 const StateWise = ({ casesByStateLatest }) => {
-	// const isMobile = window.innerWidth < 576;
 	return (
 		<Table
 			className="state-table"

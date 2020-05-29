@@ -4,42 +4,41 @@ import { useState } from 'react';
 import { Drawer, Progress, List } from 'antd';
 import Analytics from '../classes/Analytics';
 
-const RateOfGrowthText = ({ className }) => {
+const RateOfGrowthText = ({ className, title }) => {
 	const [visible, setVisible] = useState(false);
 	const data = [
 		{ rate: -10,
-			title: 'Negative < 0',
+			title: 'TRENDING BETTER',
+			growth: '(< 0)',
 			description: `Active cases decreased in the last week. We are 
 			on the right path to recovery.`
 		},
 		{
 			rate: 20,
-			title: 'Low 0 - 25%',
+			title: 'LOW RATE OF COVID+',
+			growth: '(0 - 20%)',
 			description: 'Active cases increased slightly. Nothing to worry much.'
 		},
 		{
 			rate: 40,
-			title: 'Moderate 1 26-50%',
-			description: `Moderate / Average increase of active cases. Spread is still in control but 
-				can go out of hand from here.`
+			title: 'MODERATE RATE OF COVID+',
+			growth: '(20% - 50%)',
+			description: `Active cases almost doubled in the last 7 days. This could signal 
+				rapid increase of spread of covid-19 in the area or state.`
 		},
 		{
-			rate: 65,
-			title: 'Moderate 2 51-75%',
-			description: `Moderate increase of active cases but on the higher side. We should be 
-				little concerned now.`
-		},
-		{
-			rate: 95,
-			title: 'High 76-99%',
+			rate: 75,
+			title: 'HIGH RATE OF COVID+',
+			growth: '(50% - 99%)',
 			description: `Active cases almost doubled in the last 7 days. This could signal 
 				rapid increase of spread of covid-19 in the area or state.`
 		},
 		{
 			rate: 110,
-			title: 'Very High > 100%',
-			description: `Active cases have doubled, trippled or even more in the 
-				last 7 days. The spread is now fast & often needs a strict lockdown to control.`
+			title: 'VERY HIGH RATE OF COVID+',
+			growth: '(> 100%)',
+			description: `Active cases almost doubled in the last 7 days. This could signal 
+				rapid increase of spread of covid-19 in the area or state.`
 		}
 	];
 	function showHelp() {
@@ -50,10 +49,10 @@ const RateOfGrowthText = ({ className }) => {
 	}
 	return (
 		<>
-			<a onClick={showHelp} className={`${className} link`}>LAST 7 DAYS TREND</a>
+			<a onClick={showHelp} className={`${className} link`}>{title}</a>
 			<Drawer
 				className="rate-of-growth-drawer"
-				title="7 Day Trend - Active Cases"
+				title="14 Day Moving Average of COVID+"
 				placement="right"
 				closable
 				onClose={onClose}
@@ -84,7 +83,8 @@ const RateOfGrowthText = ({ className }) => {
 										</>
 									)}
 								/>
-								<div>{item.description}</div>
+								<div>{item.growth}</div>
+								{/* <div>{item.description}</div> */}
 							</List.Item>
 						);
 					}}

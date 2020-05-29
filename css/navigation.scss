@@ -1,0 +1,33 @@
+@use 'vars';
+.ant-menu-horizontal > .ant-menu-item-selected {
+  border-bottom: 0px;
+}
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.mobile-navigation {
+  text-align: right;
+  font-size: 22px;
+  .anticon {
+    padding: 16px 0px 16px 16px;
+  }
+}
+.logo img {
+  height: 32px;
+  margin-right: 10px;
+}
+.logo a {
+  background-color: vars.$logo-color;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 2px;
+  padding: 8px;
+  color: vars.$font-color;
+}
+.ant-layout-header {
+  background-color: #fff;
+  border-bottom: vars.$border;
+  padding: 0 16px;
+}

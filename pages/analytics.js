@@ -1,4 +1,3 @@
-import { Divider } from 'antd';
 import FullWidthRow from '../components/layout/FullWidthRow';
 import NewCasesChart from '../components/charts/NewCasesChart';
 import TestingChart from '../components/charts/Testing';

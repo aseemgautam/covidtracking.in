@@ -15,7 +15,7 @@
   border-bottom: 2px solid vars.$font-color;
 }
 .ant-progress-steps-item {
-  background-color: #cfcfcf;
+  background-color: vars.$ant-progress-step-color;
 }
 .state-name {
   font-weight: 600;
