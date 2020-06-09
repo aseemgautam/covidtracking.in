@@ -1,23 +1,26 @@
 import React, { useEffect, useRef } from 'react';
-import IndiaGeoJSON from '../../public/india';
+import IndiaGeoJSON from '../../public/IndiaGeo.json';
 import LeafletMap from './LeafletMap';
-import Analytics from '../../classes/Analytics';
+import Colors from '../../classes/Colors';
+import CovidDataStateWise from '../../classes/CovidDataStateWise';
 
-const Map = React.memo(({ statewiseLatest }) => {
-	const colorMetric = useRef('active');
+const Map = React.memo(() => {
 	const map = useRef(null);
 	function getColor(name) {
-		const item = statewiseLatest.find(state => { return state.state === name; });
-		return Analytics.getMapColor(item ? item[colorMetric.current] : 0);
+		const latest = CovidDataStateWise.getLatest(name);
+		return Colors.getTrendColor(latest ? latest.movingAvg14daysRate : 0);
 	}
 	function getInfo(name) {
-		const item = statewiseLatest.find(state => { return state.state === name; });
-		return item ? item.confirmed : 0;
+		const rate = CovidDataStateWise.getLatest(name).movingAvg14daysRate;
+		if (rate > 0) {
+			return `New cases have increased by ${rate}% over the last 14 days`;
+		}
+		return `New cases have decreased by ${rate}% over the last 14 days`;
 	}
+
 	useEffect(() => {
 		map.current = new LeafletMap(23.59, 82, 4, getColor, getInfo, IndiaGeoJSON);
-	// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [statewiseLatest]);
+	}, []);
 	return (
 		<>
 			<div id="map" />

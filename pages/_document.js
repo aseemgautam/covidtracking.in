@@ -12,12 +12,13 @@ export default class extends Document {
 			<html>
 				<Head>
 					<link rel="shortcut icon" href="/favicon.png" />
-					<meta property="og:title" content="COVID-19 Tracker & Dashboard - India" key="title" />
-					<meta property="og:description" content="Data driven insights & information on spread of Covid-19 in India." key="description" />
+					<meta property="og:title" content="Covid 19 Tracking - India" key="title" />
+					<meta property="og:description" content="Tracking spread of coronavirus in India using scientific & mathematical models." key="description" />
 					<meta property="og:type" content="website" />
-					<meta property="og:url" content="https://cvd19.in/" />
-					<meta property="og:image" content="/cvd-og.png" />
+					<meta property="og:url" content="https://covidtracking.in/" />
+					<meta property="og:image" content="/og-img.png" />
 					<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+					<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 					{/* Global Site Tag (gtag.js) - Google Analytics */}
 					<script
 						async

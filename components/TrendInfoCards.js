@@ -1,11 +1,12 @@
 import { Row, Col } from 'antd';
+import Colors from '../classes/Colors';
 
 const TrendColumn = props => {
-	const { className, name, title, description } = props;
+	const { backgroundColor, name, title, description } = props;
 	return (
 		<>
 			<Col xs={12}>
-				<div className={`trend-info ${className}`}>
+				<div className="trend-info" style={{ backgroundColor }}>
 					<div>{name}</div>
 					<div>{title}</div>
 				</div>
@@ -28,28 +29,28 @@ const TrendInfoCards = () => {
 				align="middle"
 			>
 				<TrendColumn
-					className="very-poor"
+					backgroundColor={Colors.getTrendColor(75)}
 					name="RED"
-					title="Trending Very Poorly"
-					description="If cases are increasing (more than 5% change) during the 14 day period."
+					title="Rapid Growth in New Cases"
+					description="NEW covid+ cases (daily, average) have increased by 50% or more in the last 14 days."
 				/>
 				<TrendColumn
-					className="poor"
+					backgroundColor={Colors.getTrendColor(45)}
 					name="ORANGE"
-					title="Getting Worse"
-					description="If cases are increasing (more than 5% change) during the 14 day period."
+					title="Moderate growth in New Cases"
+					description="NEW covid+ cases (daily, average) have INCREASED 20% - 50% in last 14 days."
 				/>
 				<TrendColumn
-					className="progress"
+					backgroundColor={Colors.getTrendColor(15)}
 					name="YELLOW"
-					title="Making Progress"
-					description="If cases are increasing (more than 5% change) during the 14 day period."
+					title="Low Growth in New Cases"
+					description="NEW covid+ cases (daily, average) have INCREASED 0 - 20% in last 14 days."
 				/>
 				<TrendColumn
-					className="better"
+					backgroundColor={Colors.getTrendColor(-5)}
 					name="GREEN"
-					title="Trending Better"
-					description="If cases are increasing (more than 5% change) during the 14 day period."
+					title="Negative Growth in New Cases"
+					description="NEW covid+ cases (daily, average) have gone DOWN in last 14 days."
 				/>
 			</Row>
 		</>

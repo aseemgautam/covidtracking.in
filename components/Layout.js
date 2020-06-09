@@ -1,12 +1,10 @@
 import Link from 'next/link';
-import { Layout, Space, Row, Col, Menu, Dropdown, Button } from 'antd';
+import { Layout, Space, Row, Col, Menu, Dropdown } from 'antd';
 import { MenuOutlined, TwitterOutlined } from '@ant-design/icons';
 
 const { Header, Content, Footer } = Layout;
 const tracker = <Link href="/"><a>TRACKER</a></Link>;
 const analytics = <Link href="/analytics"><a>ANALYTICS</a></Link>;
-const helpline = <Link href="/helpline"><a>HELPLINES</a></Link>;
-const testing = <Link href="/coronavirus-testing-labs"><a>TESTING</a></Link>;
 const menu = (
 	<Menu>
 		<Menu.Item>
@@ -14,12 +12,6 @@ const menu = (
 		</Menu.Item>
 		<Menu.Item>
 			{analytics}
-		</Menu.Item>
-		<Menu.Item>
-			{helpline}
-		</Menu.Item>
-		<Menu.Item>
-			{testing}
 		</Menu.Item>
 	</Menu>
 );
@@ -30,7 +22,7 @@ const SiteLayout = props => {
 			<Header>
 				<Row>
 					<Col className="logo" xs={20} sm={18} md={12} lg={8}>
-						<a href="/">COVID TRACKING PROJECT</a>
+						<a href="/">COVID TRACKING INDIA</a>
 					</Col>
 					<Col xs={4} sm={6} md={0} className="mobile-navigation">
 						<Dropdown overlay={menu}>
@@ -41,8 +33,6 @@ const SiteLayout = props => {
 						<Space size="middle" className="navigation">
 							{tracker}
 							{analytics}
-							{helpline}
-							{testing}
 						</Space>
 					</Col>
 				</Row>
@@ -54,40 +44,31 @@ const SiteLayout = props => {
 					</Col>
 				</Row>
 			</Content>
-			{/* <Footer style={{ textAlign: 'center' }}>
+			<Footer style={{ textAlign: 'center' }}>
 				<Row>
 					<Col className="footer-about" xs={24} sm={16} md={14} lg={16} xl={14}>
-						<h3>About</h3>
-						<p>
-							Insights on covid-19 (coronavirus) spread in India. While news media likes
-							to highlight new cases & highs, tracking actual growth of covid-19
-							is rather complex & difficult.
-							<br />
-							There could be some areas doing great but others not so. We try to provide
-							a deeper analysis on what is actually going on in different parts of India.
-						</p>
+						<div className="logo">
+							<a href="/">COVID TRACKING INDIA</a>
+						</div>
+						<br />
+						<div>
+							Tracking spread of covid-19 in India using scientific & mathematical models. Calulating 7 & 14
+							day trends of new cases to track speed of new infections & growth of covid-19 in different states.
+						</div>
 					</Col>
 					<Col className="footer-twitter" xs={24} sm={8} md={8} lg={6} xl={6}>
 						<div className="btn-twitter">
 							<a
 								rel="noopener noreferrer"
 								target="_blank"
-								href="https://twitter.com/cvd19in"
+								href="https://twitter.com/CovidTrackingIn"
 							>
 								<TwitterOutlined /> Follow on twitter
 							</a>
 						</div>
-						<div>Developed By
-							<a
-								href="https://www.linkedin.com/in/aseemgautam/"
-								rel="noopener noreferrer"
-								target="_blank"
-							> Aseem Gautam
-							</a>
-						</div>
 					</Col>
 				</Row>
-			</Footer> */}
+			</Footer>
 		</Layout>
 	);
 };

@@ -10,7 +10,6 @@
   .ant-card-body { 
     padding: 0px;
   }
-  .weekly-rate > .ant-progress { padding-right: 16px;}
 }
 
 .covid-statistic .ant-statistic-title,
@@ -41,14 +40,20 @@
   .trend-percent {
     margin-left: 8px;
   }
+  .ant-col:first-child {
+    padding-left: 16px;
+  }
   .ant-col {
     padding: 8px;
   }
-  .ant-col:first-child {
+  .trend-card-description {
+    font-size: 13px;
+    text-align: center;
+    padding: 12px;
     background-color: #eee;
   }
   .ant-statistic-title {
-    font-weight: 500;
+    font-weight: 600;
   }
 }
 

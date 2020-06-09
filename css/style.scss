@@ -9,6 +9,7 @@ html,body
     color: #303030;
     overflow-x: hidden;
     overflow-y: auto !important;
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 #__next {
   height: 100%;
@@ -50,34 +51,8 @@ h1, h2, h3, h4 {
   @extend %flex-row-center;
 }
 
-.link { color: vars.$blue !important; font-weight: 400; }
-.ant-layout { min-height: 100%; background-color: #fff;}
-.ant-layout-content {
-  margin: 16px;
-}
-.ant-layout-footer {
-  width: 100%;
-  padding: 16px;
-  background-color: #fff;
-  // border-top: vars.$border;
-  .footer-about { 
-    padding-right: 16px;
-    text-align: left;
-  }
-  .footer-twitter {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    .btn-twitter {
-      line-height: 24px;
-      border: vars.$border;
-      border-radius: vars.$border-radius;
-      padding: 4px 8px;
-      margin-bottom: 8px;
-    }
-  }
-}
+.link { color: vars.$blue !important; }
+
 #loading {
   position: fixed;
   top: 75px;
@@ -93,12 +68,10 @@ h1, h2, h3, h4 {
   margin:0;
 }
 
-.india-map {
-  height: 400px;
-  background-color: #fafafa;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.map-info.leaflet-control {
+  background-color: rgba(255,255,255, 0.7);
+  border-radius: vars.$border-radius;
+  width: 200px;
 }
 
 .rate-of-growth-drawer {
@@ -141,6 +114,8 @@ h1, h2, h3, h4 {
 .page-section-title {
   display: flex;
   justify-content: space-between;
+  padding: 16px 0px;
+  align-items: center;
 }
 
 .map-info {
@@ -148,32 +123,3 @@ h1, h2, h3, h4 {
   text-align: right;
   padding: 10px;
 }
-
-@media (min-width: 768px) {
-  .ant-layout-header {
-    padding-right: 24px;
-    padding-left: 24px;
-  }
-  
-  .ant-layout-content {
-    margin:  24px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .ant-layout-header {
-    padding-right: 48px;
-    padding-left: 48px;
-  }
-  
-  .ant-layout-content {
-    margin:  32px 48px;
-  }
-}
-
-// @media (max-width: 576px) {
-//   .logo a { font-size: 17px; }
-//   .footer-twitter {
-//     align-items: baseline !important;
-//   }
-// }

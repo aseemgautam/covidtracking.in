@@ -20,14 +20,9 @@
 }
 .logo a {
   background-color: vars.$logo-color;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
   border-radius: 2px;
   padding: 8px;
   color: vars.$font-color;
-}
-.ant-layout-header {
-  background-color: #fff;
-  border-bottom: vars.$border;
-  padding: 0 16px;
 }

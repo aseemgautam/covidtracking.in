@@ -18,27 +18,33 @@
   background-color: vars.$ant-progress-step-color;
 }
 .state-name {
-  font-weight: 600;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.ant-table-small .ant-table-tbody > tr > td,
+.ant-table-small .ant-table-thead > tr > th {
+  .plus-today { color: vars.$trend-very-poor;}
 }
 .ant-table-small .ant-table-tbody > tr > td {
     border-bottom: 1px solid rgba(0, 0, 0, 0.067);
     .cell-wrapper { display: flex; flex-shrink: 0; line-height: 32px;}
     div.count { flex-grow: 1; text-align: right;}
+    .plus-today { font-weight: 500; }
     div.delta { width: 60px; }
+    .total { font-weight: 500;}
     .delta { text-align: left; padding-left: 10px; }
     .weekly-rate {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 0px 10px;
+      .progress-rate {
+        margin-left: 8px;
+      }
     }
   }
-  .ant-table-small .ant-table-tbody > tr > td:nth-child(2) {
-    background-color: #fff1f0;
-  }
-  .ant-table-small .ant-table-tbody > tr > td:nth-child(1),
-  .ant-table-small .ant-table-tbody > tr > td:nth-child(2),
-  .ant-table-small .ant-table-tbody > tr > td:nth-child(3) {
+
+  
+
+  .ant-table-small .ant-table-tbody > tr > td:not(:nth-child(0)):not(:last-child) {
     border-right: 1px solid rgba(0, 0, 0, 0.067);
   }
 }

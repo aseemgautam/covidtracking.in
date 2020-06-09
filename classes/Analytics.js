@@ -1,8 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 import _ from 'lodash';
 import CovidTests from '../public/covid-tests.json';
-import AllCasesState from '../public/cases-india-statewise.json';
-import IndiaStates from '../public/india-states.json';
 import CasesDistricts from '../public/cases-districts.json';
 import DailyUpdates from '../public/daily-updates.json';
 import CovidDataIndia from './CovidDataIndia';
@@ -16,37 +14,6 @@ class Analytics {
 		this.casesByState = new Map();
 		this.casesByStateLatest = [];
 		this.activeCasesPeak = [];
-		IndiaStates.states.forEach(element => {
-			this.states.push({ name: element.name, code: element.code });
-			const filtered = this.calculateNew(_.filter(AllCasesState, { state: element.name }))
-				.map((curr, idx, src) => {
-					let rateOfInc7days = '-';
-					let activeDelta = 0;
-					if (idx > 7 && src[idx - 7].active > 0) {
-						activeDelta = curr.active - src[idx - 7].active;
-						rateOfInc7days = (activeDelta * 100) / src[idx - 7].active;
-					}
-					return {
-						...curr,
-						casesPer1L: curr.confirmed > 50
-							? this.round((curr.confirmed * 100000) / element.population) : '-',
-						rateOfInc7days: this.round(rateOfInc7days),
-						activeDelta,
-						rollingAvg7days: idx > 7 ? this.round(src.slice(idx - 7, idx).reduce((prev, current) => {
-							return prev + current.newCases;
-						}, 0) / 7) : 0,
-						rollingAvg14days: idx > 14 ? this.round(src.slice(idx - 14, idx).reduce((prev, current) => {
-							return prev + current.newCases;
-						}, 0) / 14) : 0,
-						last7DaysActive: src.slice(-7)
-					};
-				});
-			this.activeCasesPeak.push(_.maxBy(filtered, val => { return val.active; }));
-			this.casesByState.set(element.name, filtered);
-			if (filtered && filtered.length > 0) {
-				this.casesByStateLatest.push(_.last(filtered));
-			}
-		});
 		this.testingData = [];
 		CovidTests.sort(this.sortJsonByDateDesc).forEach(test => {
 			this.testingData.push(
@@ -121,17 +88,6 @@ class Analytics {
 		return current - previous;
 	}
 
-	getMapColor = count => {
-		if (count > 6400) return '#b30000';
-		if (count > 3200) return '#e34a33';
-		if (count > 1600) return '#fc8d59';
-		if (count > 800) return '#fdbb84';
-		if (count > 400) return '#fdd49e';
-		if (count > 200) return '#c7e9c0';
-		if (count > 100) return '#74c476';
-		return '#74c476';
-	}
-
 	topNAffected = topn => {
 		return _.map(_.takeRight(_.sortBy(this.casesByStateLatest, ['active']), topn), 'state');
 	}
@@ -174,20 +130,17 @@ class Analytics {
 	}
 
 	getProgressColorAndPercent = growthRate => {
-		let color;
-		let percent = growthRate;
-		if (growthRate) {
-			if (growthRate > 100) color = Colors.red6;
-			else if (growthRate > 50) color = Colors.orange6;
-			else if (growthRate > 25) {
-				color = Colors.yellow6;
-				percent = 51;
-			} else if (growthRate > 0) {
-				color = Colors.green6;
-				percent = 25;
-			} else if (growthRate < 0) { color = Colors.green7; percent = 100; }
-		}
-		return { color, percent };
+		// let percent = growthRate;
+		// if (growthRate) {
+		// 	if (growthRate > 25) {
+		// 		color = Colors.yellow6;
+		// 		percent = 51;
+		// 	} else if (growthRate > 0) {
+		// 		color = Colors.green6;
+		// 		percent = 25;
+		// 	} else if (growthRate < 0) { color = Colors.green7; percent = 100; }
+		// }
+		return { color: Colors.getTrendColor(growthRate), percent: growthRate };
 	}
 }
 const analytics = new Analytics();

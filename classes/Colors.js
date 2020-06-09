@@ -18,6 +18,16 @@ class Colors {
 		this.newCasesStack = '#FFCC32';
 		this.testingSampleStack = '#d9d9d9';
 	}
+
+	getTrendColor = rate => {
+		if (rate) {
+			if (rate > 50) return '#cf1322';
+			if (rate > 20) return '#fa541c';
+			if (rate > 0) return '#faad14';
+			return '#31a354';
+		}
+		return '#31a354';
+	};
 }
 
 const colors = new Colors();

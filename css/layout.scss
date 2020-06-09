@@ -1,0 +1,61 @@
+@use 'vars';
+.ant-layout { 
+  min-height: 100%;
+  background-color: #fff;
+}
+.ant-layout-content {
+  margin: 16px 16px;
+}
+.ant-layout-footer {
+  width: 100%;
+  padding: 16px;
+  background-color: #fff;
+  border-top: vars.$border;
+  .footer-about { 
+    padding-right: 16px;
+    text-align: left;
+  }
+  .footer-twitter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .btn-twitter {
+      line-height: 24px;
+      border: vars.$border;
+      border-radius: vars.$border-radius;
+      padding: 4px 8px;
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.ant-layout-header {
+  background-color: #fff;
+  border-bottom: vars.$border;
+  padding: 0px 16px;
+}
+
+@media (min-width: 768px) {
+  .ant-layout-footer {
+    padding: 24px;
+  }
+  .ant-layout-header {
+    padding: 0px 24px;
+  }
+  .ant-layout-content {
+    margin: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .ant-layout-header {
+    padding: 0px 48px;
+  }
+  .ant-layout-footer {
+    padding: 24px 48px;
+  }
+  .ant-layout-content {
+    margin:  24px 48px;
+  }
+}

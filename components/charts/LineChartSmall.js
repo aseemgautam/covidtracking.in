@@ -1,18 +1,18 @@
 import React, { useRef, useEffect } from 'react';
 import { Chart } from '@antv/g2';
 
-const LineChartSmall = React.memo(({ data, fieldX, fieldY, width, widthSmall, height }) => {
+const LineChartSmall = React.memo(({ data, fieldX, fieldY, width, autoSize = true, height }) => {
 	const container = useRef(null);
 	useEffect(() => {
 		if (!container.current || !data) {
 			return;
 		}
-		const isMobile = window.innerWidth < 576;
+		const parentWidth = container.current.parentElement.offsetWidth;
 		const chart = new Chart({
 			container: container.current,
 			autoFit: true,
 			height: height ?? 60,
-			width: isMobile ? widthSmall : width,
+			width: autoSize ? parentWidth - 16 : width,
 			padding: [15, 20, 0, 20]
 		});
 		chart.annotation().text({
@@ -48,8 +48,8 @@ const LineChartSmall = React.memo(({ data, fieldX, fieldY, width, widthSmall, he
 
 		chart.tooltip(false);
 
-		chart.area().position(`${fieldX}*${fieldY}`);
-		chart.line().position(`${fieldX}*${fieldY}`).size(1).shape('smooth');
+		chart.area().position(`${fieldX}*${fieldY}`).color('#bfbfbf');
+		chart.line().position(`${fieldX}*${fieldY}`).size(2).color('#595959').shape('smooth');
 
 		chart.render();
 	});

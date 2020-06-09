@@ -1,15 +1,21 @@
 import { Progress } from 'antd';
-import Analytics from '../classes/Analytics';
+import Colors from '../classes/Colors';
 
 const MovingAverageProgress = ({ rateOfInc }) => {
-	const settings = Analytics.getProgressColorAndPercent(rateOfInc);
+	let percent = rateOfInc;
+	if (rateOfInc <= 0) {
+		percent = 100;
+	}
+	if (rateOfInc > 0 && rateOfInc <= 20) percent = 30;
+	if (rateOfInc > 20 && rateOfInc < 50) percent = 75;
+	if (rateOfInc > 50) percent = 110;
 	return (
 		<Progress
-			percent={settings.percent}
+			percent={percent}
 			showInfo={false}
 			status="normal"
 			steps={4}
-			strokeColor={settings.color}
+			strokeColor={Colors.getTrendColor(rateOfInc)}
 		/>
 	);
 };

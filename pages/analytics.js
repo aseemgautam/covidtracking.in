@@ -12,12 +12,10 @@ const analytics = () => {
 					Explore graphics made with the COVID Tracking Project dataset along with tips to help you
 					present the data in the clearest and most accurate way possible.
 				</h2>
-				{/* <Divider /> */}
 				<h3 className="title">GROWTH IN NEW & ACTIVE CASES</h3>
 				<NewCasesChart cases={Analytics.cases} />
 			</FullWidthRow>
 			<FullWidthRow>
-				{/* <Divider /> */}
 				<h3 className="title">COVID-19 TESTING</h3>
 				<TestingChart />
 			</FullWidthRow>

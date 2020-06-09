@@ -1,10 +1,8 @@
 import { useState } from 'react';
-import { Typography, Radio, Divider } from 'antd';
+import { Radio } from 'antd';
 import ActiveCasesGrowth from './charts/ActiveCasesGrowth';
 import CalenderActiveGrowth from './charts/CalenderActiveGrowth';
 import Analytics from '../classes/Analytics';
-
-const { Text } = Typography;
 
 function ActiveCasesSection() {
 	const [showCalendar, setShowCalendar] = useState(false);
@@ -13,7 +11,6 @@ function ActiveCasesSection() {
 	}
 	return (
 		<>
-			{/* <Divider /> */}
 			<div className="active-cases-section-head">
 				<h3 className="title"> GROWTH IN ACTIVE CASES</h3>
 				<Radio.Group defaultValue="line" onChange={onCalendarShowChange}>

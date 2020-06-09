@@ -2,7 +2,6 @@ import { Row, Col } from 'antd';
 import _ from 'lodash';
 import CovidDataIndia from '../../classes/CovidDataIndia';
 import CovidStatistic from './CovidStatistic';
-import MovingAverageCard from './MovingAverageCard';
 
 const NationalStats = () => {
 	const { latest } = CovidDataIndia;
@@ -81,12 +80,6 @@ const NationalStats = () => {
 						suffixClassName="green7"
 						precision={0}
 					/>
-				</Col>
-				<Col xs={24} sm={24} md={12}>
-					<MovingAverageCard cases={CovidDataIndia.cases} days={7} />
-				</Col>
-				<Col xs={24} sm={24} md={12}>
-					<MovingAverageCard cases={CovidDataIndia.cases} days={14} />
 				</Col>
 			</Row>
 		</>

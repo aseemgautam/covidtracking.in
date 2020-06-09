@@ -28,7 +28,7 @@ class LeafletMap {
 		// method that we will use to update the control based on feature properties passed
 		this.infoCtrl.update = props => {
 			this.infoDiv.innerHTML = `${props
-				? `<h4>${props.name}</h4>${this.getInfo(props.name)} confirmed cases`
+				? `<h4>${props.name}</h4>${this.getInfo(props.name)}`
 				: 'Hover/Tap on any state'}`;
 		};
 		this.infoCtrl.addTo(this.map);
