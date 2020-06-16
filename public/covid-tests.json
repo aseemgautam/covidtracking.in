@@ -550,5 +550,149 @@
     "positive": 165799,
     "newPositive": 7466,
     "percentPositive": 6.134656785
+  },
+  {
+    "date": "2020-05-30",
+    "samples": 3611599,
+    "newSamples": 127761,
+    "positive": 173763,
+    "newPositive": 7964,
+    "percentPositive": 6.23351414
+  },
+  {
+    "date": "2020-05-31",
+    "samples": 3737027,
+    "newSamples": 125428,
+    "positive": 182143,
+    "newPositive": 8380,
+    "percentPositive": 6.681123832
+  },
+  {
+    "date": "2020-06-01",
+    "samples": 3837207,
+    "newSamples": 100180,
+    "positive": 190535,
+    "newPositive": 8392,
+    "percentPositive": 8.376921541
+  },
+  {
+    "date": "2020-06-02",
+    "samples": 3966075,
+    "newSamples": 128868,
+    "positive": 198706,
+    "newPositive": 8171,
+    "percentPositive": 6.340596579
+  },
+  {
+    "date": "2020-06-03",
+    "samples": 4103233,
+    "newSamples": 137158,
+    "positive": 207615,
+    "newPositive": 8909,
+    "percentPositive": 6.49542863
+  },
+  {
+    "date": "2020-06-04",
+    "samples": 4242718,
+    "newSamples": 139485,
+    "positive": 216919,
+    "newPositive": 9304,
+    "percentPositive": 6.670251281
+  },
+  {
+    "date": "2020-06-05",
+    "samples": 4386379,
+    "newSamples": 143661,
+    "positive": 226770,
+    "newPositive": 9851,
+    "percentPositive": 6.857115014
+  },
+  {
+    "date": "2020-06-06",
+    "samples": 4524317,
+    "newSamples": 137938,
+    "positive": 236657,
+    "newPositive": 9887,
+    "percentPositive": 7.16771303
+  },
+  {
+    "date": "2020-06-07",
+    "samples": 4666386,
+    "newSamples": 142069,
+    "positive": 246628,
+    "newPositive": 9971,
+    "percentPositive": 7.018420627
+  },
+  {
+    "date": "2020-06-08",
+    "samples": 4774434,
+    "newSamples": 108048,
+    "positive": 256611,
+    "newPositive": 9983,
+    "percentPositive": 9.239412113
+  },
+  {
+    "date": "2020-06-09",
+    "samples": 4916116,
+    "newSamples": 141682,
+    "positive": 266598,
+    "newPositive": 9987,
+    "percentPositive": 7.048884121
+  },
+  {
+    "date": "2020-06-10",
+    "samples": 5016332,
+    "newSamples": 100216,
+    "positive": 276583,
+    "newPositive": 9985,
+    "percentPositive": 9.963478886
+  },
+  {
+    "date": "2020-06-11",
+    "samples": 5213140,
+    "newSamples": 196808,
+    "positive": 286579,
+    "newPositive": 9996,
+    "percentPositive": 5.079061827
+  },
+  {
+    "date": "2020-06-12",
+    "samples": 5363445,
+    "newSamples": 150305,
+    "positive": 297535,
+    "newPositive": 10956,
+    "percentPositive": 7.28917867
+  },
+  {
+    "date": "2020-06-13",
+    "samples": 5507182,
+    "newSamples": 143737,
+    "positive": 308993,
+    "newPositive": 11458,
+    "percentPositive": 7.97150351
+  },
+  {
+    "date": "2020-06-14",
+    "samples": 5658614,
+    "newSamples": 151432,
+    "positive": 320922,
+    "newPositive": 11929,
+    "percentPositive": 7.877463152
+  },
+  {
+    "date": "2020-06-15",
+    "samples": 5774133,
+    "newSamples": 115519,
+    "positive": 332424,
+    "newPositive": 11502,
+    "percentPositive": 9.956803643
+  },
+  {
+    "date": "2020-06-16",
+    "samples": 5921069,
+    "newSamples": 146936,
+    "positive": 343091,
+    "newPositive": 10667,
+    "percentPositive": 7.259623237
   }
 ]

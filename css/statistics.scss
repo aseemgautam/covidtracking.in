@@ -23,6 +23,7 @@
   color: vars.$font-color;
 }
 
+
 .covid-statistic .ant-statistic-content {
   font-size: 18px;
 }
@@ -41,7 +42,7 @@
     margin-left: 8px;
   }
   .ant-col:first-child {
-    padding-left: 16px;
+    padding-left: 12px;
   }
   .ant-col {
     padding: 8px;
@@ -53,7 +54,8 @@
     background-color: #eee;
   }
   .ant-statistic-title {
-    font-weight: 600;
+    font-weight: 500;
+    color: vars.$font-color;
   }
 }
 

@@ -35,11 +35,11 @@ const LineChartSmall = React.memo(({ data, fieldX, fieldY, width, autoSize = tru
 		});
 
 		chart.data(data);
-		chart.axis([fieldY], false);
 		chart.axis(fieldY, false);
 		chart.scale({
 			[fieldY]: {
 				nice: true,
+				min: 0
 			},
 			[fieldX]: {
 				range: [0, 1],

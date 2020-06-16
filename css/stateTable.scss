@@ -13,6 +13,12 @@
   color: vars.$font-color;
   font-weight: bold;
   border-bottom: 2px solid vars.$font-color;
+  .sub-heading {
+    font-size: 12px;
+    font-weight: 400;
+    color: #666;
+    text-transform: capitalize;
+  }
 }
 .ant-progress-steps-item {
   background-color: vars.$ant-progress-step-color;

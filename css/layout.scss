@@ -8,25 +8,18 @@
 }
 .ant-layout-footer {
   width: 100%;
-  padding: 16px;
-  background-color: #fff;
+  background-color: #fafafa;
   border-top: vars.$border;
-  .footer-about { 
-    padding-right: 16px;
-    text-align: left;
-  }
-  .footer-twitter {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    .btn-twitter {
-      line-height: 24px;
-      border: vars.$border;
-      border-radius: vars.$border-radius;
-      padding: 4px 8px;
-      margin-bottom: 8px;
-    }
+  text-align: center;
+  padding: 16px;
+
+  .btn-twitter {
+    border: 1px solid;
+    border-color: vars.$blue;
+    margin-left: 16px;
+    line-height: 34px;
+    padding: 0px 8px;
+    border-radius: vars.$border-radius;
   }
 }
 
@@ -37,9 +30,6 @@
 }
 
 @media (min-width: 768px) {
-  .ant-layout-footer {
-    padding: 24px;
-  }
   .ant-layout-header {
     padding: 0px 24px;
   }
@@ -52,9 +42,7 @@
   .ant-layout-header {
     padding: 0px 48px;
   }
-  .ant-layout-footer {
-    padding: 24px 48px;
-  }
+
   .ant-layout-content {
     margin:  24px 48px;
   }

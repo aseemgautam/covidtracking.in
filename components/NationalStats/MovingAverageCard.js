@@ -1,12 +1,12 @@
+import React from 'react';
 import { Row, Col } from 'antd';
-import RateOfGrowthHelp from '../RateOfGrowthHelp';
 import MovingAverageProgress from '../MovingAverageProgress';
 import LineChartSmall from '../charts/LineChartSmall';
 
-const MovingAverageCard = ({ cases, days }) => {
+const MovingAverageCard = React.memo(({ cases, days }) => {
 	const latest = cases[cases.length - 1];
 	const rateOfInc = days === 7 ? latest.movingAvg7daysRate : latest.movingAvg14daysRate;
-	const movingAverage = cases.slice(days === 7 ? -7 : -14)
+	const movingAverage = cases.slice(days === 7 ? -8 : -15)
 		.map(curr => {
 			return {
 				date: curr.date,
@@ -18,10 +18,10 @@ const MovingAverageCard = ({ cases, days }) => {
 		<>
 			<Row className="trend-card" justify="space-between">
 				<Col flex="80px">
-					<RateOfGrowthHelp title={`${days} DAY TREND COVID+`} className="ant-statistic-title" />
+					<div className="ant-statistic-title">{`${days} DAY TREND COVID+`}</div>
 				</Col>
 				<Col flex="1 0 120px" className="flex-row-center">
-					<MovingAverageProgress rateOfInc={rateOfInc} />
+					<MovingAverageProgress rateOfInc={rateOfInc} newCases={latest.newCases} />
 					<div className="trend-percent">+{rateOfInc}%</div>
 				</Col>
 				<Col flex="1 0 120px" className="flex-row-center">
@@ -40,6 +40,6 @@ const MovingAverageCard = ({ cases, days }) => {
 			</Row>
 		</>
 	);
-};
+});
 
 export default MovingAverageCard;

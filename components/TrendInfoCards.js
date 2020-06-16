@@ -2,16 +2,16 @@ import { Row, Col } from 'antd';
 import Colors from '../classes/Colors';
 
 const TrendColumn = props => {
-	const { backgroundColor, name, title, description } = props;
+	const { backgroundColor, name, title, description, colSpan } = props;
 	return (
 		<>
-			<Col xs={12}>
+			<Col xs={colSpan}>
 				<div className="trend-info" style={{ backgroundColor }}>
 					<div>{name}</div>
 					<div>{title}</div>
 				</div>
 			</Col>
-			<Col span={12}>
+			<Col xs={colSpan}>
 				<div className="trend-info description">
 					{description}
 				</div>
@@ -20,7 +20,7 @@ const TrendColumn = props => {
 	);
 };
 
-const TrendInfoCards = () => {
+const TrendInfoCards = ({ colSpan }) => {
 	return (
 		<>
 			<Row
@@ -29,28 +29,32 @@ const TrendInfoCards = () => {
 				align="middle"
 			>
 				<TrendColumn
-					backgroundColor={Colors.getTrendColor(75)}
+					backgroundColor={Colors.getTrendColor(75, 125)}
 					name="RED"
 					title="Rapid Growth in New Cases"
-					description="NEW covid+ cases (daily, average) have increased by 50% or more in the last 14 days."
+					description="14 DAY TREND > 50%. Atleast 100 new covid+ cases."
+					colSpan={colSpan}
 				/>
 				<TrendColumn
-					backgroundColor={Colors.getTrendColor(45)}
+					backgroundColor={Colors.getTrendColor(45, 75)}
 					name="ORANGE"
 					title="Moderate growth in New Cases"
-					description="NEW covid+ cases (daily, average) have INCREASED 20% - 50% in last 14 days."
+					description="20% < 14 DAY TREND < 50%. Atleast 50 new covid+ cases."
+					colSpan={colSpan}
 				/>
 				<TrendColumn
-					backgroundColor={Colors.getTrendColor(15)}
+					backgroundColor={Colors.getTrendColor(15, 30)}
 					name="YELLOW"
 					title="Low Growth in New Cases"
-					description="NEW covid+ cases (daily, average) have INCREASED 0 - 20% in last 14 days."
+					description="0% < 14 DAY TREND < 20%. Atleast 25 new covid+ cases."
+					colSpan={colSpan}
 				/>
 				<TrendColumn
-					backgroundColor={Colors.getTrendColor(-5)}
+					backgroundColor={Colors.getTrendColor(-5, 10)}
 					name="GREEN"
 					title="Negative Growth in New Cases"
-					description="NEW covid+ cases (daily, average) have gone DOWN in last 14 days."
+					description="14 DAY TREND < 0%. New covid+ cases have gone down."
+					colSpan={colSpan}
 				/>
 			</Row>
 		</>

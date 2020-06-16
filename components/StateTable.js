@@ -2,9 +2,7 @@
 /* eslint-disable no-restricted-syntax */
 import { Table } from 'antd';
 import _ from 'lodash';
-import StateTableCell from './StateTableCell';
 import MovingAverageProgress from './MovingAverageProgress';
-import RateOfGrowthHelp from './RateOfGrowthHelp';
 import LineChartSmall from './charts/LineChartSmall';
 import Colors from '../classes/Colors';
 
@@ -18,7 +16,7 @@ const columns = [
 			return {
 				props: {
 					style: {
-						backgroundColor: Colors.getTrendColor(record.movingAvg14daysRate),
+						backgroundColor: Colors.getTrendColor(record.movingAvg14daysRate, record.newCases14days),
 						color: '#fff'
 					}
 				},
@@ -45,45 +43,12 @@ const columns = [
 	}
 	},
 	{
-		title: <RateOfGrowthHelp title="7 DAY TREND COVID+" days={14} />,
-		dataIndex: 'movingAvg7days',
-		align: 'center',
-		width: 295,
-		render: (text, record) => {
-			return (
-				<div className="weekly-rate">
-					<LineChartSmall
-						fieldX="date"
-						height={50}
-						fieldY="movingAverage"
-						autoSize={false}
-						width={160}
-						data={record.movingAvg7daysData}
-					/>
-					<MovingAverageProgress
-						rateOfInc={record.movingAvg7daysRate}
-					/>
-					<div className="progress-rate">{record.movingAvg7daysRate}%</div>
-				</div>
-			);
-		}
-	},
-	{ title: '7 DAY NEW CASES ',
-		dataIndex: 'newCases7days',
-		align: 'center',
-		width: 95,
-		// sortDirections: ['descend', 'ascend'],
-		// sorter: (a, b) => {
-		// 	return a.newCases7days - b.newCases7days;
-		// },
-	},
-	{ title: 'PREV 7 DAY NEW CASES ',
-		dataIndex: 'prevNewCases7days',
-		align: 'center',
-		width: 95
-	},
-	{
-		title: <RateOfGrowthHelp title="14 DAY TREND COVID+" days={14} />,
+		title: (
+			<>
+				<div>14 DAY TREND COVID+</div>
+				<div className="sub-heading">Growth in avg daily new cases over 14 days</div>
+			</>
+		),
 		dataIndex: 'movingAvg14days',
 		align: 'center',
 		width: 295,
@@ -102,6 +67,7 @@ const columns = [
 					</div>
 					<MovingAverageProgress
 						rateOfInc={record.movingAvg14daysRate}
+						newCases={record.newCases14days}
 					/>
 					<div className="progress-rate">{record.movingAvg14daysRate}%</div>
 				</div>
@@ -121,6 +87,50 @@ const columns = [
 		dataIndex: 'prevNewCases14days',
 		align: 'center',
 		width: 105,
+	},
+	{
+		title: (
+			<>
+				<div>7 DAY TREND COVID+</div>
+				<div className="sub-heading">Growth in avg daily new cases over 7 days</div>
+			</>
+		),
+		dataIndex: 'movingAvg7days',
+		align: 'center',
+		width: 295,
+		render: (text, record) => {
+			return (
+				<div className="weekly-rate">
+					<LineChartSmall
+						fieldX="date"
+						height={50}
+						fieldY="movingAverage"
+						autoSize={false}
+						width={160}
+						data={record.movingAvg7daysData}
+					/>
+					<MovingAverageProgress
+						rateOfInc={record.movingAvg7daysRate}
+						newCases={record.newCases14days}
+					/>
+					<div className="progress-rate">{record.movingAvg7daysRate}%</div>
+				</div>
+			);
+		}
+	},
+	{ title: '7 DAY NEW CASES ',
+		dataIndex: 'newCases7days',
+		align: 'center',
+		width: 95,
+		// sortDirections: ['descend', 'ascend'],
+		// sorter: (a, b) => {
+		// 	return a.newCases7days - b.newCases7days;
+		// },
+	},
+	{ title: 'PREV 7 DAY NEW CASES ',
+		dataIndex: 'prevNewCases7days',
+		align: 'center',
+		width: 100
 	},
 	// { title: 'Confirm',
 	// 	dataIndex: 'confirmed',
@@ -215,11 +225,11 @@ const StateTable = ({ casesByStateLatest }) => {
 		<Table
 			className="state-table"
 			columns={columns}
-			dataSource={_.filter(casesByStateLatest, val => { return val.confirmed > 50; })}
+			dataSource={casesByStateLatest}
 			rowKey="state"
 			size="small"
 			scroll={{ x: 'max-content' }}
-			pagination={{ size: 'default', pageSize: 35, hideOnSinglePage: true }}
+			pagination={{ size: 'default', pageSize: 40, hideOnSinglePage: true }}
 		/>
 	);
 };

@@ -8,7 +8,10 @@ const Map = React.memo(() => {
 	const map = useRef(null);
 	function getColor(name) {
 		const latest = CovidDataStateWise.getLatest(name);
-		return Colors.getTrendColor(latest ? latest.movingAvg14daysRate : 0);
+		if (latest) {
+			return Colors.getTrendColor(latest.movingAvg14daysRate, latest.newCases14days);
+		}
+		return Colors.getTrendColor(0, 0);
 	}
 	function getInfo(name) {
 		const rate = CovidDataStateWise.getLatest(name).movingAvg14daysRate;

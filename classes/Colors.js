@@ -19,11 +19,11 @@ class Colors {
 		this.testingSampleStack = '#d9d9d9';
 	}
 
-	getTrendColor = rate => {
+	getTrendColor = (rate, newCases) => {
 		if (rate) {
-			if (rate > 50) return '#cf1322';
-			if (rate > 20) return '#fa541c';
-			if (rate > 0) return '#faad14';
+			if (rate > 50 && newCases > 100) return '#cf1322';
+			if (rate > 20 && newCases > 50) return '#fa541c';
+			if (rate > 0 && newCases > 25) return '#faad14';
 			return '#31a354';
 		}
 		return '#31a354';

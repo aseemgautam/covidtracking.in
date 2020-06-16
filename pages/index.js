@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-syntax */
-import { Row, Col } from 'antd';
+import { Row, Col, Typography } from 'antd';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import NationalStats from '../components/NationalStats';
@@ -19,36 +19,25 @@ function Index() {
 			</Head>
 			<Row>
 				<Col span={24}>
-					<p>Tracking spread of coronavirus in India using scientific & mathematical models.</p>
+					<p>Tracking spread of coronavirus in India using scientific & mathematical models recommended by
+						White House & CDC (Centers for Disease Control and Prevention) USA.
+					</p>
 				</Col>
 				<Col style={{ paddingTop: 0 }} span={24} className="page-section-title">
 					<h3 className="title">National Statistics</h3>
-					<h5>Updated 21st May, 10:26 AM</h5>
+					<h5>Updated 16th June, 07:45 PM</h5>
 				</Col>
 			</Row>
 			<NationalStats />
 			<Row>
 				<Col span={24} className="page-section-title">
-					<h3 className="title">Average (Rolling) New Cases Daily</h3>
+					<h3 className="title">Trends of New COVID+ Cases (Daily, Average)</h3>
 				</Col>
 				<Col span={24}>
-					<p> CDC (Center for diesease control, USA),&nbsp;
-						<a
-							rel="noopener noreferrer"
-							target="_blank"
-							href="https://www.covidexitstrategy.org/definitions-and-criteria"
-						>
-							recommends
-						</a>
-						&nbsp;-&nbsp;
-						<u>
-							Downward trajectory of
-							new COVID-19 cases (7 day rolling average) over a 14-day period as one of the gating criteria to open
-							up various states.
-						</u>
-						<br />
-						N<sup>day</sup> rolling average = <i>Sum of new COVID+ cases over N days / N.</i>
-						<br />
+					<p> CDC recommends
+						Downward trajectory of
+						new COVID-19 cases (7 day rolling average) over a 14-day period as one of the gating criteria to open
+						up various states. <a href="/criteria">Criteria Details.</a>
 					</p>
 				</Col>
 			</Row>
@@ -70,12 +59,12 @@ function Index() {
 					<IndiaMap />
 				</Col>
 				<Col xs={24} sm={24} md={12}>
-					<TrendInfoCards />
+					<TrendInfoCards colSpan={12} />
 				</Col>
 			</Row>
 			<Row>
 				<Col flex={24} className="page-section-title">
-					<h3 className="title">Statewise Trends of New Cases</h3>
+					<h3 className="title">Statewise Trends of New COVID+ Cases</h3>
 				</Col>
 			</Row>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>

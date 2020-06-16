@@ -1,7 +1,7 @@
 import { Progress } from 'antd';
 import Colors from '../classes/Colors';
 
-const MovingAverageProgress = ({ rateOfInc }) => {
+const MovingAverageProgress = ({ rateOfInc, newCases }) => {
 	let percent = rateOfInc;
 	if (rateOfInc <= 0) {
 		percent = 100;
@@ -15,7 +15,7 @@ const MovingAverageProgress = ({ rateOfInc }) => {
 			showInfo={false}
 			status="normal"
 			steps={4}
-			strokeColor={Colors.getTrendColor(rateOfInc)}
+			strokeColor={Colors.getTrendColor(rateOfInc, newCases)}
 		/>
 	);
 };

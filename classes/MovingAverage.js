@@ -13,18 +13,13 @@ class MovingAverage {
 						return prev + current[field];
 					}, 0) / 7);
 				}
-				if (idx > 14) {
-					curr.movingAvg14days = Math.round(src.slice(idx - 14, idx).reduce((prev, current) => {
-						return prev + current[field];
-					}, 0) / 14);
+				if (src[idx - 7]) {
+					curr.movingAvg7daysRate = Math.round(((curr.movingAvg7days - src[idx - 7].movingAvg7days)
+						/ (src[idx - 7].movingAvg7days ? src[idx - 7].movingAvg7days : 1)) * 100);
 				}
-				if (idx > 14 && src[idx - 7].movingAvg7days) {
-					curr.movingAvg7daysRate = Math.round(((src[idx].movingAvg7days - src[idx - 7].movingAvg7days)
-						/ (src[idx - 7].movingAvg7days === 0 ? 1 : src[idx - 7].movingAvg7days)) * 100);
-				}
-				if (idx > 28 && src[idx - 14].movingAvg14days) {
+				if (src[idx - 14]) {
 					curr.movingAvg14daysRate = Math.round(((src[idx].movingAvg7days - src[idx - 14].movingAvg7days)
-						/ (src[idx - 14].movingAvg7days === 0 ? 1 : src[idx - 14].movingAvg7days)) * 100);
+						/ (src[idx - 14].movingAvg7days ? src[idx - 14].movingAvg7days : 1)) * 100);
 				}
 			});
 		}
