@@ -17,7 +17,7 @@ export default class extends Document {
 					<meta name="twitter:description" content="Tracking COVID-19 in India using scientific criteria developed by CDC, USA" />
 					<meta name="twitter:site" content="@CovidTrackingIn" />
 					<meta name="twitter:creator" content="@CovidTrackingIn" />
-					<meta name="twitter:image" content="/twitter-card.png" />
+					<meta name="twitter:image" content="https://covidtracking.in/twitter-card.png" />
 					<meta property="og:title" content="How is India doing - covidtracking.in" key="title" />
 					<meta property="og:description" content="Tracking COVID-19 using scientific criteria developed by CDC, USA" key="description" />
 					<meta property="og:type" content="website" />
