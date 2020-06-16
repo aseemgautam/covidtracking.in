@@ -19,7 +19,7 @@ function Index() {
 			</Head>
 			<Row>
 				<Col span={24}>
-					<p>Tracking spread of coronavirus in India using scientific & mathematical models recommended by
+					<p>Tracking spread of coronavirus in India using scientific & mathematical model recommended by
 						White House & CDC (Centers for Disease Control and Prevention) USA.
 					</p>
 				</Col>
