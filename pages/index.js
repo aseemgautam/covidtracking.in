@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-syntax */
-import { Row, Col, Typography } from 'antd';
+import { Row, Col } from 'antd';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import NationalStats from '../components/NationalStats';
@@ -43,10 +43,10 @@ function Index() {
 			</Row>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} sm={24} md={12}>
-					<MovingAverageCard cases={CovidDataIndia.cases} days={7} />
+					<MovingAverageCard cases={CovidDataIndia.cases} days={14} />
 				</Col>
 				<Col xs={24} sm={24} md={12}>
-					<MovingAverageCard cases={CovidDataIndia.cases} days={14} />
+					<MovingAverageCard cases={CovidDataIndia.cases} days={7} />
 				</Col>
 			</Row>
 			<Row>

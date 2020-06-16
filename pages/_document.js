@@ -12,8 +12,8 @@ export default class extends Document {
 			<html>
 				<Head>
 					<link rel="shortcut icon" href="/favicon.png" />
-					<meta property="og:title" content="Covid 19 Tracking - India" key="title" />
-					<meta property="og:description" content="Tracking spread of coronavirus in India using scientific & mathematical models." key="description" />
+					<meta property="og:title" content="COVID-19 Tracking India" key="title" />
+					<meta property="og:description" content="Tracking COVID-19 using scientific criteria defined by CDC, USA" key="description" />
 					<meta property="og:type" content="website" />
 					<meta property="og:url" content="https://covidtracking.in/" />
 					<meta property="og:image" content="/og-img.png" />
