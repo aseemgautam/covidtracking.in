@@ -45,7 +45,7 @@ const Criteria = () => {
 				<h3 className="title">What is a 14 Day Trend of COVID+?</h3>
 				<p>
 					Growth of average daily covid+ cases in the last 14 days. How many more (or less) covid+
-					cases occuring today compared to 14 days ago.
+					cases occurring today compared to 14 days ago.
 				</p>
 				<p>
 					<img
