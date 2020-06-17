@@ -1,14 +1,19 @@
 /* eslint-disable max-len */
 import L from 'leaflet';
+import { GestureHandling } from 'leaflet-gesture-handling';
 
 class LeafletMap {
 	constructor(lat, lng, zoom, getColor, getInfo, geoJSON) {
-		this.map = L.map('map', { zoomControl: false }).setView([lat, lng], zoom);
+		L.Map.addInitHook('addHandler', 'gestureHandling', GestureHandling);
+		this.map = L.map('map',
+			{ zoomControl: false, gestureHandling: true })
+			.setView([lat, lng], zoom);
 		this.map.touchZoom.disable();
 		this.map.boxZoom.disable();
 		this.map.doubleClickZoom.disable();
 		this.map.scrollWheelZoom.disable();
-		this.map.dragging.disable();
+		// this.map.dragging.disable();
+		// this.map.tap = false;
 		L.tileLayer(
 			'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYXNlZW1nYXV0YW0iLCJhIjoiY2s5NG1hdW9uMGFtaTNmbnlodzE5MG1ydCJ9.bI9pFdktrGpRkNEMhiyKkg',
 			{
@@ -50,7 +55,7 @@ class LeafletMap {
 			opacity: 1,
 			color: 'white',
 			dashArray: '0',
-			fillOpacity: 0.85
+			fillOpacity: 1
 		};
 	}
 

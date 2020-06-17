@@ -18,6 +18,7 @@ import 'antd/es/radio/style/index.css';
 import 'antd/es/table/style/index.css';
 import 'antd/es/progress/style/index.css';
 import 'leaflet/dist/leaflet.css';
+import 'leaflet-gesture-handling/dist/leaflet-gesture-handling.css';
 import '../css/style.scss';
 import '../css/statistics.scss';
 import '../css/vars.scss';

@@ -1174,5 +1174,17 @@
     "newRecover": 10215,
     "newActive": 72,
     "percentIncActive": 0.05
+  },
+  {
+    "date": "2020-06-17",
+    "recovered": 186935,
+    "deaths": 11903,
+    "confirmed": 354065,
+    "active": 155227,
+    "newCases": 10974,
+    "newDeaths": 2003,
+    "newRecover": 6922,
+    "newActive": 2049,
+    "percentIncActive": 1.34
   }
 ]

@@ -16,6 +16,7 @@
     "antd": "^4.2.4",
     "babel-plugin-import": "^1.9.1",
     "leaflet": "^1.6.0",
+    "leaflet-gesture-handling": "^1.1.8",
     "lodash": "^4.17.15",
     "next": "^9.3.2",
     "null-loader": "2.0.0",
