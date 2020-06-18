@@ -9,10 +9,10 @@ const analytics = () => {
 		<>
 			<FullWidthRow>
 				<h2 className="featured">
-					Explore graphics made with the COVID Tracking Project dataset along with tips to help you
+					Explore graphics along with tips to help you
 					present the data in the clearest and most accurate way possible.
 				</h2>
-				<h3 className="title">GROWTH IN NEW & ACTIVE CASES</h3>
+				<h3 className="title">NEW / ACTIVE CASES, DEATHS & RECOVERED</h3>
 				<NewCasesChart cases={Analytics.cases} />
 			</FullWidthRow>
 			<FullWidthRow>

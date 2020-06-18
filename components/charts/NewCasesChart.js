@@ -90,7 +90,7 @@ const NewCasesChart = ({ cases }) => {
 		chart
 			.interval()
 			.position(['date', 'value'])
-			// .size(isMobile ? 18 : 23)
+			.size(isMobile ? 18 : 23)
 			.color('type', [Colors.newCasesStack, '#1a9641', '#d7191c', '#1890ff'])
 			// .label('value')
 			.label('value', value => {
