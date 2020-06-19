@@ -27,7 +27,7 @@ function Index() {
 				</Col>
 				<Col style={{ paddingTop: 0 }} span={24} className="page-section-title">
 					<h3 className="title">National Statistics</h3>
-					<h5>Updated 18th June, 01:45 PM</h5>
+					<h5>Updated 19th June, 10:45 AM</h5>
 				</Col>
 			</Row>
 			<NationalStats />
