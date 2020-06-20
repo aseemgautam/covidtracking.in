@@ -8,6 +8,7 @@ import Colors from './Colors';
 
 class Analytics {
 	constructor() {
+		// eslint-disable-next-line max-len
 		this.cases = CovidDataIndia.cases;
 		// STATE
 		this.states = [];
@@ -130,16 +131,6 @@ class Analytics {
 	}
 
 	getProgressColorAndPercent = growthRate => {
-		// let percent = growthRate;
-		// if (growthRate) {
-		// 	if (growthRate > 25) {
-		// 		color = Colors.yellow6;
-		// 		percent = 51;
-		// 	} else if (growthRate > 0) {
-		// 		color = Colors.green6;
-		// 		percent = 25;
-		// 	} else if (growthRate < 0) { color = Colors.green7; percent = 100; }
-		// }
 		return { color: Colors.getTrendColor(growthRate), percent: growthRate };
 	}
 }

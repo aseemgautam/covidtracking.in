@@ -1,15 +1,35 @@
 import _ from 'lodash';
+import fetch from 'isomorphic-unfetch';
+import Papa from 'papaparse';
 import MovingAverage from './MovingAverage';
-import CasesIndiaStatewise from '../public/cases-india-statewise.json';
 import IndianStates from '../public/india-states.json';
 
-class CovidDataStateWise {
+let instance = null;
+
+class Cache {
 	constructor() {
-		this.cases = new Map();
-		this.latest = [];
+		if (!instance) {
+			instance = this;
+		}
+		this._stateWise = new Map();
+		this._stateWiseMostRecent = null;
+		return instance;
+	}
+
+	fetchStateData = async () => {
+		if (this._stateWise.Size > 0) {
+			return this._stateWise;
+		}
+		// eslint-disable-next-line max-len
+		const res = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQRyjPj_VXGIOYnCy5eoy3YcN9yA_yFKWd4AdkMXFam62N4Ik-D6A6cwFXt2N2LwpncJEd-dFn7s5Ez/pub?gid=2100676919&single=true&output=csv');
+		const text = await res.text();
+		const { data } = Papa.parse(text, {
+			header: true,
+			dynamicTyping: true
+		});
 		IndianStates.states.forEach( // loop all states
 			state => {
-				const cases = _.filter(CasesIndiaStatewise, { state: state.name })
+				const cases = _.filter(data, { state: state.name })
 					.map((curr, idx, src) => {
 						return {
 							...curr,
@@ -22,6 +42,22 @@ class CovidDataStateWise {
 							deathRate: curr.deaths > 5 ? this.round((curr.deaths * 100) / (curr.recovered + curr.deaths)) : '-'
 						};
 					});
+				MovingAverage.calculate(cases, 'newCases');
+				this._stateWise.set(state.name, cases);
+			}
+		);
+		return this.StateWise;
+	}
+
+	stateDataMostRecent = async () => {
+		if (this._stateWiseMostRecent) {
+			return this._stateWiseMostRecent;
+		}
+		await this.fetchStateData();
+		this._stateWiseMostRecent = [];
+		IndianStates.states.forEach( // loop all states
+			state => {
+				const cases = this._stateWise.get(state.name);
 				MovingAverage.calculate(cases, 'newCases');
 				const latest = _.last(cases);
 				if (latest) {
@@ -53,26 +89,17 @@ class CovidDataStateWise {
 						(acc, curr) => {
 							return acc + curr.newCases;
 						}, 0);
-					this.latest.push(latest);
+					this._stateWiseMostRecent.push(latest);
 				}
-				this.cases.set(state.name, cases);
 			}
 		);
-		this.latest = _.orderBy(this.latest, ['confirmed'], ['desc']);
+		this._stateWiseMostRecent = _.orderBy(this._stateWiseMostRecent, ['confirmed'], ['desc']);
+		return this._stateWiseMostRecent;
 	}
 
 	round = num => {
 		return Math.round((num + Number.EPSILON) * 100) / 100;
 	}
-
-	getLatest = stateName => {
-		return _.last(this.cases.get(stateName));
-	}
-
-	sortJsonByDateDesc = (a, b) => { return new Date(a.date) - new Date(b.date); }
 }
-
-const data = new CovidDataStateWise();
-Object.freeze(data);
-
-export default data;
+const cache = new Cache();
+export default cache;

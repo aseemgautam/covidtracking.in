@@ -1,10 +1,9 @@
 /* eslint-disable max-len */
 import React, { useRef, useEffect } from 'react';
 import { Chart } from '@antv/g2';
-import Analytics from '../../classes/Analytics';
 import Colors from '../../classes/Colors';
 
-const TestingChart = () => {
+const TestingChart = ({ testingData }) => {
 	const container = useRef(null);
 
 	useEffect(() => {
@@ -15,7 +14,7 @@ const TestingChart = () => {
 			height: isMobile ? 250 : 400,
 			padding: [50, 10, 50, 26]
 		});
-		chart.data(Analytics.testingData.slice(-48));
+		chart.data(testingData.slice(-48));
 		chart.axis('date', {
 			tickLine: null,
 			label: {

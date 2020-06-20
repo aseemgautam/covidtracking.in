@@ -4,14 +4,14 @@ import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import NationalStats from '../components/NationalStats';
 import StateTable from '../components/StateTable';
-import CovidDataStateWise from '../classes/CovidDataStateWise';
 import CovidDataIndia from '../classes/CovidDataIndia';
 import TrendInfoCards from '../components/TrendInfoCards';
 import MovingAverageCard from '../components/NationalStats/MovingAverageCard';
+import Cache from '../classes/Cache';
 
 const IndiaMap = dynamic(() => { return import('../components/geo/IndiaMap'); }, { ssr: false });
 
-function Index() {
+function Index({ testingData, indiaData, stateDataMostRecent }) {
 	return (
 		<>
 			<Head>
@@ -20,8 +20,7 @@ function Index() {
 			<Row>
 				<Col span={24}>
 					<p>Tracking spread of coronavirus in India using
-						<a href="/criteria"> scientific & mathematical model </a>
-						recommended by
+						scientific & mathematical model recommended by
 						White House & CDC (Centers for Disease Control and Prevention) USA.
 					</p>
 				</Col>
@@ -30,7 +29,7 @@ function Index() {
 					<h5>Updated 19th June, 10:45 AM</h5>
 				</Col>
 			</Row>
-			<NationalStats />
+			<NationalStats testingData={testingData} covidDataIndia={indiaData} />
 			<Row>
 				<Col span={24} className="page-section-title">
 					<h3 className="title">Trends of New COVID+ Cases (Daily, Average)</h3>
@@ -45,10 +44,10 @@ function Index() {
 			</Row>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} sm={24} md={12}>
-					<MovingAverageCard cases={CovidDataIndia.cases} days={14} />
+					<MovingAverageCard cases={indiaData.cases} days={14} />
 				</Col>
 				<Col xs={24} sm={24} md={12}>
-					<MovingAverageCard cases={CovidDataIndia.cases} days={7} />
+					<MovingAverageCard cases={indiaData.cases} days={7} />
 				</Col>
 			</Row>
 			<Row>
@@ -58,7 +57,7 @@ function Index() {
 			</Row>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} sm={24} md={12}>
-					<IndiaMap />
+					<IndiaMap stateDataMostRecent={stateDataMostRecent} />
 				</Col>
 				<Col xs={24} sm={24} md={12}>
 					<TrendInfoCards colSpan={12} />
@@ -72,12 +71,22 @@ function Index() {
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} sm={24} md={24}>
 					<StateTable
-						casesByStateLatest={CovidDataStateWise.latest}
+						casesByStateLatest={stateDataMostRecent}
 					/>
 				</Col>
 			</Row>
 		</>
 	);
+}
+
+export async function getStaticProps() {
+	const covidDataIndia = new CovidDataIndia();
+	const testingData = await covidDataIndia.fetchTests();
+	const indiaData = await covidDataIndia.fetchDataIndia();
+	const stateDataMostRecent = await Cache.stateDataMostRecent();
+	return {
+		props: { testingData, indiaData, stateDataMostRecent }, // will be passed to the page component as props
+	};
 }
 
 export default Index;

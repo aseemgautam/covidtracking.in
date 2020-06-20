@@ -11,9 +11,9 @@ const menu = (
 		<Menu.Item>
 			{tracker}
 		</Menu.Item>
-		<Menu.Item>
+		{/* <Menu.Item>
 			{analytics}
-		</Menu.Item>
+		</Menu.Item> */}
 		<Menu.Item>
 			{criteria}
 		</Menu.Item>
@@ -37,7 +37,7 @@ const SiteLayout = props => {
 						<Space size="middle" className="navigation">
 							{tracker}
 							{criteria}
-							{analytics}
+							{/* {analytics} */}
 						</Space>
 					</Col>
 				</Row>

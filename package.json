@@ -15,11 +15,13 @@
     "@next/bundle-analyzer": "^9.3.4",
     "antd": "^4.2.4",
     "babel-plugin-import": "^1.9.1",
+    "isomorphic-unfetch": "^3.0.0",
     "leaflet": "^1.6.0",
     "leaflet-gesture-handling": "^1.1.8",
     "lodash": "^4.17.15",
     "next": "^9.3.2",
     "null-loader": "2.0.0",
+    "papaparse": "^5.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "sass": "^1.26.3"

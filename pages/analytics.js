@@ -3,8 +3,9 @@ import NewCasesChart from '../components/charts/NewCasesChart';
 import TestingChart from '../components/charts/Testing';
 import ActiveCasesSection from '../components/ActiveCasesSection';
 import Analytics from '../classes/Analytics';
+import CovidDataIndia from '../classes/CovidDataIndia';
 
-const analytics = () => {
+const analytics = ({ testingData }) => {
 	return (
 		<>
 			<FullWidthRow>
@@ -17,7 +18,7 @@ const analytics = () => {
 			</FullWidthRow>
 			<FullWidthRow>
 				<h3 className="title">COVID-19 TESTING</h3>
-				<TestingChart />
+				<TestingChart testingData={testingData} />
 			</FullWidthRow>
 			<FullWidthRow>
 				<ActiveCasesSection />
@@ -25,5 +26,23 @@ const analytics = () => {
 		</>
 	);
 };
+
+export async function getStaticProps() {
+	const data = await CovidDataIndia.fetchTests();
+	const testingData = [];
+	data.forEach(test => {
+		testingData.push(
+			{ date: test.date, type: 'Samples', value: test.newSamples },
+			{ date: test.date,
+				type: 'Positive',
+				value: test.newPositive,
+				percent: Math.round((test.percentPositive + Number.EPSILON) * 100) / 100
+			}
+		);
+	});
+	return {
+		props: { testingData }, // will be passed to the page component as props
+	};
+}
 
 export default analytics;
