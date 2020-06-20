@@ -1,8 +1,5 @@
 /* eslint-disable no-restricted-syntax */
 import _ from 'lodash';
-import CovidTests from '../public/covid-tests.json';
-import CasesDistricts from '../public/cases-districts.json';
-import DailyUpdates from '../public/daily-updates.json';
 import CovidDataIndia from './CovidDataIndia';
 import Colors from './Colors';
 
@@ -16,19 +13,19 @@ class Analytics {
 		this.casesByStateLatest = [];
 		this.activeCasesPeak = [];
 		this.testingData = [];
-		CovidTests.sort(this.sortJsonByDateDesc).forEach(test => {
-			this.testingData.push(
-				{ date: test.date, type: 'Samples', value: test.newSamples },
-				{ date: test.date,
-					type: 'Positive',
-					value: test.newPositive,
-					percent: Math.round((test.percentPositive + Number.EPSILON) * 100) / 100
-				}
-			);
-		});
-		this.activeCasesPeak = _.compact(this.activeCasesPeak);
-		this.casesByStateLatest = _.orderBy(this.casesByStateLatest, ['confirmed'], ['desc']);
-		this.districts = _.orderBy(CasesDistricts, ['confirmed'], ['desc']).slice(0, 10);
+		// CovidTests.sort(this.sortJsonByDateDesc).forEach(test => {
+		// 	this.testingData.push(
+		// 		{ date: test.date, type: 'Samples', value: test.newSamples },
+		// 		{ date: test.date,
+		// 			type: 'Positive',
+		// 			value: test.newPositive,
+		// 			percent: Math.round((test.percentPositive + Number.EPSILON) * 100) / 100
+		// 		}
+		// 	);
+		// });
+		// this.activeCasesPeak = _.compact(this.activeCasesPeak);
+		// this.casesByStateLatest = _.orderBy(this.casesByStateLatest, ['confirmed'], ['desc']);
+		// this.districts = _.orderBy(CasesDistricts, ['confirmed'], ['desc']).slice(0, 10);
 		this.casesForCalendarActiveGrowth = this.cases
 			.map(val => {
 				return {
@@ -40,19 +37,6 @@ class Analytics {
 					active: val.active
 				};
 			});
-		// eslint-disable-next-line prefer-destructuring
-		const todaysUpdate = _.last(DailyUpdates.sort(this.sortJsonByDateDesc));
-		this.todaysUpdate = {
-			date: todaysUpdate.date,
-			updates: []
-		};
-		Object.keys(todaysUpdate).forEach(key => {
-			if (key !== 'date') {
-				todaysUpdate[key].forEach(value => {
-					this.todaysUpdate.updates.push({ type: key, text: value });
-				});
-			}
-		});
 	}
 
 	sortJsonByDateDesc = (a, b) => { return new Date(a.date) - new Date(b.date); }
