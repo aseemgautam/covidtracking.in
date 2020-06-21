@@ -226,7 +226,7 @@ const StateTable = ({ casesByStateLatest }) => {
 			className="state-table"
 			columns={columns}
 			dataSource={casesByStateLatest}
-			// dataSource={_.filter(casesByStateLatest, { state: 'Rajasthan' })}
+			// dataSource={_.filter(casesByStateLatest, { state: 'Uttarakhand' })}
 			rowKey="state"
 			size="small"
 			scroll={{ x: 'max-content' }}
