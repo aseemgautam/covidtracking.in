@@ -83,7 +83,7 @@ const columns = [
 		// 	return a.newCases7days - b.newCases7days;
 		// },
 	},
-	{ title: 'PREV 14 DAY NEW CASES ',
+	{ title: '15 - 28 DAY NEW CASES ',
 		dataIndex: 'prevNewCases14days',
 		align: 'center',
 		width: 105,
@@ -127,7 +127,7 @@ const columns = [
 		// 	return a.newCases7days - b.newCases7days;
 		// },
 	},
-	{ title: 'PREV 7 DAY NEW CASES ',
+	{ title: '8 - 14 DAYS NEW CASES ',
 		dataIndex: 'prevNewCases7days',
 		align: 'center',
 		width: 100
@@ -227,6 +227,9 @@ const StateTable = ({ casesByStateLatest }) => {
 			columns={columns}
 			dataSource={casesByStateLatest}
 			// dataSource={_.filter(casesByStateLatest, { state: 'Uttarakhand' })}
+			// dataSource={_.filter(casesByStateLatest, o => {
+			// 	return o.movingAvg7daysRate <= 0 && o.movingAvg14daysRate <= 0;
+			// })}
 			rowKey="state"
 			size="small"
 			scroll={{ x: 'max-content' }}
