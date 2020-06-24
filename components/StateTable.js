@@ -226,7 +226,7 @@ const StateTable = ({ casesByStateLatest }) => {
 			className="state-table"
 			columns={columns}
 			dataSource={casesByStateLatest}
-			// dataSource={_.filter(casesByStateLatest, { state: 'Uttarakhand' })}
+			// dataSource={_.filter(casesByStateLatest, { state: 'Karnataka' })}
 			// dataSource={_.filter(casesByStateLatest, o => {
 			// 	return o.movingAvg7daysRate <= 0 && o.movingAvg14daysRate <= 0;
 			// })}
