@@ -5,6 +5,7 @@
   "scripts": {
     "start": "next dev",
     "build": "next build",
+    "debug": "NODE_OPTIONS='--inspect' next dev",
     "prod": "next start"
   },
   "dependencies": {
@@ -19,7 +20,7 @@
     "leaflet": "^1.6.0",
     "leaflet-gesture-handling": "^1.1.8",
     "lodash": "^4.17.15",
-    "next": "^9.3.2",
+    "next": "^9.4.4",
     "null-loader": "2.0.0",
     "papaparse": "^5.2.0",
     "react": "^16.13.1",

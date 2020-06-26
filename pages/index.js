@@ -7,11 +7,11 @@ import StateTable from '../components/StateTable';
 import CovidDataIndia from '../classes/CovidDataIndia';
 import TrendInfoCards from '../components/TrendInfoCards';
 import MovingAverageCard from '../components/NationalStats/MovingAverageCard';
-import Cache from '../classes/Cache';
+import CovidDataState from '../classes/CovidDataState';
 
 const IndiaMap = dynamic(() => { return import('../components/geo/IndiaMap'); }, { ssr: false });
 
-function Index({ testingData, indiaData, stateDataMostRecent }) {
+function Index({ testingData, indiaData, stateDataLatest }) {
 	return (
 		<>
 			<Head>
@@ -57,7 +57,7 @@ function Index({ testingData, indiaData, stateDataMostRecent }) {
 			</Row>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} sm={24} md={12}>
-					<IndiaMap stateDataMostRecent={stateDataMostRecent} />
+					<IndiaMap stateDataMostRecent={stateDataLatest} />
 				</Col>
 				<Col xs={24} sm={24} md={12}>
 					<TrendInfoCards colSpan={12} />
@@ -71,7 +71,7 @@ function Index({ testingData, indiaData, stateDataMostRecent }) {
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} sm={24} md={24}>
 					<StateTable
-						casesByStateLatest={stateDataMostRecent}
+						casesByStateLatest={stateDataLatest}
 					/>
 				</Col>
 			</Row>
@@ -83,9 +83,11 @@ export async function getStaticProps() {
 	const covidDataIndia = new CovidDataIndia();
 	const testingData = await covidDataIndia.fetchTests();
 	const indiaData = await covidDataIndia.fetchDataIndia();
-	const stateDataMostRecent = await Cache.stateDataMostRecent();
+	const stateDataLatest = await CovidDataState.latest();
+
 	return {
-		props: { testingData, indiaData, stateDataMostRecent }, // will be passed to the page component as props
+		// will be passed to the page component as props
+		props: { indiaData, testingData, stateDataLatest }
 	};
 }
 

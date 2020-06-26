@@ -32,8 +32,6 @@ class CovidDataIndia {
 			dynamicTyping: true
 		}).data;
 	}
-
-	sortJsonByDateDesc = (a, b) => { return new Date(a.date) - new Date(b.date); }
 }
 
 export default CovidDataIndia;

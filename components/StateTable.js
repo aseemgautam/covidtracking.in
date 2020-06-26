@@ -42,6 +42,24 @@ const columns = [
 		);
 	}
 	},
+	{ title: (
+		<>
+			<div>% POSITV</div>
+			<div>TESTS</div>
+		</>
+	),
+	dataIndex: 'tests',
+	align: 'right',
+	width: 85,
+	render: (text, record) => {
+		return (
+			<>
+				<div className="total">{record.positivePercent}</div>
+				<div className="total">{text}</div>
+			</>
+		);
+	}
+	},
 	{
 		title: (
 			<>

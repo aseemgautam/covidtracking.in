@@ -2,24 +2,26 @@ import _ from 'lodash';
 import fetch from 'isomorphic-unfetch';
 import Papa from 'papaparse';
 import MovingAverage from './MovingAverage';
+import CovidDataTesting from './CovidDataTesting';
 import IndianStates from '../public/india-states.json';
 
 let instance = null;
 
-class Cache {
+class CovidDataState {
 	constructor() {
 		if (!instance) {
 			instance = this;
 		}
-		this._stateWise = new Map();
-		this._stateWiseMostRecent = null;
+		this._all = new Map();
+		this._latest = null;
 		return instance;
 	}
 
-	fetchStateData = async () => {
-		if (this._stateWise.Size > 0) {
-			return this._stateWise;
+	all = async () => {
+		if (this._all.Size > 0) {
+			return this._all;
 		}
+		const testingData = await CovidDataTesting.all();
 		// eslint-disable-next-line max-len
 		const res = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQRyjPj_VXGIOYnCy5eoy3YcN9yA_yFKWd4AdkMXFam62N4Ik-D6A6cwFXt2N2LwpncJEd-dFn7s5Ez/pub?gid=2100676919&single=true&output=csv');
 		const text = await res.text();
@@ -31,6 +33,18 @@ class Cache {
 			state => {
 				const cases = _.filter(data, { state: state.name })
 					.map((curr, idx, src) => {
+						const date = new Date(curr.date);
+						let testForDate = _.find(testingData, { date: curr.date, state: state.name });
+						let loops = 0;
+
+						// no testing data present for current date
+						// forward latest data availble in last 5 days
+						while (!testForDate && loops < 5) {
+							loops += 1;
+							date.setDate(date.getDate() - 1);
+							testForDate = _.find(testingData, { date: date.toISOString().split('T')[0], state: state.name });
+						}
+
 						return {
 							...curr,
 							newCases: idx === 0 ? 0 : curr.confirmed - src[idx - 1].confirmed,
@@ -39,25 +53,28 @@ class Cache {
 							active: curr.confirmed - curr.deaths - curr.recovered,
 							newActive: idx === 0 ? 0 : (curr.confirmed - curr.deaths - curr.recovered)
 							- (src[idx - 1].confirmed - src[idx - 1].deaths - src[idx - 1].recovered),
-							deathRate: curr.deaths > 5 ? this.round((curr.deaths * 100) / (curr.recovered + curr.deaths)) : '-'
+							deathRate: curr.deaths > 5 ? this.round((curr.deaths * 100) / (curr.recovered + curr.deaths)) : '-',
+							tests: testForDate ? testForDate.totalTests : 0,
+							positivePercent: testForDate ? ((curr.confirmed * 100) / testForDate.totalTests).toFixed(2) : 0
 						};
 					});
 				MovingAverage.calculate(cases, 'newCases');
-				this._stateWise.set(state.name, cases);
+				this._all.set(state.name, cases);
 			}
 		);
 		return this.StateWise;
 	}
 
-	stateDataMostRecent = async () => {
-		if (this._stateWiseMostRecent) {
-			return this._stateWiseMostRecent;
+	latest = async () => {
+		if (this._latest) {
+			return this._latest;
 		}
-		await this.fetchStateData();
-		this._stateWiseMostRecent = [];
+		await this.all();
+
+		this._latest = [];
 		IndianStates.states.forEach( // loop all states
 			state => {
-				const cases = this._stateWise.get(state.name);
+				const cases = this._all.get(state.name);
 				MovingAverage.calculate(cases, 'newCases');
 				const latest = _.last(cases);
 				if (latest) {
@@ -89,17 +106,17 @@ class Cache {
 						(acc, curr) => {
 							return acc + curr.newCases;
 						}, 0);
-					this._stateWiseMostRecent.push(latest);
+					this._latest.push(latest);
 				}
 			}
 		);
-		this._stateWiseMostRecent = _.orderBy(this._stateWiseMostRecent, ['confirmed'], ['desc']);
-		return this._stateWiseMostRecent;
+		this._latest = _.orderBy(this._latest, ['confirmed'], ['desc']);
+		return this._latest;
 	}
 
 	round = num => {
 		return Math.round((num + Number.EPSILON) * 100) / 100;
 	}
 }
-const cache = new Cache();
-export default cache;
+const covidDataState = new CovidDataState();
+export default covidDataState;
