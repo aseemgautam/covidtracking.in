@@ -8,6 +8,7 @@ import CovidDataIndia from '../classes/CovidDataIndia';
 import TrendInfoCards from '../components/TrendInfoCards';
 import MovingAverageCard from '../components/NationalStats/MovingAverageCard';
 import CovidDataState from '../classes/CovidDataState';
+import Link from '../components/Link';
 
 const IndiaMap = dynamic(() => { return import('../components/geo/IndiaMap'); }, { ssr: false });
 
@@ -80,6 +81,14 @@ function Index({ testingData, indiaData, stateDataLatest }) {
 					<StateTable
 						casesByStateLatest={stateDataLatest}
 					/>
+				</Col>
+			</Row>
+			<Row align="middle" justify="center">
+				<Col span={24} style={{ textAlign: 'center' }}>
+					Data Sources -
+					<Link url="https://api.covid19india.org/"> api.covid19india.org </Link> (State Testing Data),
+					<Link url="https://www.mohfw.gov.in/"> MOHFW </Link> (State & National Data),
+					<Link url="https://www.icmr.gov.in/"> ICMR </Link> (National Testing Numbers)
 				</Col>
 			</Row>
 		</>

@@ -8,7 +8,9 @@
   justify-content: flex-end;
 }
 .mobile-navigation {
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   font-size: 22px;
   .anticon {
     padding: 16px 0px 16px 16px;
@@ -23,4 +25,9 @@
   border-radius: 2px;
   padding: 8px;
   color: vars.$font-color;
+}
+@media (min-width: 768px) { 
+  .mobile-navigation {
+    display: none !important;
+  }
 }

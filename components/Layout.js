@@ -25,10 +25,20 @@ const SiteLayout = props => {
 		<Layout className="layout">
 			<Header>
 				<Row>
-					<Col className="logo" xs={20} sm={18} md={12} lg={8}>
+					<Col className="logo" xs={16} sm={18} md={12} lg={8}>
 						<a href="/">COVID TRACKING INDIA</a>
 					</Col>
-					<Col xs={4} sm={6} md={0} className="mobile-navigation">
+					<Col xs={8} sm={6} md={0} className="mobile-navigation">
+						<div>
+							<a
+								style={{ color: '#1DA1F2' }}
+								rel="noopener noreferrer"
+								target="_blank"
+								href="https://twitter.com/CovidTrackingIn"
+							>
+								<TwitterOutlined />
+							</a>
+						</div>
 						<Dropdown overlay={menu}>
 							<MenuOutlined />
 						</Dropdown>
@@ -37,6 +47,16 @@ const SiteLayout = props => {
 						<Space size="middle" className="navigation">
 							{tracker}
 							{criteria}
+							<div>
+								<a
+									style={{ color: '#1DA1F2' }}
+									rel="noopener noreferrer"
+									target="_blank"
+									href="https://twitter.com/CovidTrackingIn"
+								>
+									<TwitterOutlined /> &nbsp;TWITTER
+								</a>
+							</div>
 							{/* {analytics} */}
 						</Space>
 					</Col>

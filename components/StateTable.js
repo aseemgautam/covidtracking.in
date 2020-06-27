@@ -63,13 +63,13 @@ const columns = [
 	{
 		title: (
 			<>
-				<div>Growth of new covid cases (14 DAYS)</div>
+				<div>Growth of new covid+ cases (14 DAYS)</div>
 				<div className="sub-heading">7 Day moving average over 14 days (Chart)</div>
 			</>
 		),
 		dataIndex: 'movingAvg14days',
 		align: 'center',
-		width: 295,
+		width: 290,
 		render: (text, record) => {
 			return (
 				<div className="weekly-rate">
@@ -95,13 +95,13 @@ const columns = [
 	{
 		title: (
 			<>
-				<div>Growth of new covid cases (7 DAYS)</div>
+				<div>Growth of new covid+ cases (7 DAYS)</div>
 				<div className="sub-heading">7 day moving average over 7 days (Chart)</div>
 			</>
 		),
 		dataIndex: 'movingAvg7days',
 		align: 'center',
-		width: 295,
+		width: 290,
 		render: (text, record) => {
 			return (
 				<div className="weekly-rate">
@@ -184,7 +184,7 @@ const columns = [
 		className: 'bold',
 		dataIndex: 'casesPerMillion',
 		align: 'center',
-		width: 90,
+		width: 85,
 		sortDirections: ['descend', 'ascend'],
 		sorter: (a, b) => {
 			return a.casesPerMillion - b.casesPerMillion;
@@ -195,7 +195,7 @@ const columns = [
 		className: 'bold',
 		dataIndex: 'testsPerMillion',
 		align: 'center',
-		width: 90,
+		width: 85,
 		sortDirections: ['descend', 'ascend'],
 		sorter: (a, b) => {
 			return a.testsPerMillion - b.testsPerMillion;
