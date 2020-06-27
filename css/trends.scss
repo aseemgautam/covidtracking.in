@@ -3,8 +3,9 @@
   border-radius: 2px;
   color: #fff;
   text-align: center;
+  font-size: 13px;
   @extend %flex-column-center;
-  height: 101px;
+  height: 70px;
   padding: 10px;
 }
 
@@ -26,6 +27,18 @@
 
 .trend-info.description {
   color: vars.$font-color;
-  font-size: 13px;
+  font-size: 14px;
   background-color: vars.$statistic-background;
+}
+
+@media (min-width: 768px) { 
+  .trend-info {
+    height: 101px;
+  }
+}
+
+@media (min-width: 530px) { 
+  .trend-info {
+    font-size: 16px;
+  }
 }

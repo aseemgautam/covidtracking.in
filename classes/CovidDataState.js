@@ -53,9 +53,11 @@ class CovidDataState {
 							active: curr.confirmed - curr.deaths - curr.recovered,
 							newActive: idx === 0 ? 0 : (curr.confirmed - curr.deaths - curr.recovered)
 							- (src[idx - 1].confirmed - src[idx - 1].deaths - src[idx - 1].recovered),
+							casesPerMillion: Math.round((curr.confirmed * 1000000) / state.population),
 							deathRate: curr.deaths > 5 ? this.round((curr.deaths * 100) / (curr.recovered + curr.deaths)) : '-',
 							tests: testForDate ? testForDate.totalTests : 0,
-							positivePercent: testForDate ? ((curr.confirmed * 100) / testForDate.totalTests).toFixed(2) : 0
+							positivePercent: testForDate ? ((curr.confirmed * 100) / testForDate.totalTests).toFixed(2) : 0,
+							testsPerMillion: testForDate ? Math.round((testForDate.totalTests * 1000000) / state.population) : 0
 						};
 					});
 				MovingAverage.calculate(cases, 'newCases');

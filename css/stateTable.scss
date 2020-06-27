@@ -32,6 +32,9 @@
   .plus-today { color: vars.$trend-very-poor;}
 }
 .ant-table-small .ant-table-tbody > tr > td {
+    .bold {
+      font-weight: 500;
+    }
     border-bottom: 1px solid rgba(0, 0, 0, 0.067);
     .cell-wrapper { display: flex; flex-shrink: 0; line-height: 32px;}
     div.count { flex-grow: 1; text-align: right;}
@@ -42,6 +45,7 @@
     .weekly-rate {
       display: flex;
       align-items: center;
+      justify-content: center;
       .progress-rate {
         margin-left: 8px;
       }
@@ -53,16 +57,4 @@
   .ant-table-small .ant-table-tbody > tr > td:not(:nth-child(0)):not(:last-child) {
     border-right: 1px solid rgba(0, 0, 0, 0.067);
   }
-}
-
-@media (max-width: 420px) {
-  .state-table {
-    .ant-list-header div, .state-case-row-stats div {
-      width: 44px;
-      font-size: 12px;
-    }
-    .state-case-row .state-name {
-      font-size: 13px;
-    }
-  }  
 }

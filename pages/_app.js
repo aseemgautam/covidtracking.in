@@ -10,6 +10,7 @@ import 'antd/es/statistic/style/index.css';
 import 'antd/es/layout/style/index.css';
 import 'antd/es/list/style/index.css';
 import 'antd/es/icon/style/index.css';
+import 'antd/es/tooltip/style/index.css';
 import 'antd/es/button/style/index.css';
 import 'antd/es/menu/style/index.css';
 import 'antd/es/dropdown/style/index.css';

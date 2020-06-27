@@ -7,7 +7,7 @@
           "capital": "Mayabunder",
           "code": "AN",
           "name": "Andaman and Nicobar Islands",
-          "population": 392000,
+          "population": 417036,
           "districts": [
               {
                   "id": "1",
@@ -29,7 +29,7 @@
           "capital": "Amaravati",
           "code": "AP",
           "name": "Andhra Pradesh",
-          "population": 51371000,
+          "population": 53903393,
           "districts": [
               {
                   "id": "1",
@@ -91,7 +91,7 @@
           "capital": "Itanagar",
           "code": "AR",
           "name": "Arunachal Pradesh",
-          "population": 1459000,
+          "population": 1570458,
           "districts": [
               {
                   "id": "1",
@@ -185,7 +185,7 @@
           "capital": "Dispur",
           "code": "AS",
           "name": "Assam",
-          "population": 33168000,
+          "population": 35607039,
           "districts": [
               {
                   "id": "1",
@@ -327,7 +327,7 @@
           "capital": "Patna",
           "code": "BR",
           "name": "Bihar",
-          "population": 114176000,
+          "population": 124799926,
           "districts": [
               {
                   "id": "1",
@@ -489,7 +489,7 @@
           "capital": "Chandigarh",
           "code": "CG",
           "name": "Chandigarh",
-          "population": 1136000,
+          "population": 1158473,
           "districts": [
               {
                   "id": "1",
@@ -635,7 +635,7 @@
           "capital": "Daman",
           "code": "DD",
           "name": "Daman and Diu",
-          "population": 329000,
+          "population": 615724,
           "districts": [
               {
                   "id": "1",
@@ -653,7 +653,7 @@
           "capital": "New Delhi",
           "code": "DL",
           "name": "Delhi",
-          "population": 18677000,
+          "population": 18710922,
           "districts": [
               {
                   "id": "1",
@@ -707,7 +707,7 @@
           "capital": "Panaji",
           "code": "GA",
           "name": "Goa",
-          "population": 1512000,
+          "population": 1586250,
           "districts": [
               {
                   "id": "1",
@@ -725,7 +725,7 @@
           "capital": "Gandhinagar",
           "code": "GJ",
           "name": "Gujarat",
-          "population": 65158000,
+          "population": 63872399,
           "districts": [
               {
                   "id": "1",
@@ -867,7 +867,7 @@
           "capital": "Chandigarh",
           "code": "HR",
           "name": "Haryana",
-          "population": 27455000,
+          "population": 28204692,
           "districts": [
               {
                   "id": "1",
@@ -965,7 +965,7 @@
           "capital": "Shimla",
           "code": "HP",
           "name": "Himachal Pradesh",
-          "population": 7158000,
+          "population": 7451955,
           "districts": [
               {
                   "id": "1",
@@ -1023,7 +1023,7 @@
           "capital": "Jammu (Winter), Srinagar (Summer)",
           "code": "JK",
           "name": "Jammu and Kashmir",
-          "population": 12897000,
+          "population": 13606320,
           "districts": [
               {
                   "id": "1",
@@ -1121,7 +1121,7 @@
           "capital": "Ranchi",
           "code": "JH",
           "name": "Jharkhand",
-          "population": 35800000,
+          "population": 38593948,
           "districts": [
               {
                   "id": "1",
@@ -1357,7 +1357,7 @@
           "capital": "Thiruvananthapuram",
           "code": "KL",
           "name": "Kerala",
-          "population": 34578000,
+          "population": 35699443,
           "districts": [
               {
                   "id": "1",
@@ -1423,7 +1423,7 @@
           "capital": "Leh, Kargil",
           "code": "LA",
           "name": "Ladakh",
-          "population": 287000,
+          "population": 289023,
           "districts": [{
               "id": "1",
               "name": "Kargil"
@@ -1439,7 +1439,7 @@
           "capital": "Kavaratti",
           "code": "LD",
           "name": "Lakshadweep",
-          "population": 66000,
+          "population": 73183,
           "districts": [
               {
                   "id": "1",
@@ -1489,7 +1489,7 @@
           "capital": "Bhopal",
           "code": "MP",
           "name": "Madhya Pradesh",
-          "population": 78806000,
+          "population": 85358965,
           "districts": [
               {
                   "id": "1",
@@ -1703,7 +1703,7 @@
           "capital": "Mumbai",
           "code": "MH",
           "name": "Maharashtra",
-          "population": 118727000,
+          "population": 123144223,
           "districts": [
               {
                   "id": "1",
@@ -1857,7 +1857,7 @@
           "capital": "Imphal",
           "code": "MN",
           "name": "Manipur",
-          "population": 3012000,
+          "population": 3091545,
           "districts": [
               {
                   "id": "1",
@@ -1931,7 +1931,7 @@
           "capital": "Shillong",
           "code": "ML",
           "name": "Meghalaya",
-          "population": 3129000,
+          "population": 3366710,
           "districts": [
               {
                   "id": "1",
@@ -1985,7 +1985,7 @@
           "capital": "Aizawl",
           "code": "MZ",
           "name": "Mizoram",
-          "population": 1157000,
+          "population": 1239244,
           "districts": [
               {
                   "id": "1",
@@ -2027,7 +2027,7 @@
           "capital": "Kohima",
           "code": "NL",
           "name": "Nagaland",
-          "population": 2026000,
+          "population": 2249695,
           "districts": [
               {
                   "id": "1",
@@ -2081,7 +2081,7 @@
           "capital": "Bhubaneswar",
           "code": "OR",
           "name": "Odisha",
-          "population": 43128000,
+          "population": 46356334,
           "districts": [
               {
                   "id": "1",
@@ -2211,7 +2211,7 @@
           "capital": "Puducherry",
           "code": "PY",
           "name": "Puducherry",
-          "population": 1402000,
+          "population": 1413542,
           "districts": [
               {
                   "id": "1",
@@ -2237,7 +2237,7 @@
           "capital": "Chandigarh",
           "code": "PB",
           "name": "Punjab",
-          "population": 29140000,
+          "population": 30141373,
           "districts": [
               {
                   "id": "1",
@@ -2335,7 +2335,7 @@
           "capital": "Jaipur",
           "code": "RJ",
           "name": "Rajasthan",
-          "population": 74240000,
+          "population": 81032689,
           "districts": [
               {
                   "id": "1",
@@ -2477,7 +2477,7 @@
           "capital": "Gangtok",
           "code": "SK",
           "name": "Sikkim",
-          "population": 644000,
+          "population": 690251,
           "districts": [
               {
                   "id": "1",
@@ -2503,7 +2503,7 @@
           "capital": "Chennai",
           "code": "TN",
           "name": "Tamil Nadu",
-          "population": 74635000,
+          "population": 77841267,
           "districts": [
               {
                   "id": "1",
@@ -2641,7 +2641,7 @@
           "capital": "Hyderabad",
           "code": "TS",
           "name": "Telangana",
-          "population": 36462000,
+          "population": 39362732,
           "districts": [
               {
                   "id": "1",
@@ -2775,7 +2775,7 @@
           "capital": "Agartala",
           "code": "TR",
           "name": "Tripura",
-          "population": 3874000,
+          "population": 4169794,
           "districts": [
               {
                   "id": "1",
@@ -2817,7 +2817,7 @@
           "capital": "Lucknow",
           "code": "UP",
           "name": "Uttar Pradesh",
-          "population": 216087000,
+          "population": 237882725,
           "districts": [
               {
                   "id": "1",
@@ -3127,7 +3127,7 @@
           "capital": "Dehradun",
           "code": "UK",
           "name": "Uttarakhand",
-          "population": 10755000,
+          "population": 11250858,
           "districts": [
               {
                   "id": "1",
@@ -3189,7 +3189,7 @@
           "capital": "Kolkata",
           "code": "WB",
           "name": "West Bengal",
-          "population": 95079000,
+          "population": 99609303,
           "districts": [
               {
                   "id": "1",

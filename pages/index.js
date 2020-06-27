@@ -37,7 +37,7 @@ function Index({ testingData, indiaData, stateDataLatest }) {
 				<Col span={24}>
 					<p> CDC recommends
 						Downward trajectory of
-						new COVID-19 cases (7 day rolling average) over a 14-day period as one of the gating criteria to open
+						new COVID-19 cases (7 day moving average) over a 14-day period as one of the gating criteria to open
 						up various states. <a href="/criteria">Criteria Details.</a>
 					</p>
 				</Col>
@@ -53,6 +53,13 @@ function Index({ testingData, indiaData, stateDataLatest }) {
 			<Row>
 				<Col flex={24} className="page-section-title">
 					<h3 className="title">Color scales to measure each states progress</h3>
+				</Col>
+			</Row>
+			<Row>
+				<Col flex={24}>
+					<p>Scales are based on value of <b>7 day Moving Average</b> of new cases over 14 days.
+						Read more about our criteria <a href="/criteria">here</a>.
+					</p>
 				</Col>
 			</Row>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>

@@ -63,8 +63,8 @@ const columns = [
 	{
 		title: (
 			<>
-				<div>14 DAY TREND COVID+</div>
-				<div className="sub-heading">Growth in avg daily new cases over 14 days</div>
+				<div>Growth of new covid cases (14 DAYS)</div>
+				<div className="sub-heading">7 Day moving average over 14 days (Chart)</div>
 			</>
 		),
 		dataIndex: 'movingAvg14days',
@@ -92,25 +92,11 @@ const columns = [
 			);
 		}
 	},
-	{ title: '14 DAY NEW CASES ',
-		dataIndex: 'newCases14days',
-		align: 'center',
-		width: 100,
-		// sortDirections: ['descend', 'ascend'],
-		// sorter: (a, b) => {
-		// 	return a.newCases7days - b.newCases7days;
-		// },
-	},
-	{ title: '15 - 28 DAY NEW CASES ',
-		dataIndex: 'prevNewCases14days',
-		align: 'center',
-		width: 105,
-	},
 	{
 		title: (
 			<>
-				<div>7 DAY TREND COVID+</div>
-				<div className="sub-heading">Growth in avg daily new cases over 7 days</div>
+				<div>Growth of new covid cases (7 DAYS)</div>
+				<div className="sub-heading">7 day moving average over 7 days (Chart)</div>
 			</>
 		),
 		dataIndex: 'movingAvg7days',
@@ -135,20 +121,6 @@ const columns = [
 				</div>
 			);
 		}
-	},
-	{ title: '7 DAY NEW CASES ',
-		dataIndex: 'newCases7days',
-		align: 'center',
-		width: 95,
-		// sortDirections: ['descend', 'ascend'],
-		// sorter: (a, b) => {
-		// 	return a.newCases7days - b.newCases7days;
-		// },
-	},
-	{ title: '8 - 14 DAYS NEW CASES ',
-		dataIndex: 'prevNewCases7days',
-		align: 'center',
-		width: 100
 	},
 	// { title: 'Confirm',
 	// 	dataIndex: 'confirmed',
@@ -207,36 +179,39 @@ const columns = [
 	// 		);
 	// 	}
 	// },
-	// {
-	// 	title: 'DEATH RATE',
-	// 	dataIndex: 'deathRate',
-	// 	align: 'center',
-	// 	width: 110,
-	// 	sortDirections: ['descend', 'ascend'],
-	// 	sorter: (a, b) => {
-	// 		return a.deathRate - b.deathRate;
-	// 	},
-	// 	render: (text, record) => {
-	// 		// let className = '';
-	// 		// if (record.deathRate > 1.5 * Analytics.deathRate) className = 'red bold';
-	// 		// if (record.deathRate < 0.5 * Analytics.deathRate) className = 'green bold';
-	// 		return (
-	// 			<div>
-	// 				{text}
-	// 			</div>
-	// 		);
-	// 	}
-	// },
-	// {
-	// 	title: 'Cases 1L',
-	// 	dataIndex: 'casesPer1L',
-	// 	align: 'center',
-	// 	width: 110,
-	// 	sortDirections: ['descend', 'ascend'],
-	// 	sorter: (a, b) => {
-	// 		return a.casesPer1L - b.casesPer1L;
-	// 	}
-	// }
+	{
+		title: 'Cases Per Million',
+		className: 'bold',
+		dataIndex: 'casesPerMillion',
+		align: 'center',
+		width: 90,
+		sortDirections: ['descend', 'ascend'],
+		sorter: (a, b) => {
+			return a.casesPerMillion - b.casesPerMillion;
+		}
+	},
+	{
+		title: 'Tests Per Million',
+		className: 'bold',
+		dataIndex: 'testsPerMillion',
+		align: 'center',
+		width: 90,
+		sortDirections: ['descend', 'ascend'],
+		sorter: (a, b) => {
+			return a.testsPerMillion - b.testsPerMillion;
+		}
+	},
+	{
+		title: 'DEATH RATE',
+		className: 'bold',
+		dataIndex: 'deathRate',
+		align: 'center',
+		width: 70,
+		sortDirections: ['descend', 'ascend'],
+		sorter: (a, b) => {
+			return a.deathRate - b.deathRate;
+		}
+	}
 ];
 const StateTable = ({ casesByStateLatest }) => {
 	return (
