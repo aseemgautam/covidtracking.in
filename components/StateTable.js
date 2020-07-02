@@ -1,10 +1,11 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-restricted-syntax */
-import { Table } from 'antd';
+import { Table, Tag } from 'antd';
 import _ from 'lodash';
 import MovingAverageProgress from './MovingAverageProgress';
 import LineChartSmall from './charts/LineChartSmall';
 import Colors from '../classes/Colors';
+import MonthlyNewCasesChart from './chartsv2/MonthlyNewCasesChart';
 
 const columns = [
 	{ title: 'State',
@@ -63,13 +64,17 @@ const columns = [
 	{
 		title: (
 			<>
-				<div>Growth of new covid+ cases (14 DAYS)</div>
-				<div className="sub-heading">7 Day moving average over 14 days (Chart)</div>
+				<div>Growth of covid+ cases (14 DAYS)</div>
+				<div className="sub-heading">7 Day moving average over 14 days</div>
 			</>
 		),
 		dataIndex: 'movingAvg14days',
 		align: 'center',
 		width: 290,
+		sortDirections: ['descend', 'ascend'],
+		sorter: (a, b) => {
+			return a.movingAvg14daysRate - b.movingAvg14daysRate;
+		},
 		render: (text, record) => {
 			return (
 				<div className="weekly-rate">
@@ -95,8 +100,8 @@ const columns = [
 	{
 		title: (
 			<>
-				<div>Growth of new covid+ cases (7 DAYS)</div>
-				<div className="sub-heading">7 day moving average over 7 days (Chart)</div>
+				<div>Growth of covid+ cases (7 DAYS)</div>
+				<div className="sub-heading">7 day moving average over 7 days</div>
 			</>
 		),
 		dataIndex: 'movingAvg7days',
@@ -122,107 +127,58 @@ const columns = [
 			);
 		}
 	},
-	// { title: 'Confirm',
-	// 	dataIndex: 'confirmed',
-	// 	align: 'center',
-	// 	width: 80,
-	// 	sortDirections: ['descend', 'ascend'],
-	// 	sorter: (a, b) => {
-	// 		return a.confirmed - b.confirmed;
-	// 	},
-	// },
-	// { title: 'Active',
-	// 	dataIndex: 'active',
-	// 	align: 'center',
-	// 	width: 130,
-	// 	defaultSortOrder: 'descend',
-	// 	sortDirections: ['descend', 'ascend'],
-	// 	sorter: (a, b) => {
-	// 		return a.active - b.active;
-	// 	},
-	// 	render: (text, record) => {
-	// 		const delta = record.newActive; // <= 0 ? record.newActive : record.newActive;
-	// 		// const backgroundColor = delta < 0 ? Colors.green2 : '';
-	// 		return {
-	// 			// props: {
-	// 			// 	style: { backgroundColor }
-	// 			// },
-	// 			children: <StateTableCell showCaret value={text} delta={delta} />
-	// 		};
-	// 	}
-	// },
-	// { title: 'Deaths',
-	// 	dataIndex: 'deaths',
-	// 	align: 'center',
-	// 	width: 110,
-	// 	sortDirections: ['descend', 'ascend'],
-	// 	sorter: (a, b) => {
-	// 		return a.deaths - b.deaths;
-	// 	},
-	// 	render: (text, record) => {
-	// 		return {
-	// 			children: <StateTableCell statistic="deaths" value={text} delta={record.newDeaths} />
-	// 		};
-	// 	}
-	// },
-	// { title: 'Cured',
-	// 	dataIndex: 'recovered',
-	// 	align: 'center',
-	// 	width: 120,
-	// 	sortDirections: ['descend', 'ascend'],
-	// 	sorter: (a, b) => {
-	// 		return a.recovered - b.recovered;
-	// 	},
-	// 	render: (text, record) => {
-	// 		return (
-	// 			<StateTableCell value={text} delta={record.newRecover} isCaretUpRed={false} />
-	// 		);
-	// 	}
-	// },
 	{
-		title: 'Cases Per Million',
-		className: 'bold',
-		dataIndex: 'casesPerMillion',
+		title: (
+			<>
+				<div>New cases in last 28 days</div>
+				<div className="sub-heading newCases28DaysSubHeader">
+					<span><Tag color={Colors.monthlyNewCasesChart[0]}>0-7 (Latest)</Tag></span>
+					<span><Tag color={Colors.monthlyNewCasesChart[1]}>8-14</Tag></span>
+					<span><Tag color={Colors.monthlyNewCasesChart[2]}>15-21</Tag></span>
+					<span><Tag color={Colors.monthlyNewCasesChart[3]}>22-28</Tag></span>
+				</div>
+			</>
+		),
+		dataIndex: 'newCases14days',
 		align: 'center',
-		width: 85,
-		sortDirections: ['descend', 'ascend'],
-		sorter: (a, b) => {
-			return a.casesPerMillion - b.casesPerMillion;
-		}
-	},
-	{
-		title: 'Tests Per Million',
-		className: 'bold',
-		dataIndex: 'testsPerMillion',
-		align: 'center',
-		width: 85,
-		sortDirections: ['descend', 'ascend'],
-		sorter: (a, b) => {
-			return a.testsPerMillion - b.testsPerMillion;
-		}
-	},
-	{
-		title: 'DEATH RATE',
-		className: 'bold',
-		dataIndex: 'deathRate',
-		align: 'center',
-		width: 70,
-		sortDirections: ['descend', 'ascend'],
-		sorter: (a, b) => {
-			return a.deathRate - b.deathRate;
+		width: 280,
+		render: (text, record) => {
+			const data = [record.newCases1to7days, record.newCases8to14days,
+				record.newCases15to21Days, record.newCases22to28Days];
+			return (
+				<MonthlyNewCasesChart data={data} />
+			);
 		}
 	}
+	// { title: '14 DAY NEW CASES ',
+	// 	dataIndex: 'newCases14days',
+	// 	align: 'center',
+	// 	width: 100,
+	// 	// sortDirections: ['descend', 'ascend'],
+	// 	// sorter: (a, b) => {
+	// 	// 	return a.newCases14days - b.newCases14days;
+	// 	// },
+	// },
+	// { title: '15 - 28 DAY NEW CASES ',
+	// 	dataIndex: 'prevNewCases14days',
+	// 	align: 'center',
+	// 	width: 105,
+	// }
 ];
 const StateTable = ({ casesByStateLatest }) => {
 	return (
 		<Table
 			className="state-table"
 			columns={columns}
-			dataSource={casesByStateLatest}
-			// dataSource={_.filter(casesByStateLatest, { state: 'Karnataka' })}
+			// dataSource={casesByStateLatest}
+			// dataSource={_.filter(casesByStateLatest, { state: 'Uttar Pradesh' })}
 			// dataSource={_.filter(casesByStateLatest, o => {
-			// 	return ['Telangana', 'Nagaland'].includes(o.state);
+			// 	// return ['Telangana', 'Nagaland'].includes(o.state);
+			// 	// return !['Dadra and Nagar Haveli', 'Andaman and Nicobar Islands'].includes(o.state);
 			// })}
+			dataSource={_.filter(casesByStateLatest, o => {
+				return o.confirmed > 250;
+			})}
 			rowKey="state"
 			size="small"
 			scroll={{ x: 'max-content' }}

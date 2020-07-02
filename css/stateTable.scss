@@ -12,7 +12,12 @@
   text-transform: uppercase;
   color: vars.$font-color;
   font-weight: bold;
-  border-bottom: 2px solid vars.$font-color;
+	border-bottom: 2px solid vars.$font-color;
+	.newCases28DaysSubHeader {
+		margin: 5px 10px 0px 10px;
+		display: flex;
+		justify-content: space-between;
+	}
   .sub-heading {
     font-size: 12px;
     font-weight: 400;

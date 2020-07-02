@@ -17,6 +17,7 @@ class Colors {
 
 		this.newCasesStack = '#FFCC32';
 		this.testingSampleStack = '#d9d9d9';
+		this.monthlyNewCasesChart = ['#2171b5', '#4292c6', '#6baed6', '#9ecae1'];
 	}
 
 	getTrendColor = (rate, newCases) => {

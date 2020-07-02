@@ -16,3 +16,10 @@
 .new-cases-chart .g2-tooltip .g2-tooltip-list .g2-tooltip-list-item:nth-last-child(2) {
   display: none;
 }
+
+.monthlyNewCasesChart {
+	display: flex;
+	justify-content: center;
+	// width: 2 !important;
+	// height: 30px !important;
+}

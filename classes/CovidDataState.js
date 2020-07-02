@@ -57,7 +57,8 @@ class CovidDataState {
 							deathRate: curr.deaths > 5 ? this.round((curr.deaths * 100) / (curr.recovered + curr.deaths)) : '-',
 							tests: testForDate ? testForDate.totalTests : 0,
 							positivePercent: testForDate ? ((curr.confirmed * 100) / testForDate.totalTests).toFixed(2) : 0,
-							testsPerMillion: testForDate ? Math.round((testForDate.totalTests * 1000000) / state.population) : 0
+							testsPerMillion: testForDate ? Math.round((testForDate.totalTests * 1000000) / state.population) : 0,
+							deathsPerMillion: curr.deaths > 5 ? ((curr.deaths * 1000000) / state.population).toFixed(2) : 0
 						};
 					});
 				MovingAverage.calculate(cases, 'newCases');
@@ -92,11 +93,19 @@ class CovidDataState {
 							movingAverage: data.movingAvg7days
 						};
 					});
-					latest.prevNewCases7days = cases.slice(cases.length - 15, cases.length - 8).reduce(
+					latest.newCases1to7days = cases.slice(-7).reduce(
 						(acc, curr) => {
 							return acc + curr.newCases;
 						}, 0);
-					latest.newCases7days = cases.slice(-7).reduce(
+					latest.newCases8to14days = cases.slice(cases.length - 15, cases.length - 8).reduce(
+						(acc, curr) => {
+							return acc + curr.newCases;
+						}, 0);
+					latest.newCases15to21Days = cases.slice(cases.length - 22, cases.length - 15).reduce(
+						(acc, curr) => {
+							return acc + curr.newCases;
+						}, 0);
+					latest.newCases22to28Days = cases.slice(cases.length - 29, cases.length - 22).reduce(
 						(acc, curr) => {
 							return acc + curr.newCases;
 						}, 0);

@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import NationalStats from '../components/NationalStats';
 import StateTable from '../components/StateTable';
+import StateStatsTable from '../components/StateStatsTable';
 import CovidDataIndia from '../classes/CovidDataIndia';
 import TrendInfoCards from '../components/TrendInfoCards';
 import MovingAverageCard from '../components/NationalStats/MovingAverageCard';
@@ -27,7 +28,7 @@ function Index({ testingData, indiaData, stateDataLatest }) {
 				</Col>
 				<Col style={{ paddingTop: 0 }} span={24} className="page-section-title">
 					<h3 className="title">National Statistics</h3>
-					<h5>Updated 2nd July, 11:12 AM</h5>
+					<h5>Updated 3rd July, 02:55 AM</h5>
 				</Col>
 			</Row>
 			<NationalStats testingData={testingData} covidDataIndia={indiaData} />
@@ -83,6 +84,13 @@ function Index({ testingData, indiaData, stateDataLatest }) {
 					/>
 				</Col>
 			</Row>
+			{/* <Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
+				<Col xs={24} sm={24} md={24}>
+					<StateStatsTable
+						casesByStateLatest={stateDataLatest}
+					/>
+				</Col>
+			</Row> */}
 			<Row align="middle" justify="center">
 				<Col span={24} style={{ textAlign: 'center' }}>
 					Data Sources -
