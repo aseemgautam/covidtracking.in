@@ -55,10 +55,13 @@
       }
     }
   }
-
-  
-
   .ant-table-small .ant-table-tbody > tr > td:not(:nth-child(0)):not(:last-child) {
     border-right: 1px solid rgba(0, 0, 0, 0.067);
   }
+}
+
+.state-stats-table { 
+	.ant-table-small .ant-table-tbody > tr > td {
+		font-weight: 500;
+	}
 }

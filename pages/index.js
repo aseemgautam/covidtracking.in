@@ -28,7 +28,7 @@ function Index({ testingData, indiaData, stateDataLatest }) {
 				</Col>
 				<Col style={{ paddingTop: 0 }} span={24} className="page-section-title">
 					<h3 className="title">National Statistics</h3>
-					<h5>Updated 3rd July, 10:31 AM</h5>
+					<h5>Updated 4th July, 04:52 AM</h5>
 				</Col>
 			</Row>
 			<NationalStats testingData={testingData} covidDataIndia={indiaData} />

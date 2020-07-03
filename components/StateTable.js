@@ -150,20 +150,6 @@ const columns = [
 			);
 		}
 	}
-	// { title: '14 DAY NEW CASES ',
-	// 	dataIndex: 'newCases14days',
-	// 	align: 'center',
-	// 	width: 100,
-	// 	// sortDirections: ['descend', 'ascend'],
-	// 	// sorter: (a, b) => {
-	// 	// 	return a.newCases14days - b.newCases14days;
-	// 	// },
-	// },
-	// { title: '15 - 28 DAY NEW CASES ',
-	// 	dataIndex: 'prevNewCases14days',
-	// 	align: 'center',
-	// 	width: 105,
-	// }
 ];
 const StateTable = ({ casesByStateLatest }) => {
 	return (
@@ -174,7 +160,7 @@ const StateTable = ({ casesByStateLatest }) => {
 			// dataSource={_.filter(casesByStateLatest, { state: 'Uttar Pradesh' })}
 			// dataSource={_.filter(casesByStateLatest, o => {
 			// 	// return ['Telangana', 'Nagaland'].includes(o.state);
-			// 	// return !['Dadra and Nagar Haveli', 'Andaman and Nicobar Islands'].includes(o.state);
+			// 	return ['Kerala', 'Karnataka', 'Telangana', 'Tamil Nadu', 'Andhra Pradesh', 'Maharashtra'].includes(o.state);
 			// })}
 			dataSource={_.filter(casesByStateLatest, o => {
 				return o.confirmed > 250;

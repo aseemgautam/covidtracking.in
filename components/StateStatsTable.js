@@ -83,17 +83,17 @@ const columns = [
 			return a.casesPerMillion - b.casesPerMillion;
 		}
 	},
-	// {
-	// 	title: 'Tests P Million',
-	// 	className: 'bold',
-	// 	dataIndex: 'testsPerMillion',
-	// 	align: 'center',
-	// 	width: 85,
-	// 	sortDirections: ['descend', 'ascend'],
-	// 	sorter: (a, b) => {
-	// 		return a.testsPerMillion - b.testsPerMillion;
-	// 	}
-	// },
+	{
+		title: 'Tests P Million',
+		className: 'bold',
+		dataIndex: 'testsPerMillion',
+		align: 'center',
+		width: 85,
+		sortDirections: ['descend', 'ascend'],
+		sorter: (a, b) => {
+			return a.testsPerMillion - b.testsPerMillion;
+		}
+	},
 	{
 		title: 'DEATH RATE',
 		dataIndex: 'deathRate',
@@ -118,7 +118,7 @@ const columns = [
 const StateStatsTable = ({ casesByStateLatest }) => {
 	return (
 		<Table
-			className="state-table stateStatsTable"
+			className="state-table state-stats-table"
 			columns={columns}
 			dataSource={casesByStateLatest}
 			// dataSource={_.filter(casesByStateLatest, { state: 'Uttar Pradesh' })}
