@@ -167,7 +167,7 @@ const StateTable = ({ casesByStateLatest }) => {
 			})}
 			rowKey="state"
 			size="small"
-			scroll={{ x: 'max-content' }}
+			scroll={{ y: 800, x: 'max-content' }}
 			pagination={{ size: 'default', pageSize: 40, hideOnSinglePage: true }}
 		/>
 	);
