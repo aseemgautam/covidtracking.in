@@ -1,3 +1,33 @@
+@use 'vars';
+
 .ant-divider {
   border-color: #b7bcbd;
+}
+
+.ant-tabs-bar {
+	.ant-tabs-extra-content {
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 40px;
+	}
+	.card-tab-title {
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 36px;
+	} 
+	.ant-tabs-nav .ant-tabs-tab-active {
+		// border-bottom: vars.$title-border;
+		color: vars.$font-color;
+	}
+	.ant-tabs-nav .ant-tabs-tab { padding: 0px; margin: 0 24px 0 0; }
+	.ant-tabs-ink-bar {
+		background-color: vars.$primary-color;
+		// bottom: 8px;
+	}
+}
+
+@media (min-width: 768px) {
+  .ant-tabs-nav .ant-tabs-tab {
+		margin: 0 32px 0 0;
+	}
 }

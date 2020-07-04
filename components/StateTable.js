@@ -157,7 +157,7 @@ const StateTable = ({ casesByStateLatest }) => {
 			className="state-table"
 			columns={columns}
 			// dataSource={casesByStateLatest}
-			// dataSource={_.filter(casesByStateLatest, { state: 'Uttar Pradesh' })}
+			// dataSource={_.filter(casesByStateLatest, { state: 'Telangana' })}
 			// dataSource={_.filter(casesByStateLatest, o => {
 			// 	// return ['Telangana', 'Nagaland'].includes(o.state);
 			// 	return ['Kerala', 'Karnataka', 'Telangana', 'Tamil Nadu', 'Andhra Pradesh', 'Maharashtra'].includes(o.state);

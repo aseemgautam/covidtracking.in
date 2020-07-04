@@ -1,0 +1,16 @@
+@use 'vars';
+
+.live-update-cards {
+	.ant-card-grid {
+		padding: 6px 12px;
+		font-weight: 500;
+		display: flex;
+    justify-content: space-between;
+    align-items: center;
+	}
+	.today { text-align: center;}
+	.new-cases {
+		font-weight: 500;
+		color: vars.$red6;
+	}
+}

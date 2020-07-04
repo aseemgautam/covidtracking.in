@@ -1,7 +1,8 @@
 @use 'vars';
 h3.title {
   font-size: 16px;
-  font-weight: 700;
+	font-weight: 700;
+	line-height: 30px;
   display: inline-block;
   border-bottom: vars.$title-border;
 }

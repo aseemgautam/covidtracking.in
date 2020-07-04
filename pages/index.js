@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-syntax */
-import { Row, Col } from 'antd';
+import { Row, Col, Tabs, Badge } from 'antd';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import NationalStats from '../components/NationalStats';
@@ -10,28 +10,56 @@ import TrendInfoCards from '../components/TrendInfoCards';
 import MovingAverageCard from '../components/NationalStats/MovingAverageCard';
 import CovidDataState from '../classes/CovidDataState';
 import Link from '../components/Link';
+import LiveUpdate from '../components/LiveUpdate';
 
+const { TabPane } = Tabs;
 const IndiaMap = dynamic(() => { return import('../components/geo/IndiaMap'); }, { ssr: false });
 
 function Index({ testingData, indiaData, stateDataLatest }) {
+	const liveCounter = stateDataLatest.reduce(
+		(acc, state) => {
+			if (state.newCases > 0) {
+				acc += 1;
+			}
+			return acc;
+		}, 0
+	);
 	return (
 		<>
 			<Head>
 				<title>Covid-19 Tracking India</title>
 			</Head>
 			<Row>
-				<Col span={24}>
-					<p>Tracking spread of coronavirus in India using
-						scientific & mathematical model recommended by
-						White House & CDC (Centers for Disease Control and Prevention) USA.
-					</p>
-				</Col>
-				<Col style={{ paddingTop: 0 }} span={24} className="page-section-title">
+				{/* <Col style={{ paddingTop: 0 }} span={24} className="page-section-title">
 					<h3 className="title">National Statistics</h3>
 					<h5>Updated 4th July, 11:29 AM</h5>
-				</Col>
+				</Col> */}
+				<Tabs tabBarExtraContent={
+					(<div>4th July, 19:28 PM</div>)
+				}
+				>
+					<TabPane
+						tab={
+							(<div className="card-tab-title">National Staistics</div>)
+						}
+						key="1"
+					>
+						<NationalStats testingData={testingData} covidDataIndia={indiaData} />
+					</TabPane>
+					<TabPane
+						tab={
+							(
+								<Badge count={liveCounter} offset={[15, 18]}>
+									<div className="card-tab-title">Live</div>
+								</Badge>
+							)
+						}
+						key="2"
+					>
+						<LiveUpdate casesByStateLatest={stateDataLatest} />
+					</TabPane>
+				</Tabs>
 			</Row>
-			<NationalStats testingData={testingData} covidDataIndia={indiaData} />
 			<Row>
 				<Col span={24} className="page-section-title">
 					<h3 className="title">Trends of New COVID+ Cases (Daily, Average)</h3>
@@ -84,13 +112,18 @@ function Index({ testingData, indiaData, stateDataLatest }) {
 					/>
 				</Col>
 			</Row>
-			{/* <Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
+			<Row>
+				<Col flex={24} className="page-section-title">
+					<h3 className="title">State Statistics & Numbers</h3>
+				</Col>
+			</Row>
+			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} sm={24} md={24}>
 					<StateStatsTable
 						casesByStateLatest={stateDataLatest}
 					/>
 				</Col>
-			</Row> */}
+			</Row>
 			<Row align="middle" justify="center">
 				<Col span={24} style={{ textAlign: 'center' }}>
 					Data Sources -

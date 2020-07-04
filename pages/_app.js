@@ -10,11 +10,14 @@ import 'antd/es/statistic/style/index.css';
 import 'antd/es/layout/style/index.css';
 import 'antd/es/list/style/index.css';
 import 'antd/es/icon/style/index.css';
+import 'antd/es/tabs/style/index.css';
 import 'antd/es/progress/style/index.css';
 import 'antd/es/dropdown/style/index.css';
 import 'antd/es/tooltip/style/index.css';
 import 'antd/es/tag/style/index.css';
+import 'antd/es/badge/style/index.css';
 import 'antd/es/menu/style/index.css';
+import 'antd/es/card/style/index.css';
 import 'antd/es/table/style/index.css';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-gesture-handling/dist/leaflet-gesture-handling.css';
@@ -31,6 +34,7 @@ import '../css/trends.scss';
 import '../css/navigation.scss';
 import '../css/layout.scss';
 import '../css/about.scss';
+import '../css/live.scss';
 
 Router.events.on('routeChangeStart', () => {
 	document.getElementById('loading').style.display = 'block';
