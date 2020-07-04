@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-syntax */
-import { Row, Col, Tabs, Badge } from 'antd';
+import { Row, Col } from 'antd';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import NationalStats from '../components/NationalStats';
@@ -10,56 +10,24 @@ import TrendInfoCards from '../components/TrendInfoCards';
 import MovingAverageCard from '../components/NationalStats/MovingAverageCard';
 import CovidDataState from '../classes/CovidDataState';
 import Link from '../components/Link';
-import LiveUpdate from '../components/LiveUpdate';
+import HomeLiveTabs from '../components/HomeLiveTabs';
 
-const { TabPane } = Tabs;
 const IndiaMap = dynamic(() => { return import('../components/geo/IndiaMap'); }, { ssr: false });
 
 function Index({ testingData, indiaData, stateDataLatest }) {
-	const liveCounter = stateDataLatest.reduce(
-		(acc, state) => {
-			if (state.newCases > 0) {
-				acc += 1;
-			}
-			return acc;
-		}, 0
-	);
 	return (
 		<>
 			<Head>
 				<title>Covid-19 Tracking India</title>
 			</Head>
-			<Row>
-				{/* <Col style={{ paddingTop: 0 }} span={24} className="page-section-title">
+			{/* <Row>
+				<Col style={{ paddingTop: 0 }} span={24} className="page-section-title">
 					<h3 className="title">National Statistics</h3>
-					<h5>Updated 4th July, 11:29 AM</h5>
-				</Col> */}
-				<Tabs tabBarExtraContent={
-					(<div>4th July, 11:07 PM</div>)
-				}
-				>
-					<TabPane
-						tab={
-							(<div className="card-tab-title">National Staistics</div>)
-						}
-						key="1"
-					>
-						<NationalStats testingData={testingData} covidDataIndia={indiaData} />
-					</TabPane>
-					<TabPane
-						tab={
-							(
-								<Badge count={34} offset={[20, 18]}>
-									<div className="card-tab-title">Live</div>
-								</Badge>
-							)
-						}
-						key="2"
-					>
-						<LiveUpdate casesByStateLatest={stateDataLatest} />
-					</TabPane>
-				</Tabs>
-			</Row>
+					<h5>Updated 5th July, 11:29 AM</h5>
+				</Col>
+			</Row> */}
+			{/* <NationalStats testingData={testingData} covidDataIndia={indiaData} /> */}
+			<HomeLiveTabs testingData={testingData} indiaData={indiaData} stateDataLatest={stateDataLatest} />
 			<Row>
 				<Col span={24} className="page-section-title">
 					<h3 className="title">Trends of New COVID+ Cases (Daily, Average)</h3>

@@ -5,13 +5,19 @@
 	.ant-card-grid {
 		padding: 6px 12px;
 		font-weight: 500;
+		font-size: 14px;
 		display: flex;
     justify-content: space-between;
     align-items: center;
 	}
+	.state-name { overflow-wrap: break-word; padding-right: 10px; line-height: 14px; width: 70px;}
 	.today { text-align: center;}
 	.new-cases {
 		font-weight: 500;
 		color: vars.$red6;
 	}
+}
+
+@media (min-width: 768px) {
+  .state-name { width: 100px !important; }
 }
