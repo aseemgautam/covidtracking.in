@@ -35,7 +35,7 @@ function Index({ testingData, indiaData, stateDataLatest }) {
 					<h5>Updated 4th July, 11:29 AM</h5>
 				</Col> */}
 				<Tabs tabBarExtraContent={
-					(<div>4th July, 21:00 PM</div>)
+					(<div>4th July, 22:07 PM</div>)
 				}
 				>
 					<TabPane
