@@ -1,6 +1,7 @@
 @use 'vars';
 
 .live-update-cards {
+	border-left: 1px solid #f0f0f0;
 	.ant-card-grid {
 		padding: 6px 12px;
 		font-weight: 500;

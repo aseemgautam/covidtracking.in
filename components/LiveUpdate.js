@@ -1,14 +1,16 @@
 import { Card } from 'antd';
+import _ from 'lodash';
 
 const gridStyle = {
-	height: '60px',
+	height: '50px',
 	maxWidth: '180px'
 };
 
 const LiveUpdate = ({ casesByStateLatest }) => {
 	const cards = [];
 	let total = 0;
-	casesByStateLatest.forEach(state => {
+	const cases = _.orderBy(casesByStateLatest, ['newCases'], ['desc']);
+	cases.forEach(state => {
 		if (state.newCases > 0) {
 			total += state.newCases;
 			cards.push(
@@ -19,7 +21,7 @@ const LiveUpdate = ({ casesByStateLatest }) => {
 		}
 	});
 	return (
-		<Card className="live-update-cards">
+		<Card className="live-update-cards" bordered={false}>
 			<Card.Grid key="total" style={gridStyle}>
 				<div className="today">TODAY <br />(04 July)</div> <div className="new-cases total">+{total}</div>
 			</Card.Grid>

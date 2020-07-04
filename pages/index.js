@@ -35,7 +35,7 @@ function Index({ testingData, indiaData, stateDataLatest }) {
 					<h5>Updated 4th July, 11:29 AM</h5>
 				</Col> */}
 				<Tabs tabBarExtraContent={
-					(<div>4th July, 22:07 PM</div>)
+					(<div>4th July, 11:07 PM</div>)
 				}
 				>
 					<TabPane
@@ -49,7 +49,7 @@ function Index({ testingData, indiaData, stateDataLatest }) {
 					<TabPane
 						tab={
 							(
-								<Badge count={liveCounter} offset={[20, 18]}>
+								<Badge count={34} offset={[20, 18]}>
 									<div className="card-tab-title">Live</div>
 								</Badge>
 							)
