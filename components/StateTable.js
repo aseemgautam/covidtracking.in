@@ -104,9 +104,13 @@ const columns = [
 				<div className="sub-heading">7 day moving average over 7 days</div>
 			</>
 		),
-		dataIndex: 'movingAvg7days',
+		dataIndex: 'movingAvg7daysRate',
 		align: 'center',
 		width: 290,
+		sortDirections: ['descend', 'ascend'],
+		sorter: (a, b) => {
+			return a.movingAvg7daysRate - b.movingAvg7daysRate;
+		},
 		render: (text, record) => {
 			return (
 				<div className="weekly-rate">
@@ -167,7 +171,7 @@ const StateTable = ({ casesByStateLatest }) => {
 			})}
 			rowKey="state"
 			size="small"
-			scroll={{ y: 800, x: 'max-content' }}
+			scroll={{ x: 'max-content' }}
 			pagination={{ size: 'default', pageSize: 40, hideOnSinglePage: true }}
 		/>
 	);
