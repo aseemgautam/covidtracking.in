@@ -15,7 +15,7 @@ const HomeLiveTabs = ({ testingData, indiaData, stateDataLatest }) => {
 	);
 	return (
 		<Tabs tabBarExtraContent={
-			(<div>5th July, 11:58 PM</div>)
+			(<div>6th July, 05:11 AM</div>)
 		}
 		>
 			<TabPane
@@ -29,8 +29,8 @@ const HomeLiveTabs = ({ testingData, indiaData, stateDataLatest }) => {
 			<TabPane
 				tab={
 					(
-						<Badge count={liveCounter} offset={[20, 18]}>
-							<div className="card-tab-title">Live</div>
+						<Badge count={0} offset={[20, 18]}>
+							<div className="card-tab-title">+States</div>
 						</Badge>
 					)
 				}
