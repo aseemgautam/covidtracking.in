@@ -163,8 +163,8 @@ const StateTable = ({ casesByStateLatest }) => {
 			// dataSource={casesByStateLatest}
 			// dataSource={_.filter(casesByStateLatest, { state: 'Telangana' })}
 			// dataSource={_.filter(casesByStateLatest, o => {
-			// 	// return ['Telangana', 'Nagaland'].includes(o.state);
-			// 	return ['Kerala', 'Karnataka', 'Telangana', 'Tamil Nadu', 'Andhra Pradesh', 'Maharashtra'].includes(o.state);
+			// 	return ['Karnataka', 'Delhi'].includes(o.state);
+			// 	// return ['Kerala', 'Karnataka', 'Telangana', 'Tamil Nadu', 'Andhra Pradesh', 'Maharashtra'].includes(o.state);
 			// })}
 			dataSource={_.filter(casesByStateLatest, o => {
 				return o.confirmed > 250;
