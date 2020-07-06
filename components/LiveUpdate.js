@@ -22,8 +22,7 @@ const LiveUpdate = ({ casesByStateLatest }) => {
 			);
 		}
 	});
-	// console.log(deaths);
-	// console.log(recover);
+
 	return (
 		<Card className="live-update-cards" bordered={false}>
 			<Card.Grid key="total" style={gridStyle}>
