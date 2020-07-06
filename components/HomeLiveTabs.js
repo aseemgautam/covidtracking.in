@@ -7,7 +7,7 @@ const { TabPane } = Tabs;
 const HomeLiveTabs = ({ testingData, indiaData, stateDataLatest }) => {
 	const liveCounter = stateDataLatest.reduce(
 		(acc, state) => {
-			if (state.newCases > 0) {
+			if (state.newCases > 0 || state.newRecovered > 0) {
 				acc += 1;
 			}
 			return acc;
@@ -15,7 +15,7 @@ const HomeLiveTabs = ({ testingData, indiaData, stateDataLatest }) => {
 	);
 	return (
 		<Tabs tabBarExtraContent={
-			(<div>6th July, 10:00 PM</div>)
+			(<div>7th July, 00:31 AM</div>)
 		}
 		>
 			<TabPane
@@ -29,8 +29,8 @@ const HomeLiveTabs = ({ testingData, indiaData, stateDataLatest }) => {
 			<TabPane
 				tab={
 					(
-						<Badge count={27} offset={[20, 18]}>
-							<div className="card-tab-title">+Live</div>
+						<Badge count={0} offset={[20, 18]}>
+							<div className="card-tab-title">+States</div>
 						</Badge>
 					)
 				}

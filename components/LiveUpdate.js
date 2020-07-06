@@ -16,7 +16,7 @@ const LiveUpdate = ({ casesByStateLatest }) => {
 			deaths += state.newDeaths;
 			recover += state.newRecover;
 			cards.push(
-				<Card.Grid key={state.state} style={gridStyle}>
+				<Card.Grid key={state.state} style={gridStyle} hoverable={false}>
 					<div className="state-name">{state.state}</div> <div className="new-cases">+{state.newCases}</div>
 				</Card.Grid>
 			);
@@ -26,7 +26,7 @@ const LiveUpdate = ({ casesByStateLatest }) => {
 	return (
 		<Card className="live-update-cards" bordered={false}>
 			<Card.Grid key="total" style={gridStyle}>
-				<div className="state-name">06th July</div> <div className="new-cases total">+{total}</div>
+				<div className="state-name">6th July</div> <div className="new-cases total">+{total}</div>
 			</Card.Grid>
 			{cards}
 		</Card>

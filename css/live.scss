@@ -9,7 +9,7 @@
 		display: flex;
 		color: vars.$font-color;
     justify-content: space-between;
-    align-items: center;
+		align-items: center;
 	}
 	.state-name { overflow-wrap: break-word; padding-right: 10px; line-height: 14px; width: 70px;}
 	.today { text-align: center;}
