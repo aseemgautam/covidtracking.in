@@ -18,9 +18,9 @@ class CovidDataState {
 	}
 
 	all = async () => {
-		if (this._all.Size > 0) {
-			return this._all;
-		}
+		// if (this._all.Size > 0) {
+		// 	return this._all;
+		// }
 		const testingData = await CovidDataTesting.all();
 		// eslint-disable-next-line max-len
 		const res = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQRyjPj_VXGIOYnCy5eoy3YcN9yA_yFKWd4AdkMXFam62N4Ik-D6A6cwFXt2N2LwpncJEd-dFn7s5Ez/pub?gid=2100676919&single=true&output=csv');
@@ -65,13 +65,13 @@ class CovidDataState {
 				this._all.set(state.name, cases);
 			}
 		);
-		return this.StateWise;
+		return this._all;
 	}
 
 	latest = async () => {
-		if (this._latest) {
-			return this._latest;
-		}
+		// if (this._latest) {
+		// 	return this._latest;
+		// }
 		await this.all();
 
 		this._latest = [];
