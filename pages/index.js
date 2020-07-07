@@ -20,7 +20,7 @@ function Index({ testingData, indiaData, stateDataLatest }) {
 				<title>Covid-19 Tracking India</title>
 			</Head>
 			<StatisticStateTab testingData={testingData} indiaData={indiaData} stateDataLatest={stateDataLatest} />
-			<Row>
+			{/* <Row>
 				<Col span={24} className="page-section-title">
 					<h3 className="title">Trends of New COVID+ Cases (Daily, Average)</h3>
 				</Col>
@@ -31,7 +31,7 @@ function Index({ testingData, indiaData, stateDataLatest }) {
 						up various states. <a href="/criteria">Criteria Details.</a>
 					</p>
 				</Col>
-			</Row>
+			</Row> */}
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} sm={24} md={12}>
 					<MovingAverageCard cases={indiaData.cases} days={14} />

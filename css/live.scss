@@ -1,6 +1,7 @@
 @use 'vars';
 
 .live-update-cards {
+	margin-bottom: 16px;
 	.ant-card-grid {
 		padding: 6px 12px;
 		font-weight: 500;
@@ -42,21 +43,20 @@
 		margin-right: 8px !important;
 	}
 	.ant-card-grid:nth-child(4n) {
-		margin-right: 0px;
+		margin-right: 0px !important;
 	}
 }
 @media (min-width: 1200px) { 
 	.live-update-cards {
 		.ant-card-grid {
 			width: calc((100vw - 96px - 32px)/5);
-			// margin: 8px 8px 0px 0px;
 		}
 	}
 	.ant-card-grid:nth-child(4n) {
 		margin-right: 8px !important;
 	}
 	.ant-card-grid:nth-child(5n) {
-		margin-right: 0px;
+		margin-right: 0px !important;
 	}
 	.ant-card-grid:nth-child(-n+5) {
 		margin-top: 0px;
