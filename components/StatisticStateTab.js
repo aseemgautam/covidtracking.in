@@ -1,10 +1,10 @@
 import { Tabs, Badge } from 'antd';
-import LiveUpdate from './LiveUpdate';
+import StatePlusGrid from './StatePlusGrid';
 import NationalStats from './NationalStats';
 
 const { TabPane } = Tabs;
 
-const HomeLiveTabs = ({ testingData, indiaData, stateDataLatest }) => {
+const StatisticStateTab = ({ testingData, indiaData, stateDataLatest }) => {
 	const liveCounter = stateDataLatest.reduce(
 		(acc, state) => {
 			if (state.newCases > 0 || state.newRecovered > 0) {
@@ -15,7 +15,7 @@ const HomeLiveTabs = ({ testingData, indiaData, stateDataLatest }) => {
 	);
 	return (
 		<Tabs tabBarExtraContent={
-			(<div>7th July, 10:41 AM</div>)
+			(<div>7th July, 7:00 PM</div>)
 		}
 		>
 			<TabPane
@@ -36,10 +36,10 @@ const HomeLiveTabs = ({ testingData, indiaData, stateDataLatest }) => {
 				}
 				key="2"
 			>
-				<LiveUpdate casesByStateLatest={stateDataLatest} />
+				<StatePlusGrid casesByStateLatest={stateDataLatest} />
 			</TabPane>
 		</Tabs>
 	);
 };
 
-export default HomeLiveTabs;
+export default StatisticStateTab;

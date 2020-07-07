@@ -9,7 +9,7 @@ import TrendInfoCards from '../components/TrendInfoCards';
 import MovingAverageCard from '../components/NationalStats/MovingAverageCard';
 import CovidDataState from '../classes/CovidDataState';
 import Link from '../components/Link';
-import HomeLiveTabs from '../components/HomeLiveTabs';
+import StatisticStateTab from '../components/StatisticStateTab';
 
 const IndiaMap = dynamic(() => { return import('../components/geo/IndiaMap'); }, { ssr: false });
 
@@ -19,7 +19,7 @@ function Index({ testingData, indiaData, stateDataLatest }) {
 			<Head>
 				<title>Covid-19 Tracking India</title>
 			</Head>
-			<HomeLiveTabs testingData={testingData} indiaData={indiaData} stateDataLatest={stateDataLatest} />
+			<StatisticStateTab testingData={testingData} indiaData={indiaData} stateDataLatest={stateDataLatest} />
 			<Row>
 				<Col span={24} className="page-section-title">
 					<h3 className="title">Trends of New COVID+ Cases (Daily, Average)</h3>

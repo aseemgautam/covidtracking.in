@@ -10,7 +10,7 @@ const LiveUpdate = ({ casesByStateLatest }) => {
 	let total = 0;
 	const cases = _.orderBy(casesByStateLatest, ['newCases'], ['desc']);
 	cases.forEach(state => {
-		if (state.newCases > 0) {
+		if (state.newCases > 0 || state.newRecovered > 0) {
 			total += state.newCases;
 			cards.push(
 				<Card.Grid key={state.state} style={gridStyle} hoverable={false}>
