@@ -25,7 +25,7 @@ const LiveUpdate = ({ casesByStateLatest }) => {
 
 	return (
 		<Card className="live-update-cards" bordered={false}>
-			<Card.Grid key="total" style={gridStyle}>
+			<Card.Grid key="total" style={gridStyle} hoverable={false}>
 				<div className="state-name">6th July</div> <div className="new-cases total">+{total}</div>
 			</Card.Grid>
 			{cards}
