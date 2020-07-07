@@ -1,19 +1,18 @@
 import React from 'react';
 import { Row, Col } from 'antd';
+import _ from 'lodash';
 import MovingAverageProgress from '../MovingAverageProgress';
 import LineChartSmall from '../charts/LineChartSmall';
 
 const MovingAverageCard = React.memo(({ cases, days }) => {
 	const latest = cases[cases.length - 1];
 	const rateOfInc = days === 7 ? latest.movingAvg7daysRate : latest.movingAvg14daysRate;
+	// console.log(cases.slice(days === 7 ? -8 : -15));
 	const movingAverage = cases.slice(days === 7 ? -8 : -15)
-		.map(curr => {
-			return {
-				date: curr.date,
-				movingAverage: curr.movingAvg7days
-			};
-		});
-
+		.reduce((acc, curr) => {
+			acc.push(curr.movingAvg7days);
+			return acc;
+		}, []);
 	return (
 		<>
 			<Row className="trend-card" justify="space-between">
@@ -28,7 +27,6 @@ const MovingAverageCard = React.memo(({ cases, days }) => {
 					<LineChartSmall
 						fieldX="date"
 						fieldY="movingAverage"
-						width={200}
 						widthSmall={120}
 						height={70}
 						data={movingAverage}

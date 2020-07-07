@@ -81,18 +81,14 @@ class CovidDataState {
 				MovingAverage.calculate(cases, 'newCases');
 				const latest = _.last(cases);
 				if (latest) {
-					latest.movingAvg7daysData = cases.slice(-8).map(data => {
-						return {
-							date: data.date,
-							movingAverage: data.movingAvg7days
-						};
-					});
-					latest.movingAvg14daysData = cases.slice(-15).map(data => {
-						return {
-							date: data.date,
-							movingAverage: data.movingAvg7days
-						};
-					});
+					latest.movingAvg7daysData = cases.slice(-8).reduce((acc, curr) => {
+						acc.push(curr.movingAvg7days);
+						return acc;
+					}, []);
+					latest.movingAvg14daysData = cases.slice(-15).reduce((acc, curr) => {
+						acc.push(curr.movingAvg7days);
+						return acc;
+					}, []);
 					latest.newCases1to7days = cases.slice(-7).reduce(
 						(acc, curr) => {
 							return acc + curr.newCases;

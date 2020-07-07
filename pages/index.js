@@ -2,7 +2,6 @@
 import { Row, Col } from 'antd';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
-import NationalStats from '../components/NationalStats';
 import StateTable from '../components/StateTable';
 import StateStatsTable from '../components/StateStatsTable';
 import CovidDataIndia from '../classes/CovidDataIndia';
@@ -20,13 +19,6 @@ function Index({ testingData, indiaData, stateDataLatest }) {
 			<Head>
 				<title>Covid-19 Tracking India</title>
 			</Head>
-			{/* <Row>
-				<Col style={{ paddingTop: 0 }} span={24} className="page-section-title">
-					<h3 className="title">National Statistics</h3>
-					<h5>Updated 5th July, 11:29 AM</h5>
-				</Col>
-			</Row> */}
-			{/* <NationalStats testingData={testingData} covidDataIndia={indiaData} /> */}
 			<HomeLiveTabs testingData={testingData} indiaData={indiaData} stateDataLatest={stateDataLatest} />
 			<Row>
 				<Col span={24} className="page-section-title">

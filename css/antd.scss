@@ -19,7 +19,13 @@
 		// border-bottom: vars.$title-border;
 		color: vars.$font-color;
 	}
-	.ant-tabs-nav .ant-tabs-tab { padding: 0px; margin: 0 24px 0 0; }
+	.ant-tabs-nav .ant-tabs-tab { 
+		padding: 0px; 
+		margin: 0 24px 0 0; 
+		.ant-tabs-bar {
+			margin: 0px;
+		}
+	}
 	.ant-tabs-ink-bar {
 		background-color: vars.$primary-color;
 		// bottom: 8px;

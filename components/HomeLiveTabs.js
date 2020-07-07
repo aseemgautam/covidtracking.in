@@ -29,7 +29,7 @@ const HomeLiveTabs = ({ testingData, indiaData, stateDataLatest }) => {
 			<TabPane
 				tab={
 					(
-						<Badge count={0} offset={[20, 18]}>
+						<Badge count={liveCounter} offset={[20, 18]}>
 							<div className="card-tab-title">+States</div>
 						</Badge>
 					)

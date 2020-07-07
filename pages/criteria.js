@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import TrendInfoCards from '../components/TrendInfoCards';
+import LineChartSmall from '../components/charts/LineChartSmall';
 
 const Criteria = () => {
 	let colSpan = 6;
@@ -15,6 +16,7 @@ const Criteria = () => {
 			</Head>
 			<div className="criteria">
 				<h2 className="title">THE CRITERIA</h2>
+				<LineChartSmall />
 				<p>
 					It is hard to track epidemics. We have never had one in modern times. Are daily ups & downs or news updates
 					the right way to track an epidemic? Most probably no. We need a more scientific approach.
