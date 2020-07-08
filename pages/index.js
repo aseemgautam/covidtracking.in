@@ -20,18 +20,6 @@ function Index({ testingData, indiaData, stateDataLatest }) {
 				<title>Covid-19 Tracking India</title>
 			</Head>
 			<StatisticStateTab testingData={testingData} indiaData={indiaData} stateDataLatest={stateDataLatest} />
-			{/* <Row>
-				<Col span={24} className="page-section-title">
-					<h3 className="title">Trends of New COVID+ Cases (Daily, Average)</h3>
-				</Col>
-				<Col span={24}>
-					<p> CDC recommends
-						Downward trajectory of
-						new COVID-19 cases (7 day moving average) over a 14-day period as one of the gating criteria to open
-						up various states. <a href="/criteria">Criteria Details.</a>
-					</p>
-				</Col>
-			</Row> */}
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} sm={24} md={12}>
 					<MovingAverageCard cases={indiaData.cases} days={14} />
