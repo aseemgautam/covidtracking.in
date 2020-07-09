@@ -64,11 +64,11 @@ const NationalStats = ({ testingData, covidDataIndia }) => {
 				</Col>
 				<Col xs={12} sm={8} lg={6}>
 					<CovidStatistic
-						title="Cases Per 1L"
+						title="Cases Per Million"
 						value={covidDataIndia.casesPer1L}
-						suffix="VERY LOW"
+						suffix="LOW"
 						suffixClassName="green7"
-						precision={2}
+						precision={0}
 					/>
 				</Col>
 				<Col xs={12} sm={8} lg={6}>

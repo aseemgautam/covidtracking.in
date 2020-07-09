@@ -20,7 +20,7 @@ class CovidDataIndia {
 		const latest = cases[cases.length - 1];
 		const deathRate = (latest.deaths / (latest.deaths + latest.recovered)) * 100;
 		const recoveryRate = (latest.recovered / latest.confirmed) * 100;
-		const casesPer1L = (latest.confirmed / IndiaPopulation) * 100000;
+		const casesPer1L = (latest.confirmed / IndiaPopulation) * 1000000;
 		MovingAverage.calculate(cases, 'newCases');
 		return { cases, latest, deathRate, recoveryRate, casesPer1L };
 	}
