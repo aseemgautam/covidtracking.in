@@ -15,7 +15,7 @@ const StatisticStateTab = ({ testingData, indiaData, stateDataLatest }) => {
 	);
 	return (
 		<Tabs tabBarExtraContent={
-			(<div>9th July, 9:40 PM</div>)
+			(<div>9th July, 11:45 PM</div>)
 		}
 		>
 			<TabPane
