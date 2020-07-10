@@ -1,10 +1,10 @@
 import { Tabs, Badge } from 'antd';
-import StatePlusGrid from './StatePlusGrid';
+import StatePlusGrid from './StateDeltaGrid';
 import NationalStats from './NationalStats';
 
 const { TabPane } = Tabs;
 
-const StatisticStateTab = ({ testingData, indiaData, stateDataLatest }) => {
+const HomePageTabs = ({ testingData, indiaData, stateDataLatest }) => {
 	const liveCounter = stateDataLatest.reduce(
 		(acc, state) => {
 			if (state.newCases > 0 || state.newRecovered > 0) {
@@ -42,4 +42,4 @@ const StatisticStateTab = ({ testingData, indiaData, stateDataLatest }) => {
 	);
 };
 
-export default StatisticStateTab;
+export default HomePageTabs;

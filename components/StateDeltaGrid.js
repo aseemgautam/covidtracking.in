@@ -5,7 +5,7 @@ const gridStyle = {
 	height: '50px',
 };
 
-const LiveUpdate = ({ casesByStateLatest }) => {
+const StateDeltaGrid = ({ casesByStateLatest }) => {
 	const cards = [];
 	let total = 0;
 	const cases = _.orderBy(casesByStateLatest, ['newCases'], ['desc']);
@@ -30,4 +30,4 @@ const LiveUpdate = ({ casesByStateLatest }) => {
 	);
 };
 
-export default LiveUpdate;
+export default StateDeltaGrid;

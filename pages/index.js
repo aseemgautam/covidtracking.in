@@ -1,17 +1,11 @@
 /* eslint-disable no-restricted-syntax */
 import { Row, Col } from 'antd';
-import dynamic from 'next/dynamic';
 import Head from 'next/head';
-import StateTable from '../components/StateTable';
-import StateStatsTable from '../components/StateStatsTable';
 import CovidDataIndia from '../classes/CovidDataIndia';
-import TrendInfoCards from '../components/TrendInfoCards';
 import MovingAverageCard from '../components/NationalStats/MovingAverageCard';
 import CovidDataState from '../classes/CovidDataState';
-import Link from '../components/Link';
-import StatisticStateTab from '../components/StatisticStateTab';
-
-const IndiaMap = dynamic(() => { return import('../components/geo/IndiaMap'); }, { ssr: false });
+import HomePageTabsFirst from '../components/HomePageTabsFirst';
+import HomePageTabsSecond from '../components/HomePageTabsSecond';
 
 function Index({ testingData, indiaData, stateDataLatest }) {
 	return (
@@ -19,7 +13,7 @@ function Index({ testingData, indiaData, stateDataLatest }) {
 			<Head>
 				<title>Covid-19 Tracking India</title>
 			</Head>
-			<StatisticStateTab testingData={testingData} indiaData={indiaData} stateDataLatest={stateDataLatest} />
+			<HomePageTabsFirst testingData={testingData} indiaData={indiaData} stateDataLatest={stateDataLatest} />
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} sm={24} md={12}>
 					<MovingAverageCard cases={indiaData.cases} days={14} />
@@ -28,27 +22,16 @@ function Index({ testingData, indiaData, stateDataLatest }) {
 					<MovingAverageCard cases={indiaData.cases} days={7} />
 				</Col>
 			</Row>
-			<Row>
-				<Col flex={24} className="page-section-title">
-					<h3 className="title">Color scales to measure each states progress</h3>
-				</Col>
-			</Row>
-			<Row>
-				<Col flex={24}>
-					<p>Scales are based on value of <b>7 day Moving Average</b> of new cases over 14 days.
-						Read more about our criteria <a href="/criteria">here</a>.
-					</p>
-				</Col>
-			</Row>
-			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
+			<HomePageTabsSecond stateDataLatest={stateDataLatest} />
+			{/* <Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} sm={24} md={12}>
 					<IndiaMap stateDataMostRecent={stateDataLatest} />
 				</Col>
 				<Col xs={24} sm={24} md={12}>
 					<TrendInfoCards colSpan={12} />
 				</Col>
-			</Row>
-			<Row>
+			</Row> */}
+			{/* <Row>
 				<Col flex={24} className="page-section-title">
 					<h3 className="title">Statewise Trends of New COVID+ Cases</h3>
 				</Col>
@@ -79,7 +62,7 @@ function Index({ testingData, indiaData, stateDataLatest }) {
 					<Link url="https://www.mohfw.gov.in/"> MOHFW </Link> (State & National Data),
 					<Link url="https://www.icmr.gov.in/"> ICMR </Link> (National Testing Numbers)
 				</Col>
-			</Row>
+			</Row> */}
 		</>
 	);
 }
