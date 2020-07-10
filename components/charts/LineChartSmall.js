@@ -1,16 +1,18 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import echarts from 'echarts/lib/echarts';
 import line from 'echarts/lib/chart/line';
 
-const LineChartSmall = ({ data, width, }) => {
+const LineChartSmall = ({ data, width }) => {
+	const [image, setImage] = useState(null);
 	const container = useRef(null);
+	const chartWidth = useRef(0);
 	useEffect(() => {
 		if (!container.current || !data) {
 			return;
 		}
-		const chartWidth = width || container.current.parentElement.offsetWidth - 16;
+		chartWidth.current = width || container.current.parentElement.offsetWidth - 16;
 		const chart = echarts.init(container.current, {},
-			{ width: chartWidth, height: 55 });
+			{ width: chartWidth.current, height: 55 });
 		chart.setOption(
 			{
 				xAxis: {
@@ -60,55 +62,15 @@ const LineChartSmall = ({ data, width, }) => {
 				}]
 			}
 		);
-		// const parentWidth = container.current.parentElement.offsetWidth;
-		// const chart = new Chart({
-		// 	container: container.current,
-		// 	autoFit: true,
-		// 	height: height ?? 60,
-		// 	width: autoSize ? parentWidth - 16 : width,
-		// 	padding: [15, 20, 0, 20]
-		// });
-		// chart.annotation().text({
-		// 	content: data[0][fieldY],
-		// 	position: [data[0][fieldX], data[0][fieldY]],
-		// 	offsetX: -15,
-		// 	offsetY: -10,
-		// 	style: {
-		// 		fontSize: 10
-		// 	}
-		// });
-		// chart.annotation().text({
-		// 	content: data[data.length - 1][fieldY],
-		// 	position: [data[data.length - 1][fieldX], data[data.length - 1][fieldY]],
-		// 	offsetX: -15,
-		// 	offsetY: -10,
-		// 	style: {
-		// 		fontSize: 10
-		// 	}
-		// });
-
-		// chart.data(data);
-		// chart.axis(fieldY, false);
-		// chart.scale({
-		// 	[fieldY]: {
-		// 		nice: true,
-		// 		min: 0
-		// 	},
-		// 	[fieldX]: {
-		// 		range: [0, 1],
-		// 	},
-		// });
-
-		// chart.tooltip(false);
-
-		// chart.area().position(`${fieldX}*${fieldY}`).color('#bfbfbf');
-		// chart.line().position(`${fieldX}*${fieldY}`).size(2).color('#595959').shape('smooth');
-
-		// chart.render();
-	}, [data]);
+		const base64 = chart.getDataURL({ pixelRatio: window.devicePixelRatio, backgroundColor: 'transparent' });
+		chart.clear();
+		chart.dispose();
+		setImage(base64);
+	}, []);
 	return (
 		<>
-			<div ref={container} />
+			{image ? <img style={{ height: '55px' }} src={image} alt="" />
+				: <div ref={container} />}
 		</>
 	);
 };

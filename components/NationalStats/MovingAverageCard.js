@@ -7,7 +7,6 @@ import LineChartSmall from '../charts/LineChartSmall';
 const MovingAverageCard = React.memo(({ cases, days }) => {
 	const latest = cases[cases.length - 1];
 	const rateOfInc = days === 7 ? latest.movingAvg7daysRate : latest.movingAvg14daysRate;
-	// console.log(cases.slice(days === 7 ? -8 : -15));
 	const movingAverage = cases.slice(days === 7 ? -8 : -15)
 		.reduce((acc, curr) => {
 			acc.push(curr.movingAvg7days);
@@ -27,8 +26,6 @@ const MovingAverageCard = React.memo(({ cases, days }) => {
 					<LineChartSmall
 						fieldX="date"
 						fieldY="movingAverage"
-						widthSmall={120}
-						height={70}
 						data={movingAverage}
 					/>
 				</Col>

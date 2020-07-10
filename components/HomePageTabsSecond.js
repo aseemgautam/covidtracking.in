@@ -7,7 +7,7 @@ import StateStatsTable from './StateStatsTable';
 const IndiaMap = dynamic(() => { return import('./geo/IndiaMap'); }, { ssr: false });
 const { TabPane } = Tabs;
 
-const HomePageTabsSecond = ({ indiaData, testingData, stateDataLatest }) => {
+const HomePageTabsSecond = ({ stateDataLatest }) => {
 	return (
 		<Tabs>
 			<TabPane
