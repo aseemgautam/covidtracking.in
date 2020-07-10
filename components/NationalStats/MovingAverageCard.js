@@ -30,7 +30,7 @@ const MovingAverageCard = React.memo(({ cases, days }) => {
 					/>
 				</Col>
 				<Col span={24} className="trend-card-description">Average daily new cases have increased by {rateOfInc}% from &nbsp;
-					{movingAverage[0].movingAverage} to {movingAverage[6].movingAverage} over the last {days} days.
+					{movingAverage[0]} to {movingAverage[days]} over the last {days} days.
 				</Col>
 			</Row>
 		</>

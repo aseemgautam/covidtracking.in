@@ -29,7 +29,7 @@ const LineChartSmall = ({ data, width }) => {
 				yAxis: {
 					type: 'value',
 					show: false,
-					min: data[0] * 0.3,
+					min: data[0] * 0.5,
 				},
 				series: [{
 					data,
