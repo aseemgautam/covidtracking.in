@@ -24,8 +24,9 @@
 }
 
 
-.covid-statistic .ant-statistic-content {
-  font-size: 18px;
+.covid-statistic .ant-statistic-content,
+.ant-statistic-content-suffix {
+  font-size: 14px;
 }
 
 .covid-statistic .ant-statistic-title {
@@ -68,4 +69,19 @@
 }
 .statistic-recovered {
   background-color: vars.$green2;
+}
+
+
+@media screen and (min-width: 530px) { 
+	.covid-statistic .ant-statistic-content,
+	.ant-statistic-content-suffix {
+		font-size: 16px;
+	}
+}
+
+@media screen and (min-width: 768px) { 
+	.covid-statistic .ant-statistic-content,
+	.ant-statistic-content-suffix {
+		font-size: 18px;
+	}
 }
