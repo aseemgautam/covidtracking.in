@@ -21,7 +21,7 @@ const StateDeltaGrid = ({ casesByStateLatest }) => {
 	});
 
 	return (
-		<Card className="live-update-cards" bordered={false}>
+		<Card className="card-grid" bordered={false}>
 			<Card.Grid key="total" style={gridStyle} hoverable={false}>
 				<div className="state-name">11th July</div> <div className="new-cases total">+{total}</div>
 			</Card.Grid>

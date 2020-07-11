@@ -34,7 +34,8 @@ import '../css/trends.scss';
 import '../css/navigation.scss';
 import '../css/layout.scss';
 import '../css/about.scss';
-import '../css/live.scss';
+import '../css/cardGrid.scss';
+import '../css/analytics.scss';
 
 Router.events.on('routeChangeStart', () => {
 	document.getElementById('loading').style.display = 'block';

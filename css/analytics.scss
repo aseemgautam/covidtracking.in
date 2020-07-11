@@ -1,0 +1,6 @@
+@use 'vars';
+.analytics-name {
+	background-color: vars.$statistic-background;
+	line-height: 64px;
+	padding: 0px 16px;
+}
