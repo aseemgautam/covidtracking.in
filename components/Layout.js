@@ -11,9 +11,9 @@ const menu = (
 		<Menu.Item>
 			{tracker}
 		</Menu.Item>
-		{/* <Menu.Item>
+		<Menu.Item>
 			{analytics}
-		</Menu.Item> */}
+		</Menu.Item>
 		<Menu.Item>
 			{criteria}
 		</Menu.Item>
@@ -47,6 +47,7 @@ const SiteLayout = props => {
 						<Space size="middle" className="navigation">
 							{tracker}
 							{criteria}
+							{analytics}
 							<div>
 								<a
 									style={{ color: '#1DA1F2' }}
@@ -57,7 +58,6 @@ const SiteLayout = props => {
 									<TwitterOutlined /> &nbsp;TWITTER
 								</a>
 							</div>
-							{/* {analytics} */}
 						</Space>
 					</Col>
 				</Row>

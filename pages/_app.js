@@ -12,6 +12,7 @@ import 'antd/es/list/style/index.css';
 import 'antd/es/icon/style/index.css';
 import 'antd/es/tabs/style/index.css';
 import 'antd/es/progress/style/index.css';
+import 'antd/es/breadcrumb/style/index.css';
 import 'antd/es/dropdown/style/index.css';
 import 'antd/es/tooltip/style/index.css';
 import 'antd/es/tag/style/index.css';

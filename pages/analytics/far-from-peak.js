@@ -1,7 +1,7 @@
 import { Breadcrumb } from 'antd';
 import DWChart from 'react-datawrapper-chart';
 
-const CasesPerMillion = () => {
+const FarFromPeak = () => {
 	return (
 		<>
 			<Breadcrumb>
@@ -11,9 +11,9 @@ const CasesPerMillion = () => {
 				<Breadcrumb.Item>How far is India from peak?</Breadcrumb.Item>
 			</Breadcrumb>
 			<br />
-			<DWChart title="Chart" src="//datawrapper.dwcdn.net/U5VQb/10/" />
+			<DWChart title="Chart" src="//datawrapper.dwcdn.net/nhJtE/4/" />
 		</>
 	);
 };
 
-export default CasesPerMillion;
+export default FarFromPeak;
