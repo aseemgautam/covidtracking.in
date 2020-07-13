@@ -81,6 +81,14 @@ class CovidDataState {
 				MovingAverage.calculate(cases, 'newCases');
 				const latest = _.last(cases);
 				if (latest) {
+					latest.peak = cases.reduce((high, current) => {
+						if (current.newCases >= high) {
+							// eslint-disable-next-line no-param-reassign
+							high = current.newCases;
+						}
+						return high;
+					}, 0);
+					latest.isHigh = latest.newCases === latest.peak;
 					latest.movingAvg7daysData = cases.slice(-8).reduce((acc, curr) => {
 						acc.push(curr.movingAvg7days);
 						return acc;

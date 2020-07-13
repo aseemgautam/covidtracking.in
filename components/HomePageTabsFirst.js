@@ -1,5 +1,5 @@
 import { Tabs, Badge } from 'antd';
-import StatePlusGrid from './StateDeltaGrid';
+import StateDeltaGrid from './StateDeltaGrid';
 import NationalStats from './NationalStats';
 
 const { TabPane } = Tabs;
@@ -36,7 +36,7 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest }) => {
 				}
 				key="2"
 			>
-				<StatePlusGrid casesByStateLatest={stateDataLatest} />
+				<StateDeltaGrid casesByStateLatest={stateDataLatest} />
 			</TabPane>
 		</Tabs>
 	);
