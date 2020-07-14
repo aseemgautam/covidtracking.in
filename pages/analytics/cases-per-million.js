@@ -8,7 +8,7 @@ const CasesPerMillion = () => {
 				<Breadcrumb.Item>
 					<a href="/analytics">Analytics</a>
 				</Breadcrumb.Item>
-				<Breadcrumb.Item>How far is India from peak?</Breadcrumb.Item>
+				<Breadcrumb.Item>Cases Per Million</Breadcrumb.Item>
 			</Breadcrumb>
 			<br />
 			<DWChart title="Chart" src="//datawrapper.dwcdn.net/U5VQb/10/" />
