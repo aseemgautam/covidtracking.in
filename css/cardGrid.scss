@@ -1,6 +1,7 @@
 @use 'vars';
 .delta-grid-tags {
 	color: vars.$font-color;
+	margin-right: 12px;
 }
 .card-grid {
 	margin-bottom: 16px;
@@ -19,6 +20,12 @@
 	}
 	.ant-card-grid.new-high {
 		background-color: #ffccc7;
+	}
+	.ant-card-grid.day-14-high {
+		background-color: #ffe7ba;
+	}
+	.ant-card-grid.day-14-low {
+		background-color: #d9f7be;
 	}
 	.ant-card-grid:nth-child(-n+2) {
 		margin-top: 0px;

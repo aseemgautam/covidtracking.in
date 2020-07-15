@@ -90,6 +90,12 @@ class CovidDataState {
 					}, 0);
 					latest.stateCode = state.code;
 					latest.isHigh = latest.newCases === latest.peak;
+					latest.is14dayLow = _.every(cases.slice(-14), curr => {
+						return latest.newCases <= curr.newCases;
+					});
+					latest.is14dayHigh = _.every(cases.slice(-14), curr => {
+						return latest.newCases >= curr.newCases;
+					});
 					latest.movingAvg7daysData = cases.slice(-8).reduce((acc, curr) => {
 						acc.push(curr.movingAvg7days);
 						return acc;
