@@ -1,4 +1,4 @@
-import { Card } from 'antd';
+import { Card, Tag } from 'antd';
 import _ from 'lodash';
 
 const gridStyle = {
@@ -17,7 +17,7 @@ const StateDeltaGrid = ({ casesByStateLatest }) => {
 			}
 			total += state.newCases;
 			cards.push(
-				<Card.Grid key={state.state} style={gridStyle} hoverable={false}>
+				<Card.Grid className={state.isHigh ? 'new-high' : ''} key={state.state} style={gridStyle} hoverable={false}>
 					<div className="state-name">{state.state}</div> <div className="new-cases">+{state.newCases}</div>
 				</Card.Grid>
 			);
@@ -29,12 +29,16 @@ const StateDeltaGrid = ({ casesByStateLatest }) => {
 	// 	return acc;
 	// }, ''));
 	return (
-		<Card className="card-grid" bordered={false}>
-			<Card.Grid key="total" style={gridStyle} hoverable={false}>
-				<div className="state-name">15th July</div> <div className="new-cases total">+{total}</div>
-			</Card.Grid>
-			{cards}
-		</Card>
+		<>
+			<Tag className="delta-grid-tags" color="#ffccc7">New High</Tag>
+			<br /><br />
+			<Card className="card-grid" bordered={false}>
+				<Card.Grid key="total" style={gridStyle} hoverable={false}>
+					<div className="state-name">15th July</div> <div className="new-cases total">+{total}</div>
+				</Card.Grid>
+				{cards}
+			</Card>
+		</>
 	);
 };
 

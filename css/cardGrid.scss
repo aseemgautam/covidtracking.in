@@ -1,5 +1,7 @@
 @use 'vars';
-
+.delta-grid-tags {
+	color: vars.$font-color;
+}
 .card-grid {
 	margin-bottom: 16px;
 	.ant-card-grid {
@@ -14,6 +16,9 @@
 		align-items: center;
 		box-shadow: none;
 		background-color: vars.$statistic-background;
+	}
+	.ant-card-grid.new-high {
+		background-color: #ffccc7;
 	}
 	.ant-card-grid:nth-child(-n+2) {
 		margin-top: 0px;
