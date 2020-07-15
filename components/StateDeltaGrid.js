@@ -23,11 +23,11 @@ const StateDeltaGrid = ({ casesByStateLatest }) => {
 			);
 		}
 	});
-	// console.log(tweet);
-	// console.log(_.filter(cases, { isHigh: true }).reduce((acc, state) => {
-	// 	acc += `${state.stateCode} +${state.newCases}, `;
-	// 	return acc;
-	// }, ''));
+	console.log(tweet);
+	console.log(_.filter(cases, { isHigh: true }).reduce((acc, state) => {
+		acc += `${state.stateCode} +${state.newCases}, `;
+		return acc;
+	}, ''));
 	return (
 		<Card className="card-grid" bordered={false}>
 			<Card.Grid key="total" style={gridStyle} hoverable={false}>
