@@ -10,6 +10,10 @@ const columns = [
 		width: 100,
 		fixed: 'left',
 		className: 'state-name',
+		sorter: (a, b) => {
+			// eslint-disable-next-line prefer-template
+			return ('' + a.state).localeCompare(b.state);
+		}
 	},
 	{ title: (
 		<>

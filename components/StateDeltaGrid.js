@@ -32,11 +32,11 @@ const StateDeltaGrid = ({ casesByStateLatest }) => {
 			);
 		}
 	});
-	// console.log(tweet);
-	// console.log(_.filter(cases, { isHigh: true }).reduce((acc, state) => {
-	// 	acc += `${state.stateCode} +${state.newCases}, `;
-	// 	return acc;
-	// }, ''));
+	console.log(tweet);
+	console.log(_.filter(cases, { isHigh: true }).reduce((acc, state) => {
+		acc += `${state.stateCode} +${state.newCases}, `;
+		return acc;
+	}, ''));
 	return (
 		<>
 			<Tag className="delta-grid-tags" color="#ffccc7">New High</Tag>
