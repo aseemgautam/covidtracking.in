@@ -1,5 +1,6 @@
 import { Card, Tag } from 'antd';
 import _ from 'lodash';
+import utils from '../classes/Utils';
 
 const gridStyle = {
 	height: '50px',
@@ -45,7 +46,10 @@ const StateDeltaGrid = ({ casesByStateLatest }) => {
 			<br /><br />
 			<Card className="card-grid" bordered={false}>
 				<Card.Grid key="total" style={gridStyle} hoverable={false}>
-					<div className="state-name">17th July</div> <div className="new-cases total">+{total}</div>
+					<div className="state-name">
+						{utils.getOrdinalNum((new Date()).getDate())}&nbsp;
+						{(new Date()).toLocaleString('default', { month: 'long' })}
+					</div> <div className="new-cases total">+{total}</div>
 				</Card.Grid>
 				{cards}
 			</Card>
