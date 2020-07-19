@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import fetch from 'isomorphic-unfetch';
+import papa from 'papaparse';
 
 export default async (req, res) => {
 	// const dataRequest = await fetch('https://api.covid19india.org/v4/data-all.json');
@@ -10,7 +11,7 @@ export default async (req, res) => {
 	} = req;
 	// let testsTotal = 0;
 	// const tests = [];
-	// let testTweet = '';
+	// // let testTweet = '';
 	// if (data) {
 	// 	Object.keys(data).forEach(key => {
 	// 		if (data[key].delta && data[key].delta.tested) {
@@ -36,5 +37,6 @@ export default async (req, res) => {
 	// console.log(dates);
 	res.end(`Post: ${state} ${district}`);
 	// res.end(JSON.stringify(tests));
+	// res.end(papa.unparse(tests));
 	// res.end(dates.toString());
 };
