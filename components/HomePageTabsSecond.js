@@ -1,4 +1,5 @@
 import { Tabs, Row, Col } from 'antd';
+import { LineChartOutlined } from '@ant-design/icons';
 import dynamic from 'next/dynamic';
 import TrendInfoCards from './TrendInfoCards';
 import StateTable from './StateTable';
@@ -34,7 +35,7 @@ const HomePageTabsSecond = ({ stateDataLatest }) => {
 			</TabPane>
 			<TabPane
 				tab={
-					(<div className="card-tab-title">Trends</div>)
+					(<div className="card-tab-title">7 & 14 Day Averages <LineChartOutlined /></div>)
 				}
 				key="2"
 			>
