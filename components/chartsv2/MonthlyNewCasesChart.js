@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 // import echarts from 'echarts';
 import echarts from 'echarts/lib/echarts';
 import bar from 'echarts/lib/chart/bar';
@@ -6,14 +6,15 @@ import _ from 'lodash';
 import Colors from '../../classes/Colors';
 
 const MonthlyNewCasesChart = ({ data }) => {
+	const [image, setImage] = useState(null);
 	const container = useRef(null);
 	useEffect(() => {
 		if (!container.current) {
 			return;
 		}
-		const myChart = echarts.init(container.current, {}, { width: 250, height: 30 });
+		const chart = echarts.init(container.current, {}, { width: 250, height: 30 });
 		// draw chart
-		myChart.setOption({
+		chart.setOption({
 			tooltip: {
 				trigger: 'axis',
 				axisPointer: {
@@ -45,6 +46,7 @@ const MonthlyNewCasesChart = ({ data }) => {
 					name: '0-7',
 					type: 'bar',
 					stack: 'cases',
+					animation: false,
 					itemStyle: {
 						color: Colors.monthlyNewCasesChart[0]
 					},
@@ -59,6 +61,7 @@ const MonthlyNewCasesChart = ({ data }) => {
 					name: '8-14',
 					type: 'bar',
 					stack: 'cases',
+					animation: false,
 					itemStyle: {
 						color: Colors.monthlyNewCasesChart[1]
 					},
@@ -73,6 +76,7 @@ const MonthlyNewCasesChart = ({ data }) => {
 					name: '15-21',
 					type: 'bar',
 					stack: 'cases',
+					animation: false,
 					itemStyle: {
 						color: Colors.monthlyNewCasesChart[2]
 					},
@@ -87,6 +91,7 @@ const MonthlyNewCasesChart = ({ data }) => {
 					name: '22-28',
 					type: 'bar',
 					stack: 'cases',
+					animation: false,
 					itemStyle: {
 						color: Colors.monthlyNewCasesChart[3],
 					},
@@ -99,12 +104,15 @@ const MonthlyNewCasesChart = ({ data }) => {
 				}
 			]
 		});
-		// container.current
-		// echarts.se
+		const base64 = chart.getDataURL({ pixelRatio: window.devicePixelRatio });
+		chart.clear();
+		chart.dispose();
+		setImage(base64);
 	}, [data]);
 	return (
 		<>
-			<div className="monthlyNewCasesChart" ref={container} />
+			{image ? <img style={{ height: '30px' }} src={image} alt="" />
+				: <div className="monthlyNewCasesChart" ref={container} />}
 		</>
 	);
 };
