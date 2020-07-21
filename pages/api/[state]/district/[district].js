@@ -4,23 +4,23 @@ import papa from 'papaparse';
 
 export default async (req, res) => {
 	// const dataRequest = await fetch('https://api.covid19india.org/v4/data-all.json');
-	// const dataRequest = await fetch('https://api.covid19india.org/v4/data.json');
-	// const data = await dataRequest.json();
+	const dataRequest = await fetch('https://api.covid19india.org/v4/data.json');
+	const data = await dataRequest.json();
 	const {
 		query: { state, district },
 	} = req;
-	// let testsTotal = 0;
-	// const tests = [];
-	// // let testTweet = '';
-	// if (data) {
-	// 	Object.keys(data).forEach(key => {
-	// 		if (data[key].delta && data[key].delta.tested) {
-	// 			testsTotal += data[key].delta.tested;
-	// 			tests.push({ state: key, tests: data[key].delta.tested });
-	// 		}
-	// 	});
-	// }
-	// console.log(testsTotal);
+	let testsTotal = 0;
+	const tests = [];
+	// let testTweet = '';
+	if (data) {
+		Object.keys(data).forEach(key => {
+			if (data[key].delta && data[key].delta.tested && data[key].meta.tested.last_updated === '2020-07-21') {
+				testsTotal += data[key].delta.tested;
+				tests.push({ state: key, tests: data[key].delta.tested });
+			}
+		});
+	}
+	console.log(testsTotal);
 	// if (data) {
 	// 	console.log(Object.keys(data));
 	// }
@@ -35,8 +35,8 @@ export default async (req, res) => {
 	// 	}
 	// });
 	// console.log(dates);
-	res.end(`Post: ${state} ${district}`);
-	// res.end(JSON.stringify(tests));
+	// res.end(`Post: ${state} ${district}`);
+	res.end(JSON.stringify(tests));
 	// res.end(papa.unparse(tests));
 	// res.end(dates.toString());
 };
