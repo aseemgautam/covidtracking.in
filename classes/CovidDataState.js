@@ -82,7 +82,7 @@ class CovidDataState {
 				const latest = _.last(cases);
 				if (latest) {
 					latest.peak = cases.reduce((high, current) => {
-						if (current.newCases >= high) {
+						if (current.newCases > high) {
 							// eslint-disable-next-line no-param-reassign
 							high = current.newCases;
 						}
