@@ -49,7 +49,7 @@ const StateDeltaGrid = ({ casesByStateLatest }) => {
 					<div className="state-name">
 						{/* {utils.getOrdinalNum((new Date()).getDate())}&nbsp;
 						{(new Date()).toLocaleString('default', { month: 'long' })} */}
-						20th July
+						21st July
 					</div> <div className="new-cases total">+{total}</div>
 				</Card.Grid>
 				{cards}
