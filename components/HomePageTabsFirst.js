@@ -15,7 +15,7 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest }) => {
 	);
 	return (
 		<Tabs tabBarExtraContent={
-			(<div>22nd July, 7:45 PM</div>)
+			(<div>22nd July, 8:30 PM</div>)
 		}
 		>
 			<TabPane
