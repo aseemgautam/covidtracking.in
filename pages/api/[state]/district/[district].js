@@ -11,16 +11,20 @@ export default async (req, res) => {
 	} = req;
 	let testsTotal = 0;
 	const tests = [];
-	// let testTweet = '';
+	let testTweet = '';
 	if (data) {
 		Object.keys(data).forEach(key => {
-			if (data[key].delta && data[key].delta.tested && data[key].meta.tested.last_updated === '2020-07-21') {
+			if (data[key].delta && data[key].delta.tested && data[key].meta.tested.last_updated === '2020-07-22') {
 				testsTotal += data[key].delta.tested;
+				if (data[key].delta.tested > 10000) {
+					testTweet += `${key} +${data[key].delta.tested},`;
+				}
 				tests.push({ state: key, tests: data[key].delta.tested });
 			}
 		});
 	}
 	console.log(testsTotal);
+	console.log(testTweet);
 	// if (data) {
 	// 	console.log(Object.keys(data));
 	// }
