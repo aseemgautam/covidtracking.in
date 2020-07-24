@@ -54,7 +54,7 @@ const columns = [
 	{ title: 'Active',
 		dataIndex: 'active',
 		align: 'right',
-		width: 130,
+		width: 80,
 		defaultSortOrder: 'descend',
 		sortDirections: ['descend', 'ascend'],
 		sorter: (a, b) => {
@@ -70,7 +70,7 @@ const columns = [
 	{ title: 'Deaths',
 		dataIndex: 'deaths',
 		align: 'right',
-		width: 110,
+		width: 80,
 		sortDirections: ['descend', 'ascend'],
 		sorter: (a, b) => {
 			return a.deaths - b.deaths;
@@ -84,7 +84,7 @@ const columns = [
 	{ title: 'Recovered',
 		dataIndex: 'recovered',
 		align: 'right',
-		width: 120,
+		width: 80,
 		sortDirections: ['descend', 'ascend'],
 		sorter: (a, b) => {
 			return a.recovered - b.recovered;
@@ -93,6 +93,16 @@ const columns = [
 			return (
 				<StateTableCell value={text} delta={record.newRecover} isCaretUpRed={false} />
 			);
+		}
+	},
+	{
+		title: 'DEATH RATE',
+		dataIndex: 'deathRate',
+		align: 'center',
+		width: 70,
+		sortDirections: ['descend', 'ascend'],
+		sorter: (a, b) => {
+			return a.deathRate - b.deathRate;
 		}
 	},
 	{
@@ -114,16 +124,6 @@ const columns = [
 		sortDirections: ['descend', 'ascend'],
 		sorter: (a, b) => {
 			return a.testsPerMillion - b.testsPerMillion;
-		}
-	},
-	{
-		title: 'DEATH RATE',
-		dataIndex: 'deathRate',
-		align: 'center',
-		width: 70,
-		sortDirections: ['descend', 'ascend'],
-		sorter: (a, b) => {
-			return a.deathRate - b.deathRate;
 		}
 	},
 	{

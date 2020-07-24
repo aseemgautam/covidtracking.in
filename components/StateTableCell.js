@@ -5,12 +5,12 @@ const StateTableCell = ({ value, delta, showCaret }) => {
 		? <CaretUpOutlined className="red" />
 		: <CaretDownOutlined className="green" />;
 	return (
-		<div className="cell-wrapper">
-			<div className="count">{value}</div>
-			<div className="delta">
+		<>
+			<div>
 				{(delta !== 0 && showCaret) && icon }{(!showCaret && delta > 0) && '+'}{Math.abs(delta)}
 			</div>
-		</div>
+			<div className="count">{value}</div>
+		</>
 	);
 };
 

@@ -88,6 +88,7 @@ class CovidDataState {
 						}
 						return high;
 					}, 0);
+					latest.statePopulation = state.population;
 					latest.stateCode = state.code;
 					latest.isHigh = latest.newCases === latest.peak;
 					latest.is14dayLow = _.every(cases.slice(-14), curr => {
