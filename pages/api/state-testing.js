@@ -6,7 +6,7 @@ export default async (req, res) => {
 	const stateDataLatest = await CovidDataState.latest();
 	const response = [];
 	stateDataLatest.forEach(stateData => {
-		response.push(_.pick(stateData, ['state', 'tests', 'positivePercent', 'testsPerMillion']));
+		response.push(_.pick(stateData, ['state', 'population', 'positivePercent', 'tests', 'testsPerMillion']));
 	});
 	// res.end(JSON.stringify(stateDataLatest));
 	res.end(JSON.stringify(papa.unparse(response)));
