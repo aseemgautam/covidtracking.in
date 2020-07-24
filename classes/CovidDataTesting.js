@@ -39,12 +39,14 @@ class CovidDataTesting {
 		IndianStates.states.forEach(
 			state => {
 				this._all.push(
-					..._.filter(json[Object.keys(json)[0]], { state: state.name })
-						.map(val => {
+					..._.filter(json[Object.keys(json)[0]], {
+						state: state.name === 'Dadra and Nagar Haveli' ? 'Dadra and Nagar Haveli and Daman and Diu' : state.name
+					})
+						.map((val, index, array) => {
 							// eslint-disable-next-line no-useless-escape
 							return { date: this.convertDate(val.updatedon.replace(/\//g, '')),
 								state: state.name,
-								totalTests: Number.parseInt(val.totaltested, 0) };
+								totalTests: Number.parseInt(val.totaltested ? val.totaltested : array[index - 1].totaltested, 0) };
 						})
 				);
 			}
