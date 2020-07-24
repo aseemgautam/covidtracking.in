@@ -33,18 +33,7 @@ class CovidDataState {
 			state => {
 				const cases = _.filter(data, { state: state.name })
 					.map((curr, idx, src) => {
-						const date = new Date(curr.date);
-						let testForDate = _.find(testingData, { date: curr.date, state: state.name });
-						let loops = 0;
-
-						// no testing data present for current date
-						// forward latest data availble in last 5 days
-						while (!testForDate && loops < 5) {
-							loops += 1;
-							date.setDate(date.getDate() - 1);
-							testForDate = _.find(testingData, { date: date.toISOString().split('T')[0], state: state.name });
-						}
-
+						const testForDate = _.find(testingData, { date: curr.date, state: state.name });
 						return {
 							...curr,
 							newCases: idx === 0 ? 0 : curr.confirmed - src[idx - 1].confirmed,
@@ -62,6 +51,7 @@ class CovidDataState {
 						};
 					});
 				MovingAverage.calculate(cases, 'newCases');
+
 				this._all.set(state.name, cases);
 			}
 		);
@@ -78,7 +68,6 @@ class CovidDataState {
 		IndianStates.states.forEach( // loop all states
 			state => {
 				const cases = this._all.get(state.name);
-				MovingAverage.calculate(cases, 'newCases');
 				const latest = _.last(cases);
 				if (latest) {
 					latest.peak = cases.reduce((high, current) => {

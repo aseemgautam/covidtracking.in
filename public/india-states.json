@@ -630,24 +630,6 @@
           ]
       },
       {
-          "id": "9",
-          "type": "Union Territory",
-          "capital": "Daman",
-          "code": "DD",
-          "name": "Daman and Diu",
-          "population": 615724,
-          "districts": [
-              {
-                  "id": "1",
-                  "name": "Daman"
-              },
-              {
-                  "id": "2",
-                  "name": "Diu"
-              }
-          ]
-      },
-      {
           "id": "10",
           "type": "National Capital Territory",
           "capital": "New Delhi",
