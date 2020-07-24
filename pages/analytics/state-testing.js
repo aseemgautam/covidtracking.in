@@ -8,10 +8,10 @@ const CasesPerMillion = () => {
 				<Breadcrumb.Item>
 					<a href="/analytics">Analytics</a>
 				</Breadcrumb.Item>
-				<Breadcrumb.Item>Cases Per Million</Breadcrumb.Item>
+				<Breadcrumb.Item>Coronavirus India - Testing across states</Breadcrumb.Item>
 			</Breadcrumb>
 			<br />
-			<DWChart title="Chart" src="//datawrapper.dwcdn.net/U5VQb/10/" />
+			<DWChart title="Chart" src="//datawrapper.dwcdn.net/JN9ce/3/" />
 		</>
 	);
 };
