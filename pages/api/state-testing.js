@@ -9,5 +9,5 @@ export default async (req, res) => {
 		response.push(_.pick(stateData, ['state', 'population', 'positivePercent', 'tests', 'testsPerMillion']));
 	});
 	// res.end(JSON.stringify(stateDataLatest));
-	res.end(JSON.stringify(papa.unparse(response)));
+	res.end(papa.unparse(response));
 };
