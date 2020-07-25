@@ -50,23 +50,26 @@ class CovidDataTesting {
 					let prev = 0; const result = [];
 					for (let d = new Date(testsByState[0].date); d <= new Date(); d.setDate(d.getDate() + 1)) {
 						const testForDate = _.find(testsByState, { date: d.toISOString().split('T')[0] });
-						let totalTests; let date;
+						let totalTests; let date; let newTests;
 						if (testForDate && testForDate.totaltested) {
 							date = testForDate.date;
+							newTests = testForDate.totaltested - prev.totaltested;
 							totalTests = testForDate.totaltested;
 							prev = testForDate;
 						} else {
 							// eslint-disable-next-line prefer-destructuring
 							date = d.toISOString().split('T')[0];
+							newTests = 0;
 							totalTests = prev.totaltested;
 						}
 						result.push({
 							date,
 							state: state.name,
+							newTests: Number.parseInt(newTests, 10),
 							totalTests: Number.parseInt(totalTests, 10)
 						});
 					}
-					MovingAverage.for7days(result, 'totalTests', 'movingAverage');
+					MovingAverage.for7days(result, 'newTests', 'movingAverage');
 					this._all.push(...result);
 				}
 			}
