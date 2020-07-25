@@ -43,7 +43,7 @@ export default async (req, res) => {
 		} else {
 			dailyTestsTrend = 'Flat';
 		}
-		result['DAILY TESTS(7 DAY AVG)'] = `${_.last(testingData).movingAverage.toLocaleString()}^${dailyTestsTrend}^`;
+		result['DAILY TESTS (7 DAY AVG)'] = `${_.last(testingData).movingAverage.toLocaleString()}^${dailyTestsTrend}^`;
 		result.ma14 = _.nth(testingData, -14).movingAverage;
 		result.ma11 = _.nth(testingData, -11).movingAverage;
 		result.ma9 = _.nth(testingData, -9).movingAverage;
