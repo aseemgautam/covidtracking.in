@@ -22,7 +22,7 @@ export default async (req, res) => {
 		result.movingAvg21daysAgo = _.nth(testingData, -21).movingAverage;
 		result.movingAvg14daysAgo = _.nth(testingData, -14).movingAverage;
 		result.movingAvg7daysAgo = _.nth(testingData, -7).movingAverage;
-		result.movingAverage = current.movingAverage;
+		result.movingAverage = _.last(testingData).movingAverage;
 		response.push(result);
 	});
 
