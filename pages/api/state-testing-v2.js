@@ -17,11 +17,11 @@ export default async (req, res) => {
 		const posRateDelta = (current.positivePercent - _.nth(stateData, -14).positivePercent).toFixed(2);
 		let posRateTrend;
 		if (posRateDelta > 0.5) {
-			posRateTrend = `increasing +${posRateDelta}`;
+			posRateTrend = `Up +${posRateDelta}`;
 		} else if (posRateDelta < -0.5) {
-			posRateTrend = `decreasing ${posRateDelta}`;
+			posRateTrend = `Down ${posRateDelta}`;
 		} else {
-			posRateTrend = 'flat';
+			posRateTrend = 'Flat';
 		}
 		result['POSITIVITY RATE'] = `${current.positivePercent}^${posRateTrend}^`;
 		result.posRate14 = _.nth(stateData, -14).positivePercent;
@@ -36,11 +36,11 @@ export default async (req, res) => {
 		const dailyTestsDelta = _.last(testingData).movingAverage - _.nth(testingData, -14).movingAverage;
 		let dailyTestsTrend;
 		if (dailyTestsDelta > (_.nth(testingData, -14).movingAverage * 0.1)) {
-			dailyTestsTrend = `Increasing +${dailyTestsDelta}`;
+			dailyTestsTrend = `Up +${dailyTestsDelta}`;
 		} else if (Math.abs(dailyTestsDelta) < (_.nth(testingData, -14).movingAverage * 0.1)) {
-			dailyTestsTrend = `Decreasing ${dailyTestsDelta}`;
+			dailyTestsTrend = `Down ${dailyTestsDelta}`;
 		} else {
-			dailyTestsTrend = 'flat';
+			dailyTestsTrend = 'Flat';
 		}
 		result['TESTS DAILY (7-DAY AVG)'] = `${_.last(testingData).movingAverage}^${dailyTestsTrend}^`;
 		result.ma14 = _.nth(testingData, -14).movingAverage;
