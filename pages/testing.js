@@ -12,7 +12,7 @@ const Testing = () => {
 				<Breadcrumb.Item>Coronavirus India - Testing across states</Breadcrumb.Item>
 			</Breadcrumb>
 			<br />
-			<DWChart title="Chart" src="//datawrapper.dwcdn.net/H8ALl/2/" />
+			<DWChart title="Chart" src="//datawrapper.dwcdn.net/FIsKB/2/" />
 		</>
 	);
 };
