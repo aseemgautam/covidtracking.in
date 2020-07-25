@@ -25,6 +25,19 @@ class MovingAverage {
 		}
 	}
 
+	for7days = (array, field, newField) => {
+		if (Array.isArray(array) && array.length > 0) {
+			array.forEach((curr, idx, src) => {
+				curr[newField] = 0;
+				if (idx > 7) {
+					curr[newField] = Math.round(src.slice(idx - 7, idx).reduce((prev, current) => {
+						return prev + current[field];
+					}, 0) / 7);
+				}
+			});
+		}
+	}
+
 	round = num => {
 		return Math.round((num + Number.EPSILON) * 100) / 100;
 	}

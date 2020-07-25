@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import fetch from 'isomorphic-unfetch';
 import IndianStates from '../public/india-states.json';
+import MovingAverage from './MovingAverage';
 
 let instance = null;
 
@@ -46,24 +47,27 @@ class CovidDataTesting {
 					state: state.name === 'Dadra and Nagar Haveli' ? 'Dadra and Nagar Haveli and Daman and Diu' : state.name
 				});
 				if (testsByState && testsByState.length > 0) {
-					let prev = 0;
+					let prev = 0; const result = [];
 					for (let d = new Date(testsByState[0].date); d <= new Date(); d.setDate(d.getDate() + 1)) {
 						const testForDate = _.find(testsByState, { date: d.toISOString().split('T')[0] });
+						let totalTests; let date;
 						if (testForDate && testForDate.totaltested) {
-							this._all.push({
-								date: testForDate.date,
-								state: state.name,
-								totalTests: testForDate.totaltested
-							});
+							date = testForDate.date;
+							totalTests = testForDate.totaltested;
 							prev = testForDate;
 						} else {
-							this._all.push({
-								date: d.toISOString().split('T')[0],
-								state: state.name,
-								totalTests: prev.totaltested
-							});
+							// eslint-disable-next-line prefer-destructuring
+							date = d.toISOString().split('T')[0];
+							totalTests = prev.totaltested;
 						}
+						result.push({
+							date,
+							state: state.name,
+							totalTests: Number.parseInt(totalTests, 10)
+						});
 					}
+					MovingAverage.for7days(result, 'totalTests', 'movingAverage');
+					this._all.push(...result);
 				}
 			}
 		);
