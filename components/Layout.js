@@ -5,7 +5,7 @@ import { MenuOutlined, TwitterOutlined } from '@ant-design/icons';
 const { Header, Content, Footer } = Layout;
 const tracker = <Link href="/"><a>TRACKER</a></Link>;
 const criteria = <Link href="/criteria"><a>CRITERIA</a></Link>;
-const analytics = <Link href="/analytics"><a>ANALYTICS</a></Link>;
+const analytics = <Link href="/testing"><a>TESTING</a></Link>;
 const menu = (
 	<Menu>
 		<Menu.Item>
