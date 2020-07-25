@@ -13,7 +13,7 @@ export default async (req, res) => {
 		const stateData = stateDataAll.get(current.state);
 		const testingData = _.filter(stateDataTesting, { state: current.state });
 		const result = {};
-		result.State = current.state;
+		result.STATE = current.state;
 		const posRateDelta = (current.positivePercent - _.nth(stateData, -14).positivePercent).toFixed(2);
 		let posRateTrend;
 		if (posRateDelta > 0.5) {
