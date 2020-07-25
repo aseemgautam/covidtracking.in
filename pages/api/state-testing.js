@@ -15,7 +15,7 @@ export default async (req, res) => {
 		const result = {};
 		// const result = _.pick(current, ['state', 'population', 'positivePercent', 'tests', 'testsPerMillion']);
 		result.State = current.state;
-		result['Positivity Rate'] = current.positivePercent;
+		result['POSITIVITY RATE'] = current.positivePercent;
 		result.posRate28daysAgo = _.nth(stateData, -28).positivePercent;
 		result.posRate21daysAgo = _.nth(stateData, -21).positivePercent;
 		result.posRate14daysAgo = _.nth(stateData, -14).positivePercent;
@@ -27,8 +27,8 @@ export default async (req, res) => {
 		result.movingAvg14daysAgo = _.nth(testingData, -14).movingAverage;
 		result.movingAvg7daysAgo = _.nth(testingData, -7).movingAverage;
 		result.movingAverage = _.last(testingData).movingAverage;
-		result['Total Tests'] = current.tests;
-		result['Tests Per Million'] = current.testsPerMillion;
+		result['TOTAL TESTS'] = current.tests;
+		result['TESTS PER MILLION'] = current.testsPerMillion;
 		response.push(result);
 	});
 
