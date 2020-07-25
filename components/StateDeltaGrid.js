@@ -46,11 +46,8 @@ const StateDeltaGrid = ({ casesByStateLatest }) => {
 			<br /><br />
 			<Card className="card-grid" bordered={false}>
 				<Card.Grid key="total" style={gridStyle} hoverable={false}>
-					<div className="state-name">
-						{/* {utils.getOrdinalNum((new Date()).getDate())}&nbsp;
-						{(new Date()).toLocaleString('default', { month: 'long' })} */}
-						21st July
-					</div> <div className="new-cases total">+{total}</div>
+					New Cases
+					<div className="new-cases total">+{total}</div>
 				</Card.Grid>
 				{cards}
 			</Card>
