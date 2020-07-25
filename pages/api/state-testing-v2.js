@@ -18,10 +18,13 @@ export default async (req, res) => {
 		let posRateTrend;
 		if (posRateDelta > 0.5) {
 			posRateTrend = `Up +${posRateDelta}%`;
+			result.posRateColor = 'red';
 		} else if (posRateDelta < -0.5) {
 			posRateTrend = `Down ${posRateDelta}%`;
+			result.posRateColor = 'green';
 		} else {
 			posRateTrend = 'Flat';
+			result.posRateColor = 'default';
 		}
 		result['POSITIVITY RATE'] = `${current.positivePercent}% ^${posRateTrend}^`;
 		result.posRate14 = _.nth(stateData, -14).positivePercent;
@@ -38,10 +41,13 @@ export default async (req, res) => {
 		let dailyTestsTrend;
 		if (dailyTestsDelta > (_.nth(testingData, -14).movingAverage * 0.1)) {
 			dailyTestsTrend = `Up +${dailyTestsDeltaPercent}%`;
+			result.dailyTestsTrendColor = 'green';
 		} else if (Math.abs(dailyTestsDelta) < (_.nth(testingData, -14).movingAverage * 0.1)) {
 			dailyTestsTrend = `Down ${dailyTestsDeltaPercent}%`;
+			result.dailyTestsTrendColor = 'red';
 		} else {
 			dailyTestsTrend = 'Flat';
+			result.dailyTestsTrendColor = 'red';
 		}
 		result['DAILY TESTS (7 DAY AVG)'] = `${_.last(testingData).movingAverage.toLocaleString()}^${dailyTestsTrend}^`;
 		result.ma14 = _.nth(testingData, -14).movingAverage;
