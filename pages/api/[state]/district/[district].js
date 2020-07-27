@@ -14,7 +14,7 @@ export default async (req, res) => {
 	let testTweet = '';
 	if (data) {
 		Object.keys(data).forEach(key => {
-			if (data[key].delta && data[key].delta.tested && data[key].meta.tested.last_updated === '2020-07-22') {
+			if (data[key].delta && data[key].delta.tested && data[key].meta.tested.last_updated === '2020-07-27') {
 				testsTotal += data[key].delta.tested;
 				if (data[key].delta.tested > 10000) {
 					testTweet += `${key} +${data[key].delta.tested},`;
@@ -40,7 +40,7 @@ export default async (req, res) => {
 	// });
 	// console.log(dates);
 	// res.end(`Post: ${state} ${district}`);
-	res.end(JSON.stringify(tests));
-	// res.end(papa.unparse(tests));
+	// res.end(JSON.stringify(tests));
+	res.end(papa.unparse(tests));
 	// res.end(dates.toString());
 };
