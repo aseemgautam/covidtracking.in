@@ -1,6 +1,7 @@
 import { Tabs, Badge } from 'antd';
 import StateDeltaGrid from './StateDeltaGrid';
 import NationalStats from './NationalStats';
+import Utils from '../classes/Utils';
 
 const { TabPane } = Tabs;
 
@@ -15,7 +16,9 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest }) => {
 	);
 	return (
 		<Tabs tabBarExtraContent={
-			(<div>27th July, 18:30 AM</div>)
+			(
+				<div>{Utils.dateAndTime()}</div>
+			)
 		}
 		>
 			<TabPane
