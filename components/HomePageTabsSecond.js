@@ -13,7 +13,7 @@ const HomePageTabsSecond = ({ stateDataLatest }) => {
 		<Tabs>
 			<TabPane
 				tab={
-					(<div className="card-tab-title">India Map</div>)
+					(<div className="card-tab-title">India</div>)
 				}
 				key="1"
 			>
@@ -35,7 +35,7 @@ const HomePageTabsSecond = ({ stateDataLatest }) => {
 			</TabPane>
 			<TabPane
 				tab={
-					(<div className="card-tab-title">7 & 14 Day Averages <LineChartOutlined /></div>)
+					(<div className="card-tab-title">State Progress</div>)
 				}
 				key="2"
 			>
@@ -49,7 +49,7 @@ const HomePageTabsSecond = ({ stateDataLatest }) => {
 			</TabPane>
 			<TabPane
 				tab={
-					(<div className="card-tab-title">Stats</div>)
+					(<div className="card-tab-title">State Statistics</div>)
 				}
 				key="3"
 			>

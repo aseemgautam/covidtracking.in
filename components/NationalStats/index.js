@@ -1,5 +1,6 @@
 import { Row, Col } from 'antd';
 import _ from 'lodash';
+import numeral from 'numeral';
 import CovidStatistic from './CovidStatistic';
 
 const NationalStats = ({ testingData, covidDataIndia }) => {
@@ -74,7 +75,7 @@ const NationalStats = ({ testingData, covidDataIndia }) => {
 				<Col xs={12} sm={8} lg={6}>
 					<CovidStatistic
 						title="Covid Tests"
-						value={_.last(testingData).samples}
+						value={numeral(_.last(testingData).samples).format('0.00a')}
 						suffix={_.last(testingData).newSamples}
 						suffixClassName="green7"
 						precision={0}

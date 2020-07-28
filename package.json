@@ -20,6 +20,7 @@
     "lodash": "^4.17.15",
     "next": "^9.4.4",
     "null-loader": "2.0.0",
+    "numeral": "^2.0.6",
     "papaparse": "^5.2.0",
     "react": "^16.13.1",
     "react-datawrapper-chart": "^1.0.3",
