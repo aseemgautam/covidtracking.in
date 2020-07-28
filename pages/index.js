@@ -6,14 +6,20 @@ import MovingAverageCard from '../components/NationalStats/MovingAverageCard';
 import CovidDataState from '../classes/CovidDataState';
 import HomePageTabsFirst from '../components/HomePageTabsFirst';
 import HomePageTabsSecond from '../components/HomePageTabsSecond';
+import Utils from '../classes/Utils';
 
-function Index({ testingData, indiaData, stateDataLatest }) {
+function Index({ testingData, indiaData, stateDataLatest, buildTime }) {
 	return (
 		<>
 			<Head>
 				<title>Covid-19 Tracking India</title>
 			</Head>
-			<HomePageTabsFirst testingData={testingData} indiaData={indiaData} stateDataLatest={stateDataLatest} />
+			<HomePageTabsFirst
+				testingData={testingData}
+				indiaData={indiaData}
+				stateDataLatest={stateDataLatest}
+				buildTime={buildTime}
+			/>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} sm={24} md={12}>
 					<MovingAverageCard cases={indiaData.cases} days={14} />
@@ -32,10 +38,11 @@ export async function getStaticProps() {
 	const testingData = await covidDataIndia.fetchTests();
 	const indiaData = await covidDataIndia.fetchDataIndia();
 	const stateDataLatest = await CovidDataState.latest();
+	const buildTime = Utils.dateAndTime();
 
 	return {
 		// will be passed to the page component as props
-		props: { indiaData, testingData, stateDataLatest }
+		props: { indiaData, testingData, stateDataLatest, buildTime }
 	};
 }
 

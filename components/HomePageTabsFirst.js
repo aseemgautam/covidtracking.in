@@ -1,11 +1,10 @@
 import { Tabs, Badge } from 'antd';
 import StateDeltaGrid from './StateDeltaGrid';
 import NationalStats from './NationalStats';
-import Utils from '../classes/Utils';
 
 const { TabPane } = Tabs;
 
-const HomePageTabs = ({ testingData, indiaData, stateDataLatest }) => {
+const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) => {
 	const liveCounter = stateDataLatest.reduce(
 		(acc, state) => {
 			if (state.newCases > 0 || state.newRecovered > 0) {
@@ -17,7 +16,7 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest }) => {
 	return (
 		<Tabs tabBarExtraContent={
 			(
-				<div>{Utils.dateAndTime()}</div>
+				<div>{buildTime}</div>
 			)
 		}
 		>
