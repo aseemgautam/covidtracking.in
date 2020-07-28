@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'antd';
 import _ from 'lodash';
+import numeral from 'numeral';
 import MovingAverageProgress from '../MovingAverageProgress';
 import LineChartSmall from '../charts/LineChartSmall';
 
@@ -16,7 +17,7 @@ const MovingAverageCard = React.memo(({ cases, days }) => {
 		<>
 			<Row className="trend-card" justify="space-between">
 				<Col flex="80px">
-					<div className="ant-statistic-title">{`${days} DAY TREND COVID+`}</div>
+					<div className="ant-statistic-title">{`${days} DAY COVID % GROWTH`}</div>
 				</Col>
 				<Col flex="1 0 120px" className="flex-row-center">
 					<MovingAverageProgress rateOfInc={rateOfInc} newCases={latest.newCases} />
@@ -29,8 +30,8 @@ const MovingAverageCard = React.memo(({ cases, days }) => {
 						data={movingAverage}
 					/>
 				</Col>
-				<Col span={24} className="trend-card-description">Average daily new cases have increased by {rateOfInc}% from &nbsp;
-					{movingAverage[0]} to {movingAverage[days]} over the last {days} days.
+				<Col span={24} className="trend-card-description">Average daily new cases have increased by {rateOfInc}% from&nbsp;
+					{numeral(movingAverage[0]).format('0.0a')} to {numeral(movingAverage[days]).format('0.0a')} over last {days} days.
 				</Col>
 			</Row>
 		</>

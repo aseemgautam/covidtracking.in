@@ -32,7 +32,7 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 				tab={
 					(
 						<Badge count={liveCounter} offset={[20, 18]}>
-							<div className="card-tab-title">+States</div>
+							<div className="card-tab-title">+Today</div>
 						</Badge>
 					)
 				}

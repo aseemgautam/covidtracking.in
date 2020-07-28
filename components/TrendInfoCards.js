@@ -32,28 +32,28 @@ const TrendInfoCards = ({ colSpan }) => {
 					backgroundColor={Colors.getTrendColor(75, 125)}
 					name="RED"
 					title="Rapid Growth in New Cases"
-					description="7 Day Moving average > 50%"
+					description="COVID-19 GROWTH RATE > 50%"
 					colSpan={colSpan}
 				/>
 				<TrendColumn
 					backgroundColor={Colors.getTrendColor(45, 75)}
 					name="ORANGE"
 					title="Moderate growth in New Cases"
-					description="7 Day Moving Average between 20 - 50%"
+					description="COVID-19 GROWTH RATE between 20 - 50%"
 					colSpan={colSpan}
 				/>
 				<TrendColumn
 					backgroundColor={Colors.getTrendColor(15, 30)}
 					name="YELLOW"
 					title="Low Growth in New Cases"
-					description="7 Day Moving Average between 0 - 20%"
+					description="COVID-19 GROWTH RATE between 0 - 20%"
 					colSpan={colSpan}
 				/>
 				<TrendColumn
 					backgroundColor={Colors.getTrendColor(-5, 10)}
 					name="GREEN"
 					title="Negative Growth in New Cases"
-					description="7 Day  Moving Average below 0%."
+					description="COVID-19 GROWTH RATE below 0%."
 					colSpan={colSpan}
 				/>
 			</Row>
