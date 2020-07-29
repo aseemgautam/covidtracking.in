@@ -89,3 +89,19 @@
 		}
 	}
 }
+
+@media (min-width: 1300px) { 
+	.card-grid {
+		.ant-card-grid {
+			width: calc((100vw - 128px - 32px)/5);
+		}
+	}
+}
+
+@media (min-width: 1400px) { 
+	.card-grid {
+		.ant-card-grid {
+			width: calc((100vw - 256px - 32px)/5);
+		}
+	}
+}

@@ -2,7 +2,6 @@
 /* eslint-disable no-restricted-syntax */
 import { Table } from 'antd';
 import _ from 'lodash';
-import StateTableCell from './StateTableCell';
 
 const columns = [
 	{ title: 'State',
@@ -17,7 +16,7 @@ const columns = [
 	},
 	{ title: (
 		<>
-			<div className="plus-today">+TODAY</div>
+			<div className="plus-cases">+TODAY</div>
 			<div>TOTAL</div>
 		</>
 	),
@@ -27,10 +26,14 @@ const columns = [
 	render: (text, record) => {
 		return (
 			<>
-				<div className="plus-today">{text === 0 ? '' : `+${text}`}</div>
-				<div className="total">{record.confirmed}</div>
+				<div className="plus-cases">{text === 0 ? <span>&nbsp;</span> : `+${text}`}</div>
+				<div>{record.confirmed}</div>
 			</>
 		);
+	},
+	defaultSortOrder: 'descend',
+	sorter: (a, b) => {
+		return a.confirmed - b.confirmed;
 	}
 	},
 	{ title: (
@@ -45,26 +48,39 @@ const columns = [
 	render: (text, record) => {
 		return (
 			<>
-				<div className="total">{record.positivePercent}</div>
-				<div className="total">{text}</div>
+				<div>{record.positivePercent}</div>
+				<div>{text}</div>
 			</>
 		);
+	},
+	sorter: (a, b) => {
+		return a.tests - b.tests;
 	}
 	},
 	{ title: 'Active',
 		dataIndex: 'active',
 		align: 'right',
 		width: 80,
-		defaultSortOrder: 'descend',
-		sortDirections: ['descend', 'ascend'],
 		sorter: (a, b) => {
 			return a.active - b.active;
 		},
 		render: (text, record) => {
-			const delta = record.newActive <= 0 ? record.newActive : record.newActive;
-			return {
-				children: <StateTableCell showCaret value={text} delta={delta} />
-			};
+			let active; let className;
+			if (record.newActive === 0) {
+				active = <span>&nbsp;</span>;
+			} else if (record.newActive > 0) {
+				className = 'plus-active';
+				active = `+${record.newActive}`;
+			} else {
+				className = 'minus-active';
+				active = record.newActive;
+			}
+			return (
+				<>
+					<div className={className}>{active}</div>
+					<div>{text}</div>
+				</>
+			);
 		}
 	},
 	{ title: 'Deaths',
@@ -76,27 +92,33 @@ const columns = [
 			return a.deaths - b.deaths;
 		},
 		render: (text, record) => {
-			return {
-				children: <StateTableCell statistic="deaths" value={text} delta={record.newDeaths} />
-			};
+			return (
+				<>
+					<div className="plus-deaths">{record.newDeaths === 0 ? <span>&nbsp;</span> : `+${record.newDeaths}`}</div>
+					<div>{text}</div>
+				</>
+			);
 		}
 	},
 	{ title: 'Recovered',
 		dataIndex: 'recovered',
 		align: 'right',
-		width: 80,
+		width: 85,
 		sortDirections: ['descend', 'ascend'],
 		sorter: (a, b) => {
 			return a.recovered - b.recovered;
 		},
 		render: (text, record) => {
 			return (
-				<StateTableCell value={text} delta={record.newRecover} isCaretUpRed={false} />
+				<>
+					<div className="plus-recovered">{record.newRecover === 0 ? <span>&nbsp;</span> : `+${record.newRecover}`}</div>
+					<div>{text}</div>
+				</>
 			);
 		}
 	},
 	{
-		title: 'DEATH RATE',
+		title: 'Death Rate',
 		dataIndex: 'deathRate',
 		align: 'center',
 		width: 70,
@@ -106,35 +128,39 @@ const columns = [
 		}
 	},
 	{
-		title: 'Cases P Million',
-		dataIndex: 'casesPerMillion',
-		align: 'center',
-		width: 85,
-		sortDirections: ['descend', 'ascend'],
-		sorter: (a, b) => {
-			return a.casesPerMillion - b.casesPerMillion;
-		}
-	},
-	{
-		title: 'Tests P Million',
-		className: 'bold',
-		dataIndex: 'testsPerMillion',
-		align: 'center',
-		width: 85,
-		sortDirections: ['descend', 'ascend'],
-		sorter: (a, b) => {
-			return a.testsPerMillion - b.testsPerMillion;
-		}
-	},
-	{
-		title: 'Deaths P Million',
-		dataIndex: 'deathsPerMillion',
-		align: 'center',
-		width: 85,
-		sortDirections: ['descend', 'ascend'],
-		sorter: (a, b) => {
-			return a.deathsPerMillion - b.deathsPerMillion;
-		}
+		title: 'Per Million',
+		children: [
+			{
+				title: 'Cases',
+				dataIndex: 'casesPerMillion',
+				align: 'center',
+				width: 70,
+				sortDirections: ['descend', 'ascend'],
+				sorter: (a, b) => {
+					return a.casesPerMillion - b.casesPerMillion;
+				}
+			},
+			{
+				title: 'Tests',
+				dataIndex: 'testsPerMillion',
+				align: 'center',
+				width: 70,
+				sortDirections: ['descend', 'ascend'],
+				sorter: (a, b) => {
+					return a.testsPerMillion - b.testsPerMillion;
+				}
+			},
+			{
+				title: 'Deaths',
+				dataIndex: 'deathsPerMillion',
+				align: 'center',
+				width: 70,
+				sortDirections: ['descend', 'ascend'],
+				sorter: (a, b) => {
+					return a.deathsPerMillion - b.deathsPerMillion;
+				}
+			},
+		]
 	},
 ];
 const StateStatsTable = ({ casesByStateLatest }) => {

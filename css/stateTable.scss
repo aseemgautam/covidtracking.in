@@ -1,6 +1,6 @@
 @use 'vars';
 .state-table {
-  color: vars.$font-color;
+	color: vars.$font-color;
   tr:nth-child(2n+1) td {
     background-color: #f8f8f8;
   }
@@ -10,8 +10,7 @@
 .ant-table-small .ant-table-thead > tr > th {
   background-color: #fff;
   text-transform: uppercase;
-  color: vars.$font-color;
-  font-weight: bold;
+	color: vars.$font-color;
 	border-bottom: 2px solid vars.$font-color;
 	.newCases28DaysSubHeader {
 		margin: 5px 10px 0px 10px;
@@ -32,19 +31,10 @@
   font-weight: 500;
   text-transform: uppercase;
 }
-.ant-table-small .ant-table-tbody > tr > td,
-.ant-table-small .ant-table-thead > tr > th {
-  .plus-today { color: vars.$trend-very-poor;}
-}
+
 .ant-table-small .ant-table-tbody > tr > td {
-    .bold {
-			font-weight: 500;
-		}
-		padding: 4px 8px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.067);
     div.count { flex-grow: 1; text-align: right;}
-    .plus-today { font-weight: 500; }
-    .total { font-weight: 500;}
     .delta { text-align: left; padding-left: 10px; }
     .weekly-rate {
       display: flex;
@@ -56,11 +46,11 @@
   }
   .ant-table-small .ant-table-tbody > tr > td:not(:nth-child(0)):not(:last-child) {
     border-right: 1px solid rgba(0, 0, 0, 0.067);
-  }
-}
-
-.state-stats-table { 
-	.ant-table-small .ant-table-tbody > tr > td {
-		font-weight: 500;
+	}
+	.plus-recovered, .minus-active {
+		color: vars.$green7;
+	}
+	.plus-deaths, .plus-cases, .plus-active {
+		color: vars.$red6;
 	}
 }

@@ -13,7 +13,7 @@ const HomePageTabsSecond = ({ stateDataLatest }) => {
 		<Tabs>
 			<TabPane
 				tab={
-					(<div className="card-tab-title">India</div>)
+					(<div className="card-tab-title">Map</div>)
 				}
 				key="1"
 			>

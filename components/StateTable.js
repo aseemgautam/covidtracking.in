@@ -31,31 +31,35 @@ const columns = [
 	},
 	{ title: (
 		<>
-			<div className="plus-today">+TODAY</div>
+			<div className="plus-cases">+TODAY</div>
 			<div>TOTAL</div>
 		</>
 	),
 	dataIndex: 'newCases',
 	align: 'right',
-	width: 70,
+	width: 80,
 	render: (text, record) => {
 		return (
 			<>
-				<div className="plus-today">{text === 0 ? '' : `+${text}`}</div>
+				<div className="plus-cases">{text === 0 ? '' : `+${text}`}</div>
 				<div className="total">{record.confirmed}</div>
 			</>
 		);
+	},
+	defaultSortOrder: 'descend',
+	sorter: (a, b) => {
+		return a.confirmed - b.confirmed;
 	}
 	},
 	{ title: (
 		<>
-			<div>% POSITV</div>
+			<div>+ve Rate</div>
 			<div>TESTS</div>
 		</>
 	),
 	dataIndex: 'tests',
 	align: 'right',
-	width: 85,
+	width: 100,
 	render: (text, record) => {
 		return (
 			<>
@@ -63,6 +67,9 @@ const columns = [
 				<div className="total">{text}</div>
 			</>
 		);
+	},
+	sorter: (a, b) => {
+		return a.tests - b.tests;
 	}
 	},
 	{

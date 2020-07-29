@@ -47,3 +47,23 @@
     margin:  24px 48px;
   }
 }
+
+@media screen and (min-width: 1300px) {
+  .ant-layout-header {
+    padding: 0px 64px;
+  }
+
+  .ant-layout-content {
+    margin:  24px 64px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .ant-layout-header {
+    padding: 0px 128px;
+  }
+
+  .ant-layout-content {
+    margin:  24px 128px;
+  }
+}

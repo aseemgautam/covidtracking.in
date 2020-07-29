@@ -31,7 +31,9 @@
 		// bottom: 8px;
 	}
 }
-
+.ant-table {
+	color: vars.$font-color;
+}
 @media (min-width: 768px) {
   .ant-tabs-nav .ant-tabs-tab {
 		margin: 0 32px 0 0;

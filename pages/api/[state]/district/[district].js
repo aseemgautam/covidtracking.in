@@ -14,7 +14,7 @@ export default async (req, res) => {
 	let testTweet = '';
 	if (data) {
 		Object.keys(data).forEach(key => {
-			if (data[key].delta && data[key].delta.tested && data[key].meta.tested.last_updated === '2020-07-27') {
+			if (data[key].delta && data[key].delta.tested && data[key].meta.tested.last_updated === '2020-07-28') {
 				testsTotal += data[key].delta.tested;
 				if (data[key].delta.tested > 10000) {
 					testTweet += `${key} +${data[key].delta.tested},`;
