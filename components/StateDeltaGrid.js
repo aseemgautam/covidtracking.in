@@ -1,6 +1,5 @@
 import { Card, Tag } from 'antd';
 import _ from 'lodash';
-import utils from '../classes/Utils';
 
 const gridStyle = {
 	height: '50px',
@@ -45,10 +44,10 @@ const StateDeltaGrid = ({ casesByStateLatest }) => {
 			<Tag className="delta-grid-tags" color="#d9f7be">14 Day Low</Tag>
 			<br /><br />
 			<Card className="card-grid" bordered={false}>
-				{/* <Card.Grid key="total" style={gridStyle} hoverable={false}>
+				<Card.Grid key="total" style={gridStyle} hoverable={false}>
 					New Cases
 					<div className="new-cases total">+{total}</div>
-				</Card.Grid> */}
+				</Card.Grid>
 				{cards}
 			</Card>
 		</>

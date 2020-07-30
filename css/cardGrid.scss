@@ -59,6 +59,7 @@
 
 @media screen and (min-width: 768px) {
 	.card-grid {
+		.state-name { width: 120px;}
 		.ant-card-grid {
 			width: calc((100vw - 48px - 24px)/4);
 		}

@@ -23,11 +23,18 @@ class CovidDataState {
 		// }
 		const testingData = await CovidDataTesting.all();
 		// eslint-disable-next-line max-len
-		const res = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQRyjPj_VXGIOYnCy5eoy3YcN9yA_yFKWd4AdkMXFam62N4Ik-D6A6cwFXt2N2LwpncJEd-dFn7s5Ez/pub?gid=2100676919&single=true&output=csv');
+		// const res = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQRyjPj_VXGIOYnCy5eoy3YcN9yA_yFKWd4AdkMXFam62N4Ik-D6A6cwFXt2N2LwpncJEd-dFn7s5Ez/pub?gid=2100676919&single=true&output=csv');
+		const res = await fetch('https://api.covid19india.org/csv/latest/states.csv');
 		const text = await res.text();
 		const { data } = Papa.parse(text, {
 			header: true,
-			dynamicTyping: true
+			dynamicTyping: true,
+			transformHeader(h) {
+				if (h === 'Deceased') {
+					return 'deaths';
+				}
+				return h.toLowerCase();
+			}
 		});
 		IndianStates.states.forEach( // loop all states
 			state => {
