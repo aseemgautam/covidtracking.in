@@ -16,8 +16,8 @@ const columns = [
 	},
 	{ title: (
 		<>
-			<div className="plus-cases">+TODAY</div>
-			<div>TOTAL</div>
+			{/* <div className="plus-cases">+TODAY</div> */}
+			<div>CASES</div>
 		</>
 	),
 	dataIndex: 'newCases',
@@ -35,6 +35,40 @@ const columns = [
 	sorter: (a, b) => {
 		return a.confirmed - b.confirmed;
 	}
+	},
+	{ title: 'Deaths',
+		dataIndex: 'deaths',
+		align: 'right',
+		width: 80,
+		sortDirections: ['descend', 'ascend'],
+		sorter: (a, b) => {
+			return a.deaths - b.deaths;
+		},
+		render: (text, record) => {
+			return (
+				<>
+					<div className="plus-deaths">{record.newDeaths === 0 ? <span>&nbsp;</span> : `+${record.newDeaths}`}</div>
+					<div>{text}</div>
+				</>
+			);
+		}
+	},
+	{ title: 'Recovered',
+		dataIndex: 'recovered',
+		align: 'right',
+		width: 85,
+		sortDirections: ['descend', 'ascend'],
+		sorter: (a, b) => {
+			return a.recovered - b.recovered;
+		},
+		render: (text, record) => {
+			return (
+				<>
+					<div className="plus-recovered">{record.newRecover === 0 ? <span>&nbsp;</span> : `+${record.newRecover}`}</div>
+					<div>{text}</div>
+				</>
+			);
+		}
 	},
 	{ title: (
 		<>
@@ -78,40 +112,6 @@ const columns = [
 			return (
 				<>
 					<div className={className}>{active}</div>
-					<div>{text}</div>
-				</>
-			);
-		}
-	},
-	{ title: 'Deaths',
-		dataIndex: 'deaths',
-		align: 'right',
-		width: 80,
-		sortDirections: ['descend', 'ascend'],
-		sorter: (a, b) => {
-			return a.deaths - b.deaths;
-		},
-		render: (text, record) => {
-			return (
-				<>
-					<div className="plus-deaths">{record.newDeaths === 0 ? <span>&nbsp;</span> : `+${record.newDeaths}`}</div>
-					<div>{text}</div>
-				</>
-			);
-		}
-	},
-	{ title: 'Recovered',
-		dataIndex: 'recovered',
-		align: 'right',
-		width: 85,
-		sortDirections: ['descend', 'ascend'],
-		sorter: (a, b) => {
-			return a.recovered - b.recovered;
-		},
-		render: (text, record) => {
-			return (
-				<>
-					<div className="plus-recovered">{record.newRecover === 0 ? <span>&nbsp;</span> : `+${record.newRecover}`}</div>
 					<div>{text}</div>
 				</>
 			);

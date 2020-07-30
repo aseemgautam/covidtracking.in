@@ -33,6 +33,7 @@
 	.ant-card-grid:nth-child(2n) {
 		margin-right: 0px
 	}
+	.title { background-color: #f0f0f0;}
 	.state-name { overflow-wrap: break-word; padding-right: 10px; line-height: 14px; width: 100px;}
 	.recovered { color: vars.$green7; }
 	.deaths { color: vars.$red6; }
