@@ -28,3 +28,16 @@ h3.title {
     font-size: 28px;
   }
 }
+
+@media screen and (max-width: 576px) {
+	.today-badge .ant-badge-count {
+		min-width: 16px;
+		height: 16px;
+		line-height: 16px;
+		font-size: 10px;
+		right: -15px !important;
+	}
+	.ant-badge-multiple-words {
+		padding: 0 4px;
+	}
+}

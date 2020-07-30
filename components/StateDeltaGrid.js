@@ -8,12 +8,12 @@ const gridStyle = {
 const StateDeltaGrid = ({ casesByStateLatest }) => {
 	const cards = [];
 	let tweet = '';
-	let total = 0;
+	let newCases = 0; let newRecovered = 0; let newDeaths = 0;
 	let className = '';
 	const cases = _.orderBy(casesByStateLatest, ['newCases'], ['desc']);
 	cases.forEach(state => {
 		className = '';
-		if (state.newCases > 0 || state.newRecovered > 0) {
+		if (state.newCases > 0 || state.newRecover > 0 || state.newDeaths > 0) {
 			if (state.isHigh) {
 				className = 'new-high';
 			} else if (state.is14dayHigh) {
@@ -24,7 +24,8 @@ const StateDeltaGrid = ({ casesByStateLatest }) => {
 			if (!state.isHigh) {
 				tweet += `${state.stateCode} +${state.newCases}, `;
 			}
-			total += state.newCases;
+			newCases += state.newCases; newRecovered += state.newRecover;
+			newDeaths += state.newDeaths;
 			cards.push(
 				<Card.Grid className={className} key={state.state} style={gridStyle} hoverable={false}>
 					<div className="state-name">{state.state}</div> <div className="new-cases">+{state.newCases}</div>
@@ -46,7 +47,15 @@ const StateDeltaGrid = ({ casesByStateLatest }) => {
 			<Card className="card-grid" bordered={false}>
 				<Card.Grid key="total" style={gridStyle} hoverable={false}>
 					New Cases
-					<div className="new-cases total">+{total}</div>
+					<div className="">+{newCases}</div>
+				</Card.Grid>
+				<Card.Grid key="recovered" style={gridStyle} hoverable={false}>
+					Recovered
+					<div className="recovered">+{newRecovered}</div>
+				</Card.Grid>
+				<Card.Grid key="deaths" style={gridStyle} hoverable={false}>
+					Deaths
+					<div className="deaths">+{newDeaths}</div>
 				</Card.Grid>
 				{cards}
 			</Card>

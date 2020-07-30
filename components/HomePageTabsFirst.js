@@ -22,16 +22,19 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 		>
 			<TabPane
 				tab={
-					(<div className="card-tab-title">National Statistics</div>)
+					(<div className="card-tab-title">National Statistics (29/07)</div>)
 				}
 				key="1"
 			>
+				{/* <div className="stats-explainer">National Statistics are as per MOHFW numbers in the morning.
+					+TODAY data is from daily evening state bulletins.
+				</div> */}
 				<NationalStats testingData={testingData} covidDataIndia={indiaData} />
 			</TabPane>
 			<TabPane
 				tab={
 					(
-						<Badge count={liveCounter} offset={[20, 18]}>
+						<Badge className="today-badge" count={liveCounter} offset={[20, 18]}>
 							<div className="card-tab-title">+Today</div>
 						</Badge>
 					)

@@ -34,11 +34,8 @@
 		margin-right: 0px
 	}
 	.state-name { overflow-wrap: break-word; padding-right: 10px; line-height: 14px; width: 100px;}
-	.today { text-align: center;}
-	.new-cases {
-		font-weight: 500;
-		color: vars.$red6;
-	}
+	.recovered { color: vars.$green7; }
+	.deaths { color: vars.$red6; }
 }
 @media screen and (min-width: 576px) {
 	.card-grid {

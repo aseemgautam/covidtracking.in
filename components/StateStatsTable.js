@@ -38,7 +38,7 @@ const columns = [
 	},
 	{ title: (
 		<>
-			<div>% POSITV</div>
+			<div>% +VE</div>
 			<div>TESTS</div>
 		</>
 	),

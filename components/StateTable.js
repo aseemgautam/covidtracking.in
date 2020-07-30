@@ -53,7 +53,7 @@ const columns = [
 	},
 	{ title: (
 		<>
-			<div>+ve Rate</div>
+			<div>% +VE</div>
 			<div>TESTS</div>
 		</>
 	),
