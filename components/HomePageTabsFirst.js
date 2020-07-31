@@ -22,7 +22,7 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 		>
 			<TabPane
 				tab={
-					(<div className="card-tab-title">National Statistics</div>)
+					(<div className="card-tab-title">National Statistics(30/07)</div>)
 				}
 				key="1"
 			>
@@ -35,7 +35,7 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 				tab={
 					(
 						<Badge className="today-badge" count={liveCounter} offset={[20, 18]}>
-							<div className="card-tab-title">30/07</div>
+							<div className="card-tab-title">+Today</div>
 						</Badge>
 					)
 				}
