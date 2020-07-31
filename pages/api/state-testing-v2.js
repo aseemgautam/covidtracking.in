@@ -61,6 +61,6 @@ export default async (req, res) => {
 		result['TESTS PER MILLION'] = current.testsPerMillion;
 		response.push(result);
 	});
-	// res.end(papa.unparse(response));
-	res.end(JSON.stringify(response));
+	res.end(papa.unparse(response));
+	// res.end(JSON.stringify(response));
 };
