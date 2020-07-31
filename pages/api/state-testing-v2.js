@@ -39,17 +39,17 @@ export default async (req, res) => {
 		const dailyTestsDelta = _.last(testingData).movingAverage - _.nth(testingData, -14).movingAverage;
 		const dailyTestsDeltaPercent = (Math.abs(dailyTestsDelta * 100) / _.nth(testingData, -14).movingAverage).toFixed(2);
 		let dailyTestsTrend;
-		if (dailyTestsDelta > (_.nth(testingData, -14).movingAverage * 0.1)) {
+		if (dailyTestsDelta > 0 && dailyTestsDelta > (_.nth(testingData, -14).movingAverage * 0.1)) {
 			dailyTestsTrend = `Up +${dailyTestsDeltaPercent}%`;
 			result.dailyTestsTrendColor = 'green';
-		} else if (Math.abs(dailyTestsDelta) < (_.nth(testingData, -14).movingAverage * 0.1)) {
+		} else if (dailyTestsDelta < 0 && Math.abs(dailyTestsDelta) > (_.nth(testingData, -14).movingAverage * 0.1)) {
 			dailyTestsTrend = `Down ${dailyTestsDeltaPercent}%`;
 			result.dailyTestsTrendColor = 'red';
 		} else {
 			dailyTestsTrend = 'Flat';
 			result.dailyTestsTrendColor = 'red';
 		}
-		result['DAILY TESTS (7 DAY AVG)'] = `${_.last(testingData).movingAverage.toLocaleString()}^${dailyTestsTrend}^`;
+		result['DAILY TESTS (14 DAY TREND)'] = `${_.last(testingData).movingAverage.toLocaleString()}^${dailyTestsTrend}^`;
 		result.ma14 = _.nth(testingData, -14).movingAverage;
 		result.ma11 = _.nth(testingData, -11).movingAverage;
 		result.ma9 = _.nth(testingData, -9).movingAverage;
@@ -61,5 +61,6 @@ export default async (req, res) => {
 		result['TESTS PER MILLION'] = current.testsPerMillion;
 		response.push(result);
 	});
-	res.end(papa.unparse(response));
+	// res.end(papa.unparse(response));
+	res.end(JSON.stringify(response));
 };
