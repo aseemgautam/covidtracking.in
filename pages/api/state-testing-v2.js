@@ -47,7 +47,7 @@ export default async (req, res) => {
 			result.dailyTestsTrendColor = 'red';
 		} else {
 			dailyTestsTrend = 'Flat';
-			result.dailyTestsTrendColor = 'red';
+			result.dailyTestsTrendColor = 'default';
 		}
 		result['DAILY TESTS (14 DAY TREND)'] = `${_.last(testingData).movingAverage.toLocaleString()}^${dailyTestsTrend}^`;
 		result.ma14 = _.nth(testingData, -14).movingAverage;
