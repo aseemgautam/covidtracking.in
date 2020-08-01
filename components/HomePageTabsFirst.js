@@ -22,7 +22,7 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 		>
 			<TabPane
 				tab={
-					(<div className="card-tab-title">National Statistics (30/07)</div>)
+					(<div className="card-tab-title">National Statistics (31/07)</div>)
 				}
 				key="1"
 			>
