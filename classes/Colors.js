@@ -29,6 +29,16 @@ class Colors {
 		}
 		return '#31a354';
 	};
+
+	getTrendColorByName = rate => {
+		if (rate) {
+			if (rate > 50) return 'RED';
+			if (rate > 20) return 'ORANGE';
+			if (rate > 0) return 'YELLOW';
+			return 'GREEN';
+		}
+		return 'GREEN';
+	}
 }
 
 const colors = new Colors();

@@ -4,6 +4,7 @@ import Papa from 'papaparse';
 import MovingAverage from './MovingAverage';
 import CovidDataTesting from './CovidDataTesting';
 import IndianStates from '../public/india-states.json';
+import Colors from './Colors';
 
 let instance = null;
 
@@ -84,6 +85,7 @@ class CovidDataState {
 						}
 						return high;
 					}, 0);
+					latest.trendColor = Colors.getTrendColorByName(latest.movingAvg14daysRate);
 					latest.population = state.population;
 					latest.stateCode = state.code;
 					latest.isHigh = latest.newCases === latest.peak;

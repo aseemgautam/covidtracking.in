@@ -27,6 +27,8 @@ export default async (req, res) => {
 			result.posRateColor = 'default';
 		}
 		result['POSITIVITY RATE'] = `${current.positivePercent}% ^${posRateTrend}^`;
+		result.movingAvg14daysRate = current.movingAvg14daysRate;
+		result.trendColor = current.trendColor;
 		result.posRate14 = _.nth(stateData, -14).positivePercent;
 		result.posRate13 = _.nth(stateData, -13).positivePercent;
 		result.posRate11 = _.nth(stateData, -11).positivePercent;
@@ -35,7 +37,6 @@ export default async (req, res) => {
 		result.posRate5 = _.nth(stateData, -5).positivePercent;
 		result.posRate3 = _.nth(stateData, -3).positivePercent;
 		result.posRate = current.positivePercent;
-
 		const dailyTestsDelta = _.last(testingData).movingAverage - _.nth(testingData, -14).movingAverage;
 		const dailyTestsDeltaPercent = (Math.abs(dailyTestsDelta * 100) / _.nth(testingData, -14).movingAverage).toFixed(2);
 		let dailyTestsTrend;
