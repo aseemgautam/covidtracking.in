@@ -27,7 +27,7 @@ export default async (req, res) => {
 			result.posRateColor = 'default';
 		}
 		result['POSITIVITY RATE'] = `${current.positivePercent}% ^${posRateTrend}^`;
-		result.movingAvg14daysRate = current.movingAvg14daysRate;
+		result['COVID+ GROWTH (14 DAYS)'] = current.movingAvg14daysRate;
 		result.trendColor = current.trendColor;
 		result.posRate14 = _.nth(stateData, -14).positivePercent;
 		result.posRate13 = _.nth(stateData, -13).positivePercent;
