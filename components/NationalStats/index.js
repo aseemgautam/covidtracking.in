@@ -23,7 +23,7 @@ const NationalStats = ({ testingData, covidDataIndia }) => {
 						className="statistic-active"
 						value={latest.active}
 						suffix={latest.newActive}
-						suffixClassName="red6"
+						suffixClassName={latest.newActive > 0 ? 'red6' : 'green7'}
 						precision={0}
 					/>
 				</Col>
