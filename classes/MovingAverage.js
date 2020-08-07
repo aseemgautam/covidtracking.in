@@ -4,14 +4,18 @@ class MovingAverage {
 		if (Array.isArray(array) && array.length > 0) {
 			array.forEach((curr, idx, src) => {
 				curr.movingAvg7days = 0;
-				curr.movingAvg14days = 0;
 				curr.movingAvg7daysRate = 0;
 				curr.movingAvg14daysRate = 0;
 
-				if (idx > 7) {
-					curr.movingAvg7days = Math.round(src.slice(idx - 7, idx).reduce((prev, current) => {
+				if (idx >= 6) {
+					curr.movingAvg7days = Math.round(src.slice(idx - 6, idx + 1).reduce((prev, current) => {
 						return prev + current[field];
 					}, 0) / 7);
+					// Everyday new cases field is reset to 0. Until there is an update, 0 new cases will
+					// reduce moving average. Copy prev day MA.
+					if (idx === (src.length - 1) && curr[field] === 0) {
+						curr.movingAvg7days	= src[idx - 1].movingAvg7days;
+					}
 				}
 				if (src[idx - 7]) {
 					curr.movingAvg7daysRate = Math.round(((curr.movingAvg7days - src[idx - 7].movingAvg7days)
@@ -30,9 +34,14 @@ class MovingAverage {
 			array.forEach((curr, idx, src) => {
 				curr[newField] = 0;
 				if (idx > 7) {
-					curr[newField] = Math.round(src.slice(idx - 7, idx).reduce((prev, current) => {
+					curr[newField] = Math.round(src.slice(idx - 6, idx + 1).reduce((prev, current) => {
 						return prev + current[field];
 					}, 0) / 7);
+					// New cases, deaths, recovered are 0 until there is a daily update.
+					// If 0, copy last days moving average for field.
+					if (idx === (src.length - 1) && curr[field] === 0) {
+						curr[newField]	= src[idx - 1][newField];
+					}
 				}
 			});
 		}

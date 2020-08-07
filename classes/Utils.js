@@ -30,6 +30,14 @@ class Utils {
 		const strTime = `${hours}:${minutes} ${ampm}`;
 		return strTime;
 	}
+
+	getDefaultDateFormat = date => {
+		return date.toISOString().split('T')[0];
+	}
+
+	round = num => {
+		return Math.round((num + Number.EPSILON) * 100) / 100;
+	}
 }
 
 const utils = new Utils();

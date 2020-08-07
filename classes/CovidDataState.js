@@ -99,34 +99,21 @@ class CovidDataState {
 						acc.push(curr.movingAvg7days);
 						return acc;
 					}, []);
-					latest.movingAvg14daysData = cases.slice(-15).reduce((acc, curr) => {
-						acc.push(curr.movingAvg7days);
-						return acc;
+					latest.movingAvg14daysData = cases.slice(-15).map(curr => {
+						return curr.movingAvg7days;
 					}, []);
-					latest.newCases1to7days = cases.slice(-7).reduce(
-						(acc, curr) => {
-							return acc + curr.newCases;
-						}, 0);
-					latest.newCases8to14days = cases.slice(cases.length - 15, cases.length - 8).reduce(
-						(acc, curr) => {
-							return acc + curr.newCases;
-						}, 0);
-					latest.newCases15to21Days = cases.slice(cases.length - 22, cases.length - 15).reduce(
-						(acc, curr) => {
-							return acc + curr.newCases;
-						}, 0);
-					latest.newCases22to28Days = cases.slice(cases.length - 29, cases.length - 22).reduce(
-						(acc, curr) => {
-							return acc + curr.newCases;
-						}, 0);
-					latest.newCases14days = cases.slice(-14).reduce(
-						(acc, curr) => {
-							return acc + curr.newCases;
-						}, 0);
-					latest.prevNewCases14days = cases.slice(cases.length - 29, cases.length - 15).reduce(
-						(acc, curr) => {
-							return acc + curr.newCases;
-						}, 0);
+					// if (latest.state === 'Odisha') {
+					// 	// console.log(latest.movingAvg14daysData);
+					// 	console.log(cases.slice(-15));
+					// }
+					const sum = (acc, curr) => { return acc + curr.newCases; };
+					const offset = latest.newCases === 0 ? -1 : 0;
+					latest.newCases1to7days = cases.slice(-7 + offset).reduce(sum, 0);
+					latest.newCases8to14days = cases.slice(cases.length - 15 + offset, cases.length - 8 + offset).reduce(sum, 0);
+					latest.newCases15to21Days = cases.slice(cases.length - 22 + offset, cases.length - 15 + offset).reduce(sum, 0);
+					latest.newCases22to28Days = cases.slice(cases.length - 29 + offset, cases.length - 22 + offset).reduce(sum, 0);
+					// used in trend color, MovingAverageProgress
+					latest.newCases14days = cases.slice(-14).reduce(sum, 0);
 					this._latest.push(latest);
 				}
 			}
