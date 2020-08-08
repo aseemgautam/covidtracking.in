@@ -12,6 +12,7 @@ export default class extends Document {
 			<html>
 				<Head>
 					<link rel="shortcut icon" href="/favicon.png" />
+					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 					<meta name="twitter:card" content="summary_large_image" />
 					<meta name="twitter:title" content="How is India doing - covidtracking.in" />
 					<meta name="twitter:description" content="Tracking COVID-19 in India using scientific criteria developed by CDC, USA" />

@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import echarts from 'echarts/lib/echarts';
 import line from 'echarts/lib/chart/line';
+import numeral from 'numeral';
 
 const LineChartSmall = ({ data, width }) => {
 	const [image, setImage] = useState(null);
@@ -54,8 +55,9 @@ const LineChartSmall = ({ data, width }) => {
 						fontSize: 10,
 						fontWeight: 'normal',
 						formatter: p => {
+							const text = p.value > 9999 ? numeral(p.value).format('0.0a') : p.value;
 							return p.dataIndex === 0 || p.dataIndex === data.length - 1
-								? p.value
+								? text
 								: '';
 						}
 					},

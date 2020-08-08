@@ -69,7 +69,7 @@ const SiteLayout = props => {
 					</Col>
 				</Row>
 			</Content>
-			<Footer>
+			{/* <Footer>
 				<div className="flex-row-center">
 					<div className="logo">
 						<a href="/">COVID TRACKING INDIA</a>
@@ -84,7 +84,7 @@ const SiteLayout = props => {
 						</a>
 					</div>
 				</div>
-			</Footer>
+			</Footer> */}
 		</Layout>
 	);
 };

@@ -75,13 +75,12 @@ const columns = [
 	{
 		title: (
 			<>
-				<div>Growth of covid+ cases (14 DAYS)</div>
-				<div className="sub-heading">7 Day moving average (14 day period)</div>
+				<div>14 DAY COVID% GROWTH</div>
 			</>
 		),
 		dataIndex: 'movingAvg14days',
 		align: 'center',
-		width: 290,
+		width: 220,
 		sortDirections: ['descend', 'ascend'],
 		sorter: (a, b) => {
 			return a.movingAvg14daysRate - b.movingAvg14daysRate;
@@ -92,18 +91,20 @@ const columns = [
 					<div>
 						<LineChartSmall
 							fieldX="date"
-							height={50}
+							height={35}
 							fieldY="movingAverage"
 							autoSize={false}
-							width={160}
+							width={120}
 							data={record.movingAvg14daysData}
 						/>
 					</div>
-					<MovingAverageProgress
-						rateOfInc={record.movingAvg14daysRate}
-						newCases={record.newCases14days}
-					/>
-					<div className="progress-rate">{record.movingAvg14daysRate}%</div>
+					<div className="growth-rate">
+						<MovingAverageProgress
+							rateOfInc={record.movingAvg14daysRate}
+							newCases={record.newCases14days}
+						/>
+						<div className="progress-rate">{record.movingAvg14daysRate}%</div>
+					</div>
 				</div>
 			);
 		}
@@ -111,13 +112,12 @@ const columns = [
 	{
 		title: (
 			<>
-				<div>Growth of covid+ cases (7 DAYS)</div>
-				<div className="sub-heading">7 day moving average</div>
+				<div>7 DAY COVID GROWTH</div>
 			</>
 		),
 		dataIndex: 'movingAvg7daysRate',
 		align: 'center',
-		width: 290,
+		width: 220,
 		sortDirections: ['descend', 'ascend'],
 		sorter: (a, b) => {
 			return a.movingAvg7daysRate - b.movingAvg7daysRate;
@@ -127,17 +127,19 @@ const columns = [
 				<div className="weekly-rate">
 					<LineChartSmall
 						fieldX="date"
-						height={50}
+						height={35}
 						fieldY="movingAverage"
 						autoSize={false}
-						width={160}
+						width={120}
 						data={record.movingAvg7daysData}
 					/>
-					<MovingAverageProgress
-						rateOfInc={record.movingAvg7daysRate}
-						newCases={record.newCases14days}
-					/>
-					<div className="progress-rate">{record.movingAvg7daysRate}%</div>
+					<div className="growth-rate">
+						<MovingAverageProgress
+							rateOfInc={record.movingAvg7daysRate}
+							newCases={record.newCases14days}
+						/>
+						<div className="progress-rate">{record.movingAvg7daysRate}%</div>
+					</div>
 				</div>
 			);
 		}

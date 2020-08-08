@@ -24,22 +24,18 @@
 	}
 }
 .ant-tabs-bar .ant-tabs-nav .ant-tabs-tab {
-	margin-right: 16px;
+	margin-right: 24px;
 }
 .ant-table {
 	color: vars.$font-color;
-}
-@media screen and (max-width: 576px) {
-	.ant-table {
-		font-size: 13px;
-	}
+	.ant-table-measure-row { display: none; }
 }
 
-@media screen and (min-width: 576px) {
-  .ant-tabs-bar .ant-tabs-nav .ant-tabs-tab {
-		margin-right: 24px;
+@media screen and (max-width: 576px) {
+	.ant-table-small, .card-tab-title {
+		font-size: 13px;
 	}
-	.card-tab-title {
-		font-size: 16px;
+	.ant-tabs-bar .ant-tabs-nav .ant-tabs-tab {
+		margin-right: 16px;
 	}
 }

@@ -30,7 +30,7 @@ import '../css/stateTable.scss';
 import '../css/helpline.scss';
 import '../css/charts.scss';
 import '../css/home.scss';
-import '../css/antd.scss';
+import '../css/antd-rules.scss';
 import '../css/trends.scss';
 import '../css/navigation.scss';
 import '../css/layout.scss';

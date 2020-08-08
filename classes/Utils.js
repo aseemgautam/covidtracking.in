@@ -15,7 +15,7 @@ class Utils {
 
 	dateAndTime = () => {
 		const day = this.getOrdinalNum((new Date()).getDate());
-		const month = (new Date()).toLocaleString('default', { month: 'long' });
+		const month = (new Date()).toLocaleString('default', { month: 'short' });
 		return `${day} ${month}, ${this.getAMPM()}`;
 	}
 

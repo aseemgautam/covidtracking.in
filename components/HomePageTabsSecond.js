@@ -1,5 +1,4 @@
 import { Tabs, Row, Col } from 'antd';
-import { LineChartOutlined } from '@ant-design/icons';
 import dynamic from 'next/dynamic';
 import TrendInfoCards from './TrendInfoCards';
 import StateTable from './StateTable';
@@ -10,7 +9,7 @@ const { TabPane } = Tabs;
 
 const HomePageTabsSecond = ({ stateDataLatest }) => {
 	return (
-		<Tabs>
+		<Tabs className="home-page-tabs-second">
 			<TabPane
 				tab={
 					(<div className="card-tab-title">Map</div>)
@@ -19,7 +18,8 @@ const HomePageTabsSecond = ({ stateDataLatest }) => {
 			>
 				<Row>
 					<Col flex={24}>
-						<p>Scales are based on value of <b>7 day Moving Average</b> of new cases over 14 days.
+						<p style={{ marginTop: '16px' }}>Scales are based on value of <b>7 day Moving Average </b>
+							of new cases over 14 days.
 							Read more about our criteria <a href="/criteria">here</a>.
 						</p>
 					</Col>

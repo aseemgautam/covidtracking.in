@@ -35,7 +35,10 @@
 
 .trend-card {
   border-radius: vars.$border-radius;
-  background-color: vars.$statistic-background;
+	background-color: vars.$statistic-background;
+	.trend-card-title {
+		font-weight: 500;
+	}
   .ant-progress-steps-item {
     background-color: vars.$ant-progress-step-color;
   }
@@ -55,7 +58,7 @@
     background-color: #eee;
   }
   .ant-statistic-title {
-    font-weight: 500;
+		// font-size: 13px;
     color: vars.$font-color;
   }
 }
@@ -76,6 +79,9 @@
 	.ant-statistic-content-suffix {
 		font-size: 16px;
 	}
+	// .ant-statistic-title {
+	// 	font-size: 14px;
+	// }
 }
 
 @media screen and (min-width: 768px) { 
