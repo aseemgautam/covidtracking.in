@@ -7,7 +7,6 @@ import CovidDataState from '../classes/CovidDataState';
 import HomePageTabsFirst from '../components/HomePageTabsFirst';
 import HomePageTabsSecond from '../components/HomePageTabsSecond';
 import Utils from '../classes/Utils';
-import { PeakChart } from '../components/chartsv2/Peak';
 
 function Index({ testingData, indiaData, stateDataLatest, buildTime }) {
 	return (
@@ -22,12 +21,11 @@ function Index({ testingData, indiaData, stateDataLatest, buildTime }) {
 				buildTime={buildTime}
 			/>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
-				<Col xs={24} sm={12}>
+				<Col xs={24} sm={24} md={12}>
 					<MovingAverageCard cases={indiaData.cases} days={14} />
-					<MovingAverageCard cases={indiaData.cases} days={7} />
 				</Col>
-				<Col xs={24} sm={12}>
-					<PeakChart />
+				<Col xs={24} sm={24} md={12}>
+					<MovingAverageCard cases={indiaData.cases} days={7} />
 				</Col>
 			</Row>
 			<HomePageTabsSecond stateDataLatest={stateDataLatest} />
