@@ -70,27 +70,6 @@ const columns = [
 			);
 		}
 	},
-	{ title: (
-		<>
-			<div>% +VE</div>
-			<div>TESTS</div>
-		</>
-	),
-	dataIndex: 'tests',
-	align: 'right',
-	width: 85,
-	render: (text, record) => {
-		return (
-			<>
-				<div>{record.positivePercent}</div>
-				<div>{text}</div>
-			</>
-		);
-	},
-	sorter: (a, b) => {
-		return a.tests - b.tests;
-	}
-	},
 	{ title: 'Active',
 		dataIndex: 'active',
 		align: 'right',
@@ -120,11 +99,41 @@ const columns = [
 	{
 		title: 'Death Rate',
 		dataIndex: 'deathRate',
-		align: 'center',
+		align: 'right',
 		width: 70,
 		sortDirections: ['descend', 'ascend'],
 		sorter: (a, b) => {
 			return a.deathRate - b.deathRate;
+		}
+	},
+	{ title: (
+		<>
+			<div>TESTS</div>
+		</>
+	),
+	dataIndex: 'tests',
+	align: 'right',
+	width: 85,
+	render: (text, record) => {
+		return (
+			<>
+				<div style={{ color: '#0050b3' }}>+{record.newTests}</div>
+				<div>{text}</div>
+			</>
+		);
+	},
+	sorter: (a, b) => {
+		return a.tests - b.tests;
+	}
+	},
+	{
+		title: 'POSITIVITY RATE',
+		dataIndex: 'positivePercent',
+		align: 'right',
+		width: 70,
+		sortDirections: ['descend', 'ascend'],
+		sorter: (a, b) => {
+			return a.positivePercent - b.positivePercent;
 		}
 	},
 	{
