@@ -18,11 +18,11 @@ const MovingAverageCard = React.memo(({ cases, days }) => {
 				<Col flex="80px">
 					<div className="trend-card-title">{`${days} DAY COVID % GROWTH`}</div>
 				</Col>
-				<Col flex="1 0 100px" className="flex-row-center">
+				<Col flex="1 0 80px" className="flex-row-center">
 					<MovingAverageProgress rateOfInc={rateOfInc} newCases={latest.newCases} />
 					<div className="trend-percent">+{rateOfInc}%</div>
 				</Col>
-				<Col flex="1 0 140px" className="flex-row-center">
+				<Col flex="1 0 120px" className="flex-row-center">
 					<LineChartSmall
 						fieldX="date"
 						fieldY="movingAverage"

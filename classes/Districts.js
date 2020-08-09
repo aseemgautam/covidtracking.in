@@ -18,6 +18,17 @@ class Districts {
 		return instance;
 	}
 
+	// _districtPopulation = async () => {
+	// 	const res = await fetch('https://api.covid19india.org/v4/data.json');
+	// 	const json = await res.json();
+	// 	const districtPop = []
+	// 	json.forEach(record => {
+
+	// 	})
+
+	// 	return json;
+	// }
+
 	_fetch = async () => {
 		const res = await fetch('https://api.covid19india.org/csv/latest/districts.csv');
 		const text = await res.text();
@@ -33,10 +44,11 @@ class Districts {
 			}
 		});
 		const lastDate = _.last(data).date;
-		const invalid = ['Other State', 'Unknown', 'Italians'];
+		const invalid = ['Other State', 'Unknown', 'Italians', 'Foreign Evacuees'];
 		const valid = _.filter(_.filter(data, { date: lastDate }), e => {
 			return !invalid.includes(e.district);
 		});
+		console.log(valid);
 		this._all.length = 0;
 		this._latest.length = 0;
 		valid.forEach(record => { // loop all districts

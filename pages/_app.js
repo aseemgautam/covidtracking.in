@@ -20,6 +20,7 @@ import 'antd/es/badge/style/index.css';
 import 'antd/es/menu/style/index.css';
 import 'antd/es/card/style/index.css';
 import 'antd/es/table/style/index.css';
+import 'antd/es/select/style/index.css';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-gesture-handling/dist/leaflet-gesture-handling.css';
 import '../css/style.scss';

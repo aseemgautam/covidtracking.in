@@ -1,7 +1,12 @@
 @use 'vars';
 .delta-grid-tags {
 	color: vars.$font-color;
-	margin-right: 12px;
+	margin-right: 4px;
+	font-size: 12px;
+}
+.delta-grid-select {
+	width: 85px;
+	float: right;
 }
 .card-grid {
 	margin-bottom: 16px;
@@ -39,6 +44,12 @@
 	.deaths { color: vars.$red6; }
 }
 @media screen and (min-width: 576px) {
+	.delta-grid-select {
+		width: 120px;
+	}
+	.delta-grid-tags { 
+		margin-right: 12px;
+	}
 	.card-grid {
 		.ant-card-grid {
 			width: calc((100vw - 32px - 16px)/3);
