@@ -45,17 +45,23 @@ const StateDeltaGrid = ({ casesByStateLatest }) => {
 		acc += `${state.stateCode} +${state.newCases}, `;
 		return acc;
 	}, ''));
-	const selectedStyle = { backgroundColor: '#fff1b8', borderBottom: '2px solid #FFD666' };
-	return (
+	const tags = (
 		<>
 			<Tag className="delta-grid-tags" color="#ffccc7">New High</Tag>
 			<Tag className="delta-grid-tags" color="#ffe7ba">14 Day High</Tag>
 			<Tag className="delta-grid-tags" color="#d9f7be">14 Day Low</Tag>
+		</>
+	);
+	const selectedStyle = { backgroundColor: '#fff1b8', borderBottom: '2px solid #FFD666' };
+	return (
+		<>
+			{ field === 'newCases' && tags }
 			<Select size="small" className="delta-grid-select" defaultValue="newCases" onChange={handleChange}>
 				<Option value="newCases">Cases</Option>
+				<Option value="newCasesPMil">Cases P Mil</Option>
+				<Option value="newTests">Tests</Option>
 				<Option value="newRecover">Recovered</Option>
 				<Option value="newDeaths">Deaths</Option>
-				<Option value="newTests">Tests</Option>
 			</Select>
 			<br /><br />
 			<Card className="card-grid" bordered={false}>

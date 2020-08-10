@@ -45,6 +45,8 @@ class CovidDataState {
 						return {
 							...curr,
 							newCases: idx === 0 ? 0 : curr.confirmed - src[idx - 1].confirmed,
+							newCasesPMil: idx === 0 ? 0 : Math.round(((curr.confirmed - src[idx - 1].confirmed) * 1000000)
+							/ state.population),
 							newRecover: idx === 0 ? 0 : curr.recovered - src[idx - 1].recovered,
 							newDeaths: idx === 0 ? 0 : curr.deaths - src[idx - 1].deaths,
 							newTests: idx === 0 ? 0 : curr.tested - src[idx - 1].tested,
