@@ -56,7 +56,14 @@ const StateDeltaGrid = ({ casesByStateLatest }) => {
 	return (
 		<>
 			{ field === 'newCases' && tags }
-			<Select size="small" className="delta-grid-select" defaultValue="newCases" onChange={handleChange}>
+			<Select
+				size="small"
+				// dropdownStyle={{ width: '150px;' }}
+				dropdownMatchSelectWidth={false}
+				className="delta-grid-select"
+				defaultValue="newCases"
+				onChange={handleChange}
+			>
 				<Option value="newCases">Cases</Option>
 				<Option value="newCasesPMil">Cases P Mil</Option>
 				<Option value="newTests">Tests</Option>
