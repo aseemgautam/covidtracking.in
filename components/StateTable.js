@@ -75,7 +75,7 @@ const columns = [
 	{
 		title: (
 			<>
-				<div>14 DAY COVID% GROWTH</div>
+				<div> COVID+ GROWTH (14 DAYS)</div>
 			</>
 		),
 		dataIndex: 'movingAvg14days',
@@ -112,7 +112,7 @@ const columns = [
 	{
 		title: (
 			<>
-				<div>7 DAY COVID GROWTH</div>
+				<div> COVID+ GROWTH (7 DAYS)</div>
 			</>
 		),
 		dataIndex: 'movingAvg7daysRate',

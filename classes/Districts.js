@@ -3,6 +3,7 @@ import fetch from 'isomorphic-unfetch';
 import Papa from 'papaparse';
 import Utils from './Utils';
 import MovingAverage from './MovingAverage';
+import IndiaStates from '../public/india-states.json';
 
 let instance = null;
 
@@ -18,16 +19,47 @@ class Districts {
 		return instance;
 	}
 
-	// _districtPopulation = async () => {
-	// 	const res = await fetch('https://api.covid19india.org/v4/data.json');
-	// 	const json = await res.json();
-	// 	const districtPop = []
-	// 	json.forEach(record => {
-
-	// 	})
-
-	// 	return json;
-	// }
+	_districtPopulation = async () => {
+		const res = await fetch('https://api.covid19india.org/v4/data.json');
+		const json = await res.json();
+		const districtPop = [];
+		IndiaStates.states.forEach(
+			state => {
+				let stateCode;
+				stateCode = state.code;
+				if (state.name === 'Telengana') {
+					stateCode = 'TL';
+				}
+				if (state.name === 'Chhattisgarh') {
+					stateCode = 'CT';
+				}
+				if (state.name === 'Chandigarh') {
+					stateCode = 'CH';
+				}
+				if (state.name === 'Dadra and Nagar Haveli and Daman and Diu') {
+					stateCode = 'DN';
+				}
+				if (state.name === 'Odisha') {
+					stateCode = 'OR';
+				}
+				if (state.name === 'Uttarakhand') {
+					stateCode = 'UT';
+				}
+				// console.log(json[stateCode].districts);
+				// console.log(state.name, stateCode);
+				if (json[stateCode]) {
+				// eslint-disable-next-line no-restricted-syntax
+					for (const [name, value] of Object.entries(json[stateCode].districts)) {
+						if (value.meta && value.meta.population) {
+							districtPop.push({ state: state.name, district: name, population: value.meta.population });
+						} else {
+							districtPop.push({ state: state.name, district: name, population: 0 });
+						}
+					}
+				}
+			});
+		return districtPop;
+	}
 
 	_fetch = async () => {
 		const res = await fetch('https://api.covid19india.org/csv/latest/districts.csv');
@@ -44,14 +76,17 @@ class Districts {
 			}
 		});
 		const lastDate = _.last(data).date;
-		const invalid = ['Other State', 'Unknown', 'Italians', 'Foreign Evacuees'];
+		const invalid = ['Other State', 'Unknown', 'Italians', 'Foreign Evacuees', 'Airport Quarantine'];
 		const valid = _.filter(_.filter(data, { date: lastDate }), e => {
 			return !invalid.includes(e.district);
 		});
-		console.log(valid);
+		const populations = await this._districtPopulation();
 		this._all.length = 0;
 		this._latest.length = 0;
 		valid.forEach(record => { // loop all districts
+			// console.log(record.state, record.district);
+			const { population } = _.find(populations, { state: record.state, district: record.district });
+			// console.log(population);
 			const districtData = _.filter(data, { state: record.state, district: record.district })
 				.map((curr, idx, src) => {
 					return {
@@ -61,6 +96,7 @@ class Districts {
 						newDeaths: idx === 0 ? 0 : curr.deaths - src[idx - 1].deaths,
 						active: curr.confirmed - curr.deaths - curr.recovered,
 						deathRate: curr.deaths > 5 ? Utils.round((curr.deaths * 100) / (curr.recovered + curr.deaths)) : '-',
+						population
 					};
 				});
 			let isMissing = false;
@@ -87,6 +123,11 @@ class Districts {
 				last.ma5 = _.nth(districtData, -5).movingAvg14daysRate;
 				last.ma3 = _.nth(districtData, -3).movingAvg14daysRate;
 				last.ma0 = last.movingAvg14daysRate;
+				last.casesPerMillion = last.population > 0 ? Math.round((last.confirmed * 1000000) / last.population) : 0;
+				const offset = last.newCases === 0 ? -1 : 0;
+				last.casesInLast7Days = districtData.slice(-7 + offset).reduce(this.sum, 0);
+				last.casesPerMillionLast7Days = last.population > 0
+					? Math.round((last.casesInLast7Days * 1000000) / last.population) : 0;
 				this._latest.push(last);
 				this._all.push(...districtData);
 			}
@@ -100,6 +141,8 @@ class Districts {
 		}
 		return _.filter(this._all, { state, district });
 	}
+
+	sum = (acc, curr) => { return acc + curr.newCases; };
 
 	latest = async () => {
 		if (this._all.length <= 0) {
