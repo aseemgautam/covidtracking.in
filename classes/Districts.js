@@ -123,13 +123,13 @@ class Districts {
 				last.ma5 = _.nth(districtData, -5).movingAvg14daysRate;
 				last.ma3 = _.nth(districtData, -3).movingAvg14daysRate;
 				last.ma0 = last.movingAvg14daysRate;
-				const casesPerMillion = last.population > 0 ? Math.round((last.confirmed * 1000000) / last.population) : 0;
-				last.casesPerMillion = casesPerMillion < 0 ? 0 : casesPerMillion;
+				last.casesPerMillion = last.population > 0 ? Math.round((last.confirmed * 1000000) / last.population) : 0;
 				const offset = last.newCases === 0 ? -1 : 0;
 				last.casesInLast7Days = districtData.slice(-7 + offset).reduce(this.sum, 0);
-				last.casesPerMillionLast7Days = last.population > 0
+				const casesPerMillionLast7Days = last.population > 0
 					? Math.round((last.casesInLast7Days * 1000000) / last.population) : 0;
 				this._latest.push(last);
+				last.casesPerMillionLast7Days = casesPerMillionLast7Days >= 0 ? casesPerMillionLast7Days : 0;
 				this._all.push(...districtData);
 			}
 		});
