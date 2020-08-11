@@ -115,14 +115,14 @@ class Districts {
 				MovingAverage.for7days(districtData, 'newCases', 'newCases7DayMA');
 
 				const last = _.last(districtData);
-				last.ma14 = _.nth(districtData, -14).movingAvg14daysRate;
-				last.ma13 = _.nth(districtData, -13).movingAvg14daysRate;
-				last.ma11 = _.nth(districtData, -11).movingAvg14daysRate;
-				last.ma9 = _.nth(districtData, -9).movingAvg14daysRate;
-				last.ma7 = _.nth(districtData, -7).movingAvg14daysRate;
-				last.ma5 = _.nth(districtData, -5).movingAvg14daysRate;
-				last.ma3 = _.nth(districtData, -3).movingAvg14daysRate;
-				last.ma0 = last.movingAvg14daysRate;
+				last.ma14 = _.nth(districtData, -14).movingAvg7days;
+				last.ma13 = _.nth(districtData, -13).movingAvg7days;
+				last.ma11 = _.nth(districtData, -11).movingAvg7days;
+				last.ma9 = _.nth(districtData, -9).movingAvg7days;
+				last.ma7 = _.nth(districtData, -7).movingAvg7days;
+				last.ma5 = _.nth(districtData, -5).movingAvg7days;
+				last.ma3 = _.nth(districtData, -3).movingAvg7days;
+				last.ma0 = last.movingAvg7days;
 				last.casesPerMillion = last.population > 0 ? Math.round((last.confirmed * 1000000) / last.population) : 0;
 				const offset = last.newCases === 0 ? -1 : 0;
 				last.casesInLast7Days = districtData.slice(-7 + offset).reduce(this.sum, 0);
