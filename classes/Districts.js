@@ -95,7 +95,7 @@ class Districts {
 						newRecover: idx === 0 ? 0 : curr.recovered - src[idx - 1].recovered,
 						newDeaths: idx === 0 ? 0 : curr.deaths - src[idx - 1].deaths,
 						active: curr.confirmed - curr.deaths - curr.recovered,
-						deathRate: curr.deaths > 5 ? Utils.round((curr.deaths * 100) / (curr.recovered + curr.deaths)) : '-',
+						deathRate: curr.deaths > 1 ? Utils.round((curr.deaths * 100) / (curr.recovered + curr.deaths)) : '-',
 						population
 					};
 				});
@@ -123,7 +123,8 @@ class Districts {
 				last.ma5 = _.nth(districtData, -5).movingAvg14daysRate;
 				last.ma3 = _.nth(districtData, -3).movingAvg14daysRate;
 				last.ma0 = last.movingAvg14daysRate;
-				last.casesPerMillion = last.population > 0 ? Math.round((last.confirmed * 1000000) / last.population) : 0;
+				const casesPerMillion = last.population > 0 ? Math.round((last.confirmed * 1000000) / last.population) : 0;
+				last.casesPerMillion = casesPerMillion < 0 ? 0 : casesPerMillion;
 				const offset = last.newCases === 0 ? -1 : 0;
 				last.casesInLast7Days = districtData.slice(-7 + offset).reduce(this.sum, 0);
 				last.casesPerMillionLast7Days = last.population > 0

@@ -22,12 +22,12 @@ class Colors {
 
 	getTrendColor = (rate, newCases) => {
 		if (rate) {
-			if (rate > 50 && newCases > 100) return '#cf1322';
-			if (rate > 20 && newCases > 50) return '#fa541c';
-			if (rate > 0 && newCases > 25) return '#faad14';
-			return '#31a354';
+			if (rate > 50 && newCases > 100) return '#c71e1d';
+			if (rate > 20 && newCases > 50) return '#FA531C';
+			if (rate > 0 && newCases > 25) return '#faad14'; // '#FAAD15';
+			return '#23994a';
 		}
-		return '#31a354';
+		return '#23994a';
 	};
 
 	getTrendColorByName = rate => {
