@@ -24,7 +24,8 @@ export default async (req, res) => {
 			ma0: district.ma0,
 			'Cases (7 Days)': district.casesInLast7Days,
 			'Cases P Million (7 Days)': district.casesPerMillionLast7Days,
-			'Cases P Million': district.casesPerMillion
+			'Cases P Million': district.casesPerMillion,
+			'Deaths P Million': district.deathsPerMillion
 		};
 	});
 	res.end(papa.unparse(result));

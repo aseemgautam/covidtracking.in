@@ -3,10 +3,10 @@
   border-radius: 2px;
   color: #fff;
   text-align: center;
-  font-size: 13px;
   @extend %flex-column-center;
   height: 70px;
-  padding: 10px;
+	padding: 10px;
+	font-weight: 500;
 }
 
 .trend-info.very-poor {
@@ -27,18 +27,12 @@
 
 .trend-info.description {
   color: vars.$font-color;
-  font-size: 14px;
-  background-color: vars.$statistic-background;
+	background-color: vars.$statistic-background;
+	font-weight: 400;
 }
 
 @media (min-width: 768px) { 
   .trend-info {
     height: 101px;
-  }
-}
-
-@media (min-width: 530px) { 
-  .trend-info {
-    font-size: 16px;
   }
 }

@@ -25,7 +25,7 @@ export default class extends Document {
 					<meta property="og:url" content="https://covidtracking.in" />
 					<meta property="og:image" content="/og-img.png" />
 					<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-					<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+					{/* <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" /> */}
 					{/* Global Site Tag (gtag.js) - Google Analytics */}
 					<script
 						async

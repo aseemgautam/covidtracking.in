@@ -2,7 +2,8 @@
 .delta-grid-tags {
 	color: vars.$font-color;
 	margin-right: 4px;
-	font-size: 12px;
+	padding-bottom: 1px;
+	padding-top: 1px;
 }
 .delta-grid-select {
 	width: 85px;
@@ -13,8 +14,7 @@
 	.ant-card-grid {
 		padding: 6px 12px;
 		font-weight: 500;
-		height: 50px;
-		font-size: 14px;
+		height: 36px;
 		display: flex;
 		width: calc((100vw - 32px - 8px)/2);
 		margin: 8px 8px 0px 0px;
@@ -68,10 +68,12 @@
 }
 
 @media screen and (min-width: 768px) {
+
 	.card-grid {
 		.state-name { width: 120px;}
 		.ant-card-grid {
 			width: calc((100vw - 48px - 24px)/4);
+			height: 50px;
 		}
 		.ant-card-grid:nth-child(-n+4) {
 			margin-top: 0px;

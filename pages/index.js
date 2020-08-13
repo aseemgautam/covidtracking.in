@@ -20,11 +20,7 @@ function Index({ testingData, indiaData, stateDataLatest, buildTime }) {
 				stateDataLatest={stateDataLatest}
 				buildTime={buildTime}
 			/>
-			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
-				<Col xs={24}>
-					<h3 className="title">Growth in daily cases over 7 & 14 days</h3>
-				</Col>
-			</Row>
+			<div className="subhead">Growth in daily cases over 7 & 14 days</div>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} sm={24} md={12}>
 					<MovingAverageCard cases={indiaData.cases} days={7} />

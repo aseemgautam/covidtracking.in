@@ -1,18 +1,22 @@
 import Link from 'next/link';
-import { Layout, Space, Row, Col, Menu, Dropdown } from 'antd';
+import { Layout, Space, Row, Col, Menu, Dropdown, Button } from 'antd';
 import { MenuOutlined, TwitterOutlined } from '@ant-design/icons';
 
 const { Header, Content, Footer } = Layout;
 const tracker = <Link href="/"><a>TRACKER</a></Link>;
 const criteria = <Link href="/criteria"><a>CRITERIA</a></Link>;
-const analytics = <Link href="/testing"><a>TESTING</a></Link>;
+const testing = <Link href="/testing"><a>TESTING</a></Link>;
+const districts = <Link href="/districts"><a>DISTRICTS</a></Link>;
 const menu = (
 	<Menu>
 		<Menu.Item>
 			{tracker}
 		</Menu.Item>
 		<Menu.Item>
-			{analytics}
+			{districts}
+		</Menu.Item>
+		<Menu.Item>
+			{testing}
 		</Menu.Item>
 		<Menu.Item>
 			{criteria}
@@ -25,11 +29,11 @@ const SiteLayout = props => {
 		<Layout className="layout">
 			<Header>
 				<Row>
-					<Col className="logo" xs={16} sm={18} md={12} lg={8}>
+					<Col className="logo" xs={16} sm={18} md={8} lg={6}>
 						<a href="/">COVID TRACKING INDIA</a>
 					</Col>
 					<Col xs={8} sm={6} md={0} className="mobile-navigation">
-						<div>
+						<div className="twitter" style={{ marginRight: '16px' }}>
 							<a
 								style={{ color: '#1DA1F2' }}
 								rel="noopener noreferrer"
@@ -40,14 +44,17 @@ const SiteLayout = props => {
 							</a>
 						</div>
 						<Dropdown overlay={menu}>
-							<MenuOutlined />
+							<Button>
+								<MenuOutlined />
+							</Button>
 						</Dropdown>
 					</Col>
-					<Col xs={0} sm={0} md={12} lg={16}>
+					<Col xs={0} sm={0} md={16} lg={18}>
 						<Space size="middle" className="navigation">
 							{tracker}
+							{districts}
+							{testing}
 							{criteria}
-							{analytics}
 							<div>
 								<a
 									style={{ color: '#1DA1F2' }}

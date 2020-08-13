@@ -11,16 +11,11 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  font-size: 22px;
-  .anticon {
-    padding: 16px 0px 16px 16px;
-  }
 }
 
 .logo a {
   background-color: vars.$logo-color;
-  font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 36px;
   border-radius: 2px;
   padding: 8px;

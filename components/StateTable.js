@@ -31,8 +31,7 @@ const columns = [
 	},
 	{ title: (
 		<>
-			<div className="plus-cases">+TODAY</div>
-			<div>TOTAL</div>
+			<div>CASES</div>
 		</>
 	),
 	dataIndex: 'newCases',

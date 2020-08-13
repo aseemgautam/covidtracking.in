@@ -1,16 +1,44 @@
 @use 'vars';
+
+@font-face {
+	font-family: 'SF Pro Text';
+	src: url('/font/SF-Pro-Text-Regular.woff2') format('woff2'),
+			 url('/font/SF-Pro-Text-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'SF Pro Text';
+	src: url('/font/SF-Pro-Text-Medium.woff2') format('woff2'),
+			 url('/font/SF-Pro-Text-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'SF Pro Text';
+	src: url('/font/SF-Pro-Text-Semibold.woff2') format('woff2'),
+			 url('/font/SF-Pro-Text-Semibold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+}
+
 html,body
 {
     width: 100%;
     height: 100%;
     margin: 0px;
     padding: 0px;
-    font-size: 14px;
-    color: #303030;
     overflow-x: hidden;
     overflow-y: auto !important;
-    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+html, body, p {
+	color: vars.$font-color;
+}
+
 #__next {
   height: 100%;
 }
@@ -64,10 +92,6 @@ h1, h2, h3, h4 {
   margin: 15px 0px;
 }
 
-.ant-tag {
-  margin:0;
-}
-
 .map-info.leaflet-control {
   background-color: rgba(255,255,255, 0.7);
   border-radius: vars.$border-radius;
@@ -98,7 +122,6 @@ h1, h2, h3, h4 {
 
 .navigation {
   a {
-    font-size: 14px;
     color: vars.$font-color;
     font-weight: 500;
   }
@@ -119,7 +142,6 @@ h1, h2, h3, h4 {
 }
 
 .map-info {
-  // @extend %section;
   text-align: right;
   padding: 10px;
 }

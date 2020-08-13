@@ -9,7 +9,7 @@ const StateDeltaGrid = ({ casesByStateLatest }) => {
 	const [field, setField] = useState('newCases');
 	let tweet = '';
 	let newCases = 0; let newRecover = 0; let newDeaths = 0; let newTests = 0;
-	let className = '';
+	let className = ''; let stateName = '';
 	const cases = _.orderBy(casesByStateLatest, [field], ['desc']);
 	cases.forEach(state => {
 		className = '';
@@ -28,10 +28,11 @@ const StateDeltaGrid = ({ casesByStateLatest }) => {
 			}
 			newCases += state.newCases; newRecover += state.newRecover;
 			newDeaths += state.newDeaths; newTests += state.newTests;
+			stateName = state.state === 'Dadra and Nagar Haveli and Daman and Diu' ? 'Dadra and Nagar Haveli' : state.state;
 			if (state.newCases > 0) {
 				cards.push(
 					<Card.Grid className={className} key={state.state} hoverable={false}>
-						<div className="state-name">{state.state}</div> <div className="new-cases">+{state[field]}</div>
+						<div className="state-name">{stateName}</div> <div className="new-cases">+{state[field]}</div>
 					</Card.Grid>
 				);
 			}

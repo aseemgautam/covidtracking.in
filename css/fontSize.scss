@@ -1,0 +1,30 @@
+html,body {
+	font-size: 14px;
+}
+.ant-statistic-content, .ant-tabs-nav-container, .subhead {
+	font-size: 16px;
+}
+.ant-tabs-extra-content {
+	font-size: 12px;
+}
+
+@media screen and (max-width: 576px) {
+	.mobile-navigation {
+		.twitter {
+			font-size: 20px;
+		}
+	}
+	.today-badge, .ant-badge-count, .ant-tabs-extra-content,
+	.ant-statistic-title, .delta-grid-tags, .state-table .ant-table-small .ant-table-thead > tr > th, .trend-info {
+		font-size: 3vw;
+	}
+	.ant-tabs-nav-container, .subhead, .trend-card .trend-card-title, .state-table .ant-table {
+		font-size: 3.5vw;
+	}
+	html, body, p, .card-grid, .ant-select {
+		font-size: 3.5vw;
+	}
+	.ant-statistic-content, .ant-statistic-content-suffix, .ant-statistic-content-value, .ant-statistic-content-value-decimal {
+		font-size: 4vw;
+	}
+}

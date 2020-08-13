@@ -1,22 +1,17 @@
 @use 'vars';
-h3.title {
-  font-size: 16px;
-	font-weight: 700;
-	line-height: 30px;
-  display: inline-block;
-  border-bottom: vars.$title-border;
-}
 
-.featured {
-  font-size: 20px;
-  font-weight: 300;
-  line-height: 1.25;
-  margin: 0 0 .75em;
+h2 {
+	margin: 8px 0px;
+}
+.subhead {
+	font-weight: 500;
+	border-bottom: 1px solid #f0f0f0;
+	margin: 8px 0px;
+	padding: 12px 0px;
 }
 
 .daily-update-list {
   background-color: #fff;
-  font-size: 15px;
   h4 { margin: 0;}
   .anticon {
     margin-right: 8px;
@@ -29,10 +24,9 @@ h3.title {
 	}
 }
 
-@media (min-width: 768px) {
-  .featured {
-    font-size: 28px;
-	}
+.trend-box {
+	width: 16px; height: 16px; margin: 0px 2px -2px 2px; border-radius: 2px;
+	display: inline-block;
 }
 
 @media screen and (max-width: 576px) {
@@ -40,10 +34,13 @@ h3.title {
 		min-width: 16px;
 		height: 16px;
 		line-height: 16px;
-		font-size: 10px;
 		right: -15px !important;
 	}
 	.ant-badge-multiple-words {
 		padding: 0 4px;
+	}
+
+	.subhead {
+		padding: 8px 0px;
 	}
 }

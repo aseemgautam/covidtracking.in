@@ -9,7 +9,7 @@
   }
 .ant-table-small .ant-table-thead > tr > th {
   background-color: #fff;
-  text-transform: uppercase;
+	text-transform: uppercase;
 	color: vars.$font-color;
 	border-bottom: 2px solid vars.$font-color;
 	.newCases28DaysSubHeader {
@@ -18,7 +18,6 @@
 		justify-content: space-between;
 	}
   .sub-heading {
-    font-size: 12px;
     font-weight: 400;
     color: #666;
     text-transform: capitalize;
@@ -63,6 +62,9 @@
 		.ant-table-small .ant-table-tbody > tr > td {
 			padding: 8px 8px !important;
 		}
+	}
+	.state-table .ant-table-small .ant-table-thead > tr > th {
+		font-weight: 600;
 	}
 	.state-table {
 		font-weight: 500;

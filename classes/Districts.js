@@ -130,6 +130,8 @@ class Districts {
 					? Math.round((last.casesInLast7Days * 1000000) / last.population) : 0;
 				this._latest.push(last);
 				last.casesPerMillionLast7Days = casesPerMillionLast7Days >= 0 ? casesPerMillionLast7Days : 0;
+				last.deathsPerMillion = last.deaths && last.population > 0
+					? Math.round((last.deaths * 1000000) / last.population) : 0;
 				this._all.push(...districtData);
 			}
 		});

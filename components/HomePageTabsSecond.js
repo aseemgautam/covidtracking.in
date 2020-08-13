@@ -12,13 +12,13 @@ const HomePageTabsSecond = ({ stateDataLatest }) => {
 		<Tabs className="home-page-tabs-second">
 			<TabPane
 				tab={
-					(<div className="card-tab-title">Map</div>)
+					(<div>Map</div>)
 				}
 				key="1"
 			>
 				<Row>
 					<Col flex={24}>
-						<p style={{ marginTop: '16px' }}>Scales are based on value of <b>7 day Moving Average </b>
+						<p style={{ marginTop: '16px' }}>Scales are based on value of 7 day Moving Average
 							of new cases over 14 days.
 							Read more about our criteria <a href="/criteria">here</a>.
 						</p>
@@ -35,7 +35,7 @@ const HomePageTabsSecond = ({ stateDataLatest }) => {
 			</TabPane>
 			<TabPane
 				tab={
-					(<div className="card-tab-title">State Progress</div>)
+					(<div>State Progress</div>)
 				}
 				key="2"
 			>
@@ -49,7 +49,7 @@ const HomePageTabsSecond = ({ stateDataLatest }) => {
 			</TabPane>
 			<TabPane
 				tab={
-					(<div className="card-tab-title">State Statistics</div>)
+					(<div>State Statistics</div>)
 				}
 				key="3"
 			>

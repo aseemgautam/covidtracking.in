@@ -9,33 +9,24 @@
   }
   .ant-card-body { 
     padding: 0px;
-  }
-}
-
-.covid-statistic .ant-statistic-title,
-.covid-statistic .ant-statistic-content
-{
-  font-weight: 500;
-  display: flex;
-  align-items: baseline;
-  justify-content: flex-end;
-  text-transform: uppercase;
-  color: vars.$font-color;
-}
-
-
-.covid-statistic .ant-statistic-content,
-.ant-statistic-content-suffix {
-  font-size: 14px;
-}
-
-.covid-statistic .ant-statistic-title {
-  align-items: center;
+	}
+	
+	.ant-statistic-title, .ant-statistic-content {
+		font-family: inherit;
+		font-weight: 500;
+		display: flex;
+		align-items: baseline;
+		justify-content: flex-end;
+		text-transform: uppercase;
+	}
+	.ant-statistic-title {
+		color: #595959;
+		font-weight: 600;
+	}
 }
 
 .trend-card {
-  border-radius: vars.$border-radius;
-	background-color: vars.$statistic-background;
+  align-items: center;
 	.trend-card-title {
 		font-weight: 500;
 	}
@@ -46,20 +37,18 @@
     margin-left: 8px;
   }
   .ant-col:first-child {
-    padding-left: 12px;
-  }
+    padding-left: 0px;
+	}
+	.ant-col:last-child {
+		padding-right: 0px;
+	}
   .ant-col {
     padding: 8px;
   }
   .trend-card-description {
-    font-size: 13px;
     text-align: center;
     padding: 12px;
     background-color: #eee;
-  }
-  .ant-statistic-title {
-		// font-size: 13px;
-    color: vars.$font-color;
   }
 }
 
@@ -75,18 +64,11 @@
 }
 
 @media screen and (min-width: 530px) { 
-	.covid-statistic .ant-statistic-content,
-	.ant-statistic-content-suffix {
-		font-size: 16px;
-	}
-	// .ant-statistic-title {
-	// 	font-size: 14px;
-	// }
 }
 
-@media screen and (min-width: 768px) { 
-	.covid-statistic .ant-statistic-content,
-	.ant-statistic-content-suffix {
-		font-size: 18px;
-	}
-}
+// @media screen and (min-width: 768px) { 
+// 	.covid-statistic .ant-statistic-content,
+// 	.ant-statistic-content-suffix {
+// 		font-size: 18px;
+// 	}
+// }

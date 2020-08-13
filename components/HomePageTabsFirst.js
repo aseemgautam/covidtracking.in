@@ -1,4 +1,4 @@
-import { Tabs, Badge } from 'antd';
+import { Tabs, Tag } from 'antd';
 import StateDeltaGrid from './StateDeltaGrid';
 import NationalStats from './NationalStats';
 
@@ -22,7 +22,7 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 		>
 			<TabPane
 				tab={
-					(<div className="card-tab-title">National Statistics</div>)
+					(<div>National Statistics</div>)
 				}
 				key="1"
 			>
@@ -34,9 +34,7 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 			<TabPane
 				tab={
 					(
-						<Badge className="today-badge" count={liveCounter} offset={[20, 18]}>
-							<div className="card-tab-title">+Today</div>
-						</Badge>
+						<div>+Today <Tag color="gold">{liveCounter}</Tag></div>
 					)
 				}
 				key="2"
