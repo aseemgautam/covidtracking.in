@@ -10,10 +10,6 @@ export default async (req, res) => {
 			'TREND COLOR': Colors.getTrendColorByName(district.movingAvg14daysRate),
 			STATE: district.state,
 			'COVID+ GROWTH (14 DAYS)': district.movingAvg14daysRate,
-			CASES: district.confirmed,
-			RECOVR: district.recovered,
-			DEATHS: district.deaths,
-			'DEATH RATE': district.deathRate,
 			ma14: district.ma14,
 			ma13: district.ma13,
 			ma11: district.ma11,
@@ -22,10 +18,14 @@ export default async (req, res) => {
 			ma5: district.ma5,
 			ma3: district.ma3,
 			ma0: district.ma0,
+			CASES: district.confirmed,
+			RECOVR: district.recovered,
+			DEATHS: district.deaths,
+			'DEATH RATE': district.deathRate,
+			'Deaths P Million': district.deathsPerMillion,
 			'Cases (7 Days)': district.casesInLast7Days,
 			'Cases P Million (7 Days)': district.casesPerMillionLast7Days,
 			'Cases P Million': district.casesPerMillion,
-			'Deaths P Million': district.deathsPerMillion
 		};
 	});
 	res.end(papa.unparse(result));
