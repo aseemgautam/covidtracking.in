@@ -25,6 +25,7 @@ rules:
     #   ignoreRegExpLiterals: true
     #   ignorePattern: '\\s*<'
   no-unused-vars: warn
+  no-plusplus: 0
   no-param-reassign: warn
   quotes:
     - error

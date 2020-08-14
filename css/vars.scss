@@ -44,6 +44,12 @@ $ant-progress-step-color: #ccc;
   align-items: center;
 }
 
+%flex-row {
+	display: flex;
+	// justify-content: center;
+	align-items: center;
+}
+
 %section {
   background-color: #fff;
   border: $border;

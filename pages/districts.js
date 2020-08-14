@@ -13,7 +13,7 @@ const Districts = () => {
 				you can see every districts progress towards containing COVID-19.
 			</div>
 			<br />
-			<DWChart title="Chart" src="//datawrapper.dwcdn.net/sWfDe/5/" />
+			<DWChart title="Chart" src="//datawrapper.dwcdn.net/sWfDe/" />
 		</>
 	);
 };

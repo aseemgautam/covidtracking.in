@@ -68,7 +68,7 @@ const MovingAverageCardChart = ({ data, width, newCases }) => {
 				{
 					type: 'bar',
 					data: newCases,
-					color: '#F6B6B4',
+					color: '#ffccc7',
 					barWidth: '97%',
 					// symbol: null,
 					animation: false,
@@ -76,10 +76,6 @@ const MovingAverageCardChart = ({ data, width, newCases }) => {
 				}]
 			}
 		);
-		// const base64 = chart.getDataURL({ pixelRatio: window.devicePixelRatio, backgroundColor: 'transparent' });
-		// chart.clear();
-		// chart.dispose();
-		// setImage(base64);
 	}, []);
 	return (
 		<>

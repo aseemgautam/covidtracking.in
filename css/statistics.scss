@@ -1,7 +1,6 @@
 @use 'vars';
 
 .covid-statistic {
-  padding: 10px !important;
   border-radius: vars.$border-radius;
   background-color: vars.$statistic-background;
   .ant-card {
@@ -9,6 +8,10 @@
   }
   .ant-card-body { 
     padding: 0px;
+	}
+
+	.ant-statistic {
+		padding: 10px !important;
 	}
 	
 	.ant-statistic-title, .ant-statistic-content {
@@ -22,6 +25,16 @@
 	.ant-statistic-title {
 		color: #595959;
 		font-weight: 600;
+	}
+	.now {
+		@extend %flex-row;
+		font-weight: 500;
+		justify-content: space-between;
+		padding: 4px 10px;
+		border-top: 4px solid #fff;
+		border-radius: 2px;
+		// background-color: #f0f5ff;
+		// color: #2f54eb;
 	}
 }
 
