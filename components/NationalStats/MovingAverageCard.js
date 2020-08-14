@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row, Col } from 'antd';
-import numeral from 'numeral';
 import MovingAverageProgress from '../MovingAverageProgress';
 import MovingAverageCardChart from '../chartsv2/MovingAverageCardChart';
 import Utils from '../../classes/Utils';
