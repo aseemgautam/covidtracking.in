@@ -1,12 +1,11 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import echarts from 'echarts/lib/echarts';
 import bar from 'echarts/lib/chart/bar';
 import line from 'echarts/lib/chart/line';
 import tooltip from 'echarts/lib/component/tooltip';
 import numeral from 'numeral';
 
-const MovingAverageCardChart = ({ data, width, newCases }) => {
-	// const [image, setImage] = useState(null);
+const MovingAverageCardChart = ({ data, width, newCases, xAxisData }) => {
 	const container = useRef(null);
 	const chartWidth = useRef(0);
 	useEffect(() => {
@@ -23,6 +22,7 @@ const MovingAverageCardChart = ({ data, width, newCases }) => {
 				},
 				backgroundColor: 'transparent',
 				xAxis: {
+					data: xAxisData,
 					type: 'category',
 					boundaryGap: false
 				},

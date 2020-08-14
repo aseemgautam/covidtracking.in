@@ -13,6 +13,12 @@ class Utils {
 		return number + ['th', 'st', 'nd', 'rd', ''][selector];
 	};
 
+	shortDateAndMonth = date => {
+		const day = this.getOrdinalNum((new Date(date)).getDate());
+		const month = (new Date(date)).toLocaleString('default', { month: 'short' });
+		return `${day} ${month}`;
+	}
+
 	dateAndTime = () => {
 		const day = this.getOrdinalNum((new Date()).getDate());
 		const month = (new Date()).toLocaleString('default', { month: 'short' });
