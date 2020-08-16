@@ -10,7 +10,7 @@ export default async (req, res) => {
 
 	let testsTotal = 0;
 	const tests = [];
-	let testTweet = '';
+	let testTweet = ''; let stateCode;
 	if (data) {
 		Object.keys(data).forEach(key => {
 			if (data[key].delta && data[key].delta.tested && data[key].meta.tested.last_updated
@@ -19,8 +19,21 @@ export default async (req, res) => {
 				if (data[key].delta.tested > 10000) {
 					testTweet += `${key} +${data[key].delta.tested},`;
 				}
+				stateCode = key;
+				if (key === 'TG') {
+					stateCode = 'TS';
+				}
+				if (key === 'CT') {
+					stateCode = 'CG';
+				}
+				if (key === 'OR') {
+					stateCode = 'OD';
+				}
+				if (key === 'UT') {
+					stateCode = 'UK';
+				}
 				tests.push({
-					state: key,
+					state: stateCode,
 					tests: data[key].delta.tested,
 					'Tests (in Thousands, 000s)': Utils.round(data[key].delta.tested / 1000)
 				});

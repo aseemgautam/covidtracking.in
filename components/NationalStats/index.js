@@ -5,6 +5,7 @@ import CovidStatistic from './CovidStatistic';
 
 const NationalStats = ({ testingData, covidDataIndia, cases, recovered, deaths, active }) => {
 	const { latest } = covidDataIndia;
+	const positivityRate = (_.last(testingData).positive) / _.last(testingData).samples;
 	return (
 		<>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
@@ -69,11 +70,11 @@ const NationalStats = ({ testingData, covidDataIndia, cases, recovered, deaths, 
 				</Col>
 				<Col xs={12} sm={8} lg={6}>
 					<CovidStatistic
-						title="Cases Per Million"
-						value={covidDataIndia.casesPer1L}
-						suffix="LOW"
+						title="Positivity Rate"
+						value={numeral(positivityRate).format('0.00%')}
+						suffix="DOWN"
 						suffixClassName="green7"
-						precision={0}
+						precision={2}
 					/>
 				</Col>
 				<Col xs={12} sm={8} lg={6}>
