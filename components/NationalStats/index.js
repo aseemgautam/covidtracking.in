@@ -16,7 +16,7 @@ const NationalStats = ({ testingData, covidDataIndia, cases, recovered, deaths, 
 						suffix={latest.newCases}
 						suffixClassName="red6"
 						precision={0}
-						now={cases}
+						now={`+${cases}`}
 					/>
 				</Col>
 				<Col xs={12} sm={8} lg={6}>
@@ -27,7 +27,7 @@ const NationalStats = ({ testingData, covidDataIndia, cases, recovered, deaths, 
 						suffix={latest.newActive}
 						suffixClassName={latest.newActive > 0 ? 'red6' : 'green7'}
 						precision={0}
-						now={active}
+						now={active < 0 ? active : `+${active}`}
 					/>
 				</Col>
 				<Col xs={12} sm={8} lg={6}>
@@ -38,7 +38,7 @@ const NationalStats = ({ testingData, covidDataIndia, cases, recovered, deaths, 
 						suffix={latest.newDeaths}
 						suffixClassName="red6"
 						precision={0}
-						now={deaths}
+						now={`+${deaths}`}
 					/>
 				</Col>
 				<Col xs={12} sm={8} lg={6}>
@@ -49,7 +49,7 @@ const NationalStats = ({ testingData, covidDataIndia, cases, recovered, deaths, 
 						suffix={latest.newRecover}
 						suffixClassName="green7"
 						precision={0}
-						now={recovered}
+						now={`+${recovered}`}
 					/>
 				</Col>
 				<Col xs={12} sm={8} lg={6}>

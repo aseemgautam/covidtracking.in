@@ -7,7 +7,7 @@ const CovidStatistic = ({ title, value, suffix, className, suffixClassName, prec
 	const nowElement = (
 		<div className="now">
 			<div style={{ color: '#595959' }}>Today</div>
-			<div>+{now}</div>
+			<div>{now}</div>
 		</div>
 	);
 	return (
