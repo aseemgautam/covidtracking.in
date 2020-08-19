@@ -61,6 +61,28 @@ class Districts {
 		return districtPop;
 	}
 
+	duplicates = async () => {
+		const res = await fetch('https://api.covid19india.org/csv/latest/districts.csv');
+		const text = await res.text();
+		const { data } = Papa.parse(text, {
+			header: true,
+			skipEmptyLines: true,
+			dynamicTyping: true,
+			transformHeader(h) {
+				if (h === 'Deceased') {
+					return 'deaths';
+				}
+				return h.toLowerCase();
+			}
+		});
+		const lastDate = _.last(data).date;
+		const invalid = ['Other State', 'Unknown', 'Italians', 'Foreign Evacuees', 'Airport Quarantine'];
+		const valid = _.filter(_.filter(data, { date: lastDate }), e => {
+			return !invalid.includes(e.district);
+		});
+		return valid;
+	}
+
 	_fetch = async () => {
 		const res = await fetch('https://api.covid19india.org/csv/latest/districts.csv');
 		const text = await res.text();

@@ -5,13 +5,12 @@
     background-color: #f8f8f8;
   }
   .ant-table-tbody > tr:hover > td {
-    background-color: #e6f7ff;
+    background-color: #fffae0;
   }
 .ant-table-small .ant-table-thead > tr > th {
-  background-color: #fff;
 	text-transform: uppercase;
 	color: vars.$font-color;
-	border-bottom: 2px solid vars.$font-color;
+	border-bottom: 1px solid  rgba(0, 0, 0, 0.067);
 	.newCases28DaysSubHeader {
 		margin: 5px 10px 0px 10px;
 		display: flex;

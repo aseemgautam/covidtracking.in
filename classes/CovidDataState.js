@@ -41,7 +41,6 @@ class CovidDataState {
 			state => {
 				const cases = _.filter(data, { state: state.name })
 					.map((curr, idx, src) => {
-						const testForDate = _.find(testingData, { date: curr.date, state: state.name });
 						return {
 							...curr,
 							newCases: idx === 0 ? 0 : curr.confirmed - src[idx - 1].confirmed,
@@ -54,14 +53,15 @@ class CovidDataState {
 							newActive: idx === 0 ? 0 : (curr.confirmed - curr.deaths - curr.recovered)
 							- (src[idx - 1].confirmed - src[idx - 1].deaths - src[idx - 1].recovered),
 							casesPerMillion: Math.round((curr.confirmed * 1000000) / state.population),
-							deathRate: curr.deaths > 5 ? this.round((curr.deaths * 100) / (curr.recovered + curr.deaths)) : '-',
-							tests: testForDate ? testForDate.totalTests : 0,
-							positivePercent: testForDate ? ((curr.confirmed * 100) / testForDate.totalTests).toFixed(2) : 0,
-							testsPerMillion: testForDate ? Math.round((testForDate.totalTests * 1000000) / state.population) : 0,
+							deathRate: curr.deaths > 5 ? this.round((curr.deaths * 100) / (curr.recovered + curr.deaths)) : '',
+							tests: curr.tested && curr.tested > 0 ? curr.tested : 0,
+							positivePercent: curr.tested && curr.tested ? ((curr.confirmed * 100) / curr.tested).toFixed(2) : 0,
+							testsPerMillion: curr.tested && curr.tested ? Math.round((curr.tested * 1000000) / state.population) : 0,
 							deathsPerMillion: curr.deaths > 5 ? ((curr.deaths * 1000000) / state.population).toFixed(2) : 0
 						};
 					});
 				MovingAverage.calculate(cases, 'newCases');
+				MovingAverage.for7days(cases, 'newTests', 'tests7DayMA');
 
 				this._all.set(state.name, cases);
 			}
@@ -92,9 +92,16 @@ class CovidDataState {
 					latest.population = state.population;
 					latest.stateCode = state.code;
 					latest.isHigh = latest.newCases === latest.peak;
+					latest.dailyDeathRate = latest.newDeaths > 0 && latest.newRecover
+						? ((latest.newDeaths * 100) / (latest.newDeaths + latest.newRecover)).toFixed(2) : '';
+					latest.dailyPositivity = latest.newTests > 0 ? ((latest.newCases * 100) / latest.newTests).toFixed(2) : '';
+					latest.positivityDelta = latest.newTests > 0 ? latest.positivePercent - latest.positivityDelta : '';
 					latest.is14dayLow = _.every(cases.slice(-14), curr => {
 						return latest.newCases <= curr.newCases;
 					});
+					latest.newCasesTrend = (((latest.newCases - latest.movingAvg7days) * 100) / latest.movingAvg7days).toFixed(0);
+					latest.testingTrend = latest.newTests > 0
+						? (((latest.newTests - latest.tests7DayMA) * 100) / latest.tests7DayMA).toFixed(0) : 0;
 					latest.is14dayHigh = _.every(cases.slice(-14), curr => {
 						return latest.newCases >= curr.newCases;
 					});

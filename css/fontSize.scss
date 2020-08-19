@@ -14,12 +14,15 @@ html,body {
 			font-size: 20px;
 		}
 	}
+	.daily-report-table .ant-table {
+		font-size: 3.5vw !important;
+	}
 	.today-badge, .ant-badge-count, .ant-tabs-extra-content,
 	.ant-statistic-title, .delta-grid-tags, .state-table .ant-table-small .ant-table-thead > tr > th, .trend-info,
 	.now {
 		font-size: 3vw;
 	}
-	.ant-tabs-nav-container, .subhead, .trend-card .trend-card-title, .state-table .ant-table {
+	.ant-tabs-nav-container, .subhead, .trend-card .trend-card-title, .state-table {
 		font-size: 3.5vw;
 	}
 	html, body, p, .card-grid, .ant-select {

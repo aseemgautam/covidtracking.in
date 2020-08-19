@@ -55,6 +55,12 @@ html, body, p {
   text-transform: uppercase;
 }
 
+.ellipses {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
 .bold {
   font-weight: 500;
 }
