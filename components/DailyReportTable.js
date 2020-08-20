@@ -21,22 +21,6 @@ const columns = [
 				<div className="state-name"><div className="ellipses">{text}</div> {tag}</div>
 			);
 		},
-		// render: (text, record) => {
-		// 	let className = '';
-		// 	if (record.isHigh) {
-		// 		className = 'newHigh';
-		// 	} else if (record.is14dayHigh) {
-		// 		className = 'high';
-		// 	} else if (record.is14dayLow) {
-		// 		className = 'low';
-		// 	}
-		// 	return {
-		// 		props: {
-		// 			className
-		// 		},
-		// 		children: text,
-		// 	};
-		// },
 		sorter: (a, b) => {
 			// eslint-disable-next-line prefer-template
 			return ('' + a.state).localeCompare(b.state);

@@ -8,13 +8,12 @@ export default async (req, res) => {
 	const sorted = districts.slice().sort();
 	const duplicates = [];
 	for (let i = 0; i < sorted.length - 1; i++) {
+		// eslint-disable-next-line eqeqeq
 		if (sorted[i + 1] == [sorted[i]]) {
 			duplicates.push(sorted[i]);
 		}
 	}
 	res.end(papa.unparse(data));
-	// res.end(JSON.stringify(duplicates));
-	// res.end(JSON.stringify(districts));
 };
 
 // ["Aurangabad (MH, BR)","Balrampur (UP, CG)","Bilaspur (HP, CG)","Hamirpur (UP, HP)","Pratapgarh (RJ, UP"]

@@ -4,6 +4,7 @@ import Papa from 'papaparse';
 import Utils from './Utils';
 import MovingAverage from './MovingAverage';
 import IndiaStates from '../public/india-states.json';
+import DistrictPopulation from '../public/district-population.json';
 
 let instance = null;
 
@@ -102,7 +103,7 @@ class Districts {
 		const valid = _.filter(_.filter(data, { date: lastDate }), e => {
 			return !invalid.includes(e.district);
 		});
-		const populations = await this._districtPopulation();
+		const populations = DistrictPopulation;
 		this._all.length = 0;
 		this._latest.length = 0;
 		valid.forEach(record => { // loop all districts
@@ -170,9 +171,7 @@ class Districts {
 	sum = (acc, curr) => { return acc + curr.newCases; };
 
 	latest = async () => {
-		if (this._all.length <= 0) {
-			await this._fetch();
-		}
+		await this._fetch();
 		return _.filter(this._latest, district => {
 			return district.confirmed > 100;
 		});
