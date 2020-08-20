@@ -21,6 +21,7 @@ import 'antd/es/card/style/index.css';
 import 'antd/es/table/style/index.css';
 import 'antd/es/select/style/index.css';
 import 'antd/es/button/style/index.css';
+import 'antd/es/pagination/style/index.css';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-gesture-handling/dist/leaflet-gesture-handling.css';
 import '../css/style.scss';

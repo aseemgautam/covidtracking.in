@@ -1,6 +1,7 @@
 import { Tabs, Tag } from 'antd';
 import NationalStats from './NationalStats';
 import DailyReportSection from './DailyReportSection';
+// import StateDeltaGrid from './StateDeltaGrid';
 
 const { TabPane } = Tabs;
 
@@ -49,6 +50,7 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 				key="2"
 			>
 				<DailyReportSection casesByStateLatest={stateDataLatest} />
+				{/* <StateDeltaGrid casesByStateLatest={stateDataLatest} /> */}
 			</TabPane>
 		</Tabs>
 	);

@@ -85,6 +85,9 @@ class Districts {
 	}
 
 	_fetch = async () => {
+		// eslint-disable-next-line global-require
+		const { performance } = require('perf_hooks');
+		const t0 = performance.now();
 		const res = await fetch('https://api.covid19india.org/csv/latest/districts.csv');
 		const text = await res.text();
 		const { data } = Papa.parse(text, {
@@ -98,18 +101,20 @@ class Districts {
 				return h.toLowerCase();
 			}
 		});
+		const t1 = performance.now();
+		console.log(`Fetch took ${(t1 - t0) / 1000} seconds.`);
 		const lastDate = _.last(data).date;
 		const invalid = ['Other State', 'Unknown', 'Italians', 'Foreign Evacuees', 'Airport Quarantine'];
 		const valid = _.filter(_.filter(data, { date: lastDate }), e => {
 			return !invalid.includes(e.district);
 		});
+		const t2 = performance.now();
+		console.log(`Invalid Filter took ${(t2 - t1) / 1000} seconds.`);
 		const populations = DistrictPopulation;
 		this._all.length = 0;
 		this._latest.length = 0;
 		valid.forEach(record => { // loop all districts
-			// console.log(record.state, record.district);
 			const { population } = _.find(populations, { state: record.state, district: record.district });
-			// console.log(population);
 			const districtData = _.filter(data, { state: record.state, district: record.district })
 				.map((curr, idx, src) => {
 					return {
@@ -122,17 +127,8 @@ class Districts {
 						population
 					};
 				});
-			let isMissing = false;
-			const date = new Date();
-			date.setDate(date.getDate() - 30);
-			for (let d = date; d <= new Date(lastDate); d.setDate(d.getDate() + 1)) {
-				if (!_.find(districtData, { date: d.toISOString().split('T')[0] })) {
-					// console.log(districtData[0].state, districtData[0].district, 'found');
-					isMissing = true;
-					break;
-				}
-			}
-			if (!isMissing) {
+
+			if (districtData.length > 10) {
 				MovingAverage.calculate(districtData, 'newCases');
 				MovingAverage.for7days(districtData, 'newRecover', 'newRecovered7DayMA');
 				MovingAverage.for7days(districtData, 'newCases', 'newCases7DayMA');
@@ -158,6 +154,8 @@ class Districts {
 				this._all.push(...districtData);
 			}
 		});
+		const t3 = performance.now();
+		console.log(`Final Loop took ${(t3 - t2) / 1000} seconds.`);
 		return this._all;
 	}
 

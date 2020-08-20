@@ -3,9 +3,6 @@ import Districts from '../../../classes/Districts';
 import Colors from '../../../classes/Colors';
 
 export default async (req, res) => {
-	// eslint-disable-next-line global-require
-	// const { performance } = require('perf_hooks');
-	// const t0 = performance.now();
 	const data = await Districts.latest();
 	const result = data.map(district => {
 		return {
@@ -31,7 +28,5 @@ export default async (req, res) => {
 			'Cases P Million': district.casesPerMillion,
 		};
 	});
-	// const t1 = performance.now();
-	// console.log(`${(t1 - t0) / 1000} seconds.`);
 	res.end(papa.unparse(result));
 };
