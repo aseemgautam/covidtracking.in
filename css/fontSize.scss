@@ -14,18 +14,18 @@ html,body {
 			font-size: 20px;
 		}
 	}
-	.daily-report-table .ant-table {
-		font-size: 3.5vw !important;
+	.daily-report-table .ant-table, .state-table .ant-table-small, .ant-tag {
+		font-size: 3.1vw !important;
 	}
 	.today-badge, .ant-badge-count, .ant-tabs-extra-content,
-	.ant-statistic-title, .delta-grid-tags, .state-table .ant-table-small .ant-table-thead > tr > th, .trend-info,
+	.ant-statistic-title, .state-table .ant-table-small .ant-table-thead > tr > th, .trend-info,
 	.now {
 		font-size: 3vw;
 	}
-	.ant-tabs-nav-container, .subhead, .trend-card .trend-card-title, .state-table {
+	.ant-tabs-nav-container, .subhead, .trend-card .trend-card-title {
 		font-size: 3.5vw;
 	}
-	html, body, p, .card-grid, .ant-select {
+	html, body, p, .ant-select {
 		font-size: 3.5vw;
 	}
 	.ant-statistic-content, .ant-statistic-content-suffix, .ant-statistic-content-value, .ant-statistic-content-value-decimal {
