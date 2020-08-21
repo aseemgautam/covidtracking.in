@@ -147,10 +147,11 @@ class Districts {
 				last.casesInLast7Days = districtData.slice(-7 + offset).reduce(this.sum, 0);
 				const casesPerMillionLast7Days = last.population > 0
 					? Math.round((last.casesInLast7Days * 1000000) / last.population) : 0;
-				this._latest.push(last);
 				last.casesPerMillionLast7Days = casesPerMillionLast7Days >= 0 ? casesPerMillionLast7Days : 0;
 				last.deathsPerMillion = last.deaths && last.population > 0
 					? Math.round((last.deaths * 1000000) / last.population) : 0;
+				last.newCasesYesterday = _.nth(districtData, -2).newCases;
+				this._latest.push(last);
 				this._all.push(...districtData);
 			}
 		});
