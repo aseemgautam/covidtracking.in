@@ -115,20 +115,20 @@ class Districts {
 		this._latest.length = 0;
 		valid.forEach(record => { // loop all districts
 			const { population } = _.find(populations, { state: record.state, district: record.district });
-			const districtData = _.filter(data, { state: record.state, district: record.district })
-				.map((curr, idx, src) => {
-					return {
-						...curr,
-						newCases: idx === 0 ? 0 : curr.confirmed - src[idx - 1].confirmed,
-						newRecover: idx === 0 ? 0 : curr.recovered - src[idx - 1].recovered,
-						newDeaths: idx === 0 ? 0 : curr.deaths - src[idx - 1].deaths,
-						active: curr.confirmed - curr.deaths - curr.recovered,
-						deathRate: curr.deaths > 1 ? Utils.round((curr.deaths * 100) / (curr.recovered + curr.deaths)) : '-',
-						population
-					};
-				});
-
-			if (districtData.length > 10) {
+			const districtData = _.filter(data, district => {
+				return district.state === record.state && district.district === record.district;
+			}).map((curr, idx, src) => {
+				return {
+					...curr,
+					newCases: idx === 0 ? 0 : curr.confirmed - src[idx - 1].confirmed,
+					newRecover: idx === 0 ? 0 : curr.recovered - src[idx - 1].recovered,
+					newDeaths: idx === 0 ? 0 : curr.deaths - src[idx - 1].deaths,
+					active: curr.confirmed - curr.deaths - curr.recovered,
+					deathRate: curr.deaths > 1 ? Utils.round((curr.deaths * 100) / (curr.recovered + curr.deaths)) : '-',
+					population
+				};
+			});
+			if (districtData.length > 14) {
 				MovingAverage.calculate(districtData, 'newCases');
 				MovingAverage.for7days(districtData, 'newRecover', 'newRecovered7DayMA');
 				MovingAverage.for7days(districtData, 'newCases', 'newCases7DayMA');
