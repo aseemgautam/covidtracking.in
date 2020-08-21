@@ -8,7 +8,7 @@ export default async (req, res) => {
 		return {
 			DISTRICT: district.district,
 			'+TODAY': district.newCases || '-',
-			'+YTRDY': district.newCasesYesterday || '-',
+			'+YSTRDY': district.newCasesYesterday || '-',
 			'TREND COLOR': Colors.getTrendColorByName(district.movingAvg14daysRate),
 			STATE: district.state,
 			'COVID+ GROWTH (14 DAYS)': district.movingAvg14daysRate,
