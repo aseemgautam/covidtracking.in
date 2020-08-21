@@ -7,10 +7,10 @@ export default async (req, res) => {
 	const result = data.map(district => {
 		return {
 			DISTRICT: district.district,
+			STATE: district.state,
 			'+TODAY': district.newCases || '-',
 			'+YSTRDY': district.newCasesYesterday || '-',
 			'TREND COLOR': Colors.getTrendColorByName(district.movingAvg14daysRate),
-			STATE: district.state,
 			'COVID+ GROWTH (14 DAYS)': district.movingAvg14daysRate,
 			ma14: district.ma14,
 			ma13: district.ma13,
