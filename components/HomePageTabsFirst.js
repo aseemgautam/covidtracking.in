@@ -16,17 +16,11 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 		if (stateDataLatest[i].newCases > 0 || stateDataLatest[i].newRecovered > 0) {
 			liveCounter += 1;
 		}
-		if (stateDataLatest[i].newCases > 0 && stateDataLatest[i].newTests > 0) {
-			posRates.push((stateDataLatest[i].newCases * 100) / stateDataLatest[i].newTests);
-		}
 	}
 	active = cases - recovered - deaths;
 	const recoveryRate = ((recovered * 100) / cases).toFixed(2);
 	const deathRate = ((deaths * 100) / (deaths + recovered)).toFixed(2);
-
-	if (posRates.length > 0) {
-		positivity = _.mean(posRates).toFixed(2);
-	}
+	positivity = ((cases * 100) / tests).toFixed(2);
 	return (
 		<Tabs tabBarExtraContent={
 			(
