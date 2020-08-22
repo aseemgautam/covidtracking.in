@@ -69,7 +69,7 @@ class CovidDataTesting {
 							totalTests: Number.parseInt(totalTests, 10)
 						});
 					}
-					MovingAverage.for7days(result, 'newTests', 'movingAverage');
+					MovingAverage.for7days(result, 'newTests', 'movingAverage', true);
 					this._all.push(...result);
 				}
 			}

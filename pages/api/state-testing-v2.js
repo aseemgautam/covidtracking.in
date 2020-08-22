@@ -14,43 +14,43 @@ export default async (req, res) => {
 		const testingData = _.filter(stateDataTesting, { state: current.state });
 		const result = {};
 		result.STATE = current.state;
-		const posRateDelta = (current.positivePercent - _.nth(stateData, -14).positivePercent).toFixed(2);
+		const posRateDelta = (current.dailyPositive7DayMA - _.nth(stateData, -14).dailyPositive7DayMA).toFixed(2);
 		let posRateTrend;
 		if (posRateDelta > 0.5) {
-			posRateTrend = `Up +${posRateDelta}%`;
+			posRateTrend = `Increasing +${posRateDelta}%`;
 			result.posRateColor = 'red';
 		} else if (posRateDelta < -0.5) {
-			posRateTrend = `Down ${posRateDelta}%`;
+			posRateTrend = `Decreasing ${posRateDelta}%`;
 			result.posRateColor = 'green';
 		} else {
 			posRateTrend = 'Flat';
 			result.posRateColor = 'default';
 		}
 		result['POSITIVITY RATE'] = `${current.positivePercent}% ^${posRateTrend}^`;
-		result['COVID+ GROWTH (14 DAYS)'] = current.movingAvg14daysRate;
+		result['AVG NEW CASES/DAY'] = current.movingAvg14daysRate;
 		result.trendColor = current.trendColor;
-		result.posRate14 = _.nth(stateData, -14).positivePercent;
-		result.posRate13 = _.nth(stateData, -13).positivePercent;
-		result.posRate11 = _.nth(stateData, -11).positivePercent;
-		result.posRate9 = _.nth(stateData, -9).positivePercent;
-		result.posRate7 = _.nth(stateData, -7).positivePercent;
-		result.posRate5 = _.nth(stateData, -5).positivePercent;
-		result.posRate3 = _.nth(stateData, -3).positivePercent;
-		result.posRate = current.positivePercent;
+		result.posRate14 = _.nth(stateData, -14).dailyPositive7DayMA;
+		result.posRate13 = _.nth(stateData, -13).dailyPositive7DayMA;
+		result.posRate11 = _.nth(stateData, -11).dailyPositive7DayMA;
+		result.posRate9 = _.nth(stateData, -9).dailyPositive7DayMA;
+		result.posRate7 = _.nth(stateData, -7).dailyPositive7DayMA;
+		result.posRate5 = _.nth(stateData, -5).dailyPositive7DayMA;
+		result.posRate3 = _.nth(stateData, -3).dailyPositive7DayMA;
+		result.posRate = current.dailyPositive7DayMA;
 		const dailyTestsDelta = _.last(testingData).movingAverage - _.nth(testingData, -14).movingAverage;
 		const dailyTestsDeltaPercent = (Math.abs(dailyTestsDelta * 100) / _.nth(testingData, -14).movingAverage).toFixed(2);
 		let dailyTestsTrend;
 		if (dailyTestsDelta > 0 && dailyTestsDelta > (_.nth(testingData, -14).movingAverage * 0.1)) {
 			dailyTestsTrend = `Up +${dailyTestsDeltaPercent}%`;
 			result.dailyTestsTrendColor = 'green';
-		} else if (dailyTestsDelta < 0 && Math.abs(dailyTestsDelta) > (_.nth(testingData, -14).movingAverage * 0.1)) {
+		} else if (dailyTestsDelta < 0 && Math.abs(dailyTestsDelta) > (_.nth(testingData, -14).movingAverage * 0.05)) {
 			dailyTestsTrend = `Down ${dailyTestsDeltaPercent}%`;
 			result.dailyTestsTrendColor = 'red';
 		} else {
 			dailyTestsTrend = 'Flat';
 			result.dailyTestsTrendColor = 'default';
 		}
-		result['DAILY TESTS (14 DAY TREND)'] = `${_.last(testingData).movingAverage.toLocaleString()}^${dailyTestsTrend}^`;
+		result['AVG NEW TESTS/DAY'] = `${_.last(testingData).movingAverage.toLocaleString()}^${dailyTestsTrend}^`;
 		result.ma14 = _.nth(testingData, -14).movingAverage;
 		result.ma11 = _.nth(testingData, -11).movingAverage;
 		result.ma9 = _.nth(testingData, -9).movingAverage;

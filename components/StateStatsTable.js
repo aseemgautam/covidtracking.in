@@ -117,7 +117,7 @@ const columns = [
 	render: (text, record) => {
 		return (
 			<>
-				<div style={{ color: '#0050b3' }}>+{record.newTests}</div>
+				<div style={{ color: '#0050b3' }}>{record.newTests === 0 ? <span>&nbsp;</span> : `+${record.newTests}`}</div>
 				<div>{text}</div>
 			</>
 		);

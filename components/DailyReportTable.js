@@ -33,6 +33,7 @@ const columns = [
 		sorter: (a, b) => {
 			return a.newCases - b.newCases;
 		},
+		defaultSortOrder: 'descend',
 		render: (text, record) => {
 			let color = '';
 			if (record.newCasesTrend >= 10) {
@@ -118,7 +119,7 @@ const DailyReportTable = ({ casesByStateLatest }) => {
 			rowKey="state"
 			size="small"
 			scroll={{ x: 600 }}
-			pagination={{ size: 'default', pageSize: 17, hideOnSinglePage: true }}
+			pagination={{ size: 'default', pageSize: 40, hideOnSinglePage: true }}
 		/>
 	);
 };

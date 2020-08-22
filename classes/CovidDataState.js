@@ -5,6 +5,7 @@ import MovingAverage from './MovingAverage';
 import CovidDataTesting from './CovidDataTesting';
 import IndianStates from '../public/india-states.json';
 import Colors from './Colors';
+import Utils from './Utils';
 
 let instance = null;
 
@@ -41,28 +42,32 @@ class CovidDataState {
 			state => {
 				const cases = _.filter(data, { state: state.name })
 					.map((curr, idx, src) => {
+						const newCases = idx === 0 ? 0 : curr.confirmed - src[idx - 1].confirmed;
+						const newTests = idx === 0 ? 0 : curr.tested - src[idx - 1].tested;
 						return {
 							...curr,
-							newCases: idx === 0 ? 0 : curr.confirmed - src[idx - 1].confirmed,
+							newCases,
 							newCasesPMil: idx === 0 ? 0 : Math.round(((curr.confirmed - src[idx - 1].confirmed) * 1000000)
 							/ state.population),
 							newRecover: idx === 0 ? 0 : curr.recovered - src[idx - 1].recovered,
 							newDeaths: idx === 0 ? 0 : curr.deaths - src[idx - 1].deaths,
-							newTests: idx === 0 ? 0 : curr.tested - src[idx - 1].tested,
+							newTests,
 							active: curr.confirmed - curr.deaths - curr.recovered,
 							newActive: idx === 0 ? 0 : (curr.confirmed - curr.deaths - curr.recovered)
 							- (src[idx - 1].confirmed - src[idx - 1].deaths - src[idx - 1].recovered),
 							casesPerMillion: Math.round((curr.confirmed * 1000000) / state.population),
 							deathRate: curr.deaths > 5 ? this.round((curr.deaths * 100) / (curr.recovered + curr.deaths)) : '',
 							tests: curr.tested && curr.tested > 0 ? curr.tested : 0,
-							positivePercent: curr.tested && curr.tested ? ((curr.confirmed * 100) / curr.tested).toFixed(2) : 0,
+							dailyPositivePercent: newCases > 0 && newTests > 0 ? (newCases * 100) / newTests : 0,
+							positivePercent: curr.tested && curr.tested ? parseFloat(((curr.confirmed * 100) / curr.tested).toFixed(2))
+								: 0,
 							testsPerMillion: curr.tested && curr.tested ? Math.round((curr.tested * 1000000) / state.population) : 0,
 							deathsPerMillion: curr.deaths > 5 ? ((curr.deaths * 1000000) / state.population).toFixed(2) : 0
 						};
 					});
 				MovingAverage.calculate(cases, 'newCases');
-				MovingAverage.for7days(cases, 'newTests', 'tests7DayMA');
-
+				MovingAverage.for7days(cases, 'newTests', 'tests7DayMA', true);
+				MovingAverage.for7days(cases, 'dailyPositivePercent', 'dailyPositive7DayMA', false);
 				this._all.set(state.name, cases);
 			}
 		);

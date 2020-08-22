@@ -29,14 +29,15 @@ class MovingAverage {
 		}
 	}
 
-	for7days = (array, field, newField) => {
+	for7days = (array, field, newField, round) => {
 		if (Array.isArray(array) && array.length > 0) {
 			array.forEach((curr, idx, src) => {
 				curr[newField] = 0;
 				if (idx > 7) {
-					curr[newField] = Math.round(src.slice(idx - 6, idx + 1).reduce((prev, current) => {
+					const ma = src.slice(idx - 6, idx + 1).reduce((prev, current) => {
 						return prev + current[field];
-					}, 0) / 7);
+					}, 0) / 7;
+					curr[newField] = round ? Math.round(ma) : parseFloat(ma.toFixed(2));
 					// New cases, deaths, recovered are 0 until there is a daily update.
 					// If 0, copy last days moving average for field.
 					if (idx === (src.length - 1) && curr[field] === 0) {

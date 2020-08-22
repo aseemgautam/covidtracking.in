@@ -130,8 +130,8 @@ class Districts {
 			});
 			if (districtData.length > 14) {
 				MovingAverage.calculate(districtData, 'newCases');
-				MovingAverage.for7days(districtData, 'newRecover', 'newRecovered7DayMA');
-				MovingAverage.for7days(districtData, 'newCases', 'newCases7DayMA');
+				MovingAverage.for7days(districtData, 'newRecover', 'newRecovered7DayMA', true);
+				MovingAverage.for7days(districtData, 'newCases', 'newCases7DayMA', true);
 
 				const last = _.last(districtData);
 				last.ma14 = _.nth(districtData, -14).movingAvg7days;

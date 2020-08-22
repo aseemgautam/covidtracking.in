@@ -3,7 +3,8 @@ import _ from 'lodash';
 import numeral from 'numeral';
 import CovidStatistic from './CovidStatistic';
 
-const NationalStats = ({ testingData, covidDataIndia, cases, recovered, deaths, active }) => {
+const NationalStats = ({ testingData, covidDataIndia, cases, recovered, deaths,
+	active, tests, positivity, recoveryRate, deathRate }) => {
 	const { latest } = covidDataIndia;
 	const positivityRate = (_.last(testingData).positive) / _.last(testingData).samples;
 	return (
@@ -58,6 +59,7 @@ const NationalStats = ({ testingData, covidDataIndia, cases, recovered, deaths, 
 						value={covidDataIndia.deathRate}
 						suffix="%"
 						precision={2}
+						now={`${deathRate}%`}
 					/>
 				</Col>
 				<Col xs={12} sm={8} lg={6}>
@@ -66,15 +68,16 @@ const NationalStats = ({ testingData, covidDataIndia, cases, recovered, deaths, 
 						value={covidDataIndia.recoveryRate}
 						suffix="%"
 						precision={2}
+						now={`${recoveryRate}%`}
 					/>
 				</Col>
 				<Col xs={12} sm={8} lg={6}>
 					<CovidStatistic
 						title="Positivity Rate"
 						value={numeral(positivityRate).format('0.00%')}
-						suffix="DOWN"
 						suffixClassName="green7"
 						precision={2}
+						now={positivity > 0 ? `${positivity}%` : '-'}
 					/>
 				</Col>
 				<Col xs={12} sm={8} lg={6}>
@@ -84,6 +87,7 @@ const NationalStats = ({ testingData, covidDataIndia, cases, recovered, deaths, 
 						suffix={_.last(testingData).newSamples}
 						suffixClassName="green7"
 						precision={0}
+						now={`+${tests}`}
 					/>
 				</Col>
 			</Row>
