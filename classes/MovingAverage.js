@@ -21,7 +21,7 @@ class MovingAverage {
 					curr.movingAvg7daysRate = Math.round(((curr.movingAvg7days - src[idx - 7].movingAvg7days)
 						/ (src[idx - 7].movingAvg7days ? src[idx - 7].movingAvg7days : 1)) * 100);
 				}
-				if (src[idx - 14]) {
+				if (src[idx - 20]) { // 21st day
 					curr.movingAvg14daysRate = Math.round(((src[idx].movingAvg7days - src[idx - 14].movingAvg7days)
 						/ (src[idx - 14].movingAvg7days ? src[idx - 14].movingAvg7days : 1)) * 100);
 				}

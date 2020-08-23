@@ -161,9 +161,7 @@ class Districts {
 	}
 
 	single = async (state, district) => {
-		if (this._all.length <= 0) {
-			await this._fetch();
-		}
+		await this._fetch();
 		return _.filter(this._all, { state, district });
 	}
 
