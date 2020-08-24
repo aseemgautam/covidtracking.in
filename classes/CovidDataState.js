@@ -62,7 +62,7 @@ class CovidDataState {
 							positivePercent: curr.tested && curr.tested ? parseFloat(((curr.confirmed * 100) / curr.tested).toFixed(2))
 								: 0,
 							testsPerMillion: curr.tested && curr.tested ? Math.round((curr.tested * 1000000) / state.population) : 0,
-							deathsPerMillion: curr.deaths > 5 ? ((curr.deaths * 1000000) / state.population).toFixed(2) : 0
+							deathsPerMillion: curr.deaths > 5 ? ((curr.deaths * 1000000) / state.population).toFixed(0) : 0
 						};
 					});
 				MovingAverage.calculate(cases, 'newCases');

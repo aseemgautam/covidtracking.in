@@ -7,7 +7,7 @@ const { TabPane } = Tabs;
 
 const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) => {
 	let liveCounter = 0; let cases = 0; let recovered = 0; let deaths = 0; let active = 0; let tests = 0;
-	const posRates = []; let positivity = 0;
+	let positivity = 0;
 	for (let i = 0; i < stateDataLatest.length; i++) {
 		cases += stateDataLatest[i].newCases;
 		recovered += stateDataLatest[i].newRecover;
@@ -20,7 +20,7 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 	active = cases - recovered - deaths;
 	const recoveryRate = ((recovered * 100) / cases).toFixed(2);
 	const deathRate = ((deaths * 100) / (deaths + recovered)).toFixed(2);
-	positivity = ((cases * 100) / tests).toFixed(2);
+	positivity = tests > 0 ? ((cases * 100) / tests).toFixed(2) : '-';
 	return (
 		<Tabs tabBarExtraContent={
 			(

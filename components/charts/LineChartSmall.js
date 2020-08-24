@@ -35,7 +35,7 @@ const LineChartSmall = ({ data, width }) => {
 				series: [{
 					data,
 					type: 'line',
-					smooth: true,
+					smooth: false,
 					symbol: null,
 					animation: false,
 					hoverAnimation: false,
