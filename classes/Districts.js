@@ -114,7 +114,8 @@ class Districts {
 		this._all.length = 0;
 		this._latest.length = 0;
 		valid.forEach(record => { // loop all districts
-			const { population } = _.find(populations, { state: record.state, district: record.district });
+			const populationObj = _.find(populations, { state: record.state, district: record.district });
+			const population = populationObj ? populationObj.population : 0;
 			const districtData = _.filter(data, district => {
 				return district.state === record.state && district.district === record.district;
 			}).map((curr, idx, src) => {
