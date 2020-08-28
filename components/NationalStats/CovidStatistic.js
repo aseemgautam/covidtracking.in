@@ -23,7 +23,7 @@ const CovidStatistic = ({ title, value, suffix, className, suffixClassName, prec
 					</>
 				)}
 			/>
-			{/* {now && nowElement} */}
+			{now && nowElement}
 		</div>
 	);
 };

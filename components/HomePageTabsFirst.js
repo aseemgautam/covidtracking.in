@@ -40,14 +40,14 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 				<NationalStats
 					testingData={testingData}
 					covidDataIndia={indiaData}
-					// cases={cases}
-					// recovered={recovered}
-					// deaths={deaths}
-					// active={active}
-					// tests={tests}
-					// positivity={positivity}
-					// recoveryRate={recoveryRate}
-					// deathRate={deathRate}
+					cases={cases}
+					recovered={recovered}
+					deaths={deaths}
+					active={active}
+					tests={tests}
+					positivity={positivity}
+					recoveryRate={recoveryRate}
+					deathRate={deathRate}
 				/>
 			</TabPane>
 			{/* <TabPane
@@ -70,7 +70,7 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 					deaths={_.map(indiaData.cases, 'newDeaths')}
 				/>
 			</TabPane> */}
-			{/* <TabPane
+			<TabPane
 				tab={
 					(
 						<div>+Today &nbsp;<Tag style={{ color: '#303030' }} color="#FFD666">{liveCounter}</Tag></div>
@@ -79,7 +79,7 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 				key="3"
 			>
 				<DailyReportSection casesByStateLatest={stateDataLatest} />
-			</TabPane> */}
+			</TabPane>
 		</Tabs>
 	);
 };

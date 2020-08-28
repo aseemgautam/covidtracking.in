@@ -53,7 +53,7 @@ const columns = [
 	},
 	{ title: 'Tests',
 		dataIndex: 'newTests',
-		width: 100,
+		width: 90,
 		align: 'right',
 		sorter: (a, b) => {
 			return a.newTests - b.newTests;
@@ -82,7 +82,7 @@ const columns = [
 	},
 	{ title: '+ve %',
 		dataIndex: 'dailyPositivity',
-		width: 80,
+		width: 55,
 		align: 'right',
 		sorter: (a, b) => {
 			return a.dailyPositivity - b.dailyPositivity;
@@ -90,7 +90,7 @@ const columns = [
 	},
 	{ title: 'Deaths',
 		dataIndex: 'newDeaths',
-		width: 60,
+		width: 50,
 		align: 'right',
 		sortDirections: ['descend', 'ascend'],
 		sorter: (a, b) => {
@@ -118,7 +118,7 @@ const DailyReportTable = ({ casesByStateLatest }) => {
 			})}
 			rowKey="state"
 			size="small"
-			scroll={{ x: 600 }}
+			scroll={{ x: 500 }}
 			pagination={{ size: 'default', pageSize: 40, hideOnSinglePage: true }}
 		/>
 	);
