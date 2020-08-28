@@ -53,7 +53,7 @@ const columns = [
 	},
 	{ title: 'Tests',
 		dataIndex: 'newTests',
-		width: 100,
+		width: 110,
 		align: 'right',
 		sorter: (a, b) => {
 			return a.newTests - b.newTests;
@@ -82,7 +82,7 @@ const columns = [
 	},
 	{ title: '+ve %',
 		dataIndex: 'dailyPositivity',
-		width: 60,
+		width: 65,
 		align: 'right',
 		sorter: (a, b) => {
 			return a.dailyPositivity - b.dailyPositivity;
@@ -100,7 +100,7 @@ const columns = [
 	{ title: 'Recovered',
 		dataIndex: 'newRecover',
 		align: 'right',
-		width: 70,
+		width: 80,
 		sortDirections: ['descend', 'ascend'],
 		sorter: (a, b) => {
 			return a.newRecover - b.newRecover;
