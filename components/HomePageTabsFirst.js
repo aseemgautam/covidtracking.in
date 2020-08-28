@@ -1,9 +1,12 @@
-import { Tabs, Tag } from 'antd';
+import { Tabs, Tag, Select } from 'antd';
+// import { BarChartOutlined } from '@ant-design/icons';
 import _ from 'lodash';
 import NationalStats from './NationalStats';
 import DailyReportSection from './DailyReportSection';
+// import BarAndLineChart from './chartsv2/BarAndLineChart';
 
 const { TabPane } = Tabs;
+const { Option } = Select;
 
 const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) => {
 	let liveCounter = 0; let cases = 0; let recovered = 0; let deaths = 0; let active = 0; let tests = 0;
@@ -37,26 +40,46 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 				<NationalStats
 					testingData={testingData}
 					covidDataIndia={indiaData}
-					cases={cases}
-					recovered={recovered}
-					deaths={deaths}
-					active={active}
-					tests={tests}
-					positivity={positivity}
-					recoveryRate={recoveryRate}
-					deathRate={deathRate}
+					// cases={cases}
+					// recovered={recovered}
+					// deaths={deaths}
+					// active={active}
+					// tests={tests}
+					// positivity={positivity}
+					// recoveryRate={recoveryRate}
+					// deathRate={deathRate}
 				/>
 			</TabPane>
-			<TabPane
+			{/* <TabPane
+				tab={
+					(<div><BarChartOutlined />Graphics</div>)
+				}
+				key="2"
+			>
+				<div className="flex-row-spread chart-title">
+					<h3>New cases by day</h3>
+					<Select defaultValue="cases" style={{ width: 190 }}>
+						<Option value="cases">New Cases & Deaths</Option>
+						<Option value="tests">Tests & Positivity</Option>
+					</Select>
+				</div>
+				<BarAndLineChart
+					barData={_.map(indiaData.cases, 'newCases')}
+					xAxisLabels={_.map(indiaData.cases, 'date')}
+					lineData={_.map(indiaData.cases, 'movingAvg7days')}
+					deaths={_.map(indiaData.cases, 'newDeaths')}
+				/>
+			</TabPane> */}
+			{/* <TabPane
 				tab={
 					(
 						<div>+Today &nbsp;<Tag style={{ color: '#303030' }} color="#FFD666">{liveCounter}</Tag></div>
 					)
 				}
-				key="2"
+				key="3"
 			>
 				<DailyReportSection casesByStateLatest={stateDataLatest} />
-			</TabPane>
+			</TabPane> */}
 		</Tabs>
 	);
 };
