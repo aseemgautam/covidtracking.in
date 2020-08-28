@@ -53,7 +53,7 @@ const columns = [
 	},
 	{ title: 'Tests',
 		dataIndex: 'newTests',
-		width: 90,
+		width: 100,
 		align: 'right',
 		sorter: (a, b) => {
 			return a.newTests - b.newTests;
@@ -82,7 +82,7 @@ const columns = [
 	},
 	{ title: '+ve %',
 		dataIndex: 'dailyPositivity',
-		width: 55,
+		width: 60,
 		align: 'right',
 		sorter: (a, b) => {
 			return a.dailyPositivity - b.dailyPositivity;
