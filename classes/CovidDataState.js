@@ -23,7 +23,7 @@ class CovidDataState {
 		// if (this._all.Size > 0) {
 		// 	return this._all;
 		// }
-		const testingData = await CovidDataTesting.all();
+		// const testingData = await CovidDataTesting.all();
 		// eslint-disable-next-line max-len
 		// const res = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQRyjPj_VXGIOYnCy5eoy3YcN9yA_yFKWd4AdkMXFam62N4Ik-D6A6cwFXt2N2LwpncJEd-dFn7s5Ez/pub?gid=2100676919&single=true&output=csv');
 		const res = await fetch('https://api.covid19india.org/csv/latest/states.csv');
@@ -38,9 +38,12 @@ class CovidDataState {
 				return h.toLowerCase();
 			}
 		});
+		const data2 = _.filter(data, record => {
+			return record.date !== '2020-08-30';
+		});
 		IndianStates.states.forEach( // loop all states
 			state => {
-				const cases = _.filter(data, { state: state.name })
+				const cases = _.filter(data2, { state: state.name })
 					.map((curr, idx, src) => {
 						const newCases = idx === 0 ? 0 : curr.confirmed - src[idx - 1].confirmed;
 						const newTests = idx === 0 ? 0 : curr.tested - src[idx - 1].tested;
