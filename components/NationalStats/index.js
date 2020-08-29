@@ -84,7 +84,7 @@ const NationalStats = ({ testingData, covidDataIndia, cases, recovered, deaths,
 					<CovidStatistic
 						title="Covid Tests"
 						value={numeral(_.last(testingData).samples).format('0.00a')}
-						suffix={_.last(testingData).newSamples}
+						// suffix={_.last(testingData).newSamples}
 						suffixClassName="green7"
 						precision={0}
 						now={`+${tests}`}
