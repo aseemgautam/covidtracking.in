@@ -25,7 +25,7 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 	positivity = tests > 0 ? ((cases * 100) / tests).toFixed(2) : '-';
 	let tabExtraContent = <span />;
 
-	if (typeof window !== 'undefined') {
+	if (typeof window !== 'undefined' && window.innerWidth > 576) {
 		tabExtraContent = <div style={{ marginTop: '4px' }}>{buildTime}</div>;
 	}
 
