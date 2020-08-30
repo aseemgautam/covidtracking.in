@@ -57,7 +57,7 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 				key="2"
 			>
 				<Row gutter={[24, 16]}>
-					<Col xs={24} sm={12}>
+					<Col xs={24} md={12}>
 						<div className="flex-row-spread chart-title">
 							<h4>New Cases & Deaths</h4>
 						</div>
