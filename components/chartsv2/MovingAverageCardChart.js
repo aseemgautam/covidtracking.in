@@ -5,7 +5,7 @@ import line from 'echarts/lib/chart/line';
 import tooltip from 'echarts/lib/component/tooltip';
 import numeral from 'numeral';
 
-const MovingAverageCardChart = ({ data, width, newCases, xAxisData }) => {
+const MovingAverageCardChart = ({ data, width, newCases, dates }) => {
 	const container = useRef(null);
 	const chartWidth = useRef(0);
 	useEffect(() => {
@@ -22,7 +22,7 @@ const MovingAverageCardChart = ({ data, width, newCases, xAxisData }) => {
 				},
 				backgroundColor: 'transparent',
 				xAxis: {
-					data: xAxisData,
+					data: dates,
 					type: 'category',
 					boundaryGap: false
 				},

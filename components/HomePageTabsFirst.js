@@ -1,12 +1,12 @@
-import { Tabs, Tag, Select } from 'antd';
-// import { BarChartOutlined } from '@ant-design/icons';
+import { Tabs, Tag } from 'antd';
+import { BarChartOutlined } from '@ant-design/icons';
 import _ from 'lodash';
 import NationalStats from './NationalStats';
 import DailyReportSection from './DailyReportSection';
-// import BarAndLineChart from './chartsv2/BarAndLineChart';
+import NewCasesAndDeathsChart from './chartsv2/NewCasesAndDeathsChart';
 
 const { TabPane } = Tabs;
-const { Option } = Select;
+// const { Option } = Select;
 
 const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) => {
 	let liveCounter = 0; let cases = 0; let recovered = 0; let deaths = 0; let active = 0; let tests = 0;
@@ -50,26 +50,26 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 					deathRate={deathRate}
 				/>
 			</TabPane>
-			{/* <TabPane
+			<TabPane
 				tab={
 					(<div><BarChartOutlined />Graphics</div>)
 				}
 				key="2"
 			>
 				<div className="flex-row-spread chart-title">
-					<h3>New cases by day</h3>
-					<Select defaultValue="cases" style={{ width: 190 }}>
+					<h3>New cases and deaths over time</h3>
+					{/* <Select defaultValue="cases" style={{ width: 190 }}>
 						<Option value="cases">New Cases & Deaths</Option>
 						<Option value="tests">Tests & Positivity</Option>
-					</Select>
+					</Select> */}
 				</div>
-				<BarAndLineChart
-					barData={_.map(indiaData.cases, 'newCases')}
-					xAxisLabels={_.map(indiaData.cases, 'date')}
-					lineData={_.map(indiaData.cases, 'movingAvg7days')}
+				<NewCasesAndDeathsChart
+					newCases={_.map(indiaData.cases, 'newCases')}
+					dates={_.map(indiaData.cases, 'date')}
+					movingAverage={_.map(indiaData.cases, 'movingAvg7days')}
 					deaths={_.map(indiaData.cases, 'newDeaths')}
 				/>
-			</TabPane> */}
+			</TabPane>
 			<TabPane
 				tab={
 					(

@@ -18,7 +18,7 @@ export default async (req, res) => {
 		}
 	});
 	const positivity = ((newCases * 100) / newTests).toFixed(2);
-	const day = Utils.shortDateAndMonth(new Date());
+	const day = Utils.shortMonthAndDate(new Date());
 	const line1 = `#CoronavirusIndia ${day} Bulletin`;
 	// eslint-disable-next-line max-len
 	const line2 = `Cases +${newCases}, Deaths +${newDeaths}, Recovered +${newRecover}, Tests +${newTests}, Positivity Rate ${positivity}%`;

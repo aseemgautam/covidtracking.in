@@ -38,12 +38,12 @@ class CovidDataState {
 				return h.toLowerCase();
 			}
 		});
-		const data2 = _.filter(data, record => {
-			return record.date !== '2020-08-30';
-		});
+		// const data2 = _.filter(data, record => {
+		// 	return record.date !== '2020-08-30';
+		// });
 		IndianStates.states.forEach( // loop all states
 			state => {
-				const cases = _.filter(data2, { state: state.name })
+				const cases = _.filter(data, { state: state.name })
 					.map((curr, idx, src) => {
 						const newCases = idx === 0 ? 0 : curr.confirmed - src[idx - 1].confirmed;
 						const newTests = idx === 0 ? 0 : curr.tested - src[idx - 1].tested;

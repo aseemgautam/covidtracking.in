@@ -85,6 +85,10 @@ h1, h2, h3, h4 {
   @extend %flex-row-center;
 }
 
+.flex-row-spread {
+	@extend %flex-row-spread;
+}
+
 .link { color: vars.$blue !important; }
 
 #loading {

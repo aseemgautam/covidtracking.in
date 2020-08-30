@@ -12,7 +12,7 @@ const MovingAverageCard = React.memo(({ cases, days }) => {
 		.forEach(curr => {
 			movingAverage.push(curr.movingAvg7days);
 			newCases.push(curr.newCases);
-			dates.push(Utils.shortDateAndMonth(curr.date));
+			dates.push(Utils.shortMonthAndDate(curr.date));
 		}, []);
 	return (
 		<>
@@ -30,7 +30,7 @@ const MovingAverageCard = React.memo(({ cases, days }) => {
 						fieldY="movingAverage"
 						data={movingAverage}
 						newCases={newCases}
-						xAxisData={dates}
+						dates={dates}
 					/>
 				</Col>
 			</Row>

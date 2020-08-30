@@ -43,7 +43,12 @@ $ant-progress-step-color: #ccc;
   justify-content: center;
   align-items: center;
 }
-
+%flex-row-spread {
+	display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 %flex-row {
 	display: flex;
 	// justify-content: center;
