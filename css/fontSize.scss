@@ -14,7 +14,13 @@ html,body {
 			font-size: 20px;
 		}
 	}
-	.daily-report-table .ant-table, .state-table .ant-table-small, .ant-tag {
+	.ant-tag.live-counter {
+		font-size: 2.5vw;
+	}
+	.daily-report-table .ant-tag {
+		font-size: 3vw;
+	}
+	.daily-report-table .ant-table, .state-table .ant-table-small {
 		font-size: 3.1vw !important;
 	}
 	.today-badge, .ant-badge-count, .ant-tabs-extra-content,

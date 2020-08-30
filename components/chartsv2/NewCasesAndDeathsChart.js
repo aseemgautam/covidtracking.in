@@ -66,7 +66,7 @@ const NewCasesAndDeathsChart = ({ newCases, movingAverage, dates, deaths }) => {
 				},
 				grid: [{
 					left: 0,
-					right: 10,
+					right: 0,
 					top: 60,
 					height: '35%'
 				}, {

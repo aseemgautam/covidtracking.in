@@ -82,7 +82,7 @@ const columns = [
 	},
 	{ title: '+ve %',
 		dataIndex: 'dailyPositivity',
-		width: 65,
+		width: 80,
 		align: 'right',
 		sorter: (a, b) => {
 			return a.dailyPositivity - b.dailyPositivity;
@@ -100,7 +100,7 @@ const columns = [
 	{ title: 'Recovered',
 		dataIndex: 'newRecover',
 		align: 'right',
-		width: 80,
+		width: 100,
 		sortDirections: ['descend', 'ascend'],
 		sorter: (a, b) => {
 			return a.newRecover - b.newRecover;

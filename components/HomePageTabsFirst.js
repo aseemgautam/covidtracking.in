@@ -73,7 +73,11 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 			<TabPane
 				tab={
 					(
-						<div>+Today &nbsp;<Tag style={{ color: '#303030' }} color="#FFD666">{liveCounter}</Tag></div>
+						<div>+Today &nbsp;
+							<Tag className="live-counter" style={{ color: '#303030' }} color="#FFD666">
+								{liveCounter}
+							</Tag>
+						</div>
 					)
 				}
 				key="3"

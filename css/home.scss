@@ -29,6 +29,12 @@ h2 {
 	display: inline-block;
 }
 
+.ant-tag.live-counter {
+	padding: 0 4px;
+	font-size: 11px;
+	line-height: 18px;
+}
+
 @media screen and (max-width: 576px) {
 	.today-badge .ant-badge-count {
 		min-width: 16px;
