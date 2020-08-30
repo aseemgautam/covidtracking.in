@@ -11,7 +11,7 @@ import numeral from 'numeral';
 import Utils from '../../classes/Utils';
 import chartSettings from './Settings';
 
-const NewCasesAndDeathsChart = ({ newCases, movingAverage, dates, deaths }) => {
+const TestAndPositivityChart = ({ tests, movingAverage, dates, positivity, positivityMovingAverage }) => {
 	const container = useRef(null);
 	const chartWidth = useRef(0);
 	useEffect(() => {
@@ -26,9 +26,11 @@ const NewCasesAndDeathsChart = ({ newCases, movingAverage, dates, deaths }) => {
 				tooltip: {
 					...chartSettings.tooltip,
 					formatter: params => {
-						return `<b>${Utils.longMonthAndDate(params[0].name)}</b> <br />New Cases: ${newCases[params[0].dataIndex]}
+						return `<b>${Utils.longMonthAndDate(params[0].name)}</b> <br />
+							Tests: ${numeral(tests[params[0].dataIndex]).format('0,0')}
 							<br />7-day average: ${numeral(movingAverage[params[0].dataIndex]).format('0,0')}
-							<br />Deaths: ${deaths[params[0].dataIndex]}`;
+							<br />Positivity: ${numeral(positivity[params[0].dataIndex]).format('0.00')}%
+							<br />7-day average: ${numeral(positivityMovingAverage[params[0].dataIndex]).format('0.00')}%`;
 					},
 					axisPointer: {
 						animation: false
@@ -42,8 +44,8 @@ const NewCasesAndDeathsChart = ({ newCases, movingAverage, dates, deaths }) => {
 					end: 100,
 				},
 				legend: {
-					data: ['New Cases', '7 day average', 'Deaths'],
-					left: -5
+					left: -5,
+					itemGap: 8
 				},
 				xAxis: [{
 					data: dates,
@@ -77,51 +79,63 @@ const NewCasesAndDeathsChart = ({ newCases, movingAverage, dates, deaths }) => {
 				}],
 				yAxis: [{
 					...chartSettings.yAxis,
-					minInterval: 20000,
-					max: 80000,
+					max: 1200000,
+					minInterval: 500000,
 				}, {
 					...chartSettings.yAxis,
 					gridIndex: 1,
-					minInterval: 1000,
-					max: 2000
+					// minInterval: 1000,
+					// max: 2000
 				}],
 				series: [
 					{
+						...chartSettings.barSeries,
+						name: 'Tests',
+						data: tests,
+						color: '#ffd591',
+						emphasis: {
+							itemStyle: {
+								color: '#ffa940'
+							}
+						},
+					},
+					{
 						...chartSettings.lineSeries,
-						name: '7 day average',
+						name: '7 day avg',
+						color: '#d46b08',
 						data: movingAverage,
 						lineStyle: {
-							color: '#CF1110',
+							color: '#d46b08',
 							width: 2
 						},
 						areaStyle: {
-							color: '#FAE6E6'
+							color: '#ffe7ba'
 						},
 					},
 					{
-						...chartSettings.barSeries,
-						name: 'New Cases',
-						data: newCases,
-						color: '#FAC9C7',
-						emphasis: {
-							itemStyle: {
-								color: '#F87E7B'
-							}
-						},
-					},
-					{
-						...chartSettings.barSeries,
-						name: 'Deaths',
-						data: deaths,
-						color: '#bbb',
+						...chartSettings.lineSeries,
+						name: '+VE',
+						data: positivity,
+						color: '#d9d9d9',
 						xAxisIndex: 1,
 						yAxisIndex: 1,
-						emphasis: {
-							itemStyle: {
-								color: '#666'
-							}
-						},
+						lineStyle: {
+							color: '#d9d9d9',
+							width: 2
+						}
 					},
+					{
+						...chartSettings.lineSeries,
+						name: '+VE 7 day avg',
+						data: positivityMovingAverage,
+						color: '#ff7a45',
+						xAxisIndex: 1,
+						yAxisIndex: 1,
+						lineStyle: {
+							color: '#ff7a45',
+							width: 2
+						}
+					}
 				]
 			}
 		);
@@ -129,7 +143,7 @@ const NewCasesAndDeathsChart = ({ newCases, movingAverage, dates, deaths }) => {
 			chart.resize();
 		}
 		window.addEventListener('resize', handleResize);
-	}, [newCases, movingAverage, dates, deaths]);
+	}, [tests, movingAverage, dates, positivity, positivityMovingAverage]);
 	return (
 		<>
 			<div ref={container} />
@@ -137,4 +151,4 @@ const NewCasesAndDeathsChart = ({ newCases, movingAverage, dates, deaths }) => {
 	);
 };
 
-export default NewCasesAndDeathsChart;
+export default TestAndPositivityChart;

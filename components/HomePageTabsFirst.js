@@ -1,9 +1,9 @@
-import { Tabs, Tag } from 'antd';
-import { BarChartOutlined } from '@ant-design/icons';
+import { Tabs, Tag, Row, Col } from 'antd';
 import _ from 'lodash';
 import NationalStats from './NationalStats';
 import DailyReportSection from './DailyReportSection';
 import NewCasesAndDeathsChart from './chartsv2/NewCasesAndDeathsChart';
+import TestAndPositivityChart from './chartsv2/TestAndPositivityChart';
 
 const { TabPane } = Tabs;
 // const { Option } = Select;
@@ -56,19 +56,31 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 				}
 				key="2"
 			>
-				<div className="flex-row-spread chart-title">
-					<h3>New cases and deaths over time</h3>
-					{/* <Select defaultValue="cases" style={{ width: 190 }}>
-						<Option value="cases">New Cases & Deaths</Option>
-						<Option value="tests">Tests & Positivity</Option>
-					</Select> */}
-				</div>
-				<NewCasesAndDeathsChart
-					newCases={_.map(indiaData.cases, 'newCases')}
-					dates={_.map(indiaData.cases, 'date')}
-					movingAverage={_.map(indiaData.cases, 'movingAvg7days')}
-					deaths={_.map(indiaData.cases, 'newDeaths')}
-				/>
+				<Row gutter={[16, 8]}>
+					<Col xs={24} sm={12}>
+						<div className="flex-row-spread chart-title">
+							<h4>New Cases & Deaths</h4>
+						</div>
+						<NewCasesAndDeathsChart
+							newCases={_.map(indiaData.cases, 'newCases')}
+							dates={_.map(indiaData.cases, 'date')}
+							movingAverage={_.map(indiaData.cases, 'movingAvg7days')}
+							deaths={_.map(indiaData.cases, 'newDeaths')}
+						/>
+					</Col>
+					<Col xs={24} sm={12}>
+						<div className="flex-row-spread chart-title">
+							<h4>Daily Tests & Positivity (+VE) Rate</h4>
+						</div>
+						<TestAndPositivityChart
+							tests={_.map(testingData, 'newSamples')}
+							dates={_.map(testingData, 'date')}
+							movingAverage={_.map(testingData, 'New Samples 7 Day MA')}
+							positivity={_.map(testingData, 'percentPositive')}
+							positivityMovingAverage={_.map(testingData, '+ve Rate 7 Day MA')}
+						/>
+					</Col>
+				</Row>
 			</TabPane>
 			<TabPane
 				tab={
