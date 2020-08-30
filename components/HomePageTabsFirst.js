@@ -52,7 +52,7 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 			</TabPane>
 			<TabPane
 				tab={
-					(<div><BarChartOutlined />Graphics</div>)
+					(<div>Graphs</div>)
 				}
 				key="2"
 			>
