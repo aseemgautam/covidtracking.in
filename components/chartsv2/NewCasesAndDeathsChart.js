@@ -77,8 +77,8 @@ const NewCasesAndDeathsChart = ({ newCases, movingAverage, dates, deaths }) => {
 				}],
 				yAxis: [{
 					...chartSettings.yAxis,
-					minInterval: 25000,
-					max: 75000,
+					minInterval: 20000,
+					max: 80000,
 				}, {
 					...chartSettings.yAxis,
 					gridIndex: 1,
