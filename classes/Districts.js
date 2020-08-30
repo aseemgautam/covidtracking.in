@@ -135,7 +135,7 @@ class Districts {
 				MovingAverage.for7days(districtData, 'newCases', 'newCases7DayMA', true);
 
 				const last = _.last(districtData);
-				last.ma14 = _.nth(districtData, -14).movingAvg7days;
+				last.ma14 = _.nth(districtData, -15).movingAvg7days;
 				last.ma13 = _.nth(districtData, -13).movingAvg7days;
 				last.ma11 = _.nth(districtData, -11).movingAvg7days;
 				last.ma9 = _.nth(districtData, -9).movingAvg7days;
