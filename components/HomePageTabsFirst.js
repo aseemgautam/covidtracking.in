@@ -24,13 +24,13 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 	const recoveryRate = ((recovered * 100) / cases).toFixed(2);
 	const deathRate = ((deaths * 100) / (deaths + recovered)).toFixed(2);
 	positivity = tests > 0 ? ((cases * 100) / tests).toFixed(2) : '-';
+	// tabBarExtraContent={
+	// 	(
+	// 		<div>{buildTime}</div>
+	// 	)
+	// }
 	return (
-		<Tabs tabBarExtraContent={
-			(
-				<div>{buildTime}</div>
-			)
-		}
-		>
+		<Tabs>
 			<TabPane
 				tab={
 					(<div>National Statistics</div>)
