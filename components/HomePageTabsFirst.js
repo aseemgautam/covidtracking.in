@@ -6,7 +6,6 @@ import NewCasesAndDeathsChart from './chartsv2/NewCasesAndDeathsChart';
 import TestAndPositivityChart from './chartsv2/TestAndPositivityChart';
 
 const { TabPane } = Tabs;
-// const { Option } = Select;
 
 const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) => {
 	let liveCounter = 0; let cases = 0; let recovered = 0; let deaths = 0; let active = 0; let tests = 0;
@@ -24,13 +23,14 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 	const recoveryRate = ((recovered * 100) / cases).toFixed(2);
 	const deathRate = ((deaths * 100) / (deaths + recovered)).toFixed(2);
 	positivity = tests > 0 ? ((cases * 100) / tests).toFixed(2) : '-';
-	// tabBarExtraContent={
-	// 	(
-	// 		<div>{buildTime}</div>
-	// 	)
-	// }
+	let tabExtraContent = <span />;
+
+	if (typeof window !== 'undefined') {
+		tabExtraContent = <div style={{ marginTop: '4px' }}>{buildTime}</div>;
+	}
+
 	return (
-		<Tabs>
+		<Tabs tabBarExtraContent={tabExtraContent}>
 			<TabPane
 				tab={
 					(<div>National Statistics</div>)
