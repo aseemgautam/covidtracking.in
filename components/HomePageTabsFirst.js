@@ -7,24 +7,8 @@ import TestAndPositivityChart from './chartsv2/TestAndPositivityChart';
 
 const { TabPane } = Tabs;
 
-const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) => {
-	let liveCounter = 0; let cases = 0; let recovered = 0; let deaths = 0; let active = 0; let tests = 0;
-	let positivity = 0;
-	for (let i = 0; i < stateDataLatest.length; i++) {
-		cases += stateDataLatest[i].newCases;
-		recovered += stateDataLatest[i].newRecover;
-		deaths += stateDataLatest[i].newDeaths;
-		tests += stateDataLatest[i].newTests;
-		if (stateDataLatest[i].newCases > 0 || stateDataLatest[i].newRecovered > 0) {
-			liveCounter += 1;
-		}
-	}
-	active = cases - recovered - deaths;
-	const recoveryRate = ((recovered * 100) / cases).toFixed(2);
-	const deathRate = ((deaths * 100) / (deaths + recovered)).toFixed(2);
-	positivity = tests > 0 ? ((cases * 100) / tests).toFixed(2) : '-';
+const HomePageTabs = ({ indiaDailyStats, latest, stateDataLatest, buildTime }) => {
 	let tabExtraContent = <span />;
-
 	if (typeof window !== 'undefined' && window.innerWidth > 576) {
 		tabExtraContent = <div style={{ marginTop: '4px' }}>{buildTime}</div>;
 	}
@@ -38,17 +22,13 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 				key="1"
 			>
 				<NationalStats
-					testingData={testingData}
-					covidDataIndia={indiaData}
-					cases={cases}
-					recovered={recovered}
-					deaths={deaths}
-					active={active}
-					tests={tests}
-					positivity={positivity}
-					recoveryRate={recoveryRate}
-					deathRate={deathRate}
+					dailyStatistics={indiaDailyStats}
+					latest={latest}
 				/>
+				<p style={{ marginTop: '16px' }}>
+					Today&apos;s statistics are from end of day state bulletins usually published between 6:00 PM - midnight.
+					Yesterday & other date statistics are confirmed national numbers by MOHFW.
+				</p>
 			</TabPane>
 			<TabPane
 				tab={
@@ -62,10 +42,10 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 							<h4>New Cases & Deaths</h4>
 						</div>
 						<NewCasesAndDeathsChart
-							newCases={_.map(indiaData.cases, 'newCases')}
-							dates={_.map(indiaData.cases, 'date')}
-							movingAverage={_.map(indiaData.cases, 'movingAvg7days')}
-							deaths={_.map(indiaData.cases, 'newDeaths')}
+							newCases={_.map(indiaDailyStats, 'newCases')}
+							dates={_.map(indiaDailyStats, 'date')}
+							movingAverage={_.map(indiaDailyStats, 'movingAvg7days')}
+							deaths={_.map(indiaDailyStats, 'newDeaths')}
 						/>
 					</Col>
 					<Col xs={24} sm={12}>
@@ -73,11 +53,11 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 							<h4>Daily Tests & Positivity (+VE) Rate</h4>
 						</div>
 						<TestAndPositivityChart
-							tests={_.map(testingData, 'newSamples')}
-							dates={_.map(testingData, 'date')}
-							movingAverage={_.map(testingData, 'New Samples 7 Day MA')}
-							positivity={_.map(testingData, 'percentPositive')}
-							positivityMovingAverage={_.map(testingData, '+ve Rate 7 Day MA')}
+							tests={_.map(indiaDailyStats, 'newTests')}
+							dates={_.map(indiaDailyStats, 'date')}
+							movingAverage={_.map(indiaDailyStats, 'newTests7DayMA')}
+							positivity={_.map(indiaDailyStats, 'dailyPositivity')}
+							positivityMovingAverage={_.map(indiaDailyStats, 'dailyPositivity7DayMA')}
 						/>
 					</Col>
 				</Row>
@@ -87,7 +67,7 @@ const HomePageTabs = ({ testingData, indiaData, stateDataLatest, buildTime }) =>
 					(
 						<div>+Today &nbsp;
 							<Tag className="live-counter" style={{ color: '#303030' }} color="#FFD666">
-								{liveCounter}
+								{latest.count}
 							</Tag>
 						</div>
 					)

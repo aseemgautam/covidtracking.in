@@ -1,32 +1,34 @@
 /* eslint-disable no-restricted-syntax */
 import { Row, Col } from 'antd';
 import Head from 'next/head';
+import _ from 'lodash';
 import CovidDataIndia from '../classes/CovidDataIndia';
 import MovingAverageCard from '../components/NationalStats/MovingAverageCard';
 import CovidDataState from '../classes/CovidDataState';
 import HomePageTabsFirst from '../components/HomePageTabsFirst';
 import HomePageTabsSecond from '../components/HomePageTabsSecond';
 import Utils from '../classes/Utils';
+import DailyStatistic from '../classes/DailyStatistic';
 
-function Index({ testingData, indiaData, stateDataLatest, buildTime }) {
+function Index({ indiaDailyStats, latest, stateDataLatest, buildTime }) {
 	return (
 		<>
 			<Head>
 				<title>Covid-19 Tracking India</title>
 			</Head>
 			<HomePageTabsFirst
-				testingData={testingData}
-				indiaData={indiaData}
+				latest={latest}
+				indiaDailyStats={indiaDailyStats}
 				stateDataLatest={stateDataLatest}
 				buildTime={buildTime}
 			/>
 			<div className="subhead">Growth in daily cases over 7 & 14 days</div>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} sm={24} md={12}>
-					<MovingAverageCard cases={indiaData.cases} days={7} />
+					<MovingAverageCard cases={indiaDailyStats} days={7} />
 				</Col>
 				<Col xs={24} sm={24} md={12}>
-					<MovingAverageCard cases={indiaData.cases} days={14} />
+					<MovingAverageCard cases={indiaDailyStats} days={14} />
 				</Col>
 			</Row>
 			<HomePageTabsSecond stateDataLatest={stateDataLatest} />
@@ -36,14 +38,33 @@ function Index({ testingData, indiaData, stateDataLatest, buildTime }) {
 
 export async function getStaticProps() {
 	const covidDataIndia = new CovidDataIndia();
-	const testingData = await covidDataIndia.fetchTests();
-	const indiaData = await covidDataIndia.fetchDataIndia();
+	const indiaDailyStats = await covidDataIndia.fetchDataIndia();
 	const stateDataLatest = await CovidDataState.latest();
 	const buildTime = Utils.dateAndTime();
 
+	let cases = 0; let recovered = 0; let deaths = 0; let tests = 0;
+	let active = 0; let count = 0;
+	for (let i = 0; i < stateDataLatest.length; i++) {
+		cases += stateDataLatest[i].newCases;
+		recovered += stateDataLatest[i].newRecover;
+		deaths += stateDataLatest[i].newDeaths;
+		tests += stateDataLatest[i].newTests;
+		if (stateDataLatest[i].newCases > 0 || stateDataLatest[i].newRecovered > 0) {
+			count += 1;
+		}
+	}
+	active = cases - deaths - recovered;
+	const indiaLatest = _.last(indiaDailyStats);
+	const latest = new DailyStatistic(Utils.getDefaultDateFormat(new Date(stateDataLatest[0].date)),
+		indiaLatest.cases + cases, cases,
+		indiaLatest.active + active, active,
+		indiaLatest.recovered + recovered,
+		recovered, indiaLatest.deaths + deaths, deaths, indiaLatest.tests + tests,
+		tests);
+	latest.count = count;
 	return {
 		// will be passed to the page component as props
-		props: { indiaData, testingData, stateDataLatest, buildTime }
+		props: { indiaDailyStats, latest: JSON.parse(JSON.stringify(latest)), stateDataLatest, buildTime }
 	};
 }
 

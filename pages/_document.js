@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable react/no-danger */
 import React from 'react';
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 import { GA_TRACKING_ID } from '../lib/gtag';
 
@@ -9,10 +9,9 @@ export default class extends Document {
 	render() {
 		return (
 			// eslint-disable-next-line jsx-a11y/html-has-lang
-			<html>
+			<Html>
 				<Head>
 					<link rel="shortcut icon" href="/favicon.png" />
-					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 					<meta name="twitter:card" content="summary_large_image" />
 					<meta name="twitter:title" content="How is India doing - covidtracking.in" />
 					<meta name="twitter:description" content="Tracking COVID-19 in India using scientific criteria developed by CDC, USA" />
@@ -24,8 +23,6 @@ export default class extends Document {
 					<meta property="og:type" content="website" />
 					<meta property="og:url" content="https://covidtracking.in" />
 					<meta property="og:image" content="/og-img.png" />
-					<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-					{/* <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" /> */}
 					{/* Global Site Tag (gtag.js) - Google Analytics */}
 					<script
 						async
@@ -48,7 +45,7 @@ export default class extends Document {
 					<Main />
 					<NextScript />
 				</body>
-			</html>
+			</Html>
 		);
 	}
 }

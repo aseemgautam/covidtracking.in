@@ -1,7 +1,7 @@
 html,body {
 	font-size: 14px;
 }
-.ant-statistic-content, .ant-tabs-nav-container, .subhead {
+.ant-statistic-content, .subhead {
 	font-size: 16px;
 }
 .ant-tabs-extra-content {
@@ -28,10 +28,10 @@ html,body {
 	.now {
 		font-size: 3vw;
 	}
-	.ant-tabs-nav-container, .subhead, .trend-card .trend-card-title {
+	.ant-tabs-tab .ant-tabs-tab-btn, .subhead, .trend-card .trend-card-title, .ant-radio-button-wrapper {
 		font-size: 3.5vw;
 	}
-	html, body, p, .ant-select {
+	html, body, p, .ant-select, .ant-picker, .ant-picker-input > input {
 		font-size: 3.5vw;
 	}
 	.ant-statistic-content, .ant-statistic-content-suffix, .ant-statistic-content-value, .ant-statistic-content-value-decimal {

@@ -2,6 +2,7 @@
 import React from 'react';
 import App from 'next/app';
 import Router from 'next/router';
+import Head from 'next/head';
 import { LoadingOutlined } from '@ant-design/icons';
 import SiteLayout from '../components/Layout';
 import 'antd/es/grid/style/index.css';
@@ -16,12 +17,15 @@ import 'antd/es/breadcrumb/style/index.css';
 import 'antd/es/dropdown/style/index.css';
 import 'antd/es/tooltip/style/index.css';
 import 'antd/es/tag/style/index.css';
+import 'antd/es/space/style/index.css';
 import 'antd/es/menu/style/index.css';
 import 'antd/es/card/style/index.css';
 import 'antd/es/table/style/index.css';
 import 'antd/es/select/style/index.css';
 import 'antd/es/button/style/index.css';
+import 'antd/es/radio/style/index.css';
 import 'antd/es/pagination/style/index.css';
+import 'antd/es/date-picker/style/index.css';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-gesture-handling/dist/leaflet-gesture-handling.css';
 import '../css/style.scss';
@@ -55,10 +59,15 @@ class CovidTracking extends App {
 		const { Component, pageProps } = this.props;
 
 		return (
-			<SiteLayout>
-				<div id="loading"><LoadingOutlined /></div>
-				<Component {...pageProps} />
-			</SiteLayout>
+			<>
+				<Head>
+					<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+				</Head>
+				<SiteLayout>
+					<div id="loading"><LoadingOutlined /></div>
+					<Component {...pageProps} />
+				</SiteLayout>
+			</>
 		);
 	}
 }

@@ -10,6 +10,9 @@
 			right: 0;
 		}
 	}
+	.ant-table-tbody > tr:hover > td {
+    background-color: #fffae0;
+  }
 	.ant-tag-green {
 			color: #237804;
 			background-color: #e5f5e0;
@@ -22,24 +25,3 @@
 		}
 	}
 }
-
-// .daily-report-table, .daily-report-tags {
-// 	.newHigh {
-// 		color: #C71E1D;
-// 		background-color: #FFF2EC;
-// 	}
-// 	.high {
-// 		color: #FA521C;
-// 		background-color: #fff2e8;
-// 	}
-// 	.low {
-// 		color: #238B45;
-// 		background-color: #E8F5E0;
-// 	}
-// }
-
-// .daily-report-tags {
-// 	.newHigh, .high, .low {
-// 		border: none;
-// 	}
-// }
