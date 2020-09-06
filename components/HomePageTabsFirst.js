@@ -46,6 +46,7 @@ const HomePageTabs = ({ indiaDailyStats, latest, stateDataLatest, buildTime }) =
 							dates={_.map(indiaDailyStats, 'date')}
 							movingAverage={_.map(indiaDailyStats, 'movingAvg7days')}
 							deaths={_.map(indiaDailyStats, 'newDeaths')}
+							deathsMovingAverage={_.map(indiaDailyStats, 'newDeaths7DayMA')}
 						/>
 					</Col>
 					<Col xs={24} sm={12}>

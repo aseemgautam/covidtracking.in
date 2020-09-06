@@ -11,7 +11,7 @@ import numeral from 'numeral';
 import Utils from '../../classes/Utils';
 import chartSettings from './Settings';
 
-const NewCasesAndDeathsChart = ({ newCases, movingAverage, dates, deaths }) => {
+const NewCasesAndDeathsChart = ({ newCases, movingAverage, dates, deaths, deathsMovingAverage }) => {
 	const container = useRef(null);
 	const chartWidth = useRef(0);
 	useEffect(() => {
@@ -20,7 +20,7 @@ const NewCasesAndDeathsChart = ({ newCases, movingAverage, dates, deaths }) => {
 		}
 		chartWidth.current = container.current.parentElement.offsetWidth;
 		const chart = echarts.init(container.current, {},
-			{ width: 'auto', height: 400 });
+			{ width: 'auto', height: 420 });
 		chart.setOption(
 			{
 				tooltip: {
@@ -28,7 +28,8 @@ const NewCasesAndDeathsChart = ({ newCases, movingAverage, dates, deaths }) => {
 					formatter: params => {
 						return `<b>${Utils.longMonthAndDate(params[0].name)}</b> <br />New Cases: ${newCases[params[0].dataIndex]}
 							<br />7-day average: ${numeral(movingAverage[params[0].dataIndex]).format('0,0')}
-							<br />Deaths: ${deaths[params[0].dataIndex]}`;
+							<br />Deaths: ${deaths[params[0].dataIndex]}
+							<br />7-day average: ${deathsMovingAverage[params[0].dataIndex]}`;
 					},
 					axisPointer: {
 						animation: false
@@ -42,9 +43,21 @@ const NewCasesAndDeathsChart = ({ newCases, movingAverage, dates, deaths }) => {
 					end: 100,
 				},
 				legend: {
-					data: ['New Cases', '7 day average', 'Deaths'],
+					data: ['Cases', 'Cases Avg', 'Deaths', 'Deaths Avg'],
 					left: -5
 				},
+				// graphic: [
+				// 	{
+				// 		type: 'text',
+				// 		z: 100,
+				// 		style: {
+				// 			text: 'test',
+				// 			fill: '#000'
+				// 		},
+				// 		right: 'center',
+				// 		top: 'middle'
+				// 	}
+				// ],
 				xAxis: [{
 					data: dates,
 					...chartSettings.xAxis,
@@ -72,23 +85,32 @@ const NewCasesAndDeathsChart = ({ newCases, movingAverage, dates, deaths }) => {
 				}, {
 					left: 0,
 					right: 0,
-					top: '55%',
+					top: '49%',
 					height: '33%'
 				}],
 				yAxis: [{
 					...chartSettings.yAxis,
-					minInterval: 20000,
-					max: 80000,
+					minInterval: 25000,
+					max: 100000,
 				}, {
 					...chartSettings.yAxis,
 					gridIndex: 1,
 					minInterval: 1000,
-					max: 2000
+					max: 2000,
+					axisLabel: {
+						verticalAlign: 'top',
+						inside: true,
+						align: 'left',
+						margin: 0,
+						lineHeight: 20,
+						showMinLabel: false,
+						color: '#999'
+					}
 				}],
 				series: [
 					{
 						...chartSettings.lineSeries,
-						name: '7 day average',
+						name: 'Cases Avg',
 						data: movingAverage,
 						lineStyle: {
 							color: '#CF1110',
@@ -100,13 +122,27 @@ const NewCasesAndDeathsChart = ({ newCases, movingAverage, dates, deaths }) => {
 					},
 					{
 						...chartSettings.barSeries,
-						name: 'New Cases',
+						name: 'Cases',
 						data: newCases,
 						color: '#FAC9C7',
 						emphasis: {
 							itemStyle: {
 								color: '#F87E7B'
 							}
+						},
+					},
+					{
+						...chartSettings.lineSeries,
+						name: 'Deaths Avg',
+						data: deathsMovingAverage,
+						xAxisIndex: 1,
+						yAxisIndex: 1,
+						lineStyle: {
+							color: '#434343',
+							width: 2
+						},
+						areaStyle: {
+							color: '#f5f5f5'
 						},
 					},
 					{

@@ -74,7 +74,7 @@ const TestAndPositivityChart = ({ tests, movingAverage, dates, positivity, posit
 				}, {
 					left: 0,
 					right: 0,
-					top: '55%',
+					top: '50%',
 					height: '33%'
 				}],
 				yAxis: [{
@@ -84,8 +84,17 @@ const TestAndPositivityChart = ({ tests, movingAverage, dates, positivity, posit
 				}, {
 					...chartSettings.yAxis,
 					gridIndex: 1,
-					// minInterval: 1000,
-					// max: 2000
+					minInterval: 4,
+					max: 16,
+					axisLabel: {
+						verticalAlign: 'top',
+						inside: true,
+						align: 'left',
+						margin: 0,
+						lineHeight: 20,
+						showMinLabel: false,
+						color: '#999'
+					}
 				}],
 				series: [
 					{

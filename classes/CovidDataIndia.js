@@ -36,6 +36,7 @@ class CovidDataIndia {
 		});
 
 		MovingAverage.calculate(data, 'newCases');
+		MovingAverage.for7days(data, 'newDeaths', 'newDeaths7DayMA', true);
 		MovingAverage.for7days(data, 'newTests', 'newTests7DayMA', true);
 		MovingAverage.for7days(data, 'dailyPositivity', 'dailyPositivity7DayMA', false);
 		return JSON.parse(JSON.stringify(data));
