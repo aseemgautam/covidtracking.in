@@ -20,7 +20,7 @@ const TestAndPositivityChart = ({ tests, movingAverage, dates, positivity, posit
 		}
 		chartWidth.current = container.current.parentElement.offsetWidth;
 		const chart = echarts.init(container.current, {},
-			{ width: 'auto', height: 400 });
+			{ width: 'auto', height: 420 });
 		chart.setOption(
 			{
 				tooltip: {
