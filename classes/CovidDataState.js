@@ -59,13 +59,13 @@ class CovidDataState {
 							newActive: idx === 0 ? 0 : (curr.confirmed - curr.deaths - curr.recovered)
 							- (src[idx - 1].confirmed - src[idx - 1].deaths - src[idx - 1].recovered),
 							casesPerMillion: Math.round((curr.confirmed * 1000000) / state.population),
-							deathRate: curr.deaths > 5 ? this.round((curr.deaths * 100) / (curr.recovered + curr.deaths)) : '',
+							deathRate: curr.deaths > 0 ? this.round((curr.deaths * 100) / (curr.recovered + curr.deaths)) : '',
 							tests: curr.tested && curr.tested > 0 ? curr.tested : 0,
 							dailyPositivePercent: newCases > 0 && newTests > 0 ? (newCases * 100) / newTests : 0,
 							positivePercent: curr.tested && curr.tested ? parseFloat(((curr.confirmed * 100) / curr.tested).toFixed(2))
 								: 0,
 							testsPerMillion: curr.tested && curr.tested ? Math.round((curr.tested * 1000000) / state.population) : 0,
-							deathsPerMillion: curr.deaths > 5 ? ((curr.deaths * 1000000) / state.population).toFixed(0) : 0
+							deathsPerMillion: curr.deaths > 0 ? ((curr.deaths * 1000000) / state.population).toFixed(0) : 0
 						};
 					});
 				MovingAverage.calculate(cases, 'newCases');
@@ -78,9 +78,9 @@ class CovidDataState {
 	}
 
 	latest = async () => {
-		// if (this._latest) {
-		// 	return this._latest;
-		// }
+		if (this._latest) {
+			return this._latest;
+		}
 		await this.all();
 
 		this._latest = [];

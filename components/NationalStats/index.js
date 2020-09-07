@@ -5,10 +5,10 @@ import _ from 'lodash';
 import numeral from 'numeral';
 import CovidStatistic from './CovidStatistic';
 import DatePicker from '../DatePicker';
-import Utils from '../../classes/Utils';
 
-const NationalStats = ({ latest, dailyStatistics }) => {
+const NationalStats = ({ latest, dailyStatistics, showDateOptions }) => {
 	const [date, setDate] = useState(latest.date);
+	let statistic; let yesterdayDate;
 
 	function onDateChangeFromPicker(newDate) {
 		if (newDate && dayjs(newDate).isValid()) {
@@ -22,29 +22,40 @@ const NationalStats = ({ latest, dailyStatistics }) => {
 		// console.log(current);
 		return dayjs(current).isBefore(dayjs('2020-07-01')) || dayjs(current).isAfter(dayjs(latest.date));
 	}
-	const statistic = date === latest.date ? latest : _.find(dailyStatistics, { date });
+	// set dates;
+	const todayDate = latest.date;
+	if (date === latest.date && _.last(dailyStatistics).date === latest.date) {
+		yesterdayDate = _.nth(dailyStatistics, -2).date;
+		statistic = _.last(dailyStatistics);
+	} else {
+		yesterdayDate = _.last(dailyStatistics).date;
+		statistic = date === latest.date ? latest : _.find(dailyStatistics, { date });
+	}
 	return (
 		<>
-			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 16, sm: 16 }]}>
-				<Col xs={24}>
-					<Space>
-						<Radio.Group value={date} onChange={onDateChangeFromRadio}>
-							<Radio.Button value={latest.date}>Today</Radio.Button>
-							<Radio.Button
-								value={_.last(dailyStatistics).date}
-							>Yesterday
-							</Radio.Button>
-						</Radio.Group>
-						<DatePicker
-							inputReadOnly
-							allowClear={false}
-							value={dayjs(date)}
-							onChange={onDateChangeFromPicker}
-							disabledDate={disableDate}
-						/>
-					</Space>
-				</Col>
-			</Row>
+			{showDateOptions && (
+				<Row gutter={[{ xs: 8, sm: 16 }, { xs: 16, sm: 16 }]}>
+					<Col xs={24}>
+						<Space>
+							<Radio.Group value={date} onChange={onDateChangeFromRadio}>
+								<Radio.Button value={todayDate}>Today</Radio.Button>
+								<Radio.Button
+									value={yesterdayDate}
+								>Yesterday
+								</Radio.Button>
+							</Radio.Group>
+							<DatePicker
+								inputReadOnly
+								allowClear={false}
+								value={dayjs(date)}
+								onChange={onDateChangeFromPicker}
+								disabledDate={disableDate}
+								showToday={false}
+							/>
+						</Space>
+					</Col>
+				</Row>
+			)}
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={12} sm={8} lg={6}>
 					<CovidStatistic

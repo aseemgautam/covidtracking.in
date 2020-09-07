@@ -12,7 +12,6 @@ const HomePageTabs = ({ indiaDailyStats, latest, stateDataLatest, buildTime }) =
 	if (typeof window !== 'undefined' && window.innerWidth > 576) {
 		tabExtraContent = <div style={{ marginTop: '4px' }}>{buildTime}</div>;
 	}
-
 	return (
 		<Tabs tabBarExtraContent={tabExtraContent}>
 			<TabPane
@@ -24,9 +23,10 @@ const HomePageTabs = ({ indiaDailyStats, latest, stateDataLatest, buildTime }) =
 				<NationalStats
 					dailyStatistics={indiaDailyStats}
 					latest={latest}
+					showDateOptions
 				/>
 				<p style={{ marginTop: '16px' }}>
-					Today&apos;s statistics are from end of day state bulletins usually published between 6:00 PM - midnight.
+					Today&apos;s statistics are from end of day state bulletins published between 6:00 PM - midnight.
 					Yesterday & other date statistics are confirmed national numbers by MOHFW.
 				</p>
 			</TabPane>
