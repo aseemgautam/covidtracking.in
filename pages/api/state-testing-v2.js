@@ -14,7 +14,7 @@ export default async (req, res) => {
 		const testingData = _.filter(stateDataTesting, { state: current.state });
 		const result = {};
 		result.STATE = current.state;
-		const posRateDelta = (current.dailyPositive7DayMA - _.nth(stateData, -14).dailyPositive7DayMA).toFixed(2);
+		const posRateDelta = (current.dailyPositivity7DayMA - _.nth(stateData, -14).dailyPositivity7DayMA).toFixed(2);
 		let posRateTrend;
 		if (posRateDelta > 0.5) {
 			posRateTrend = `Increasing +${posRateDelta}%`;
