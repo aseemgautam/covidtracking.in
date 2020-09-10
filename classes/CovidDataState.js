@@ -51,7 +51,7 @@ class CovidDataState {
 							/ state.population),
 							newRecover: idx === 0 ? 0 : curr.recovered - src[idx - 1].recovered,
 							newDeaths: idx === 0 ? 0 : curr.deaths - src[idx - 1].deaths,
-							newTests: newTests > 0 ? newTests : 1,
+							newTests: newTests > 0 ? newTests : 0,
 							active: curr.confirmed - curr.deaths - curr.recovered,
 							newActive: idx === 0 ? 0 : (curr.confirmed - curr.deaths - curr.recovered)
 							- (src[idx - 1].confirmed - src[idx - 1].deaths - src[idx - 1].recovered),
