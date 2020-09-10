@@ -69,9 +69,11 @@ const CoronavirusCases = ({ stateStatistics, name }) => {
 export async function getStaticPaths() {
 	const paths = [];
 	IndiaStates.states.forEach(state => {
-		paths.push({
-			params: { name: state.name.split(' ').join('-') }
-		});
+		if (state.name !== 'Lakshadweep') {
+			paths.push({
+				params: { name: state.name.split(' ').join('-') }
+			});
+		}
 	});
 	return {
 		paths,
