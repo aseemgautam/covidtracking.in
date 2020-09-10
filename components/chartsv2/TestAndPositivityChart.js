@@ -1,5 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import React, { useRef, useEffect } from 'react';
+import _ from 'lodash';
+import { LineOutlined } from '@ant-design/icons';
 import echarts from 'echarts/lib/echarts';
 import bar from 'echarts/lib/chart/bar';
 import line from 'echarts/lib/chart/line';
@@ -7,6 +9,7 @@ import tooltip from 'echarts/lib/component/tooltip';
 import dataZoom from 'echarts/lib/component/dataZoom';
 import legend from 'echarts/lib/component/legend';
 import axisPointer from 'echarts/lib/component/axisPointer';
+import graphic from 'echarts/lib/component/graphic';
 import numeral from 'numeral';
 import Utils from '../../classes/Utils';
 import chartSettings from './Settings';
@@ -25,6 +28,7 @@ const TestAndPositivityChart = ({ tests, movingAverage, dates, positivity, posit
 			{
 				tooltip: {
 					...chartSettings.tooltip,
+					trigger: 'axis',
 					formatter: params => {
 						return `<b>${Utils.longMonthAndDate(params[0].name)}</b> <br />
 							Tests: ${numeral(tests[params[0].dataIndex]).format('0,0')}
@@ -34,8 +38,7 @@ const TestAndPositivityChart = ({ tests, movingAverage, dates, positivity, posit
 					},
 					axisPointer: {
 						animation: false
-					},
-					extraCssText: 'border-radius: 2px; padding: 8px; border: 1px solid #aaa'
+					}
 				},
 				dataZoom: {
 					show: true,
@@ -43,10 +46,7 @@ const TestAndPositivityChart = ({ tests, movingAverage, dates, positivity, posit
 					start: 50,
 					end: 100,
 				},
-				legend: {
-					left: -5,
-					itemGap: 8
-				},
+				graphic: chartSettings.getGraphicSettings('daily tests', 'positivity'),
 				xAxis: [{
 					data: dates,
 					...chartSettings.xAxis,
@@ -66,26 +66,14 @@ const TestAndPositivityChart = ({ tests, movingAverage, dates, positivity, posit
 				axisPointer: {
 					link: { xAxisIndex: 'all' }
 				},
-				grid: [{
-					left: 0,
-					right: 0,
-					top: 60,
-					height: '33%'
-				}, {
-					left: 0,
-					right: 0,
-					top: '50%',
-					height: '33%'
-				}],
+				grid: chartSettings.grid,
 				yAxis: [{
 					...chartSettings.yAxis,
-					max: 1200000,
-					minInterval: 500000,
+					...chartSettings.getAxisIntervals(_.max(tests))
 				}, {
 					...chartSettings.yAxis,
 					gridIndex: 1,
-					minInterval: 4,
-					max: 16,
+					...chartSettings.getAxisIntervals(_.max(positivity)),
 					axisLabel: {
 						verticalAlign: 'top',
 						inside: true,

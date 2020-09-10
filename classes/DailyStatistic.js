@@ -2,7 +2,7 @@ class DailyStatistic {
 	constructor(date, cases, newCases, active, newActive, recovered, newRecovered,
 		deaths, newDeaths, tests, newTests) {
 		this.date = date;
-		this.cases = cases;
+		this.confirmed = cases;
 		this.newCases = newCases;
 		this.active = active;
 		this.newActive = newActive;

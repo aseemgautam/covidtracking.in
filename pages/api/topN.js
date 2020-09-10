@@ -7,11 +7,12 @@ import CovidDataIndia from '../../classes/CovidDataIndia';
 
 function getTopN(from, to, latest, districtData) {
 	const sorted = _.orderBy(latest, ['confirmed'], ['desc']);
-	let day0 = 0; let day1 = 0; let day2 = 0;
+	let day0 = 0; let day1 = 0; let day2 = 0; let day3 = 0;
 	sorted.slice(from, to).forEach(curr => {
-		day0 += _.nth(_.filter(districtData, { district: curr.district, state: curr.state }), -2).newCases;
-		day1 += _.nth(_.filter(districtData, { district: curr.district, state: curr.state }), -3).newCases;
-		day2 += _.nth(_.filter(districtData, { district: curr.district, state: curr.state }), -4).newCases;
+		day0 += _.nth(_.filter(districtData, { district: curr.district, state: curr.state }), -1).newCases;
+		day1 += _.nth(_.filter(districtData, { district: curr.district, state: curr.state }), -2).newCases;
+		day2 += _.nth(_.filter(districtData, { district: curr.district, state: curr.state }), -3).newCases;
+		day3 += _.nth(_.filter(districtData, { district: curr.district, state: curr.state }), -4).newCases;
 	});
 	const sum = sorted.slice(from, to).reduce((acc, curr) => {
 		return acc + curr.confirmed;
@@ -19,9 +20,10 @@ function getTopN(from, to, latest, districtData) {
 	return {
 		District: `${from}-${to}`,
 		Overall: sum,
-		Yesterday: day0,
-		'2 Days Ago': day1,
-		'3 Days Ago': day2
+		Today: day0,
+		Yesterday: day1,
+		'2 Days Ago': day2,
+		'3 Days Ago': day3
 	};
 }
 

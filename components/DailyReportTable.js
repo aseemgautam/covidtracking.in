@@ -119,7 +119,7 @@ const DailyReportTable = ({ casesByStateLatest }) => {
 			rowKey="state"
 			size="small"
 			scroll={{ x: 500 }}
-			pagination={{ size: 'default', pageSize: 40, hideOnSinglePage: true }}
+			pagination={{ size: 'default', pageSize: 17, hideOnSinglePage: true }}
 		/>
 	);
 };

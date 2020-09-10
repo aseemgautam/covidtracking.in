@@ -4,6 +4,8 @@ import bar from 'echarts/lib/chart/bar';
 import line from 'echarts/lib/chart/line';
 import tooltip from 'echarts/lib/component/tooltip';
 import numeral from 'numeral';
+import chartSettings from './Settings';
+import Utils from '../../classes/Utils';
 
 const MovingAverageCardChart = ({ data, width, newCases, dates }) => {
 	const container = useRef(null);
@@ -18,6 +20,12 @@ const MovingAverageCardChart = ({ data, width, newCases, dates }) => {
 		chart.setOption(
 			{
 				tooltip: {
+					...chartSettings.tooltip,
+					formatter: params => {
+						return `<b>${Utils.longMonthAndDate(dates[params.dataIndex])}</b> <br />
+							New Cases: ${numeral(newCases[params.dataIndex]).format('0,0')}
+							<br />7-day average: ${numeral(data[params.dataIndex]).format('0,0')}`;
+					},
 					show: true
 				},
 				backgroundColor: 'transparent',

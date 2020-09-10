@@ -26,7 +26,7 @@ export default async (req, res) => {
 			posRateTrend = 'Flat';
 			result.posRateColor = 'default';
 		}
-		result['POSITIVITY RATE'] = `${current.positivePercent}% ^${posRateTrend}^`;
+		result['POSITIVITY RATE'] = `${current.positivity}% ^${posRateTrend}^`;
 		result['AVG NEW CASES/DAY'] = current.movingAvg14daysRate;
 		result.trendColor = current.trendColor;
 		result.posRate14 = _.nth(stateData, -14).dailyPositive7DayMA;

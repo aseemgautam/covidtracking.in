@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import React, { useRef, useEffect } from 'react';
+import _ from 'lodash';
 import echarts from 'echarts/lib/echarts';
 import bar from 'echarts/lib/chart/bar';
 import line from 'echarts/lib/chart/line';
@@ -7,6 +8,7 @@ import tooltip from 'echarts/lib/component/tooltip';
 import dataZoom from 'echarts/lib/component/dataZoom';
 import legend from 'echarts/lib/component/legend';
 import axisPointer from 'echarts/lib/component/axisPointer';
+import graphic from 'echarts/lib/component/graphic';
 import numeral from 'numeral';
 import Utils from '../../classes/Utils';
 import chartSettings from './Settings';
@@ -25,6 +27,7 @@ const NewCasesAndDeathsChart = ({ newCases, movingAverage, dates, deaths, deaths
 			{
 				tooltip: {
 					...chartSettings.tooltip,
+					trigger: 'axis',
 					formatter: params => {
 						return `<b>${Utils.longMonthAndDate(params[0].name)}</b> <br />New Cases: ${newCases[params[0].dataIndex]}
 							<br />7-day average: ${numeral(movingAverage[params[0].dataIndex]).format('0,0')}
@@ -33,8 +36,7 @@ const NewCasesAndDeathsChart = ({ newCases, movingAverage, dates, deaths, deaths
 					},
 					axisPointer: {
 						animation: false
-					},
-					extraCssText: 'border-radius: 2px; padding: 8px; border: 1px solid #aaa'
+					}
 				},
 				dataZoom: {
 					show: true,
@@ -42,22 +44,7 @@ const NewCasesAndDeathsChart = ({ newCases, movingAverage, dates, deaths, deaths
 					start: 50,
 					end: 100,
 				},
-				legend: {
-					data: ['Cases', 'Cases Avg', 'Deaths', 'Deaths Avg'],
-					left: -5
-				},
-				// graphic: [
-				// 	{
-				// 		type: 'text',
-				// 		z: 100,
-				// 		style: {
-				// 			text: 'test',
-				// 			fill: '#000'
-				// 		},
-				// 		right: 'center',
-				// 		top: 'middle'
-				// 	}
-				// ],
+				graphic: chartSettings.getGraphicSettings('new cases', 'deaths'),
 				xAxis: [{
 					data: dates,
 					...chartSettings.xAxis,
@@ -77,26 +64,14 @@ const NewCasesAndDeathsChart = ({ newCases, movingAverage, dates, deaths, deaths
 				axisPointer: {
 					link: { xAxisIndex: 'all' }
 				},
-				grid: [{
-					left: 0,
-					right: 0,
-					top: 60,
-					height: '33%'
-				}, {
-					left: 0,
-					right: 0,
-					top: '49%',
-					height: '33%'
-				}],
+				grid: chartSettings.grid,
 				yAxis: [{
 					...chartSettings.yAxis,
-					minInterval: 25000,
-					max: 100000,
+					...chartSettings.getAxisIntervals(_.max(newCases))
 				}, {
 					...chartSettings.yAxis,
 					gridIndex: 1,
-					minInterval: 1000,
-					max: 2000,
+					...chartSettings.getAxisIntervals(_.max(deaths)),
 					axisLabel: {
 						verticalAlign: 'top',
 						inside: true,
@@ -165,7 +140,7 @@ const NewCasesAndDeathsChart = ({ newCases, movingAverage, dates, deaths, deaths
 			chart.resize();
 		}
 		window.addEventListener('resize', handleResize);
-	}, [newCases, movingAverage, dates, deaths]);
+	}, [newCases, movingAverage, dates, deaths, deathsMovingAverage]);
 	return (
 		<>
 			<div ref={container} />

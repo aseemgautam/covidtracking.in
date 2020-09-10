@@ -31,6 +31,11 @@ function Index({ indiaDailyStats, latest, stateDataLatest, buildTime }) {
 					<MovingAverageCard cases={indiaDailyStats} days={14} />
 				</Col>
 			</Row>
+			<p>
+				Rate at which daily cases are increasing or decreasing. A negative value indicates
+				a drop in daily cases. A 50% growth over 14 days means if we found 100 new cases
+				daily (average, 14 days ago), today we find 150. Line = 7 day moving average. Bars = new cases.
+			</p>
 			<HomePageTabsSecond stateDataLatest={stateDataLatest} />
 		</>
 	);
@@ -42,10 +47,10 @@ export async function getStaticProps() {
 	const stateDataLatest = await CovidDataState.latest();
 	const buildTime = Utils.dateAndTime();
 
-	let cases = 0; let recovered = 0; let deaths = 0; let tests = 0;
+	let confirmed = 0; let recovered = 0; let deaths = 0; let tests = 0;
 	let active = 0; let count = 0;
 	for (let i = 0; i < stateDataLatest.length; i++) {
-		cases += stateDataLatest[i].newCases;
+		confirmed += stateDataLatest[i].newCases;
 		recovered += stateDataLatest[i].newRecover;
 		deaths += stateDataLatest[i].newDeaths;
 		tests += stateDataLatest[i].newTests;
@@ -53,10 +58,10 @@ export async function getStaticProps() {
 			count += 1;
 		}
 	}
-	active = cases - deaths - recovered;
+	active = confirmed - deaths - recovered;
 	const indiaLatest = _.last(indiaDailyStats);
 	const latest = new DailyStatistic(Utils.getDefaultDateFormat(new Date(stateDataLatest[0].date)),
-		indiaLatest.cases + cases, cases,
+		indiaLatest.confirmed + confirmed, confirmed,
 		indiaLatest.active + active, active,
 		indiaLatest.recovered + recovered,
 		recovered, indiaLatest.deaths + deaths, deaths, indiaLatest.tests + tests,

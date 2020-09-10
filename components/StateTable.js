@@ -62,7 +62,7 @@ const columns = [
 	render: (text, record) => {
 		return (
 			<>
-				<div className="total">{record.positivePercent}</div>
+				<div className="total">{record.positivity}</div>
 				<div className="total">{text}</div>
 			</>
 		);

@@ -8,7 +8,7 @@ import DatePicker from '../DatePicker';
 
 const NationalStats = ({ latest, dailyStatistics, showDateOptions }) => {
 	const [date, setDate] = useState(latest.date);
-	let statistic; let yesterdayDate;
+	let statistic = latest; let yesterdayDate;
 
 	function onDateChangeFromPicker(newDate) {
 		if (newDate && dayjs(newDate).isValid()) {
@@ -24,12 +24,14 @@ const NationalStats = ({ latest, dailyStatistics, showDateOptions }) => {
 	}
 	// set dates;
 	const todayDate = latest.date;
-	if (date === latest.date && _.last(dailyStatistics).date === latest.date) {
-		yesterdayDate = _.nth(dailyStatistics, -2).date;
-		statistic = _.last(dailyStatistics);
-	} else {
-		yesterdayDate = _.last(dailyStatistics).date;
-		statistic = date === latest.date ? latest : _.find(dailyStatistics, { date });
+	if (showDateOptions) {
+		if (date === latest.date && _.last(dailyStatistics).date === latest.date) {
+			yesterdayDate = _.nth(dailyStatistics, -2).date;
+			statistic = _.last(dailyStatistics);
+		} else {
+			yesterdayDate = _.last(dailyStatistics).date;
+			statistic = date === latest.date ? latest : _.find(dailyStatistics, { date });
+		}
 	}
 	return (
 		<>
@@ -60,7 +62,7 @@ const NationalStats = ({ latest, dailyStatistics, showDateOptions }) => {
 				<Col xs={12} sm={8} lg={6}>
 					<CovidStatistic
 						title="confirmed"
-						value={statistic.cases}
+						value={statistic.confirmed}
 						suffix={statistic.newCases}
 						suffixClassName="red6"
 						precision={0}

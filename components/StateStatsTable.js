@@ -128,12 +128,12 @@ const columns = [
 	},
 	{
 		title: 'POSITIVITY RATE',
-		dataIndex: 'positivePercent',
+		dataIndex: 'positivity',
 		align: 'right',
 		width: 70,
 		sortDirections: ['descend', 'ascend'],
 		sorter: (a, b) => {
-			return a.positivePercent - b.positivePercent;
+			return a.positivity - b.positivity;
 		}
 	},
 	{
