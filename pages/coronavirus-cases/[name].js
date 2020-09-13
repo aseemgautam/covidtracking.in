@@ -16,6 +16,15 @@ const CoronavirusCases = ({ stateStatistics, name }) => {
 				<title>Coronavirus cases & dashboard {name}</title>
 			</Head>
 			<h2>{name}</h2>
+			<p>
+				At least 573 new cases were reported in New York on Sept. 9.
+				Over the past week, there have been an average of 705 cases per day,
+				an increase of 19 percent from the average two weeks earlier.
+			</p>
+			<p>
+				As of Thursday morning, there have been at least 445,881 cases and
+				32,611 deaths in New York since the beginning of the pandemic, according to a New York Times database.
+			</p>
 			{/* <p>Last updated: build time</p> */}
 			<NationalStats
 				latest={_.last(stateStatistics)}
