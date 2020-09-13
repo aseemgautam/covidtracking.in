@@ -21,6 +21,7 @@ export default async (req, res) => {
 			ma3: district.ma3,
 			ma0: district.ma0,
 			CASES: district.confirmed,
+			ACTIVE: district.active,
 			RECOVR: district.recovered,
 			DEATHS: district.deaths,
 			'DEATH RATE': district.deathRate,
