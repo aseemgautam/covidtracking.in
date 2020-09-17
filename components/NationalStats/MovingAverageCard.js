@@ -3,7 +3,7 @@ import { Row, Col } from 'antd';
 import _ from 'lodash';
 import MovingAverageProgress from '../MovingAverageProgress';
 import MovingAverageCardChart from '../chartsv2/MovingAverageCardChart';
-import Utils from '../../classes/Utils';
+// import Utils from '../../classes/Utils';
 
 const MovingAverageCard = React.memo(({ cases, days }) => {
 	const latest = cases[cases.length - 1];
@@ -14,17 +14,17 @@ const MovingAverageCard = React.memo(({ cases, days }) => {
 		.forEach(curr => {
 			movingAverage.push(curr.movingAvg7days);
 			newCases.push(curr.newCases);
-			dates.push(Utils.shortMonthAndDate(curr.date));
+			dates.push(curr.date);
 		}, []);
 	return (
 		<>
 			<Row className="trend-card" justify="space-between">
 				<Col flex="60px">
-					<div className="trend-card-title">{`${days} Day Growth`}</div>
+					<div className="trend-card-title">{`${days} Day Change`}</div>
 				</Col>
 				<Col flex="1 0 80px" className="flex-row-center">
 					<MovingAverageProgress rateOfInc={rateOfInc} newCases={newCasesLast7days} />
-					<div className="trend-percent">+{rateOfInc}%</div>
+					<div className="trend-percent">{rateOfInc}%</div>
 				</Col>
 				<Col flex="1 0 120px" className="flex-row-center">
 					<MovingAverageCardChart

@@ -138,6 +138,12 @@ class CovidDataState {
 		return this._latest;
 	}
 
+	byName = async name => {
+		const stateStatistics = await this.all();
+		console.log(_.startCase(name));
+		return stateStatistics.get(_.startCase(name));
+	}
+
 	round = num => {
 		return Math.round((num + Number.EPSILON) * 100) / 100;
 	}

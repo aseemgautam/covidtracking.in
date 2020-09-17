@@ -6,9 +6,8 @@ import numeral from 'numeral';
 import CovidStatistic from './CovidStatistic';
 import DatePicker from '../DatePicker';
 
-const NationalStats = ({ latest, dailyStatistics, showDateOptions }) => {
+const NationalStats = ({ latest, dailyStatistics, isNational }) => {
 	const [date, setDate] = useState(latest.date);
-	let statistic = latest; let yesterdayDate;
 
 	function onDateChangeFromPicker(newDate) {
 		if (newDate && dayjs(newDate).isValid()) {
@@ -24,40 +23,37 @@ const NationalStats = ({ latest, dailyStatistics, showDateOptions }) => {
 	}
 	// set dates;
 	const todayDate = latest.date;
-	if (showDateOptions) {
-		if (date === latest.date && _.last(dailyStatistics).date === latest.date) {
-			yesterdayDate = _.nth(dailyStatistics, -2).date;
-			statistic = _.last(dailyStatistics);
-		} else {
-			yesterdayDate = _.last(dailyStatistics).date;
-			statistic = date === latest.date ? latest : _.find(dailyStatistics, { date });
-		}
+	const yesterdayDate = _.nth(dailyStatistics, isNational === true ? -1 : -2).date;
+	const statistic = date === latest.date ? latest : _.find(dailyStatistics, { date });
+	let radioTextFirst = 'Today';
+	let radioTextSecond = 'Yesterday';
+	if (dayjs(latest.date).isBefore(new Date(), 'date') && (new Date()).getHours() > 8) {
+		radioTextFirst = 'Yesterday';
+		radioTextSecond = '2 days ago';
 	}
 	return (
 		<>
-			{showDateOptions && (
-				<Row gutter={[{ xs: 8, sm: 16 }, { xs: 16, sm: 16 }]}>
-					<Col xs={24}>
-						<Space>
-							<Radio.Group value={date} onChange={onDateChangeFromRadio}>
-								<Radio.Button value={todayDate}>Today</Radio.Button>
-								<Radio.Button
-									value={yesterdayDate}
-								>Yesterday
-								</Radio.Button>
-							</Radio.Group>
-							<DatePicker
-								inputReadOnly
-								allowClear={false}
-								value={dayjs(date)}
-								onChange={onDateChangeFromPicker}
-								disabledDate={disableDate}
-								showToday={false}
-							/>
-						</Space>
-					</Col>
-				</Row>
-			)}
+			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 16, sm: 16 }]}>
+				<Col xs={24}>
+					<Space>
+						<Radio.Group value={date} onChange={onDateChangeFromRadio}>
+							<Radio.Button value={todayDate}>{radioTextFirst}</Radio.Button>
+							<Radio.Button
+								value={yesterdayDate}
+							>{radioTextSecond}
+							</Radio.Button>
+						</Radio.Group>
+						<DatePicker
+							inputReadOnly
+							allowClear={false}
+							value={dayjs(date)}
+							onChange={onDateChangeFromPicker}
+							disabledDate={disableDate}
+							showToday={false}
+						/>
+					</Space>
+				</Col>
+			</Row>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={12} sm={8} lg={6}>
 					<CovidStatistic

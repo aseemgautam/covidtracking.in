@@ -23,7 +23,7 @@ const HomePageTabs = ({ indiaDailyStats, latest, stateDataLatest, buildTime }) =
 				<NationalStats
 					dailyStatistics={indiaDailyStats}
 					latest={latest}
-					showDateOptions
+					isNational
 				/>
 				<p>
 					Today&apos;s statistics are from end of day state bulletins published between 6:00 PM - midnight.
@@ -51,7 +51,7 @@ const HomePageTabs = ({ indiaDailyStats, latest, stateDataLatest, buildTime }) =
 					</Col>
 					<Col xs={24} sm={12}>
 						<div className="flex-row-spread chart-title">
-							<h4>Daily Tests & Positivity (+VE) Rate</h4>
+							<h4>Daily Tests & Positivity</h4>
 						</div>
 						<TestAndPositivityChart
 							tests={_.map(indiaDailyStats, 'newTests')}

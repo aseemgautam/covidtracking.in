@@ -117,6 +117,8 @@ class ChartSettings {
 		const intervals = [
 			{ max: 10, minInterval: 2 },
 			{ max: 20, minInterval: 5 },
+			{ max: 25, minInterval: 5 },
+			{ max: 35, minInterval: 7 },
 			{ max: 50, minInterval: 10 },
 			{ max: 100, minInterval: 25 },
 			{ max: 200, minInterval: 50 },

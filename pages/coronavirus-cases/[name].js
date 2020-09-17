@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import numeral from 'numeral';
 import { Row, Col } from 'antd';
 import Head from 'next/head';
 import CovidDataState from '../../classes/CovidDataState';
@@ -7,29 +8,35 @@ import NationalStats from '../../components/NationalStats';
 import MovingAverageCard from '../../components/NationalStats/MovingAverageCard';
 import NewCasesAndDeathsChart from '../../components/chartsv2/NewCasesAndDeathsChart';
 import TestAndPositivityChart from '../../components/chartsv2/TestAndPositivityChart';
+import Utils from '../../classes/Utils';
 
 const CoronavirusCases = ({ stateStatistics, name }) => {
-	// console.log(stateDataLatest);
+	const last = _.last(stateStatistics);
+	const day = (new Date(last.date)).toLocaleString('en-IN', { weekday: 'long' });
+	const cases = numeral(last.confirmed).format('0,0');
+	const deaths = numeral(last.deaths).format('0,0');
+	const movement = last.movingAvg7daysRate >= 0
+		? `an increase of ${last.movingAvg7daysRate}` : ` a decrease of ${last.movingAvg7daysRate * -1}`;
 	return (
 		<>
 			<Head>
 				<title>Coronavirus cases & dashboard {name}</title>
 			</Head>
-			<h2>{name}</h2>
+			<h2>{name} Covid Cases & Dashboard</h2>
 			<p>
-				At least 573 new cases were reported in New York on Sept. 9.
-				Over the past week, there have been an average of 705 cases per day,
-				an increase of 19 percent from the average two weeks earlier.
+				At least {last.newCases} new cases were reported in {name} on {Utils.shortMonthAndDate(last.date)}.
+				Over the past week, there have been an average of {last.movingAvg7days} cases per day,
+				{movement} percent from the average two weeks earlier.
 			</p>
 			<p>
-				As of Thursday morning, there have been at least 445,881 cases and
-				32,611 deaths in New York since the beginning of the pandemic, according to a New York Times database.
+				As of {day} evening, there have been at least {cases} cases and
+				{` ${deaths}`} deaths in {name} since the beginning of the pandemic, according to
+				MOHFW.
 			</p>
 			{/* <p>Last updated: build time</p> */}
 			<NationalStats
 				latest={_.last(stateStatistics)}
 				dailyStatistics={stateStatistics}
-				showDateOptions
 			/>
 			<div className="subhead">Growth in daily cases over 7 & 14 days</div>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
@@ -60,7 +67,7 @@ const CoronavirusCases = ({ stateStatistics, name }) => {
 				</Col>
 				<Col xs={24} sm={12}>
 					<div className="flex-row-spread chart-title">
-						<h4>Daily Tests & Positivity (+VE) Rate</h4>
+						<h4>Daily Tests & Positivity</h4>
 					</div>
 					<TestAndPositivityChart
 						tests={_.map(stateStatistics, 'newTests')}
@@ -80,7 +87,7 @@ export async function getStaticPaths() {
 	IndiaStates.states.forEach(state => {
 		if (state.name !== 'Lakshadweep') {
 			paths.push({
-				params: { name: state.name.split(' ').join('-') }
+				params: { name: state.name.toLocaleLowerCase().split(' ').join('-') }
 			});
 		}
 	});
@@ -91,11 +98,14 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-	const stateStatistics = await CovidDataState.all();
-	const stateName = params.name.split('-').join(' ');
+	const stateName = params.name.toLocaleLowerCase().split('-').join(' ');
+	const stateStatistics = await CovidDataState.byName(stateName);
+	if (_.last(stateStatistics).newCases === 0) {
+		stateStatistics.pop();
+	}
 	return {
 		// will be passed to the page component as props
-		props: { stateStatistics: stateStatistics.get(stateName), name: stateName }
+		props: { stateStatistics, name: _.startCase(stateName) }
 	};
 }
 
