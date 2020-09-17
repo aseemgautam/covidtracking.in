@@ -140,8 +140,7 @@ class CovidDataState {
 
 	byName = async name => {
 		const stateStatistics = await this.all();
-		console.log(_.startCase(name));
-		return stateStatistics.get(_.startCase(name));
+		return stateStatistics.get(name);
 	}
 
 	round = num => {

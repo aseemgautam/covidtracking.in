@@ -98,7 +98,16 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-	const stateName = params.name.toLocaleLowerCase().split('-').join(' ');
+	let stateName = _.startCase(params.name.toLocaleLowerCase().split('-').join(' '));
+	if (stateName === 'Andaman And Nicobar Islands') {
+		stateName = 'Andaman and Nicobar Islands';
+	}
+	if (stateName === 'Dadra And Nagar Haveli And Daman And Diu') {
+		stateName = 'Dadra and Nagar Haveli and Daman and Diu';
+	}
+	if (stateName === 'Jammu And Kashmir') {
+		stateName = 'Jammu and Kashmir';
+	}
 	const stateStatistics = await CovidDataState.byName(stateName);
 	if (_.last(stateStatistics).newCases === 0) {
 		stateStatistics.pop();
