@@ -60,13 +60,16 @@ export async function getStaticProps() {
 	}
 	active = confirmed - deaths - recovered;
 	const indiaLatest = _.last(indiaDailyStats);
-	const latest = new DailyStatistic(Utils.getDefaultDateFormat(new Date(stateDataLatest[0].date)),
+	let latest = new DailyStatistic(Utils.getDefaultDateFormat(new Date(stateDataLatest[0].date)),
 		indiaLatest.confirmed + confirmed, confirmed,
 		indiaLatest.active + active, active,
 		indiaLatest.recovered + recovered,
 		recovered, indiaLatest.deaths + deaths, deaths, indiaLatest.tests + tests,
 		tests);
 	latest.count = count;
+	if (latest.date === _.last(indiaDailyStats).date) {
+		latest = [];
+	}
 	return {
 		// will be passed to the page component as props
 		props: { indiaDailyStats, latest: JSON.parse(JSON.stringify(latest)), stateDataLatest, buildTime }

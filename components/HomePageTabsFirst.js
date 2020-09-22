@@ -22,8 +22,8 @@ const HomePageTabs = ({ indiaDailyStats, latest, stateDataLatest, buildTime }) =
 			>
 				<NationalStats
 					dailyStatistics={indiaDailyStats}
-					latest={latest}
-					isNational
+					latest={latest.length > 0 ? latest : _.last(indiaDailyStats)}
+					// isNational
 				/>
 				<p>
 					Today&apos;s statistics are from end of day state bulletins published between 6:00 PM - midnight.
@@ -63,20 +63,22 @@ const HomePageTabs = ({ indiaDailyStats, latest, stateDataLatest, buildTime }) =
 					</Col>
 				</Row>
 			</TabPane>
-			<TabPane
-				tab={
-					(
-						<div>+Today &nbsp;
-							<Tag className="live-counter" style={{ color: '#303030' }} color="#FFD666">
-								{latest.count}
-							</Tag>
-						</div>
-					)
-				}
-				key="3"
-			>
-				<DailyReportSection casesByStateLatest={stateDataLatest} />
-			</TabPane>
+			{latest.length > 0 && (
+				<TabPane
+					tab={
+						(
+							<div>+Today &nbsp;
+								<Tag className="live-counter" style={{ color: '#303030' }} color="#FFD666">
+									{latest.count}
+								</Tag>
+							</div>
+						)
+					}
+					key="3"
+				>
+					<DailyReportSection casesByStateLatest={stateDataLatest} />
+				</TabPane>
+			)}
 		</Tabs>
 	);
 };
