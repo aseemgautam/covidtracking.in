@@ -17,10 +17,10 @@ export default async (req, res) => {
 		const posRateDelta = (current.dailyPositivity7DayMA - _.nth(stateData, -14).dailyPositivity7DayMA).toFixed(2);
 		let posRateTrend;
 		if (posRateDelta > 0.5) {
-			posRateTrend = `Increasing +${posRateDelta}%`;
+			posRateTrend = `Increasing +${posRateDelta}`;
 			result.posRateColor = 'red';
 		} else if (posRateDelta < -0.5) {
-			posRateTrend = `Decreasing ${posRateDelta}%`;
+			posRateTrend = `Decreasing ${posRateDelta}`;
 			result.posRateColor = 'green';
 		} else {
 			posRateTrend = 'Flat';
