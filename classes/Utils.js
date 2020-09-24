@@ -19,6 +19,12 @@ class Utils {
 		return `${day} ${month}`;
 	}
 
+	shortMonthAndDateWithOrdinal = date => {
+		const month = (new Date(date)).toLocaleString('default', { month: 'short' });
+		const day = this.getOrdinalNum((new Date(date)).getDate());
+		return `${day} ${month}`;
+	}
+
 	longMonthAndDate = date => {
 		const day = (new Date(date)).getDate();
 		const month = (new Date(date)).toLocaleString('default', { month: 'long' });

@@ -24,7 +24,7 @@ const CoronavirusCases = ({ stateStatistics, name }) => {
 			</Head>
 			<h2>{name} Covid Cases & Dashboard</h2>
 			<p>
-				At least {last.newCases} new cases were reported in {name} on {Utils.shortMonthAndDate(last.date)}.
+				At least {last.newCases} new cases were reported in {name} on {Utils.shortMonthAndDateWithOrdinal(last.date)}.
 				Over the past week, there have been an average of {last.movingAvg7days} cases per day,
 				{movement} percent from the average two weeks earlier.
 			</p>
@@ -65,7 +65,7 @@ const CoronavirusCases = ({ stateStatistics, name }) => {
 						deathsMovingAverage={_.map(stateStatistics, 'newDeaths7DayMA')}
 					/>
 				</Col>
-				<Col xs={24} sm={12}>
+				<Col xs={24} md={12}>
 					<div className="flex-row-spread chart-title">
 						<h4>Daily Tests & Positivity</h4>
 					</div>
@@ -109,7 +109,7 @@ export async function getStaticProps({ params }) {
 		stateName = 'Jammu and Kashmir';
 	}
 	const stateStatistics = await CovidDataState.byName(stateName);
-	if (_.last(stateStatistics).newCases === 0) {
+	if (_.last(stateStatistics).newCases === 0 && _.last(stateStatistics).newRecover === 0) {
 		stateStatistics.pop();
 	}
 	return {

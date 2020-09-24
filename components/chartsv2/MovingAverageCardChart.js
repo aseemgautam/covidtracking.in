@@ -44,7 +44,6 @@ const MovingAverageCardChart = ({ data, width, newCases, dates }) => {
 				yAxis: {
 					type: 'value',
 					show: false,
-					min: data[0] * 0.5,
 				},
 				series: [{
 					data,

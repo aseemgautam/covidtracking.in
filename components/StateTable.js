@@ -1,11 +1,11 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-restricted-syntax */
-import { Table, Tag } from 'antd';
+import { Table } from 'antd';
+import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import _ from 'lodash';
 import MovingAverageProgress from './MovingAverageProgress';
 import LineChartSmall from './charts/LineChartSmall';
 import Colors from '../classes/Colors';
-import MonthlyNewCasesChart from './chartsv2/MonthlyNewCasesChart';
 
 const columns = [
 	{ title: 'State',
@@ -70,6 +70,41 @@ const columns = [
 	sorter: (a, b) => {
 		return a.tests - b.tests;
 	}
+	},
+	{ title: 'Testing Trend',
+		dataIndex: 'testingTrend',
+		align: 'right',
+		width: 100,
+		sorter: (a, b) => {
+			return a.testingTrend - b.testingTrend;
+		},
+		// render: (text, record) => {
+		// 	return {
+		// 		props: {
+		// 			style: {
+		// 				backgroundColor: Colors.getTrendColor(record.movingAvg14daysRate, record.newCases14days),
+		// 				color: '#fff'
+		// 			}
+		// 		},
+		// 		children: text,
+		// 	};
+		// }
+	},
+	{ title: 'Positivity Trend',
+		dataIndex: 'positivityTrend',
+		align: 'center',
+		width: 100,
+		sorter: (a, b) => {
+			return a.positivityTrend - b.positivityTrend;
+		},
+		render: (text, record) => {
+			const icon = record.positivityTrend > 0 ? <ArrowUpOutlined /> : <ArrowDownOutlined />;
+			return (
+				<>
+					{icon} {text}%
+				</>
+			);
+		}
 	},
 	{
 		title: (
@@ -143,29 +178,29 @@ const columns = [
 			);
 		}
 	},
-	{
-		title: (
-			<>
-				<div>New cases in last 28 days</div>
-				<div className="sub-heading newCases28DaysSubHeader">
-					<span><Tag color={Colors.monthlyNewCasesChart[0]}>0-7 (Latest)</Tag></span>
-					<span><Tag color={Colors.monthlyNewCasesChart[1]}>8-14</Tag></span>
-					<span><Tag color={Colors.monthlyNewCasesChart[2]}>15-21</Tag></span>
-					<span><Tag color={Colors.monthlyNewCasesChart[3]}>22-28</Tag></span>
-				</div>
-			</>
-		),
-		dataIndex: 'newCases14days',
-		align: 'center',
-		width: 280,
-		render: (text, record) => {
-			const data = [record.newCases1to7days, record.newCases8to14days,
-				record.newCases15to21Days, record.newCases22to28Days];
-			return (
-				<MonthlyNewCasesChart data={data} />
-			);
-		}
-	}
+	// {
+	// 	title: (
+	// 		<>
+	// 			<div>New cases in last 28 days</div>
+	// 			<div className="sub-heading newCases28DaysSubHeader">
+	// 				<span><Tag color={Colors.monthlyNewCasesChart[0]}>0-7 (Latest)</Tag></span>
+	// 				<span><Tag color={Colors.monthlyNewCasesChart[1]}>8-14</Tag></span>
+	// 				<span><Tag color={Colors.monthlyNewCasesChart[2]}>15-21</Tag></span>
+	// 				<span><Tag color={Colors.monthlyNewCasesChart[3]}>22-28</Tag></span>
+	// 			</div>
+	// 		</>
+	// 	),
+	// 	dataIndex: 'newCases14days',
+	// 	align: 'center',
+	// 	width: 280,
+	// 	render: (text, record) => {
+	// 		const data = [record.newCases1to7days, record.newCases8to14days,
+	// 			record.newCases15to21Days, record.newCases22to28Days];
+	// 		return (
+	// 			<MonthlyNewCasesChart data={data} />
+	// 		);
+	// 	}
+	// }
 ];
 const StateTable = ({ casesByStateLatest }) => {
 	return (

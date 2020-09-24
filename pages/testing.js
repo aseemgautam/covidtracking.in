@@ -15,7 +15,7 @@ const Testing = () => {
 			<Head>
 				<title>Coronavirus Testing across India</title>
 			</Head>
-			<DWChart title="Chart" src="//datawrapper.dwcdn.net/FIsKB/8/" />
+			<DWChart title="Chart" src="//datawrapper.dwcdn.net/FIsKB/9/" />
 		</>
 	);
 };

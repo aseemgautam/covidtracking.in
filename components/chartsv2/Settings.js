@@ -144,7 +144,7 @@ class ChartSettings {
 			{ max: 60000, minInterval: 15000 },
 			{ max: 80000, minInterval: 20000 },
 			{ max: 100000, minInterval: 25000 },
-			{ max: 125000, minInterval: 25000 },
+			{ max: 120000, minInterval: 30000 },
 			{ max: 150000, minInterval: 30000 },
 			{ max: 200000, minInterval: 50000 },
 			{ max: 300000, minInterval: 60000 },

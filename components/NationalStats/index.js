@@ -89,7 +89,7 @@ const NationalStats = ({ latest, dailyStatistics, isNational }) => {
 						title="Recovered"
 						className="statistic-recovered"
 						value={statistic.recovered}
-						suffix={statistic.newRecovered}
+						suffix={statistic.newRecover}
 						suffixClassName="green7"
 						precision={0}
 					/>

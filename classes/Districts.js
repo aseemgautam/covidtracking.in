@@ -6,18 +6,11 @@ import MovingAverage from './MovingAverage';
 import IndiaStates from '../public/india-states.json';
 import DistrictPopulation from '../public/district-population.json';
 
-let instance = null;
-
 class Districts {
 	constructor() {
-		if (!instance) {
-			instance = this;
-		}
-
 		this._all = [];
 		this._latest = [];
-		this.list = []; // list of all { state, district }
-		return instance;
+		this.list = [];
 	}
 
 	_districtPopulation = async () => {
@@ -46,8 +39,6 @@ class Districts {
 				if (state.name === 'Uttarakhand') {
 					stateCode = 'UT';
 				}
-				// console.log(json[stateCode].districts);
-				// console.log(state.name, stateCode);
 				if (json[stateCode]) {
 				// eslint-disable-next-line no-restricted-syntax
 					for (const [name, value] of Object.entries(json[stateCode].districts)) {
@@ -85,6 +76,9 @@ class Districts {
 	}
 
 	_fetch = async () => {
+		if (this._all.length > 0) {
+			return this._all;
+		}
 		// eslint-disable-next-line global-require
 		const { performance } = require('perf_hooks');
 		const t0 = performance.now();
@@ -124,6 +118,8 @@ class Districts {
 					newCases: idx === 0 ? 0 : curr.confirmed - src[idx - 1].confirmed,
 					newRecover: idx === 0 ? 0 : curr.recovered - src[idx - 1].recovered,
 					newDeaths: idx === 0 ? 0 : curr.deaths - src[idx - 1].deaths,
+					newActive: idx === 0 ? 0 : (curr.confirmed - curr.deaths - curr.recovered)
+							- (src[idx - 1].confirmed - src[idx - 1].deaths - src[idx - 1].recovered),
 					active: curr.confirmed - curr.deaths - curr.recovered,
 					deathRate: curr.deaths > 1 ? Utils.round((curr.deaths * 100) / (curr.recovered + curr.deaths)) : '-',
 					population
@@ -133,6 +129,7 @@ class Districts {
 				MovingAverage.calculate(districtData, 'newCases');
 				MovingAverage.for7days(districtData, 'newRecover', 'newRecovered7DayMA', true);
 				MovingAverage.for7days(districtData, 'newCases', 'newCases7DayMA', true);
+				MovingAverage.for7days(districtData, 'newDeaths', 'newDeaths7DayMA', true);
 
 				const last = _.last(districtData);
 				last.ma14 = _.nth(districtData, -15).movingAvg7days;
@@ -177,4 +174,5 @@ class Districts {
 }
 
 const districts = new Districts();
+Object.freeze(districts);
 export default districts;

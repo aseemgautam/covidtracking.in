@@ -118,10 +118,6 @@ class CovidDataState {
 					latest.movingAvg14daysData = cases.slice(-15).map(curr => {
 						return curr.movingAvg7days;
 					}, []);
-					// if (latest.state === 'Odisha') {
-					// 	// console.log(latest.movingAvg14daysData);
-					// 	console.log(cases.slice(-15));
-					// }
 					const sum = (acc, curr) => { return acc + curr.newCases; };
 					const offset = latest.newCases === 0 ? -1 : 0;
 					latest.newCases1to7days = cases.slice(-7 + offset).reduce(sum, 0);
@@ -130,6 +126,11 @@ class CovidDataState {
 					latest.newCases22to28Days = cases.slice(cases.length - 29 + offset, cases.length - 22 + offset).reduce(sum, 0);
 					// used in trend color, MovingAverageProgress
 					latest.newCases14days = cases.slice(-14).reduce(sum, 0);
+					// positivity trend
+					latest.positivityTrend = (latest.dailyPositivity7DayMA - _.nth(cases, -14).dailyPositivity7DayMA).toFixed(2);
+					// testing trend
+					latest.testingTrend = (((latest.newTests7DayMA - _.nth(cases, -14).newTests7DayMA) * 100)
+						/	_.nth(cases, -14).newTests7DayMA).toFixed(2);
 					this._latest.push(latest);
 				}
 			}

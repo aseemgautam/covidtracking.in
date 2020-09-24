@@ -7,7 +7,7 @@ class DailyStatistic {
 		this.active = active;
 		this.newActive = newActive;
 		this.recovered = recovered;
-		this.newRecovered = newRecovered;
+		this.newRecover = newRecovered;
 		this.recoveryRate = parseFloat(((recovered * 100) / cases).toFixed(2));
 		this.deaths = deaths;
 		this.newDeaths = newDeaths;
