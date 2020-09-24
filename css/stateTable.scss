@@ -43,7 +43,21 @@
 				margin-left: 8px;
 				@extend %flex-column-center
 			}
-    }
+		}
+		.trend-tag-green, .trend-tag-red { 
+			width: 64px;
+			border-radius: 2px;
+			padding: 2px;
+		}
+		.trend-tag-green {
+    	border: 1px solid #b7eb8f;
+    	background-color: #f6ffed;
+    	
+		}
+		.trend-tag-red {
+    	border: 1px solid #ffa39e;
+    	background-color: #fff1f0;
+		}
   }
   .ant-table-small .ant-table-tbody > tr > td:not(:nth-child(0)):not(:last-child) {
     border-right: 1px solid rgba(0, 0, 0, 0.067);

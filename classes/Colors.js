@@ -15,6 +15,9 @@ class Colors {
 		this.chartSecondary = '#85a5ff';
 		this.chartRed = '';
 
+		this.green = '#238B45';
+		this.red = '#C71E1D';
+
 		this.newCasesStack = '#FFCC32';
 		this.testingSampleStack = '#d9d9d9';
 		this.monthlyNewCasesChart = ['#2171b5', '#4292c6', '#6baed6', '#9ecae1'];

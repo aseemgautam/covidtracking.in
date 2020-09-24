@@ -1,7 +1,8 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-restricted-syntax */
 import { Table } from 'antd';
-import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
+import numeral from 'numeral';
+import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons';
 import _ from 'lodash';
 import MovingAverageProgress from './MovingAverageProgress';
 import LineChartSmall from './charts/LineChartSmall';
@@ -29,27 +30,27 @@ const columns = [
 			};
 		}
 	},
-	{ title: (
-		<>
-			<div>CASES</div>
-		</>
-	),
-	dataIndex: 'newCases',
-	align: 'right',
-	width: 80,
-	render: (text, record) => {
-		return (
-			<>
-				<div className="plus-cases">{text === 0 ? '' : `+${text}`}</div>
-				<div className="total">{record.confirmed}</div>
-			</>
-		);
-	},
-	defaultSortOrder: 'descend',
-	sorter: (a, b) => {
-		return a.confirmed - b.confirmed;
-	}
-	},
+	// { title: (
+	// 	<>
+	// 		<div>CASES</div>
+	// 	</>
+	// ),
+	// dataIndex: 'newCases',
+	// align: 'right',
+	// width: 80,
+	// render: (text, record) => {
+	// 	return (
+	// 		<>
+	// 			<div className="plus-cases">{text === 0 ? '' : `+${text}`}</div>
+	// 			<div className="total">{record.confirmed}</div>
+	// 		</>
+	// 	);
+	// },
+	// defaultSortOrder: 'descend',
+	// sorter: (a, b) => {
+	// 	return a.confirmed - b.confirmed;
+	// }
+	// },
 	{ title: (
 		<>
 			<div>% +VE</div>
@@ -73,22 +74,23 @@ const columns = [
 	},
 	{ title: 'Testing Trend',
 		dataIndex: 'testingTrend',
-		align: 'right',
+		align: 'center',
 		width: 100,
 		sorter: (a, b) => {
 			return a.testingTrend - b.testingTrend;
 		},
-		// render: (text, record) => {
-		// 	return {
-		// 		props: {
-		// 			style: {
-		// 				backgroundColor: Colors.getTrendColor(record.movingAvg14daysRate, record.newCases14days),
-		// 				color: '#fff'
-		// 			}
-		// 		},
-		// 		children: text,
-		// 	};
-		// }
+		render: (text, record) => {
+			const icon = record.testingTrend > 0 ? <CaretUpOutlined style={{ color: `${Colors.green}` }} />
+				: <CaretDownOutlined style={{ color: `${Colors.red}` }} />;
+			return (
+				<div className="flex-row-center">
+					<div className={record.testingTrend > 0 ? 'trend-tag-green' : 'trend-tag-red'}>
+						{icon} {record.testingTrend < 0
+							? numeral(record.testingTrend * -1).format('0') : numeral(record.testingTrend).format('0') }%
+					</div>
+				</div>
+			);
+		}
 	},
 	{ title: 'Positivity Trend',
 		dataIndex: 'positivityTrend',
@@ -98,11 +100,15 @@ const columns = [
 			return a.positivityTrend - b.positivityTrend;
 		},
 		render: (text, record) => {
-			const icon = record.positivityTrend > 0 ? <ArrowUpOutlined /> : <ArrowDownOutlined />;
+			const icon = record.positivityTrend > 0 ? <CaretUpOutlined style={{ color: `${Colors.red}` }} />
+				: <CaretDownOutlined style={{ color: `${Colors.green}` }} />;
 			return (
-				<>
-					{icon} {text}%
-				</>
+				<div className="flex-row-center">
+					<div className={record.positivityTrend > 0 ? 'trend-tag-red' : 'trend-tag-green'}>
+						{icon} {record.positivityTrend < 0
+							? numeral(record.positivityTrend * -1).format('0.00') : numeral(record.positivityTrend).format('0.00') }
+					</div>
+				</div>
 			);
 		}
 	},
