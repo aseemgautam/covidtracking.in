@@ -23,7 +23,6 @@ const HomePageTabs = ({ indiaDailyStats, latest, stateDataLatest, buildTime }) =
 				<NationalStats
 					dailyStatistics={indiaDailyStats}
 					latest={latest}
-					isNational
 				/>
 				<p>
 					Today&apos;s statistics are from end of day state bulletins published between 6:00 PM - midnight.

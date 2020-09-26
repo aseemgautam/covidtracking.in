@@ -1,6 +1,7 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-restricted-syntax */
 import { Table, Tag } from 'antd';
+import numeral from 'numeral';
 import _ from 'lodash';
 
 const columns = [
@@ -70,7 +71,7 @@ const columns = [
 			const testElement = (
 				<div className="cell-with-trend-indicator">
 					<Tag color={color}>{prefix}{record.testingTrend}%</Tag>
-					<div>{text}</div>
+					<div>{numeral(record.newTests).format('0.0a')}</div>
 				</div>
 			);
 			return (
