@@ -155,3 +155,18 @@ h1, h2, h3, h4 {
   text-align: right;
   padding: 10px;
 }
+
+.trend-tag-green, .trend-tag-red { 
+	border-radius: 2px;
+	padding: 2px;
+	text-align: center;
+}
+.trend-tag-green {
+	border: 1px solid #b7eb8f;
+	background-color: #f6ffed;
+	
+}
+.trend-tag-red {
+	border: 1px solid #ffa39e;
+	background-color: #fff1f0;
+}

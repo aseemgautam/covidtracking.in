@@ -7,6 +7,7 @@ import _ from 'lodash';
 import MovingAverageProgress from './MovingAverageProgress';
 import LineChartSmall from './charts/LineChartSmall';
 import Colors from '../classes/Colors';
+import TrendIndicator from './TrendIndicator';
 
 const columns = [
 	{ title: 'State',
@@ -59,12 +60,12 @@ const columns = [
 	),
 	dataIndex: 'tests',
 	align: 'right',
-	width: 100,
+	width: 70,
 	render: (text, record) => {
 		return (
 			<>
-				<div className="total">{record.positivity}</div>
-				<div className="total">{text}</div>
+				<div className="total">{record.positivity}%</div>
+				<div className="total">{numeral(text).format('0.0a')}</div>
 			</>
 		);
 	},
@@ -80,15 +81,8 @@ const columns = [
 			return a.testingTrend - b.testingTrend;
 		},
 		render: (text, record) => {
-			const icon = record.testingTrend > 0 ? <CaretUpOutlined style={{ color: `${Colors.green}` }} />
-				: <CaretDownOutlined style={{ color: `${Colors.red}` }} />;
 			return (
-				<div className="flex-row-center">
-					<div className={record.testingTrend > 0 ? 'trend-tag-green' : 'trend-tag-red'}>
-						{icon} {record.testingTrend < 0
-							? numeral(record.testingTrend * -1).format('0') : numeral(record.testingTrend).format('0') }%
-					</div>
-				</div>
+				<TrendIndicator value={numeral(record.testingTrend).format('0')} isPercent />
 			);
 		}
 	},
@@ -100,15 +94,8 @@ const columns = [
 			return a.positivityTrend - b.positivityTrend;
 		},
 		render: (text, record) => {
-			const icon = record.positivityTrend > 0 ? <CaretUpOutlined style={{ color: `${Colors.red}` }} />
-				: <CaretDownOutlined style={{ color: `${Colors.green}` }} />;
 			return (
-				<div className="flex-row-center">
-					<div className={record.positivityTrend > 0 ? 'trend-tag-red' : 'trend-tag-green'}>
-						{icon} {record.positivityTrend < 0
-							? numeral(record.positivityTrend * -1).format('0.00') : numeral(record.positivityTrend).format('0.00') }
-					</div>
-				</div>
+				<TrendIndicator value={numeral(record.positivityTrend).format('0.00')} isPercent reverse />
 			);
 		}
 	},

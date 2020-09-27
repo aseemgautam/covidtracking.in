@@ -18,7 +18,7 @@ const HomePageTabsSecond = ({ stateDataLatest }) => {
 			>
 				<Row>
 					<Col flex={24}>
-						<p style={{ marginTop: 12 }}>Scales are based on value of 7 day Moving Average
+						<p style={{ marginTop: 16, marginBottom: 16 }}>Scales are based on value of 7 day Moving Average
 							of new cases over 14 days.
 							Read more about our criteria <a href="/criteria">here</a>.
 						</p>

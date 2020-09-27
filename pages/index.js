@@ -1,7 +1,10 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable no-restricted-syntax */
-import { Row, Col } from 'antd';
+import { Row, Col, Statistic } from 'antd';
 import Head from 'next/head';
 import _ from 'lodash';
+import numeral from 'numeral';
+import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import CovidDataIndia from '../classes/CovidDataIndia';
 import MovingAverageCard from '../components/NationalStats/MovingAverageCard';
 import CovidDataState from '../classes/CovidDataState';
@@ -9,8 +12,23 @@ import HomePageTabsFirst from '../components/HomePageTabsFirst';
 import HomePageTabsSecond from '../components/HomePageTabsSecond';
 import Utils from '../classes/Utils';
 import DailyStatistic from '../classes/DailyStatistic';
+import Colors from '../classes/Colors';
 
-function Index({ indiaDailyStats, latest, stateDataLatest, buildTime }) {
+function Index({ indiaDailyStats, latest, stateDataLatest, buildTime, testingTrend, positivityTrend }) {
+	const growthInCases = _.last(indiaDailyStats).movingAvg14daysRate;
+	const newCasesTrendText = growthInCases === 0 ? 'are flat (not changed)'
+		: growthInCases > 0 ? `increased by ${growthInCases}%`
+			: `decreased by ${Math.abs(growthInCases)}%`;
+	const testsTrendText = testingTrend === 0 ? 'are flat (not changed)'
+		: testingTrend > 0 ? `increased by ${testingTrend}%`
+			: `decreased by ${Math.abs(testingTrend)}%`;
+	const positivityTrendText = positivityTrend === 0 ? 'is same'
+		: positivityTrend > 0 ? `is up by ${positivityTrend}%`
+			: `down by ${Math.abs(positivityTrend)}%`;
+	const testingTrendIcon = testingTrend > 0 ? <ArrowUpOutlined style={{ color: Colors.green }} />
+		: <ArrowDownOutlined style={{ color: Colors.red }} />;
+	const positivityTrendIcon = positivityTrend > 0 ? <ArrowUpOutlined style={{ color: Colors.red }} />
+		: <ArrowDownOutlined style={{ color: Colors.green }} />;
 	return (
 		<>
 			<Head>
@@ -22,20 +40,35 @@ function Index({ indiaDailyStats, latest, stateDataLatest, buildTime }) {
 				stateDataLatest={stateDataLatest}
 				buildTime={buildTime}
 			/>
-			<div className="subhead">Growth in daily cases over 7 & 14 days</div>
+			<div className="subhead">New cases, Tests & Positivity over Last 14 days</div>
+			<p style={{ marginTop: 16 }}>Over the last 2 weeks, new cases have {newCasesTrendText},
+				daily tests have {testsTrendText} & positivity is {positivityTrendText}.
+			</p>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} sm={24} md={12}>
-					<MovingAverageCard cases={indiaDailyStats} days={7} />
+					<MovingAverageCard cases={indiaDailyStats} days={14} title="New Cases" />
 				</Col>
-				<Col xs={24} sm={24} md={12}>
-					<MovingAverageCard cases={indiaDailyStats} days={14} />
+				<Col xs={12} md={6}>
+					<div className={`${testingTrend > 0 ? 'statistic-green' : 'statistic-red'} covid-statistic`}>
+						<Statistic
+							title="Daily Tests"
+							value={Math.abs(testingTrend)}
+							prefix={testingTrendIcon}
+							suffix="%"
+						/>
+					</div>
+				</Col>
+				<Col xs={12} md={6}>
+					<div className={`${positivityTrend > 0 ? 'statistic-red' : 'statistic-green'} covid-statistic`}>
+						<Statistic
+							title="Positivity Rate"
+							value={Math.abs(positivityTrend)}
+							prefix={positivityTrendIcon}
+							suffix="%"
+						/>
+					</div>
 				</Col>
 			</Row>
-			<p>
-				Rate at which daily cases are increasing or decreasing. A negative value indicates
-				a drop in daily cases. A 50% growth over 14 days means if we found 100 new cases
-				daily (average, 14 days ago), today we find 150. Line = 7 day moving average. Bars = new cases.
-			</p>
 			<HomePageTabsSecond stateDataLatest={stateDataLatest} />
 		</>
 	);
@@ -67,12 +100,21 @@ export async function getStaticProps() {
 		recovered, indiaLatest.deaths + deaths, deaths, indiaLatest.tests + tests,
 		tests);
 	latest.count = count;
+	const testingTrend = ((_.last(indiaDailyStats).newTests7DayMA - _.nth(indiaDailyStats, -15).newTests7DayMA) * 100)
+		/ _.nth(indiaDailyStats, -15).newTests7DayMA;
+	const positivityTrend = _.last(indiaDailyStats).dailyPositivity7DayMA
+		- _.nth(indiaDailyStats, -15).dailyPositivity7DayMA;
 	// if (latest.date === _.last(indiaDailyStats).date) {
 	// 	latest = [];
 	// }
 	return {
 		// will be passed to the page component as props
-		props: { indiaDailyStats, latest: JSON.parse(JSON.stringify(latest)), stateDataLatest, buildTime }
+		props: { indiaDailyStats,
+			latest: JSON.parse(JSON.stringify(latest)),
+			stateDataLatest,
+			buildTime,
+			testingTrend: numeral(testingTrend).format('0.00'),
+			positivityTrend: numeral(positivityTrend).format('0.00') }
 	};
 }
 

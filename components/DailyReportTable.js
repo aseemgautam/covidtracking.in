@@ -70,7 +70,7 @@ const columns = [
 			const prefix = record.testingTrend > 0 ? '+' : '';
 			const testElement = (
 				<div className="cell-with-trend-indicator">
-					<Tag color={color}>{prefix}{record.testingTrend}%</Tag>
+					<Tag color={color}>{prefix}{numeral(record.testingTrend).format('0')}%</Tag>
 					<div>{numeral(record.newTests).format('0.0a')}</div>
 				</div>
 			);
