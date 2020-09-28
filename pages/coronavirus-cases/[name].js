@@ -1,7 +1,9 @@
+/* eslint-disable no-nested-ternary */
 import _ from 'lodash';
 import numeral from 'numeral';
-import { Row, Col } from 'antd';
+import { Row, Col, Statistic } from 'antd';
 import Head from 'next/head';
+import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import CovidDataState from '../../classes/CovidDataState';
 import IndiaStates from '../../public/india-states.json';
 import NationalStats from '../../components/NationalStats';
@@ -9,14 +11,30 @@ import MovingAverageCard from '../../components/NationalStats/MovingAverageCard'
 import NewCasesAndDeathsChart from '../../components/chartsv2/NewCasesAndDeathsChart';
 import TestAndPositivityChart from '../../components/chartsv2/TestAndPositivityChart';
 import Utils from '../../classes/Utils';
+import Colors from '../../classes/Colors';
 
-const CoronavirusCases = ({ stateStatistics, name }) => {
+const CoronavirusCases = ({ stateStatistics, name, buildTime, testingTrend, positivityTrend }) => {
 	const last = _.last(stateStatistics);
 	const day = (new Date(last.date)).toLocaleString('en-IN', { weekday: 'long' });
 	const cases = numeral(last.confirmed).format('0,0');
 	const deaths = numeral(last.deaths).format('0,0');
 	const movement = last.movingAvg7daysRate >= 0
 		? `an increase of ${last.movingAvg7daysRate}` : ` a decrease of ${last.movingAvg7daysRate * -1}`;
+	// 14 day trend
+	const growthInCases = last.movingAvg14daysRate;
+	const newCasesTrendText = growthInCases === 0 ? 'are flat (not changed)'
+		: growthInCases > 0 ? `increased by ${growthInCases}%`
+			: `decreased by ${Math.abs(growthInCases)}%`;
+	const testsTrendText = testingTrend === 0 ? 'are flat (not changed)'
+		: testingTrend > 0 ? `increased by ${testingTrend}%`
+			: `decreased by ${Math.abs(testingTrend)}%`;
+	const positivityTrendText = positivityTrend === 0 ? 'is same'
+		: positivityTrend > 0 ? `is up by ${positivityTrend}%`
+			: `down by ${Math.abs(positivityTrend)}%`;
+	const testingTrendIcon = testingTrend > 0 ? <ArrowUpOutlined style={{ color: Colors.green }} />
+		: <ArrowDownOutlined style={{ color: Colors.red }} />;
+	const positivityTrendIcon = positivityTrend > 0 ? <ArrowUpOutlined style={{ color: Colors.red }} />
+		: <ArrowDownOutlined style={{ color: Colors.green }} />;
 	return (
 		<>
 			<Head>
@@ -38,20 +56,35 @@ const CoronavirusCases = ({ stateStatistics, name }) => {
 				latest={_.last(stateStatistics)}
 				dailyStatistics={stateStatistics}
 			/>
-			<div className="subhead">Growth in daily cases over 7 & 14 days</div>
+			<div className="subhead">New cases, Tests & Positivity over Last 14 days</div>
+			<p style={{ marginTop: 16 }}>Over the last 2 weeks, new cases have {newCasesTrendText},
+				daily tests have {testsTrendText} & positivity is {positivityTrendText}.
+			</p>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} sm={24} md={12}>
-					<MovingAverageCard cases={stateStatistics} days={7} />
+					<MovingAverageCard cases={stateStatistics} days={14} title="New Cases" />
 				</Col>
-				<Col xs={24} sm={24} md={12}>
-					<MovingAverageCard cases={stateStatistics} days={14} />
+				<Col xs={12} md={6}>
+					<div className={`${testingTrend > 0 ? 'statistic-green' : 'statistic-red'} covid-statistic`}>
+						<Statistic
+							title="Daily Tests"
+							value={Math.abs(testingTrend)}
+							prefix={testingTrendIcon}
+							suffix="%"
+						/>
+					</div>
+				</Col>
+				<Col xs={12} md={6}>
+					<div className={`${positivityTrend > 0 ? 'statistic-red' : 'statistic-green'} covid-statistic`}>
+						<Statistic
+							title="Positivity Rate"
+							value={Math.abs(positivityTrend)}
+							prefix={positivityTrendIcon}
+							suffix="%"
+						/>
+					</div>
 				</Col>
 			</Row>
-			<p>
-				Rate at which daily cases are increasing or decreasing. A negative value indicates
-				a drop in daily cases. A 50% growth over 14 days means if we found 100 new cases
-				daily (average, 14 days ago), today we find 150. Line = 7 day moving average. Bars = new cases.
-			</p>
 			<Row gutter={[24, 16]}>
 				<Col xs={24} md={12}>
 					<div className="flex-row-spread chart-title">
@@ -112,9 +145,18 @@ export async function getStaticProps({ params }) {
 	if (_.last(stateStatistics).newCases === 0 && _.last(stateStatistics).newRecover === 0) {
 		stateStatistics.pop();
 	}
+	const buildTime = Utils.dateAndTime();
+	const testingTrend = ((_.last(stateStatistics).newTests7DayMA - _.nth(stateStatistics, -15).newTests7DayMA) * 100)
+		/ _.nth(stateStatistics, -15).newTests7DayMA;
+	const positivityTrend = _.last(stateStatistics).dailyPositivity7DayMA
+		- _.nth(stateStatistics, -15).dailyPositivity7DayMA;
 	return {
 		// will be passed to the page component as props
-		props: { stateStatistics, name: _.startCase(stateName) }
+		props: { stateStatistics,
+			name: _.startCase(stateName),
+			buildTime,
+			testingTrend: numeral(testingTrend).format('0.00'),
+			positivityTrend: numeral(positivityTrend).format('0.00') }
 	};
 }
 

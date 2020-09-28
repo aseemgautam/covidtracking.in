@@ -42,10 +42,10 @@ const DistrictPage = ({ districtData, state, name }) => {
 			<div className="subhead">Growth in daily cases over 7 & 14 days</div>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} sm={24} md={12}>
-					<MovingAverageCard cases={districtData} days={7} />
+					<MovingAverageCard cases={districtData} days={7} title="7 Day Change" />
 				</Col>
 				<Col xs={24} sm={24} md={12}>
-					<MovingAverageCard cases={districtData} days={14} />
+					<MovingAverageCard cases={districtData} days={14} title="14 Day Change" />
 				</Col>
 			</Row>
 			<p>
