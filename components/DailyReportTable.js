@@ -61,16 +61,16 @@ const columns = [
 		},
 		render: (text, record) => {
 			let color = '';
-			if (record.testingTrend >= 10) {
+			if (record.dailyTestingTrend >= 5) {
 				color = 'green';
 			}
-			if (record.testingTrend <= 0) {
+			if (record.dailyTestingTrend <= 0) {
 				color = 'red';
 			}
-			const prefix = record.testingTrend > 0 ? '+' : '';
+			const prefix = record.dailyTestingTrend > 0 ? '+' : '';
 			const testElement = (
 				<div className="cell-with-trend-indicator">
-					<Tag color={color}>{prefix}{numeral(record.testingTrend).format('0')}%</Tag>
+					<Tag color={color}>{prefix}{record.dailyTestingTrend}%</Tag>
 					<div>{numeral(record.newTests).format('0.0a')}</div>
 				</div>
 			);

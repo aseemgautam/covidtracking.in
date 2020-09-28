@@ -106,8 +106,8 @@ class CovidDataState {
 						return latest.newCases <= curr.newCases;
 					});
 					latest.newCasesTrend = (((latest.newCases - latest.movingAvg7days) * 100) / latest.movingAvg7days).toFixed(0);
-					latest.testingTrend = latest.newTests > 0
-						? (((latest.newTests - latest.newTests7DayMA) * 100) / latest.newTests7DayMA).toFixed(0) : 0;
+					latest.dailyTestingTrend = latest.newTests > 0
+						? (((latest.newTests - latest.newTests7DayMA) / latest.newTests7DayMA) * 100).toFixed(0) : 0;
 					latest.is14dayHigh = _.every(cases.slice(-14), curr => {
 						return latest.newCases >= curr.newCases;
 					});
