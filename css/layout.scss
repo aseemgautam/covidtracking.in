@@ -12,7 +12,9 @@
   border-top: vars.$border;
   text-align: center;
   padding: 16px;
-
+	a {
+		margin-right: 8px;
+	}
   .btn-twitter {
     border: 1px solid;
     border-color: vars.$blue;

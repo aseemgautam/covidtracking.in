@@ -76,22 +76,22 @@ const SiteLayout = props => {
 					</Col>
 				</Row>
 			</Content>
-			{/* <Footer>
+			<Footer>
 				<div className="flex-row-center">
-					<div className="logo">
-						<a href="/">COVID TRACKING INDIA</a>
+					<div>
+						<a href="/">Tracker</a>
 					</div>
-					<div className="btn-twitter">
-						<a
-							rel="noopener noreferrer"
-							target="_blank"
-							href="https://twitter.com/CovidTrackingIn"
-						>
-							<TwitterOutlined /> Follow on twitter
-						</a>
+					<div>
+						<a href="/districts">Districts</a>
+					</div>
+					<div>
+						<a href="/testing">Testing</a>
+					</div>
+					<div>
+						<a href="/sitemap">Sitemap</a>
 					</div>
 				</div>
-			</Footer> */}
+			</Footer>
 		</Layout>
 	);
 };

@@ -23,7 +23,7 @@ const DistrictPage = ({ districtData, state, name }) => {
 			<Head>
 				<title>Coronavirus cases & dashboard {name}</title>
 			</Head>
-			<h2>{name} Covid Cases & Dashboard</h2>
+			<h2>{name}, {state} Covid Cases & Dashboard</h2>
 			<p>
 				At least {last.newCases} new cases were reported in {name}, {state} on {Utils.shortMonthAndDateWithOrdinal(last.date)}.
 				Over the past week, there have been an average of {last.movingAvg7days} cases per day,
