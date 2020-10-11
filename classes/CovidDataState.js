@@ -131,6 +131,7 @@ class CovidDataState {
 					// testing trend
 					latest.testingTrend = (((latest.newTests7DayMA - _.nth(cases, -14).newTests7DayMA) * 100)
 						/	_.nth(cases, -14).newTests7DayMA).toFixed(2);
+					latest.url = latest.state.toLocaleLowerCase().split(' ').join('-');
 					this._latest.push(latest);
 				}
 			}

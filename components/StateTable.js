@@ -27,7 +27,7 @@ const columns = [
 						color: '#fff'
 					}
 				},
-				children: text,
+				children: <a style={{ color: '#fff' }} href={`/coronavirus-cases/${record.url}`}>{text}</a>,
 			};
 		}
 	},

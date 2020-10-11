@@ -12,6 +12,11 @@ const columns = [
 		sorter: (a, b) => {
 			// eslint-disable-next-line prefer-template
 			return ('' + a.state).localeCompare(b.state);
+		},
+		render: (text, record) => {
+			return (
+				<a href={`/coronavirus-cases/${record.url}`}>{text}</a>
+			);
 		}
 	},
 	{ title: (
