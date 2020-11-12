@@ -16,6 +16,7 @@ const DistrictPage = ({ districtData, state, name }) => {
 	const day = (new Date(last.date)).toLocaleString('en-IN', { weekday: 'long' });
 	const cases = numeral(last.confirmed).format('0,0');
 	const deaths = numeral(last.deaths).format('0,0');
+	const buildTime = Utils.dateAndTime();
 	const movement = last.movingAvg7daysRate >= 0
 		? `an increase of ${last.movingAvg7daysRate}` : ` a decrease of ${last.movingAvg7daysRate * -1}`;
 	return (
@@ -24,6 +25,7 @@ const DistrictPage = ({ districtData, state, name }) => {
 				<title>Coronavirus cases & dashboard {name}</title>
 			</Head>
 			<h2>{name}, {state} Covid Cases & Dashboard</h2>
+			<p style={{ color: '#666', fontSize: '12px' }}>Last updated: {buildTime}</p>
 			<p>
 				At least {last.newCases} new cases were reported in {name}, {state} on {Utils.shortMonthAndDateWithOrdinal(last.date)}.
 				Over the past week, there have been an average of {last.movingAvg7days} cases per day,
