@@ -52,7 +52,7 @@ const SiteLayout = props => {
 					<Col xs={0} sm={0} md={16} lg={18}>
 						<Space size="middle" className="navigation">
 							{tracker}
-							{districts}
+							{/* {districts} */}
 							{testing}
 							{criteria}
 							<div>
@@ -81,9 +81,9 @@ const SiteLayout = props => {
 					<div>
 						<a href="/">Tracker</a>
 					</div>
-					<div>
+					{/* <div>
 						<a href="/districts">Districts</a>
-					</div>
+					</div> */}
 					<div>
 						<a href="/testing">Testing</a>
 					</div>
