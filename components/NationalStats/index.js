@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { Row, Col, Radio, Space } from 'antd';
 import dayjs from 'dayjs';
 import _ from 'lodash';
-import numeral from 'numeral';
 import CovidStatistic from './CovidStatistic';
 import DatePicker from '../DatePicker';
+import Utils from '../../classes/Utils';
 
 const NationalStats = ({ latest, dailyStatistics, isNational }) => {
 	const [date, setDate] = useState(latest.date);
@@ -58,7 +58,7 @@ const NationalStats = ({ latest, dailyStatistics, isNational }) => {
 				<Col xs={12} sm={8} lg={6}>
 					<CovidStatistic
 						title="confirmed"
-						value={statistic.confirmed}
+						value={Utils.getIndianNumberFormat(statistic.confirmed)}
 						suffix={statistic.newCases}
 						suffixClassName="red6"
 						precision={0}
@@ -88,7 +88,7 @@ const NationalStats = ({ latest, dailyStatistics, isNational }) => {
 					<CovidStatistic
 						title="Recovered"
 						className="statistic-recovered"
-						value={statistic.recovered}
+						value={Utils.getIndianNumberFormat(statistic.recovered)}
 						suffix={statistic.newRecover}
 						suffixClassName="green7"
 						precision={0}
@@ -97,7 +97,7 @@ const NationalStats = ({ latest, dailyStatistics, isNational }) => {
 				<Col xs={12} sm={8} lg={6}>
 					<CovidStatistic
 						title="Covid Tests"
-						value={numeral(statistic.tests).format('0.00a')}
+						value={Utils.getIndianNumberFormat(statistic.tests)}
 						suffix={statistic.newTests}
 						suffixClassName="green7"
 						precision={0}
