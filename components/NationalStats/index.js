@@ -33,7 +33,7 @@ const NationalStats = ({ latest, dailyStatistics, isNational }) => {
 	}
 	return (
 		<>
-			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 16, sm: 16 }]}>
+			<Row style={{ marginBottom: '16px' }}>
 				<Col xs={24}>
 					<Space>
 						<Radio.Group value={date} onChange={onDateChangeFromRadio}>
@@ -54,7 +54,7 @@ const NationalStats = ({ latest, dailyStatistics, isNational }) => {
 					</Space>
 				</Col>
 			</Row>
-			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
+			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]} style={{ marginBottom: '16px' }}>
 				<Col xs={12} sm={8} lg={6}>
 					<CovidStatistic
 						title="confirmed"

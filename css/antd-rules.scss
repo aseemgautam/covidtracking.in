@@ -21,8 +21,11 @@
 	}
 }
 .ant-tabs .ant-tabs-tab {
-	margin-right: 18px;
 	padding: 8px 0px;
+}
+
+.ant-tabs-tab + .ant-tabs-tab {
+	margin: 0 0 0 24px;
 }
 .ant-table {
 	color: vars.$font-color;
@@ -74,7 +77,6 @@
 
 @media screen and (max-width: 576px) {
 	.ant-tabs-bar .ant-tabs-nav .ant-tabs-tab {
-		margin-right: 16px;
 		padding: 8px 0px;
 	}	
 }
