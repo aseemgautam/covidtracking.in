@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import fetch from 'isomorphic-unfetch';
 import Papa from 'papaparse';
-import Utils from './Utils';
 import MovingAverage from './MovingAverage';
 import IndiaStates from '../public/india-states.json';
 import DistrictPopulation from '../public/district-population.json';
@@ -99,8 +98,9 @@ class Districts {
 		console.log(`Fetch took ${(t1 - t0) / 1000} seconds.`);
 		const lastDate = _.last(data).date;
 		const invalid = ['Other State', 'Unknown', 'Italians', 'Foreign Evacuees', 'Airport Quarantine'];
+		const excludeStates = ['Arunachal Pradesh', 'Meghalaya', 'Nagaland', 'Mizoram'];
 		const valid = _.filter(_.filter(data, { date: lastDate }), e => {
-			return !invalid.includes(e.district);
+			return !invalid.includes(e.district) && !excludeStates.includes(e.state) && e.confirmed > 100;
 		});
 		const t2 = performance.now();
 		console.log(`Invalid Filter took ${(t2 - t1) / 1000} seconds.`);
@@ -121,7 +121,7 @@ class Districts {
 					newActive: idx === 0 ? 0 : (curr.confirmed - curr.deaths - curr.recovered)
 							- (src[idx - 1].confirmed - src[idx - 1].deaths - src[idx - 1].recovered),
 					active: curr.confirmed - curr.deaths - curr.recovered,
-					deathRate: curr.deaths > 1 ? Utils.round((curr.deaths * 100) / (curr.recovered + curr.deaths)) : '-',
+					// deathRate: curr.deaths > 1 ? Utils.round((curr.deaths * 100) / (curr.recovered + curr.deaths)) : '-',
 					population
 				};
 			});
