@@ -111,7 +111,7 @@ class Districts {
 			const populationObj = _.find(populations, { state: record.state, district: record.district });
 			const population = populationObj ? populationObj.population : 0;
 			const districtData = _.filter(data, district => {
-				return district.state === record.state && district.district === record.district && district.date > '2021-03-15';
+				return district.state === record.state && district.district === record.district && district.date > '2021-03-26';
 			}).map((curr, idx, src) => {
 				return {
 					...curr,
