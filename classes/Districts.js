@@ -111,7 +111,7 @@ class Districts {
 			const populationObj = _.find(populations, { state: record.state, district: record.district });
 			const population = populationObj ? populationObj.population : 0;
 			const districtData = _.filter(data, district => {
-				return district.state === record.state && district.district === record.district;
+				return district.state === record.state && district.district === record.district && district.date > '2021-03-15';
 			}).map((curr, idx, src) => {
 				return {
 					...curr,
@@ -121,7 +121,6 @@ class Districts {
 					newActive: idx === 0 ? 0 : (curr.confirmed - curr.deaths - curr.recovered)
 							- (src[idx - 1].confirmed - src[idx - 1].deaths - src[idx - 1].recovered),
 					active: curr.confirmed - curr.deaths - curr.recovered,
-					// deathRate: curr.deaths > 1 ? Utils.round((curr.deaths * 100) / (curr.recovered + curr.deaths)) : '-',
 					population
 				};
 			});
