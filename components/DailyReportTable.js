@@ -87,6 +87,12 @@ const columns = [
 		align: 'right',
 		sorter: (a, b) => {
 			return a.dailyPositivity - b.dailyPositivity;
+		},
+		render: text => {
+			const className = parseInt(text, 10) > 10 ? 'red' : null;
+			return (
+				<div className={className}>{text}</div>
+			);
 		}
 	},
 	{ title: 'Deaths',
