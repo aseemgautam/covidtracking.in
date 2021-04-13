@@ -84,57 +84,55 @@ class CovidDataState {
 		this._latest = [];
 		IndianStates.states.forEach( // loop all states
 			state => {
-				if (state.name !== 'Lakshadweep') {
-					const cases = this._all.get(state.name);
-					const latest = _.last(cases);
-					if (latest) {
-						latest.peak = cases.reduce((high, current) => {
-							if (current.newCases > high) {
-								// eslint-disable-next-line no-param-reassign
-								high = current.newCases;
-							}
-							return high;
-						}, 0);
-						latest.trendColor = Colors.getTrendColorByName(latest.movingAvg14daysRate);
-						latest.population = state.population;
-						latest.stateCode = state.code;
-						latest.isHigh = latest.newCases === latest.peak;
-						latest.dailyDeathRate = latest.newDeaths > 0 && latest.newRecover
-							? ((latest.newDeaths * 100) / (latest.newDeaths + latest.newRecover)).toFixed(2) : '';
-						latest.dailyPositivity = latest.newTests > 0 ? ((latest.newCases * 100) / latest.newTests).toFixed(2) : '';
-						latest.positivityDelta = latest.newTests > 0 ? latest.positivity - latest.positivityDelta : '';
-						latest.is14dayLow = _.every(cases.slice(-14), curr => {
-							return latest.newCases <= curr.newCases;
-						});
-						latest.newCasesTrend = (((latest.newCases - latest.movingAvg7days) * 100) / latest.movingAvg7days).toFixed(0);
-						latest.dailyTestingTrend = latest.newTests > 0
-							? (((latest.newTests - latest.newTests7DayMA) / latest.newTests7DayMA) * 100).toFixed(0) : 0;
-						latest.is14dayHigh = _.every(cases.slice(-14), curr => {
-							return latest.newCases >= curr.newCases;
-						});
-						latest.movingAvg7daysData = cases.slice(-8).reduce((acc, curr) => {
-							acc.push(curr.movingAvg7days);
-							return acc;
-						}, []);
-						latest.movingAvg14daysData = cases.slice(-15).map(curr => {
-							return curr.movingAvg7days;
-						}, []);
-						const sum = (acc, curr) => { return acc + curr.newCases; };
-						const offset = latest.newCases === 0 ? -1 : 0;
-						latest.newCases1to7days = cases.slice(-7 + offset).reduce(sum, 0);
-						latest.newCases8to14days = cases.slice(cases.length - 15 + offset, cases.length - 8 + offset).reduce(sum, 0);
-						latest.newCases15to21Days = cases.slice(cases.length - 22 + offset, cases.length - 15 + offset).reduce(sum, 0);
-						latest.newCases22to28Days = cases.slice(cases.length - 29 + offset, cases.length - 22 + offset).reduce(sum, 0);
-						// used in trend color, MovingAverageProgress
-						latest.newCases14days = cases.slice(-14).reduce(sum, 0);
-						// positivity trend
-						latest.positivityTrend = (latest.dailyPositivity7DayMA - _.nth(cases, -14).dailyPositivity7DayMA).toFixed(2);
-						// testing trend
-						latest.testingTrend = (((latest.newTests7DayMA - _.nth(cases, -14).newTests7DayMA) * 100)
-							/	_.nth(cases, -14).newTests7DayMA).toFixed(2);
-						latest.url = latest.state.toLocaleLowerCase().split(' ').join('-');
-						this._latest.push(latest);
-					}
+				const cases = this._all.get(state.name);
+				const latest = _.last(cases);
+				if (latest) {
+					latest.peak = cases.reduce((high, current) => {
+						if (current.newCases > high) {
+							// eslint-disable-next-line no-param-reassign
+							high = current.newCases;
+						}
+						return high;
+					}, 0);
+					latest.trendColor = Colors.getTrendColorByName(latest.movingAvg14daysRate);
+					latest.population = state.population;
+					latest.stateCode = state.code;
+					latest.isHigh = latest.newCases === latest.peak;
+					latest.dailyDeathRate = latest.newDeaths > 0 && latest.newRecover
+						? ((latest.newDeaths * 100) / (latest.newDeaths + latest.newRecover)).toFixed(2) : '';
+					latest.dailyPositivity = latest.newTests > 0 ? ((latest.newCases * 100) / latest.newTests).toFixed(2) : '';
+					latest.positivityDelta = latest.newTests > 0 ? latest.positivity - latest.positivityDelta : '';
+					latest.is14dayLow = _.every(cases.slice(-14), curr => {
+						return latest.newCases <= curr.newCases;
+					});
+					latest.newCasesTrend = (((latest.newCases - latest.movingAvg7days) * 100) / latest.movingAvg7days).toFixed(0);
+					latest.dailyTestingTrend = latest.newTests > 0
+						? (((latest.newTests - latest.newTests7DayMA) / latest.newTests7DayMA) * 100).toFixed(0) : 0;
+					latest.is14dayHigh = _.every(cases.slice(-14), curr => {
+						return latest.newCases >= curr.newCases;
+					});
+					latest.movingAvg7daysData = cases.slice(-8).reduce((acc, curr) => {
+						acc.push(curr.movingAvg7days);
+						return acc;
+					}, []);
+					latest.movingAvg14daysData = cases.slice(-15).map(curr => {
+						return curr.movingAvg7days;
+					}, []);
+					const sum = (acc, curr) => { return acc + curr.newCases; };
+					const offset = latest.newCases === 0 ? -1 : 0;
+					latest.newCases1to7days = cases.slice(-7 + offset).reduce(sum, 0);
+					latest.newCases8to14days = cases.slice(cases.length - 15 + offset, cases.length - 8 + offset).reduce(sum, 0);
+					latest.newCases15to21Days = cases.slice(cases.length - 22 + offset, cases.length - 15 + offset).reduce(sum, 0);
+					latest.newCases22to28Days = cases.slice(cases.length - 29 + offset, cases.length - 22 + offset).reduce(sum, 0);
+					// used in trend color, MovingAverageProgress
+					latest.newCases14days = cases.slice(-14).reduce(sum, 0);
+					// positivity trend
+					latest.positivityTrend = (latest.dailyPositivity7DayMA - _.nth(cases, -14).dailyPositivity7DayMA).toFixed(2);
+					// testing trend
+					latest.testingTrend = (((latest.newTests7DayMA - _.nth(cases, -14).newTests7DayMA) * 100)
+						/	_.nth(cases, -14).newTests7DayMA).toFixed(2);
+					latest.url = latest.state.toLocaleLowerCase().split(' ').join('-');
+					this._latest.push(latest);
 				}
 			}
 		);
