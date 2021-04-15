@@ -65,7 +65,19 @@ class CovidDataState {
 							deathsPerMillion: curr.deaths > 0 ? ((curr.deaths * 1000000) / state.population).toFixed(0) : 0
 						};
 					});
-				MovingAverage.calculate(cases, 'newCases');
+				// console.log(state.name);
+				// if (cases.slice(0, -1).length === 0) {
+				// 	console.log(state.name);
+				// }
+				// MovingAverage.calculate(cases, 'newCases');
+				if (_.last(cases).newCases === 0) {
+					MovingAverage.calculate(cases.slice(0, -1), 'newCases');
+					_.last(cases).movingAvg7days = _.nth(cases, -2).movingAvg7days;
+					_.last(cases).movingAvg7daysRate = _.nth(cases, -2).movingAvg7daysRate;
+					_.last(cases).movingAvg14daysRate = _.nth(cases, -2).movingAvg14daysRate;
+				} else {
+					MovingAverage.calculate(cases, 'newCases');
+				}
 				MovingAverage.for7days(cases, 'newDeaths', 'newDeaths7DayMA', true);
 				MovingAverage.for7days(cases, 'newTests', 'newTests7DayMA', true);
 				MovingAverage.for7days(cases, 'dailyPositivity', 'dailyPositivity7DayMA', false);
