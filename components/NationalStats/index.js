@@ -4,7 +4,6 @@ import dayjs from 'dayjs';
 import _ from 'lodash';
 import CovidStatistic from './CovidStatistic';
 import DatePicker from '../DatePicker';
-import Utils from '../../classes/Utils';
 
 const NationalStats = ({ latest, dailyStatistics, isNational }) => {
 	const [date, setDate] = useState(latest.date);
@@ -58,10 +57,11 @@ const NationalStats = ({ latest, dailyStatistics, isNational }) => {
 				<Col xs={12} sm={8} lg={6}>
 					<CovidStatistic
 						title="confirmed"
-						value={Utils.getIndianNumberFormat(statistic.confirmed)}
+						value={statistic.confirmed}
 						suffix={statistic.newCases}
 						suffixClassName="red6"
 						precision={0}
+						formatValue
 					/>
 				</Col>
 				<Col xs={12} sm={8} lg={6}>
@@ -72,6 +72,7 @@ const NationalStats = ({ latest, dailyStatistics, isNational }) => {
 						suffix={statistic.newActive}
 						suffixClassName={latest.newActive > 0 ? 'red6' : 'green7'}
 						precision={0}
+						formatValue
 					/>
 				</Col>
 				<Col xs={12} sm={8} lg={6}>
@@ -88,19 +89,22 @@ const NationalStats = ({ latest, dailyStatistics, isNational }) => {
 					<CovidStatistic
 						title="Recovered"
 						className="statistic-recovered"
-						value={Utils.getIndianNumberFormat(statistic.recovered)}
+						value={statistic.recovered}
 						suffix={statistic.newRecover}
 						suffixClassName="green7"
 						precision={0}
+						formatValue
 					/>
 				</Col>
 				<Col xs={12} sm={8} lg={6}>
 					<CovidStatistic
 						title="Covid Tests"
-						value={Utils.getIndianNumberFormat(statistic.tests)}
+						value={statistic.tests}
 						suffix={statistic.newTests}
 						suffixClassName="green7"
 						precision={0}
+						formatSuffix
+						formatValue
 					/>
 				</Col>
 				<Col xs={12} sm={8} lg={6}>

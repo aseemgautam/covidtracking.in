@@ -25,10 +25,6 @@ const HomePageTabs = ({ indiaDailyStats, latest, stateDataLatest, buildTime }) =
 					latest={latest}
 					isNational
 				/>
-				<p>
-					Today&apos;s statistics are from end of day state bulletins published between 6:00 PM - midnight.
-					Yesterday & other date statistics are confirmed national numbers by MOHFW.
-				</p>
 			</TabPane>
 			<TabPane
 				tab={
@@ -67,7 +63,7 @@ const HomePageTabs = ({ indiaDailyStats, latest, stateDataLatest, buildTime }) =
 				<TabPane
 					tab={
 						(
-							<div>+Today &nbsp;
+							<div>Live &nbsp;
 								<Tag className="live-counter" style={{ color: '#303030' }} color="#FFD666">
 									{latest.count}
 								</Tag>
