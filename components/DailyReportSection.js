@@ -12,9 +12,9 @@ const DailyReportSection = ({ casesByStateLatest }) => {
 	return (
 		<>
 			<p className="daily-help-text">
-				Updates from daily state bulletins. Percentages (%) show change from average.
+				Percentages (%) show change from average.
 				For eg. +12% in Tests would mean, today there were 12% more tests done for that state, compared
-				to average tests done in last 7 days.
+				to average tests done in last 7 days. <b>WCT</b> = Weekly cases trend. <b>WTT</b> = Weekly testing trend.
 			</p>
 			{tags}
 			<DailyReportTable casesByStateLatest={casesByStateLatest} />

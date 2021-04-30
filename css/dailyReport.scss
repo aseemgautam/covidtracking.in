@@ -24,4 +24,14 @@
 			border: none;
 		}
 	}
+	.weekly-trend-negative, .weekly-trend-positive, .weekly-trend-none { text-align: center;}
+	.weekly-trend-negative {
+		background-color: #fff1f0;
+		color: #cf1322;
+	}
+	.weekly-trend-positive {
+		background-color: #e5f5e0;
+		color: #237804;
+	}
+	// .trend-tag-red, .trend-tag-green { width: 60px; border: none; background-color:transparent;}
 }
