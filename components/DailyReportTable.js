@@ -161,7 +161,7 @@ const columns = [
 	{ title: 'Recovered',
 		dataIndex: 'newRecover',
 		align: 'right',
-		width: 100,
+		width: 70,
 		sortDirections: ['descend', 'ascend'],
 		sorter: (a, b) => {
 			return a.newRecover - b.newRecover;
