@@ -89,7 +89,7 @@ const columns = [
 			return a.dailyPositivity - b.dailyPositivity;
 		},
 		render: text => {
-			const className = parseInt(text, 10) > 10 ? 'red' : null;
+			const className = parseInt(text, 10) > 20 ? 'red bold' : null;
 			return (
 				<div className={className}>{text}</div>
 			);
