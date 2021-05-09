@@ -65,7 +65,7 @@ const MovingAverageCardChart = ({ data, width, newCases, dates }) => {
 						fontSize: 12,
 						fontWeight: 'normal',
 						formatter: p => {
-							const text = p.value > 9999 ? numeral(p.value).format('0.0a') : p.value;
+							const text = p.value > 9999 ? numeral(p.value).format('0a') : p.value;
 							return p.dataIndex === 0 || p.dataIndex === data.length - 1
 								? text
 								: '';

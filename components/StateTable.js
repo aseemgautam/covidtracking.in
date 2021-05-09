@@ -8,6 +8,7 @@ import MovingAverageProgress from './MovingAverageProgress';
 import LineChartSmall from './charts/LineChartSmall';
 import Colors from '../classes/Colors';
 import TrendIndicator from './TrendIndicator';
+import Utils from '../classes/Utils';
 
 const columns = [
 	{ title: 'State',
@@ -31,27 +32,6 @@ const columns = [
 			};
 		}
 	},
-	// { title: (
-	// 	<>
-	// 		<div>CASES</div>
-	// 	</>
-	// ),
-	// dataIndex: 'newCases',
-	// align: 'right',
-	// width: 80,
-	// render: (text, record) => {
-	// 	return (
-	// 		<>
-	// 			<div className="plus-cases">{text === 0 ? '' : `+${text}`}</div>
-	// 			<div className="total">{record.confirmed}</div>
-	// 		</>
-	// 	);
-	// },
-	// defaultSortOrder: 'descend',
-	// sorter: (a, b) => {
-	// 	return a.confirmed - b.confirmed;
-	// }
-	// },
 	{ title: (
 		<>
 			<div>% +VE</div>
@@ -65,7 +45,8 @@ const columns = [
 		return (
 			<>
 				<div className="total">{record.positivity}%</div>
-				<div className="total">{numeral(text).format('0.0a')}</div>
+				{/* <div className="total">{numeral(text).format('0.0a')}</div> */}
+				<div className="total">{Utils.getIndianNumberFormat(text)}</div>
 			</>
 		);
 	},
@@ -95,7 +76,7 @@ const columns = [
 		},
 		render: (text, record) => {
 			return (
-				<TrendIndicator value={numeral(record.positivityTrend).format('0.00')} isPercent reverse />
+				<TrendIndicator value={numeral(record.positivityTrend).format('0.0')} isPercent reverse />
 			);
 		}
 	},

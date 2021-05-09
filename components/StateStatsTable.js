@@ -2,6 +2,7 @@
 /* eslint-disable no-restricted-syntax */
 import { Table } from 'antd';
 import _ from 'lodash';
+import Utils from '../classes/Utils';
 
 const columns = [
 	{ title: 'State',
@@ -32,7 +33,7 @@ const columns = [
 		return (
 			<>
 				<div className="plus-cases">{text === 0 ? <span>&nbsp;</span> : `+${text}`}</div>
-				<div>{record.confirmed}</div>
+				<div>{Utils.getIndianNumberFormat(record.confirmed)}</div>
 			</>
 		);
 	},
@@ -70,7 +71,7 @@ const columns = [
 			return (
 				<>
 					<div className="plus-recovered">{record.newRecover === 0 ? <span>&nbsp;</span> : `+${record.newRecover}`}</div>
-					<div>{text}</div>
+					<div>{Utils.getIndianNumberFormat(text)}</div>
 				</>
 			);
 		}
@@ -109,6 +110,13 @@ const columns = [
 		sortDirections: ['descend', 'ascend'],
 		sorter: (a, b) => {
 			return a.deathRate - b.deathRate;
+		},
+		render: text => {
+			return (
+				<>
+					<div>{text}%</div>
+				</>
+			);
 		}
 	},
 	{ title: (
@@ -139,6 +147,13 @@ const columns = [
 		sortDirections: ['descend', 'ascend'],
 		sorter: (a, b) => {
 			return a.positivity - b.positivity;
+		},
+		render: text => {
+			return (
+				<>
+					<div>{text}%</div>
+				</>
+			);
 		}
 	},
 	{
