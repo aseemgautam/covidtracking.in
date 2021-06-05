@@ -7,7 +7,7 @@ import _ from 'lodash';
 const columns = [
 	{ title: 'State',
 		dataIndex: 'state',
-		width: 105,
+		width: 100,
 		fixed: true,
 		render: (text, record) => {
 			let tag = '';
@@ -29,7 +29,7 @@ const columns = [
 	},
 	{ title: 'Cases',
 		dataIndex: 'newCases',
-		width: 100,
+		width: 110,
 		align: 'right',
 		sorter: (a, b) => {
 			return a.newCases - b.newCases;
@@ -54,7 +54,7 @@ const columns = [
 	},
 	{ title: 'Tests',
 		dataIndex: 'newTests',
-		width: 110,
+		width: 90,
 		align: 'right',
 		sorter: (a, b) => {
 			return a.newTests - b.newTests;
@@ -83,7 +83,7 @@ const columns = [
 	},
 	{ title: '+ve %',
 		dataIndex: 'dailyPositivity',
-		width: 80,
+		width: 75,
 		align: 'right',
 		sorter: (a, b) => {
 			return a.dailyPositivity - b.dailyPositivity;
@@ -95,7 +95,7 @@ const columns = [
 			);
 		}
 	},
-	{ title: 'Deaths',
+	{ title: 'Death',
 		dataIndex: 'newDeaths',
 		width: 50,
 		align: 'right',
@@ -104,64 +104,10 @@ const columns = [
 			return a.deaths - b.deaths;
 		}
 	},
-	{ title: 'WCT',
-		dataIndex: 'movingAvg7daysRate',
-		align: 'right',
-		width: 80,
-		sortDirections: ['descend', 'ascend'],
-		className: 'weekly-trend',
-		render: (text, record) => {
-			if (record.movingAvg7daysRate > 0) {
-				return (
-					<div className="weekly-trend-negative">
-						+{record.movingAvg7daysRate}%
-					</div>
-				);
-			}
-			return (
-				<div className="weekly-trend-positive">
-					{-Math.abs(record.movingAvg7daysRate)}%
-				</div>
-			);
-		},
-		sorter: (a, b) => {
-			return a.movingAvg7daysRate - b.movingAvg7daysRate;
-		}
-	},
-	{ title: 'WTT',
-		dataIndex: 'testingTrend',
-		align: 'right',
-		width: 80,
-		sortDirections: ['descend', 'ascend'],
-		className: 'weekly-trend',
-		render: (text, record) => {
-			const trendValue = parseFloat(record.testingTrend);
-			if (Number.isNaN(trendValue)) {
-				return (
-					<div>&nbsp;</div>
-				);
-			}
-			if (trendValue > 0) {
-				return (
-					<div className={record.testingTrend > 5 ? 'weekly-trend-positive' : 'weekly-trend-none'}>
-						+{Math.round(record.testingTrend, 2)}%
-					</div>
-				);
-			}
-			return (
-				<div className="weekly-trend-negative">
-					{Math.round(record.testingTrend, 2)}%
-				</div>
-			);
-		},
-		sorter: (a, b) => {
-			return a.testingTrend - b.testingTrend;
-		}
-	},
-	{ title: 'Recovered',
+	{ title: 'Recover',
 		dataIndex: 'newRecover',
 		align: 'right',
-		width: 70,
+		width: 80,
 		sortDirections: ['descend', 'ascend'],
 		sorter: (a, b) => {
 			return a.newRecover - b.newRecover;

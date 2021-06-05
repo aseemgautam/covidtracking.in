@@ -4,6 +4,7 @@ import Papa from 'papaparse';
 import MovingAverage from './MovingAverage';
 import IndianStates from '../public/india-states.json';
 import Colors from './Colors';
+import Utils from './Utils';
 
 let instance = null;
 
@@ -35,9 +36,6 @@ class CovidDataState {
 				return h.toLowerCase();
 			}
 		});
-		// const data2 = _.filter(data, record => {
-		// 	return record.date !== '2020-08-30';
-		// });
 		IndianStates.states.forEach( // loop all states
 			state => {
 				const cases = _.filter(data, { state: state.name })
@@ -65,11 +63,6 @@ class CovidDataState {
 							deathsPerMillion: curr.deaths > 0 ? ((curr.deaths * 1000000) / state.population).toFixed(0) : 0
 						};
 					});
-				// console.log(state.name);
-				// if (cases.slice(0, -1).length === 0) {
-				// 	console.log(state.name);
-				// }
-				// MovingAverage.calculate(cases, 'newCases');
 				if (_.last(cases).newCases === 0) {
 					MovingAverage.calculate(cases.slice(0, -1), 'newCases');
 					_.last(cases).movingAvg7days = _.nth(cases, -2).movingAvg7days;
@@ -143,7 +136,7 @@ class CovidDataState {
 					// testing trend
 					latest.testingTrend = (((latest.newTests7DayMA - _.nth(cases, -14).newTests7DayMA) * 100)
 						/	_.nth(cases, -14).newTests7DayMA).toFixed(2);
-					latest.url = latest.state.toLocaleLowerCase().split(' ').join('-');
+					latest.url = Utils.getPathString(latest.state);
 					this._latest.push(latest);
 				}
 			}

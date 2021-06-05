@@ -2,7 +2,7 @@
 /* eslint-disable no-restricted-syntax */
 import { Table } from 'antd';
 import numeral from 'numeral';
-import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons';
+import { useRouter } from 'next/router';
 import _ from 'lodash';
 import MovingAverageProgress from './MovingAverageProgress';
 import LineChartSmall from './charts/LineChartSmall';
@@ -10,6 +10,7 @@ import Colors from '../classes/Colors';
 import TrendIndicator from './TrendIndicator';
 import Utils from '../classes/Utils';
 
+let router;
 const columns = [
 	{ title: 'State',
 		dataIndex: 'state',
@@ -21,6 +22,11 @@ const columns = [
 			return ('' + a.state).localeCompare(b.state);
 		},
 		render: (text, record) => {
+			const url = `/coronavirus-cases/${record.url}`;
+			const handleClick = e => {
+				e.preventDefault();
+				router.push(url);
+			};
 			return {
 				props: {
 					style: {
@@ -28,7 +34,7 @@ const columns = [
 						color: '#fff'
 					}
 				},
-				children: <a style={{ color: '#fff' }} href={`/coronavirus-cases/${record.url}`}>{text}</a>,
+				children: <a style={{ color: '#fff' }} onClick={handleClick}>{text}</a>,
 			};
 		}
 	},
@@ -152,41 +158,13 @@ const columns = [
 			);
 		}
 	},
-	// {
-	// 	title: (
-	// 		<>
-	// 			<div>New cases in last 28 days</div>
-	// 			<div className="sub-heading newCases28DaysSubHeader">
-	// 				<span><Tag color={Colors.monthlyNewCasesChart[0]}>0-7 (Latest)</Tag></span>
-	// 				<span><Tag color={Colors.monthlyNewCasesChart[1]}>8-14</Tag></span>
-	// 				<span><Tag color={Colors.monthlyNewCasesChart[2]}>15-21</Tag></span>
-	// 				<span><Tag color={Colors.monthlyNewCasesChart[3]}>22-28</Tag></span>
-	// 			</div>
-	// 		</>
-	// 	),
-	// 	dataIndex: 'newCases14days',
-	// 	align: 'center',
-	// 	width: 280,
-	// 	render: (text, record) => {
-	// 		const data = [record.newCases1to7days, record.newCases8to14days,
-	// 			record.newCases15to21Days, record.newCases22to28Days];
-	// 		return (
-	// 			<MonthlyNewCasesChart data={data} />
-	// 		);
-	// 	}
-	// }
 ];
 const StateTable = ({ casesByStateLatest }) => {
+	router = useRouter();
 	return (
 		<Table
 			className="state-table"
 			columns={columns}
-			// dataSource={casesByStateLatest}
-			// dataSource={_.filter(casesByStateLatest, { state: 'Delhi' })}
-			// dataSource={_.filter(casesByStateLatest, o => {
-			// 	return ['Karnataka', 'Delhi'].includes(o.state);
-			// 	// return ['Kerala', 'Karnataka', 'Telangana', 'Tamil Nadu', 'Andhra Pradesh', 'Maharashtra'].includes(o.state);
-			// })}
 			dataSource={_.filter(casesByStateLatest, o => {
 				return o.confirmed > 250;
 			})}

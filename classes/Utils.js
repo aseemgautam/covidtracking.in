@@ -66,6 +66,10 @@ class Utils {
 	round = num => {
 		return Math.round((num + Number.EPSILON) * 100) / 100;
 	}
+
+	getPathString = name => {
+		return name.toLocaleLowerCase().split(' ').join('-');
+	}
 }
 
 const utils = new Utils();

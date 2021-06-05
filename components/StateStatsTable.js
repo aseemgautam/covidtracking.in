@@ -1,8 +1,10 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-restricted-syntax */
 import { Table } from 'antd';
-import _ from 'lodash';
+import { useRouter } from 'next/router';
 import Utils from '../classes/Utils';
+
+let router;
 
 const columns = [
 	{ title: 'State',
@@ -15,8 +17,13 @@ const columns = [
 			return ('' + a.state).localeCompare(b.state);
 		},
 		render: (text, record) => {
+			const url = `/coronavirus-cases/${record.url}`;
+			const handleClick = e => {
+				e.preventDefault();
+				router.push(url);
+			};
 			return (
-				<a href={`/coronavirus-cases/${record.url}`}>{text}</a>
+				<a onClick={handleClick}>{text}</a>
 			);
 		}
 	},
@@ -193,6 +200,7 @@ const columns = [
 	},
 ];
 const StateStatsTable = ({ casesByStateLatest }) => {
+	router = useRouter();
 	return (
 		<Table
 			className="state-table state-stats-table"

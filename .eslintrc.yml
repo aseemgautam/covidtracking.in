@@ -38,6 +38,7 @@ rules:
     - error
     - tab
     - SwitchCase: 1
+      ignoredNodes: ["TemplateLiteral"]
   react/jsx-indent:
     - error
     - tab
@@ -57,11 +58,14 @@ rules:
   react/no-did-mount-set-state: 0
   react/react-in-jsx-scope: 0
   jsx-a11y/href-no-hash: off
+  jsx-a11y/click-events-have-key-events: 0
+  jsx-a11y/no-static-element-interactions: 0
   jsx-a11y/anchor-is-valid: ["warn", { "aspects": ["invalidHref"] }] # work around
   linebreak-style: 0
   react-hooks/rules-of-hooks: error
   react-hooks/exhaustive-deps: warn
   react/jsx-one-expression-per-line: 0
+  template-curly-spacing : 0
 settings:
   import/resolver:
     node:

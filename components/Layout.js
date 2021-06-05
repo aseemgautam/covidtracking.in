@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Layout, Space, Row, Col, Menu, Dropdown, Button } from 'antd';
 import { MenuOutlined, TwitterOutlined } from '@ant-design/icons';
+import StateDropdown from './layout/StateDropdown';
 
 const { Header, Content, Footer } = Layout;
 const tracker = <Link href="/"><a>TRACKER</a></Link>;
@@ -33,21 +34,24 @@ const SiteLayout = props => {
 						<a href="/">COVID TRACKING INDIA</a>
 					</Col>
 					<Col xs={8} sm={6} md={0} className="mobile-navigation">
-						<div className="twitter" style={{ marginRight: '16px' }}>
-							<a
-								style={{ color: '#1DA1F2' }}
-								rel="noopener noreferrer"
-								target="_blank"
-								href="https://twitter.com/CovidTrackingIn"
-							>
-								<TwitterOutlined />
-							</a>
-						</div>
-						<Dropdown overlay={menu}>
-							<Button>
-								<MenuOutlined />
-							</Button>
-						</Dropdown>
+						<Space>
+							<div className="twitter" style={{ marginRight: '4px' }}>
+								<a
+									style={{ color: '#1DA1F2' }}
+									rel="noopener noreferrer"
+									target="_blank"
+									href="https://twitter.com/CovidTrackingIn"
+								>
+									<TwitterOutlined />
+								</a>
+							</div>
+							<StateDropdown />
+							<Dropdown overlay={menu}>
+								<Button>
+									<MenuOutlined />
+								</Button>
+							</Dropdown>
+						</Space>
 					</Col>
 					<Col xs={0} sm={0} md={16} lg={18}>
 						<Space size="middle" className="navigation">
@@ -65,6 +69,7 @@ const SiteLayout = props => {
 									<TwitterOutlined /> &nbsp;TWITTER
 								</a>
 							</div>
+							<StateDropdown />
 						</Space>
 					</Col>
 				</Row>

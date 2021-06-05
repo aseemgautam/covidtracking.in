@@ -148,7 +148,7 @@ class Districts {
 				last.deathsPerMillion = last.deaths && last.population > 0
 					? Math.round((last.deaths * 1000000) / last.population) : 0;
 				last.newCasesYesterday = _.nth(districtData, -2).newCases;
-				last.deathRate = last.deaths > 0 ? this.round((last.deaths * 100) / (last.recovered + last.deaths)) : '' 
+				last.deathRate = last.deaths > 0 ? this.round((last.deaths * 100) / (last.recovered + last.deaths)) : '';
 				this._latest.push(last);
 				this._all.push(...districtData);
 			}
@@ -160,13 +160,16 @@ class Districts {
 
 	single = async (state, district) => {
 		await this._fetch();
-		return _.filter(this._all, { state, district });
+		return this._all;
+		// return _.filter(this._all, { state, district });
 	}
 
 	sum = (acc, curr) => { return acc + curr.newCases; };
+
 	round = num => {
 		return Math.round((num + Number.EPSILON) * 100) / 100;
 	}
+
 	latest = async () => {
 		await this._fetch();
 		return _.filter(this._latest, district => {
