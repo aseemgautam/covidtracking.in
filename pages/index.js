@@ -6,6 +6,7 @@ import _ from 'lodash';
 import numeral from 'numeral';
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import CovidDataIndia from '../classes/CovidDataIndia';
+import CovidDataVacc from '../classes/CovidDataVaccinations';
 import MovingAverageCard from '../components/NationalStats/MovingAverageCard';
 import CovidDataState from '../classes/CovidDataState';
 import HomePageTabsFirst from '../components/HomePageTabsFirst';
@@ -104,9 +105,6 @@ export async function getStaticProps() {
 		/ _.nth(indiaDailyStats, -15).newTests7DayMA;
 	const positivityTrend = _.last(indiaDailyStats).dailyPositivity7DayMA
 		- _.nth(indiaDailyStats, -15).dailyPositivity7DayMA;
-	// if (latest.date === _.last(indiaDailyStats).date) {
-	// 	latest = [];
-	// }
 	return {
 		// will be passed to the page component as props
 		props: { indiaDailyStats,

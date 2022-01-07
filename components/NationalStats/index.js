@@ -21,9 +21,9 @@ const NationalStats = ({ latest, dailyStatistics, isNational }) => {
 		return dayjs(current).isBefore(dayjs('2020-07-01')) || dayjs(current).isAfter(dayjs(latest.date));
 	}
 	// set dates;
-	const todayDate = latest.date;
-	const yesterdayDate = _.nth(dailyStatistics, isNational === true ? -1 : -2).date;
-	const statistic = date === latest.date ? latest : _.find(dailyStatistics, { date });
+	const todayDate = _.last(dailyStatistics).date;
+	const yesterdayDate = _.nth(dailyStatistics, isNational === true ? -2 : -2).date;
+	const statistic = _.find(dailyStatistics, { date });
 	let radioTextFirst = 'Today';
 	let radioTextSecond = 'Yesterday';
 	if (dayjs(latest.date).isBefore(new Date(), 'date') && (new Date()).getHours() > 8) {
