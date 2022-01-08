@@ -46,7 +46,7 @@ function Index({ indiaDailyStats, latest, stateDataLatest, buildTime, testingTre
 			</p>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} sm={24} md={12}>
-					<MovingAverageCard cases={indiaDailyStats} days={14} title="New Cases" />
+					<MovingAverageCard cases={indiaDailyStats} days={7} title="New Cases" />
 				</Col>
 				<Col xs={12} md={6}>
 					<div className={`${testingTrend > 0 ? 'statistic-green' : 'statistic-red'} covid-statistic`}>

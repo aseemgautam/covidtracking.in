@@ -40,7 +40,7 @@ const columns = [
 		return (
 			<>
 				<div className="plus-cases">{text === 0 ? <span>&nbsp;</span> : `+${text}`}</div>
-				<div>{Utils.getIndianNumberFormat(record.confirmed)}</div>
+				<div>{record.confirmed.toLocaleString('en-IN')}</div>
 			</>
 		);
 	},
@@ -61,7 +61,7 @@ const columns = [
 			return (
 				<>
 					<div className="plus-deaths">{record.newDeaths === 0 ? <span>&nbsp;</span> : `+${record.newDeaths}`}</div>
-					<div>{text}</div>
+					<div>{text.toLocaleString('en-IN')}</div>
 				</>
 			);
 		}
@@ -104,7 +104,7 @@ const columns = [
 			return (
 				<>
 					<div className={className}>{active}</div>
-					<div>{text}</div>
+					<div>{text.toLocaleString('en-IN')}</div>
 				</>
 			);
 		}
@@ -133,12 +133,12 @@ const columns = [
 	),
 	dataIndex: 'tests',
 	align: 'right',
-	width: 85,
+	width: 80,
 	render: (text, record) => {
 		return (
 			<>
 				<div style={{ color: '#0050b3' }}>{record.newTests === 0 ? <span>&nbsp;</span> : `+${record.newTests}`}</div>
-				<div>{text}</div>
+				<div>{Utils.getIndianNumberFormat(text)}</div>
 			</>
 		);
 	},
@@ -206,10 +206,6 @@ const StateStatsTable = ({ casesByStateLatest }) => {
 			className="state-table state-stats-table"
 			columns={columns}
 			dataSource={casesByStateLatest}
-			// dataSource={_.filter(casesByStateLatest, { state: 'Uttar Pradesh' })}
-			// dataSource={_.filter(casesByStateLatest, o => {
-			// 	return ['Uttar Pradesh', 'Kerala', 'Bihar', 'Odisha', 'Assam'].includes(o.state);
-			// })}
 			rowKey="state"
 			size="small"
 			scroll={{ x: 'max-content' }}
