@@ -15,7 +15,7 @@ import DailyStatistic from '../classes/DailyStatistic';
 import Colors from '../classes/Colors';
 
 function Index({ indiaDailyStats, latest, stateDataLatest, buildTime, testingTrend, positivityTrend }) {
-	const growthInCases = _.last(indiaDailyStats).movingAvg14daysRate;
+	const growthInCases = _.last(indiaDailyStats).movingAvg7daysRate;
 	const newCasesTrendText = growthInCases === 0 ? 'are flat (not changed)'
 		: growthInCases > 0 ? `increased by ${growthInCases}%`
 			: `decreased by ${Math.abs(growthInCases)}%`;
@@ -40,8 +40,8 @@ function Index({ indiaDailyStats, latest, stateDataLatest, buildTime, testingTre
 				stateDataLatest={stateDataLatest}
 				buildTime={buildTime}
 			/>
-			<div className="subhead">New cases, Tests & Positivity over Last 14 days</div>
-			<p style={{ marginTop: 16 }}>Over the last 2 weeks, new cases have {newCasesTrendText},
+			<div className="subhead">New cases, Tests & Positivity over Last 7 days</div>
+			<p style={{ marginTop: 16 }}>Over the last 7, new cases have {newCasesTrendText},
 				daily tests have {testsTrendText} & positivity is {positivityTrendText}.
 			</p>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
@@ -100,10 +100,10 @@ export async function getStaticProps() {
 		recovered, indiaLatest.deaths + deaths, deaths, indiaLatest.tests + tests,
 		tests);
 	latest.count = count;
-	const testingTrend = ((_.last(indiaDailyStats).newTests7DayMA - _.nth(indiaDailyStats, -15).newTests7DayMA) * 100)
-		/ _.nth(indiaDailyStats, -15).newTests7DayMA;
+	const testingTrend = ((_.last(indiaDailyStats).newTests7DayMA - _.nth(indiaDailyStats, -8).newTests7DayMA) * 100)
+		/ _.nth(indiaDailyStats, -8).newTests7DayMA;
 	const positivityTrend = _.last(indiaDailyStats).dailyPositivity7DayMA
-		- _.nth(indiaDailyStats, -15).dailyPositivity7DayMA;
+		- _.nth(indiaDailyStats, -8).dailyPositivity7DayMA;
 	return {
 		// will be passed to the page component as props
 		props: { indiaDailyStats,
