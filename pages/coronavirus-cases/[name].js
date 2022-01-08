@@ -21,7 +21,7 @@ const CoronavirusCases = ({ stateStatistics, name, buildTime, testingTrend, posi
 	const movement = last.movingAvg7daysRate >= 0
 		? `an increase of ${last.movingAvg7daysRate}` : ` a decrease of ${last.movingAvg7daysRate * -1}`;
 	// 14 day trend
-	const growthInCases = last.movingAvg14daysRate;
+	const growthInCases = last.movingAvg7daysRate;
 	const newCasesTrendText = growthInCases === 0 ? 'are flat (not changed)'
 		: growthInCases > 0 ? `increased by ${growthInCases}%`
 			: `decreased by ${Math.abs(growthInCases)}%`;
@@ -56,13 +56,13 @@ const CoronavirusCases = ({ stateStatistics, name, buildTime, testingTrend, posi
 				latest={_.last(stateStatistics)}
 				dailyStatistics={stateStatistics}
 			/>
-			<div className="subhead">New cases, Tests & Positivity over Last 14 days</div>
-			<p style={{ marginTop: 16 }}>Over the last 2 weeks, new cases have {newCasesTrendText},
+			<div className="subhead">New cases, Tests & Positivity over Last 7 days</div>
+			<p style={{ marginTop: 16 }}>Over the last 7 days, new cases have {newCasesTrendText},
 				daily tests have {testsTrendText} & positivity is {positivityTrendText}.
 			</p>
 			<Row gutter={[{ xs: 8, sm: 16 }, { xs: 8, sm: 16 }]}>
 				<Col xs={24} sm={24} md={12}>
-					<MovingAverageCard cases={stateStatistics} days={14} title="New Cases" />
+					<MovingAverageCard cases={stateStatistics} days={7} title="New Cases" />
 				</Col>
 				<Col xs={12} md={6}>
 					<div className={`${testingTrend > 0 ? 'statistic-green' : 'statistic-red'} covid-statistic`}>
@@ -144,10 +144,10 @@ export async function getStaticProps({ params }) {
 		stateStatistics.pop();
 	}
 	const buildTime = Utils.dateAndTime();
-	const testingTrend = ((_.last(stateStatistics).newTests7DayMA - _.nth(stateStatistics, -15).newTests7DayMA) * 100)
-		/ _.nth(stateStatistics, -15).newTests7DayMA;
+	const testingTrend = ((_.last(stateStatistics).newTests7DayMA - _.nth(stateStatistics, -8).newTests7DayMA) * 100)
+		/ _.nth(stateStatistics, -8).newTests7DayMA;
 	const positivityTrend = _.last(stateStatistics).dailyPositivity7DayMA
-		- _.nth(stateStatistics, -15).dailyPositivity7DayMA;
+		- _.nth(stateStatistics, -8).dailyPositivity7DayMA;
 	return {
 		// will be passed to the page component as props
 		props: { stateStatistics,
