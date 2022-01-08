@@ -41,11 +41,6 @@ const StateDeltaGrid = ({ casesByStateLatest }) => {
 	function handleChange(value) {
 		setField(value);
 	}
-	console.log(tweet);
-	console.log(_.filter(cases, { isHigh: true }).reduce((acc, state) => {
-		acc += `${state.stateCode} +${state.newCases}, `;
-		return acc;
-	}, ''));
 	const tags = (
 		<>
 			<Tag className="delta-grid-tags" color="#ffccc7">New High</Tag>

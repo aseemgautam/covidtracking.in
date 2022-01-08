@@ -18,13 +18,8 @@ class CovidDataState {
 		return instance;
 	}
 
-	all = async () => {
-		if (this._all.Size > 0) {
-			return this._all;
-		}
-		// eslint-disable-next-line max-len
-		// const res = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQRyjPj_VXGIOYnCy5eoy3YcN9yA_yFKWd4AdkMXFam62N4Ik-D6A6cwFXt2N2LwpncJEd-dFn7s5Ez/pub?gid=2100676919&single=true&output=csv');
-		const res = await fetch('https://api.covid19india.org/csv/latest/states.csv');
+	downloadCsvStates = async () => {
+		const res = await fetch('https://api.covid19tracker.in/data/csv/latest/states.csv');
 		const text = await res.text();
 		const { data } = Papa.parse(text, {
 			header: true,
@@ -36,11 +31,41 @@ class CovidDataState {
 				return h.toLowerCase();
 			}
 		});
+		return data;
+	}
+
+	getTestsForStateByDate = (data, date, code) => {
+		let stateCode = code;
+		if (code === 'OD') {
+			stateCode = 'OR';
+		} else if (code === 'CG') {
+			stateCode = 'CT';
+		} else if (code === 'DH') {
+			stateCode = 'DN';
+		} else if (code === 'TS') {
+			stateCode = 'TG';
+		} else if (code === 'UK') {
+			stateCode = 'UT';
+		}
+		const { tested } = data[stateCode].dates[date].total;
+		return tested || 0;
+	}
+
+	all = async () => {
+		if (this._all.Size > 0) {
+			return this._all;
+		}
+
+		const data = await this.downloadCsvStates();
+		const testingData = await (await fetch('https://api.covid19tracker.in/data/static/timeseries.min.json')).json();
+
 		IndianStates.states.forEach( // loop all states
 			state => {
 				const cases = _.filter(data, { state: state.name })
 					.map((curr, idx, src) => {
 						const newCases = idx === 0 ? 0 : curr.confirmed - src[idx - 1].confirmed;
+						// eslint-disable-next-line no-param-reassign
+						curr.tested = this.getTestsForStateByDate(testingData, curr.date, state.code);
 						const newTests = idx === 0 ? 0 : curr.tested - src[idx - 1].tested;
 						return {
 							...curr,

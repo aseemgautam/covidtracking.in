@@ -6,7 +6,11 @@ import CovidStatistic from './CovidStatistic';
 import DatePicker from '../DatePicker';
 
 const NationalStats = ({ latest, dailyStatistics, isNational }) => {
-	const [date, setDate] = useState(latest.date);
+	// set dates;
+	const todayDate = _.last(dailyStatistics).date;
+	const yesterdayDate = _.nth(dailyStatistics, isNational === true ? -2 : -2).date;
+	const [date, setDate] = useState(todayDate);
+	const statistic = _.find(dailyStatistics, { date });
 
 	function onDateChangeFromPicker(newDate) {
 		if (newDate && dayjs(newDate).isValid()) {
@@ -17,15 +21,11 @@ const NationalStats = ({ latest, dailyStatistics, isNational }) => {
 		setDate(e.target.value);
 	}
 	function disableDate(current) {
-		// console.log(current);
 		return dayjs(current).isBefore(dayjs('2020-07-01')) || dayjs(current).isAfter(dayjs(latest.date));
 	}
-	// set dates;
-	const todayDate = _.last(dailyStatistics).date;
-	const yesterdayDate = _.nth(dailyStatistics, isNational === true ? -2 : -2).date;
-	const statistic = _.find(dailyStatistics, { date });
-	let radioTextFirst = 'Today';
-	let radioTextSecond = 'Yesterday';
+
+	let radioTextFirst = 'Latest';
+	let radioTextSecond = 'Day Before';
 	if (dayjs(latest.date).isBefore(new Date(), 'date') && (new Date()).getHours() > 8) {
 		radioTextFirst = 'Yesterday';
 		radioTextSecond = '2 days ago';

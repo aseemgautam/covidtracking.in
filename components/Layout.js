@@ -13,12 +13,12 @@ const menu = (
 		<Menu.Item>
 			{tracker}
 		</Menu.Item>
-		<Menu.Item>
+		{/* <Menu.Item>
 			{districts}
 		</Menu.Item>
 		<Menu.Item>
 			{testing}
-		</Menu.Item>
+		</Menu.Item> */}
 		<Menu.Item>
 			{criteria}
 		</Menu.Item>
@@ -56,8 +56,8 @@ const SiteLayout = props => {
 					<Col xs={0} sm={0} md={16} lg={18}>
 						<Space size="middle" className="navigation">
 							{tracker}
-							{districts}
-							{testing}
+							{/* {districts}
+							{testing} */}
 							{criteria}
 							<div>
 								<a
