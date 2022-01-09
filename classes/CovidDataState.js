@@ -47,7 +47,12 @@ class CovidDataState {
 		} else if (code === 'UK') {
 			stateCode = 'UT';
 		}
-		const { tested } = data[stateCode].dates[date].total;
+
+		let tested = 0;
+		if (data[stateCode].dates[date]) {
+			tested = data[stateCode].dates[date].total;
+		}
+
 		return tested || 0;
 	}
 
