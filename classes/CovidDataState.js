@@ -50,7 +50,7 @@ class CovidDataState {
 
 		let tested = 0;
 		if (data[stateCode].dates[date]) {
-			tested = data[stateCode].dates[date].total;
+			tested = data[stateCode].dates[date].total.tested;
 		}
 
 		return tested || 0;
