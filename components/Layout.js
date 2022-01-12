@@ -86,12 +86,12 @@ const SiteLayout = props => {
 					<div>
 						<a href="/">Tracker</a>
 					</div>
-					<div>
+					{/* <div>
 						<a href="/districts">Districts</a>
 					</div>
 					<div>
 						<a href="/testing">Testing</a>
-					</div>
+					</div> */}
 					<div>
 						<a href="/sitemap">Sitemap</a>
 					</div>

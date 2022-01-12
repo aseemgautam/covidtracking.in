@@ -7,10 +7,14 @@ import DatePicker from '../DatePicker';
 
 const NationalStats = ({ latest, dailyStatistics, isNational }) => {
 	// set dates;
-	const todayDate = _.last(dailyStatistics).date;
-	const yesterdayDate = _.nth(dailyStatistics, isNational === true ? -2 : -2).date;
-	const [date, setDate] = useState(todayDate);
-	const statistic = _.find(dailyStatistics, { date });
+	// const todayDate = _.last(dailyStatistics).date;
+	// const yesterdayDate = _.nth(dailyStatistics, isNational === true ? -2 : -2).date;
+	// const [date, setDate] = useState(todayDate);
+	// const statistic = _.find(dailyStatistics, { date });
+	const [date, setDate] = useState(latest.date);
+	const todayDate = latest.date;
+	const yesterdayDate = _.nth(dailyStatistics, isNational === true ? -1 : -2).date;
+	const statistic = date === latest.date ? latest : _.find(dailyStatistics, { date });
 
 	function onDateChangeFromPicker(newDate) {
 		if (newDate && dayjs(newDate).isValid()) {

@@ -59,7 +59,7 @@ const HomePageTabs = ({ indiaDailyStats, latest, stateDataLatest, buildTime }) =
 					</Col>
 				</Row>
 			</TabPane>
-			{/* {stateDataLatest.length > 0 && (
+			{stateDataLatest.length > 0 && (
 				<TabPane
 					tab={
 						(
@@ -74,7 +74,7 @@ const HomePageTabs = ({ indiaDailyStats, latest, stateDataLatest, buildTime }) =
 				>
 					<DailyReportSection casesByStateLatest={stateDataLatest} />
 				</TabPane>
-			)} */}
+			)}
 		</Tabs>
 	);
 };
